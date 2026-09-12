@@ -1,0 +1,4 @@
+heat_category,n,median_next_change_pp_per_year,mean_next_change_pp_per_year
+DHW < 1,81,-0.63,-0.5503827160493827
+DHW 1–<4,128,-1.06,-0.59840625
+DHW ≥ 4,139,-1.11,-1.3778992805755395

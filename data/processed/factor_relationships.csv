@@ -1,0 +1,10 @@
+factor,analysis,n,statistic,statistic_unit,p_value,caution
+noaa_max_dhw,Spearman rank correlation,348,-0.1045779727630862,rho,0.051270888572376425,Descriptive lagged association; not a causal effect
+noaa_mean_ssta,Spearman rank correlation,348,-0.06056818930566387,rho,0.2598039926898717,Descriptive lagged association; not a causal effect
+grp_disturbance_indicators,Spearman rank correlation,338,0.07772612436258132,rho,0.15391408226206862,Descriptive lagged association; not a causal effect
+grp_pollution_indicators,Spearman rank correlation,338,0.14597611401784685,rho,0.00718360745525168,Descriptive lagged association; not a causal effect
+fish_parrotfish,Spearman rank correlation,348,-0.0326674872877121,rho,0.5436029873395897,Descriptive lagged association; not a causal effect
+grazer_ratio,Spearman rank correlation,331,-0.05970715805382468,rho,0.27874907864012083,Descriptive lagged association; not a causal effect
+impact_anchor,Mean difference: mentioned minus not mentioned,348,0.7535327329651386,percentage points per year,0.6580050963797206,Narrative mention comparison; absence may mean unreported
+impact_trash,Mean difference: mentioned minus not mentioned,348,-0.3909071505171756,percentage points per year,0.6040435948163754,Narrative mention comparison; absence may mean unreported
+impact_bleaching,Mean difference: mentioned minus not mentioned,348,0.8710021173123366,percentage points per year,0.5471291369752176,Narrative mention comparison; absence may mean unreported
