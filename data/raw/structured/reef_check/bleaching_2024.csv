@@ -1,0 +1,27 @@
+region,location,island,survey_year,site,depth_min_m,depth_max_m,depth_mid_m,dhw,mortality_pct,bleaching_pct,colonies_n,taxa_n,small_sample,mortality_underestimated,repeat_surveyed
+North PM,P. Redang,Redang,2024,Pulau Pinang,3,7,5,9.6,63.6,100,11,3,1,0,1
+North PM,P. Rhu,Rhu,2024,Rhu,2,4,3,7.5,57.6,,151,12,0,0,0
+North PM,P. Lang Tengah,Lang Tengah,2024,Pasir Besar,5,12,8.5,9.7,56.8,88.7,1126,24,0,0,1
+North PM,P. Perhentian,Perhentian,2024,Batu Nisan,4,11,7.5,11,51.03,12.61,292,16,0,0,0
+North PM,P. Perhentian,Perhentian,2024,D.Lagoon,4,10,7,11,49.1,15.4,462,28,0,0,0
+North PM,P. Perhentian,Perhentian,2024,Batu Layar,15,16,15.5,11,46.6,32,103,15,0,0,0
+North PM,P. Perhentian,Perhentian,2024,Batu Nisan,8,10,9,11,42.4,10.6,238,16,0,0,0
+North PM,P. Lang Tengah,Lang Tengah,2024,Batu Bulan,5,13,9,9.7,41.4,87.3,573,31,0,0,1
+North PM,P. Redang,Redang,2024,Kerengga Besar,3,8,5.5,9.6,40,90,10,7,1,0,1
+South PM,P. Tioman,Tioman,2024,Renggis,5,9,7,5.4,37.5,37.5,8,4,1,0,0
+North PM,P. Lang Tengah,Lang Tengah,2024,Tanjung Telunjuk,5,13,9,9.7,29.9,80.7,622,34,0,0,1
+West Sabah,Kota Kinabalu,Tunku Abdul Rahman Park,2024,Sapi,5,7,6,5.5,28.6,64.3,28,9,1,0,0
+North PM,P. Perhentian,Perhentian,2024,Seringgih,10,15,12.5,11.1,26.7,52.5,202,18,0,0,0
+West Sabah,Kota Kinabalu,Tunku Abdul Rahman Park,2024,Mamutik,5,7,6,5.5,25.9,77.8,27,11,1,0,0
+North PM,P. Perhentian,Perhentian,2024,Seringgih,3,4,3.5,11.1,24.9,54.9,209,14,0,0,0
+North PM,P. Bidong,Bidong & Yu,2024,Pasir Cina,8,9,8.5,9.5,22.7,52.7,353,16,0,1,0
+East Sabah,P. Mabul,Mabul,2024,Panglima,9,10,9.5,6.5,15.4,26.9,26,11,1,0,0
+East Sabah,Larapan,Larapan,2024,Point 3,9,12,10.5,9.4,15.4,69.2,13,8,1,0,0
+South PM,P. Tioman,Tioman,2024,Tekek House Reef,5,7,6,5.4,11.1,44.4,9,5,1,0,0
+East Sabah,Larapan,Larapan,2024,SMEE 2,8,13,10.5,9.4,8.7,4.4,23,12,1,0,0
+East Sabah,P. Mabul,Mabul,2024,Eel Garden,8,10,9,6.5,4.6,27.3,44,10,0,0,0
+South PM,P. Besar,Besar,2024,Teluk Buluh,4,6,5,7.5,0,69.2,13,9,1,0,0
+South PM,P. Besar,Besar,2024,Teluk Kalih,2,5,3.5,7.5,0,26.3,19,3,1,0,0
+North PM,P. Geluk,,2024,Beach Front,5,7,6,9.5,,83.9,,20,0,0,0
+North PM,P. Kapas,Kapas,2024,Coral Garden,7,10,8.5,7.7,,57.8,211,18,0,0,0
+North PM,P. Kapas,Kapas,2024,Coral Garden,2,3,2.5,7.7,,84.7,327,15,0,0,0
