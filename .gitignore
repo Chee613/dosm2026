@@ -5,3 +5,13 @@ tmp/
 dist/dashboard_package/audit/
 *.inspect.ndjson
 ~$*
+
+# secrets
+.env
+
+# local tooling and scratch artifacts
+.claude/
+catboost_info/
+
+# per-island download cache (combined into crw_5km_weekly.csv)
+data/raw/noaa_crw_5km/islands/
