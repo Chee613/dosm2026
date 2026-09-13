@@ -15,6 +15,7 @@ These assumptions define what the current evidence can support. They are not hid
 | Residual dependence | Repeated island observations are not fully independent. | Conventional uncertainty can be too narrow. | Do not present formal causal confidence intervals; use empirical screening bands. |
 | Priority threshold | The top quartile is a practical workload queue, not an ecological or legal threshold. | Users may mistake rank 10 versus 11 for a scientific boundary. | Label the tier “High screening priority” and require field verification. |
 | Economic context | State or national tourism totals cannot represent individual-island pressure without allocation data. | Downscaling would fabricate precision. | Keep OpenDOSM tourism/GDP series descriptive and outside the island prediction features. |
+| Physical accommodation footprint | Verified resort and room inventories represent the physical upper-bound ceiling of overnight tourist capacity, not observed daily occupancy. | Day-tripper volume is uncaptured without jetty tickets. | Present room metrics as static capacity bounds; do not synthesize daily tourist time series without ticketing manifests. |
 
 ## Assumptions that would change with new data
 

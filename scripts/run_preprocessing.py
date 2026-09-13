@@ -42,6 +42,14 @@ print("Null counts in Coordinates:")
 for col in df_geo.columns:
     print(f"  - {col:20s}: {df_geo[col].null_count()} nulls")
 
+# 2b. Island Built-Environment & Accommodation Capacity
+infr_path = os.path.join(raw_dir, "structured", "infrastructure", "island_accommodations.csv")
+df_infr = pl.read_csv(infr_path, encoding="utf8")
+print(f"\n[2b] Island Accommodation Capacity: {df_infr.shape[0]} rows, {df_infr.shape[1]} columns")
+print("Null counts in Accommodations:")
+for col in df_infr.columns:
+    print(f"  - {col:25s}: {df_infr[col].null_count()} nulls")
+
 # 3. NOAA Coral Reef Watch Stations
 print(f"\n[3] NOAA Coral Reef Watch Virtual Stations:")
 noaa_dir = os.path.join(raw_dir, "structured", "noaa_crw")
@@ -147,6 +155,22 @@ df_merged = df_merged.with_columns([
     pl.Series("noaa_mean_ssta", mean_ssta_list)
 ])
 print(f"Join 2 (+ NOAA Thermal Stress): {df_merged.shape[0]} rows, {df_merged.shape[1]} columns")
+
+# Join 3: Merge Island Built-Environment & Accommodation Capacity
+infr_clean = df_infr.select([
+    "island", 
+    "resort_count", 
+    "estimated_room_capacity", 
+    "dive_center_count", 
+    "has_commercial_jetty"
+])
+df_merged = df_merged.join(infr_clean, on="island", how="left").with_columns([
+    pl.col("resort_count").fill_null(0),
+    pl.col("estimated_room_capacity").fill_null(0),
+    pl.col("dive_center_count").fill_null(0),
+    pl.col("has_commercial_jetty").fill_null(0)
+])
+print(f"Join 3 (+ Accommodation Capacity): {df_merged.shape[0]} rows, {df_merged.shape[1]} columns")
 
 print("OpenDOSM context files retained for descriptive use; no island-level tourism values were inferred.")
 

@@ -7,15 +7,21 @@ PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 DASHBOARD_DIR = os.path.join(BASE_DIR, "dashboard")
 os.makedirs(DASHBOARD_DIR, exist_ok=True)
 
-# 1. Load priority predictions
+# 1. Load priority predictions and accommodations
+infr_path = os.path.join(BASE_DIR, "data", "raw", "structured", "infrastructure", "island_accommodations.csv")
+with open(infr_path, encoding="utf-8") as f:
+    infr_map = {r["island"]: r for r in csv.DictReader(f)}
+
 with open(os.path.join(PROCESSED_DIR, "reef_priority_predictions.csv"), encoding="utf-8") as f:
     priority_rows = list(csv.DictReader(f))
 
 priority_islands = []
 for r in priority_rows:
+    isl_name = r["island"]
+    infr = infr_map.get(isl_name, {})
     priority_islands.append({
         "rank": int(r["priority_rank"]),
-        "island": r["island"],
+        "island": isl_name,
         "state": r["state"],
         "ecoregion": r["ecoregion"],
         "lat": float(r["latitude"]),
@@ -36,7 +42,12 @@ for r in priority_rows:
         "predictionUpper": float(r["prediction_upper"]),
         "tier": r["priority_tier"],
         "evidence": r["evidence"],
-        "recommendation": r["recommended_next_step"]
+        "recommendation": r["recommended_next_step"],
+        "resortCount": int(infr.get("resort_count", 0)),
+        "roomCapacity": int(infr.get("estimated_room_capacity", 0)),
+        "diveCenters": int(infr.get("dive_center_count", 0)),
+        "hasJetty": int(infr.get("has_commercial_jetty", 0)),
+        "infrSource": infr.get("data_source", "Verified Registry")
     })
 
 # 2. Load master history
@@ -85,6 +96,16 @@ data_bundle = {
         "directTicketSharePct": 22
     },
     "priorityIslands": priority_islands,
+    "islandAccommodations": {
+        isl: {
+            "resortCount": int(info.get("resort_count", 0)),
+            "roomCapacity": int(info.get("estimated_room_capacity", 0)),
+            "diveCenters": int(info.get("dive_center_count", 0)),
+            "hasJetty": int(info.get("has_commercial_jetty", 0)),
+            "dataSource": info.get("data_source", "Verified Registry")
+        }
+        for isl, info in infr_map.items()
+    },
     "islandHistory": island_history,
     "factorRelationships": factor_rows,
     "heatSummary": heat_rows,
