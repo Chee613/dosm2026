@@ -1,0 +1,1622 @@
+{
+  "overview": {
+    "headline": "Malaysian coral reefs face record heat stress in 2026, requiring urgent local management to mitigate cumulative damage.",
+    "key_findings": [
+      "Sabah reefs are experiencing record heat stress in 2026, exceeding 2024 peaks with 13.4 DHW.",
+      "Average coral cover fell to 40% in 2025, the lowest level recorded between 2015 and 2025.",
+      "Local pressures, including anchor damage, are associated with 6 points less coral cover at affected islands.",
+      "Reefs show a clear association between higher previous-year heat stress and subsequent coral cover decline.",
+      "Trash reported at previous surveys is associated with a 3-point decline in coral cover."
+    ],
+    "top_priority_islands": [
+      {
+        "island": "Tunku Abdul Rahman Park",
+        "reason": "Projected cover of 15% is in the poor band, requiring urgent bleaching response and stress reduction."
+      },
+      {
+        "island": "Sipadan",
+        "reason": "High-value site showing losses in calm years; local action is worthwhile to protect existing cover."
+      },
+      {
+        "island": "Redang",
+        "reason": "Significant site showing losses in calm years where local management of tourism pressures can improve outcomes."
+      },
+      {
+        "island": "Tioman",
+        "reason": "Important tourism hub where local stressors contribute to losses during calm years."
+      }
+    ],
+    "regional_patterns": [
+      {
+        "region": "Sabah",
+        "pattern": "Lowest mean coral cover (33.1%) and the most frequent, severe heat stress events."
+      },
+      {
+        "region": "Peninsular East",
+        "pattern": "Higher mean cover (44.9%) but vulnerable to local pressures during calm years."
+      },
+      {
+        "region": "Peninsular West",
+        "pattern": "Mean cover of 36.5% with all surveyed sites currently in the yellow urgency category."
+      }
+    ],
+    "heat_outlook_2026": "Sabah has reached record heat stress (13.4 DHW), while the Malacca Strait faces 9.0 DHW; these levels are associated with significant coral decline.",
+    "caveats": "Forecasts have a typical error of 6 points; small changes often reflect reefs drifting toward regional averages rather than specific local trends. Associations are based on observational data, not proven causes.",
+    "_meta": {
+      "model": "gemini-3.1-flash-lite",
+      "generated_at": "2026-09-13T20:52:47",
+      "scenario": "2026 to date",
+      "input_hash": "88bdca3a3f53f225"
+    }
+  },
+  "islands": {
+    "Aur & Dayang": {
+      "island": "Aur & Dayang",
+      "urgency": "yellow",
+      "headline": "Address local stressors to stabilize coral cover amid fair conditions.",
+      "why": "Projected cover of 36% is in the fair band. Losses occur in calm years, suggesting local pressures are key levers.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns outbreaks",
+          "evidence": "75% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "88% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement a crown-of-thorns removal programme.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "High frequency of outbreaks requires active intervention to reduce coral loss."
+        },
+        {
+          "action": "Establish a strict waste management protocol for all tour boats.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash is present in 88% of surveys and negatively impacts coral health."
+        }
+      ],
+      "monitoring": "Check for new crown-of-thorns outbreaks and monitor trash accumulation.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect regional trends.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:10",
+        "scenario": "2026 to date",
+        "input_hash": "9ed1a1b155cb8d27"
+      }
+    },
+    "Besar": {
+      "island": "Besar",
+      "urgency": "yellow",
+      "headline": "Install permanent moorings to eliminate anchor damage.",
+      "why": "Projected cover of 42% is in the fair band. Anchor damage and trash are reported in 100% of surveys.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "100% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install and maintain permanent mooring buoys.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is reported in 100% of surveys."
+        },
+        {
+          "action": "Enforce no-anchoring zones and use provided moorings.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Directly addresses the 100% anchor damage rate."
+        }
+      ],
+      "monitoring": "Assess anchor damage at popular dive sites.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect regional trends.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:10",
+        "scenario": "2026 to date",
+        "input_hash": "90e220208053a0b2"
+      }
+    },
+    "Bidong & Yu": {
+      "island": "Bidong & Yu",
+      "urgency": "yellow",
+      "headline": "Mitigate local stressors to improve resilience against thermal stress.",
+      "why": "Projected cover of 47% is in the fair band. Recent surveys show an 11.2 point decline.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns outbreaks",
+          "evidence": "91% of surveys"
+        },
+        {
+          "factor": "Heat stress",
+          "evidence": "4.4 DHW"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Conduct systematic crown-of-thorns removal.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Outbreaks are present in 91% of surveys."
+        },
+        {
+          "action": "Reduce boat traffic and pollution during heat stress events.",
+          "actor": "Tourism operators",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Reduces cumulative stress on reefs already affected by thermal events."
+        }
+      ],
+      "monitoring": "Monitor coral bleaching and crown-of-thorns density.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect regional trends.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:10",
+        "scenario": "2026 to date",
+        "input_hash": "a25c82a43891e86d"
+      }
+    },
+    "Gual": {
+      "island": "Gual",
+      "urgency": "yellow",
+      "headline": "Manage anchor use to protect remaining coral cover.",
+      "why": "Projected cover of 45% is in the fair band. Recent surveys show a 10.4 point decline.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "50% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "75% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Designate and mark anchoring zones away from coral.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is present in 50% of surveys."
+        },
+        {
+          "action": "Conduct regular beach and reef clean-ups.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 75% of surveys."
+        }
+      ],
+      "monitoring": "Survey anchor damage levels at key sites.",
+      "confidence": "low",
+      "caveats": "Limited survey data makes classification difficult.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:10",
+        "scenario": "2026 to date",
+        "input_hash": "56110dca1cd66d1f"
+      }
+    },
+    "Harimau": {
+      "island": "Harimau",
+      "urgency": "yellow",
+      "headline": "Prioritize waste management and mooring compliance.",
+      "why": "Projected cover of 48% is in the fair band. Recent surveys show an 11.3 point decline.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys"
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "75% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install mooring buoys to prevent anchor damage.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is present in 75% of surveys."
+        },
+        {
+          "action": "Implement a 'zero-trash' policy for all tourism activities.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash is present in 100% of surveys."
+        }
+      ],
+      "monitoring": "Track trash volume and anchor damage frequency.",
+      "confidence": "low",
+      "caveats": "Limited survey data makes classification difficult.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:10",
+        "scenario": "2026 to date",
+        "input_hash": "f3595a39b141db2c"
+      }
+    },
+    "Hujung": {
+      "island": "Hujung",
+      "urgency": "yellow",
+      "headline": "Address high rates of anchor damage and trash to stabilize coral cover.",
+      "why": "Projected coral cover is 41%, placing it in the fair band. Local pressures show 100% of surveys recorded both anchor damage and trash.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "1.0 share of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "1.0 share of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install permanent mooring buoys to eliminate anchoring.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Anchor damage was recorded in 100% of surveys."
+        },
+        {
+          "action": "Implement a mandatory waste management program for all vessels.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash was recorded in 100% of surveys."
+        }
+      ],
+      "monitoring": "Survey sites for new anchor scars and debris accumulation.",
+      "confidence": "medium",
+      "caveats": "Data is based on few surveys; projections reflect regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:15",
+        "scenario": "2026 to date",
+        "input_hash": "2e6e505402b2d16d"
+      }
+    },
+    "Kapalai": {
+      "island": "Kapalai",
+      "urgency": "red",
+      "headline": "Urgent intervention needed to mitigate severe heat stress and local damage.",
+      "why": "Projected cover is 17%, which is in the poor band. Heat stress is severe at 13.4 DHW.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW"
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "0.82 share of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Restrict access to sensitive reef areas during peak heat stress.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Heat stress is severe at 13.4 DHW."
+        },
+        {
+          "action": "Adopt strict no-anchoring policies and use provided moorings.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Anchor damage is present in 82% of surveys."
+        }
+      ],
+      "monitoring": "Monitor for signs of coral bleaching and mortality.",
+      "confidence": "high",
+      "caveats": "Forecasts have a typical error of 6 points.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:15",
+        "scenario": "2026 to date",
+        "input_hash": "484d674bb47b38b2"
+      }
+    },
+    "Kapas": {
+      "island": "Kapas",
+      "urgency": "yellow",
+      "headline": "Reduce local stressors to protect coral during calm years.",
+      "why": "Projected cover is 50%, in the fair band. Losses occur in calm years, suggesting local pressures are the primary lever.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "0.36 share of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "0.73 share of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Initiate a crown-of-thorns removal programme.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Outbreaks were recorded in 36% of surveys."
+        },
+        {
+          "action": "Conduct regular reef clean-ups to remove marine debris.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash was recorded in 73% of surveys."
+        }
+      ],
+      "monitoring": "Track crown-of-thorns population density and debris levels.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect drifting toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:15",
+        "scenario": "2026 to date",
+        "input_hash": "64643607ca79efa2"
+      }
+    },
+    "Labuan": {
+      "island": "Labuan",
+      "urgency": "yellow",
+      "headline": "Monitor reef recovery following thermal stress events.",
+      "why": "Projected cover is 26%, in the fair band. Losses are associated with thermal stress, with 13.4 DHW predicted.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW"
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "17.2% of non-coral seabed"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Establish thermal stress monitoring protocols for the marine park.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Losses are mainly after heat stress."
+        },
+        {
+          "action": "Ensure all tour boats follow strict waste disposal protocols to reduce pollution.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Pollution indicators cover 17.2% of non-coral seabed."
+        }
+      ],
+      "monitoring": "Assess coral cover recovery after the 13.4 DHW heat event.",
+      "confidence": "medium",
+      "caveats": "Forecast error is approximately 6 points.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:15",
+        "scenario": "2026 to date",
+        "input_hash": "d1375cc2c5e3c52c"
+      }
+    },
+    "Lahad Datu": {
+      "island": "Lahad Datu",
+      "urgency": "red",
+      "headline": "Control crown-of-thorns and trash to improve reef resilience.",
+      "why": "Forecast decline of -2.3 points under severe heat (13.4 DHW). Local action is worthwhile as losses occur in calm years.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "0.64 share of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "1.0 share of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Execute a crown-of-thorns starfish removal programme.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Outbreaks were recorded in 64% of surveys."
+        },
+        {
+          "action": "Enforce strict waste management for all tourism activities.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash was recorded in 100% of surveys."
+        }
+      ],
+      "monitoring": "Survey for crown-of-thorns and monitor coral cover trends.",
+      "confidence": "high",
+      "caveats": "Associations are observational, not proven causes.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:15",
+        "scenario": "2026 to date",
+        "input_hash": "15231b7cc16760d6"
+      }
+    },
+    "Lang Tengah": {
+      "island": "Lang Tengah",
+      "urgency": "yellow",
+      "headline": "Address high levels of trash and pollution to support reef recovery.",
+      "why": "Coral cover is in the fair band at 29%. Local pressures include trash in 80% of surveys and 22.6% pollution indicators.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "80% of surveys"
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "22.6% of non-coral seabed"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement a comprehensive waste management and collection system.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 80% of surveys and is associated with lower coral cover."
+        },
+        {
+          "action": "Conduct regular underwater clean-ups at popular dive sites.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "High trash levels require active removal to mitigate local stressors."
+        }
+      ],
+      "monitoring": "Track trash accumulation rates at key reef sites.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect reefs drifting toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:38",
+        "scenario": "2026 to date",
+        "input_hash": "4791baf306b39278"
+      }
+    },
+    "Lankayan": {
+      "island": "Lankayan",
+      "urgency": "red",
+      "headline": "Prepare for severe heat stress to protect stable coral cover.",
+      "why": "Severe heat stress of 13.4 DHW is projected to cause a decline of 3.1 points in coral cover.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "64% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Establish coral nursery and heat-resilient monitoring protocols.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Severe heat stress of 13.4 DHW threatens current stable coral cover."
+        },
+        {
+          "action": "Reduce visitor numbers at sensitive sites during peak heat.",
+          "actor": "Tourism operators",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Reducing local stressors helps reefs survive heat-driven bleaching events."
+        }
+      ],
+      "monitoring": "Monitor for signs of coral bleaching during high DHW periods.",
+      "confidence": "high",
+      "caveats": "Forecasts are based on severe heat scenarios.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:38",
+        "scenario": "2026 to date",
+        "input_hash": "c823beed2b3f160d"
+      }
+    },
+    "Larapan": {
+      "island": "Larapan",
+      "urgency": "red",
+      "headline": "Mitigate anchor damage and trash to improve reef resilience.",
+      "why": "Severe heat stress of 13.4 DHW is projected to cause a 2.7 point decline, compounded by high local pressures.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "100% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install permanent mooring buoys to eliminate anchor damage.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Anchor damage was reported in 100% of surveys."
+        },
+        {
+          "action": "Enforce strict no-anchoring zones for all tourism vessels.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Anchor damage is a major local stressor that can be eliminated."
+        }
+      ],
+      "monitoring": "Survey for physical damage to coral colonies at popular sites.",
+      "confidence": "medium",
+      "caveats": "Limited survey data available for this island.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:38",
+        "scenario": "2026 to date",
+        "input_hash": "f6fbe0c2fe5468ad"
+      }
+    },
+    "Lima": {
+      "island": "Lima",
+      "urgency": "green",
+      "headline": "Maintain good coral cover by managing anchor and trash impacts.",
+      "why": "Current coral cover is 51.9% and projected to remain in the good band at 50.4%.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "60% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "80% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Designate and mark mooring zones to prevent anchor damage.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Anchor damage is present in 60% of surveys."
+        },
+        {
+          "action": "Implement a 'zero-trash' policy for all boat trips.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is found in 80% of surveys and impacts reef health."
+        }
+      ],
+      "monitoring": "Assess coral cover trends to ensure stability.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect reefs drifting toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:38",
+        "scenario": "2026 to date",
+        "input_hash": "2e41d435f33d7065"
+      }
+    },
+    "Mabul": {
+      "island": "Mabul",
+      "urgency": "yellow",
+      "headline": "Address high anchor damage and trash to support fair coral cover.",
+      "why": "Coral cover is in the fair band at 26.6% with high local pressures from anchoring and trash.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "91% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Deploy additional mooring buoys at high-traffic dive sites.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Anchor damage is reported in 91% of surveys."
+        },
+        {
+          "action": "Organize regular reef clean-up events for staff and guests.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 100% of surveys."
+        }
+      ],
+      "monitoring": "Track the frequency of anchor damage at popular sites.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect reefs drifting toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:38",
+        "scenario": "2026 to date",
+        "input_hash": "097df269f54f2a75"
+      }
+    },
+    "Malacca": {
+      "island": "Malacca",
+      "urgency": "yellow",
+      "headline": "Address high levels of marine trash to stabilize coral cover.",
+      "why": "Projected coral cover is 31.9%, placing the reef in the fair band. High trash presence in 80% of surveys suggests significant local pressure.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "80% of surveys reported trash."
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "Pollution indicators cover 16.1% of non-coral seabed."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement a regular marine debris collection and waste management program.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 80% of surveys and is associated with lower coral cover."
+        },
+        {
+          "action": "Enforce strict no-littering policies for all tour boats.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "High trash levels are a major local pressure impacting reef health."
+        }
+      ],
+      "monitoring": "Track the frequency of trash sightings during routine reef surveys.",
+      "confidence": "medium",
+      "caveats": "The forecast change is small and reflects regional trends; data is limited by few surveys.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:45",
+        "scenario": "2026 to date",
+        "input_hash": "5d70a48ace548e4b"
+      }
+    },
+    "Mantanani": {
+      "island": "Mantanani",
+      "urgency": "red",
+      "headline": "Urgent reduction of anchor damage and trash needed to support recovery.",
+      "why": "Coral cover is poor at 24.4% following severe heat stress of 13.4 DHW. Local pressures including 82% anchor damage and 100% trash presence are critical.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "Peak heat stress reached 13.4 DHW."
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "82% of surveys show anchor damage."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys show trash."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install permanent mooring buoys to eliminate anchor damage.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is present in 82% of surveys and typically reduces cover by 6 points."
+        },
+        {
+          "action": "Conduct daily reef clean-ups and enforce strict anchoring bans.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "High levels of trash and anchor damage are compounding the effects of heat stress."
+        }
+      ],
+      "monitoring": "Assess coral recruitment and recovery rates at sites with new moorings.",
+      "confidence": "high",
+      "caveats": "Forecast reflects regional averages; recovery is slow after severe heat stress.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:45",
+        "scenario": "2026 to date",
+        "input_hash": "2015a8c15d5016c0"
+      }
+    },
+    "Mataking": {
+      "island": "Mataking",
+      "urgency": "yellow",
+      "headline": "Mitigate anchor damage to protect remaining coral cover.",
+      "why": "Projected cover is 28.6% in the fair band. Anchor damage is reported in 70% of surveys, acting as a persistent local stressor.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "Peak heat stress reached 13.4 DHW."
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "70% of surveys show anchor damage."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install and maintain mooring buoys at popular dive sites.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is linked to a 6-point reduction in coral cover."
+        },
+        {
+          "action": "Require all vessels to use designated moorings instead of dropping anchors.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Reducing physical damage is essential while the reef recovers from 13.4 DHW heat stress."
+        }
+      ],
+      "monitoring": "Monitor anchor damage frequency at popular dive sites.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect regional trends rather than site-specific shifts.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:45",
+        "scenario": "2026 to date",
+        "input_hash": "c9542608f402edae"
+      }
+    },
+    "Mensirip": {
+      "island": "Mensirip",
+      "urgency": "green",
+      "headline": "Maintain good coral health by managing persistent trash issues.",
+      "why": "Coral cover is good at 51.9%. While heat stress is low, trash is present in 100% of surveys.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys show trash."
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "50% of surveys show anchor damage."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Organize regular community-led beach and reef clean-up events.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 100% of surveys and negatively impacts reef health."
+        },
+        {
+          "action": "Ensure all tour boats carry waste storage containers to prevent ocean dumping.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Reducing trash input is a practical step to maintain the current good coral cover."
+        }
+      ],
+      "monitoring": "Track trash accumulation rates at key reef sites.",
+      "confidence": "medium",
+      "caveats": "Forecast change is small; current status is stable.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:45",
+        "scenario": "2026 to date",
+        "input_hash": "e2ad20424321579b"
+      }
+    },
+    "Mertang": {
+      "island": "Mertang",
+      "urgency": "green",
+      "headline": "Address universal anchor damage to preserve good coral cover.",
+      "why": "Coral cover is good at 56.1%. Anchor damage is reported in 100% of surveys, posing a risk to long-term stability.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "100% of surveys show anchor damage."
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "Pollution indicators cover 17.0% of non-coral seabed."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement a mandatory mooring system for all visiting vessels.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is present in 100% of surveys and is a known driver of coral loss."
+        },
+        {
+          "action": "Train boat captains on proper mooring techniques to avoid reef contact.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Eliminating anchor damage is critical to maintaining the current good coral cover."
+        }
+      ],
+      "monitoring": "Survey reef sites for physical signs of anchor scarring.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect regional trends; evidence for specific causes is limited.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:51:45",
+        "scenario": "2026 to date",
+        "input_hash": "564f3c636e1d676c"
+      }
+    },
+    "Payar": {
+      "island": "Payar",
+      "urgency": "yellow",
+      "headline": "Monitor coral health closely as heat stress reaches 9.0 DHW.",
+      "why": "The projected coral cover of 41.2% remains in the fair band. Recent heat stress has increased significantly to 9.0 DHW, necessitating vigilance.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "2026 peak heat stress reached 9.0 DHW."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "Trash was reported in 18% of surveys."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement enhanced reef monitoring protocols",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "High heat stress levels require tracking potential bleaching responses."
+        },
+        {
+          "action": "Conduct regular beach and reef clean-up campaigns",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Reducing trash helps mitigate cumulative stressors on the reef."
+        }
+      ],
+      "monitoring": "Assess bleaching prevalence during the next survey.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect reefs drifting toward regional averages; evidence is observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:07",
+        "scenario": "2026 to date",
+        "input_hash": "402f30fa15b1d1f3"
+      }
+    },
+    "Pemanggil": {
+      "island": "Pemanggil",
+      "urgency": "yellow",
+      "headline": "Address local pressures to support reef recovery in calm years.",
+      "why": "Projected cover is 42.8% in the fair band. Historical losses in calm years indicate that local management can effectively improve reef resilience.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "Anchor damage reported in 27% of surveys."
+        },
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "Crown-of-thorns outbreaks reported in 55% of surveys."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install permanent mooring buoys",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is a persistent pressure affecting 27% of surveys."
+        },
+        {
+          "action": "Execute crown-of-thorns removal programme",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Outbreaks were reported in 55% of surveys and require direct intervention."
+        }
+      ],
+      "monitoring": "Track crown-of-thorns density and anchor damage frequency.",
+      "confidence": "high",
+      "caveats": "Forecast error is approximately 6 points; associations are observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:07",
+        "scenario": "2026 to date",
+        "input_hash": "5d69ff8a44de8fce"
+      }
+    },
+    "Penyu": {
+      "island": "Penyu",
+      "urgency": "yellow",
+      "headline": "Mitigate local stressors to improve resilience against high heat.",
+      "why": "Projected cover is 36.6% in the fair band. High heat stress of 13.4 DHW makes local pressure reduction critical for survival.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "2026 peak heat stress reached 13.4 DHW."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "Trash reported in 30% of surveys."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Enforce strict waste management protocols",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 30% of surveys and adds to environmental stress."
+        },
+        {
+          "action": "Establish no-anchor zones",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Reducing physical damage is essential when thermal stress is high."
+        }
+      ],
+      "monitoring": "Survey coral cover and bleaching signs at known sites.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect regional trends; evidence is observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:07",
+        "scenario": "2026 to date",
+        "input_hash": "ced0661d462d73a3"
+      }
+    },
+    "Perhentian": {
+      "island": "Perhentian",
+      "urgency": "yellow",
+      "headline": "Reduce high levels of trash and anchor damage to aid recovery.",
+      "why": "Projected cover is 33.8% in the fair band. High levels of trash and anchor damage are linked to lower coral cover.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "Trash reported in 82% of surveys."
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "Anchor damage reported in 27% of surveys."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement mandatory waste disposal training for staff",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash is a major stressor found in 82% of surveys."
+        },
+        {
+          "action": "Enforce mooring buoy usage for all vessels",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Anchor damage is present in 27% of surveys and degrades reef structure."
+        }
+      ],
+      "monitoring": "Audit trash levels and mooring buoy compliance.",
+      "confidence": "high",
+      "caveats": "Forecast error is approximately 6 points; associations are observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:07",
+        "scenario": "2026 to date",
+        "input_hash": "2b0a9ca027fb6f8f"
+      }
+    },
+    "Port Dickson": {
+      "island": "Port Dickson",
+      "urgency": "yellow",
+      "headline": "Monitor reef health amidst high pollution indicators.",
+      "why": "Projected cover is 35.1% in the fair band. Pollution indicators on non-coral seabed are high at 35.5%.",
+      "drivers": [
+        {
+          "factor": "Pollution",
+          "evidence": "Pollution indicators cover 35.5% of non-coral seabed."
+        },
+        {
+          "factor": "Heat stress",
+          "evidence": "2026 peak heat stress reached 9.0 DHW."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Conduct water quality assessments",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "High pollution indicators suggest water quality is a significant local factor."
+        },
+        {
+          "action": "Limit boat traffic in sensitive reef areas",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Reducing physical and chemical disturbance helps reefs withstand 9.0 DHW heat stress."
+        }
+      ],
+      "monitoring": "Track water quality and coral cover trends.",
+      "confidence": "low",
+      "caveats": "Classification is limited due to too few surveys; evidence is observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:07",
+        "scenario": "2026 to date",
+        "input_hash": "fd0656845b04d67d"
+      }
+    },
+    "Rawa": {
+      "island": "Rawa",
+      "urgency": "yellow",
+      "headline": "Address high levels of trash and anchor damage to stabilize coral cover.",
+      "why": "Projected coral cover is 47.6%, placing it in the fair band. Local pressures include trash in 57% of surveys and anchor damage in 43%.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "57% of surveys"
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "43% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install and maintain permanent mooring buoys at popular dive sites.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Reduces the 43% incidence of anchor damage."
+        },
+        {
+          "action": "Implement a strict 'take your trash home' policy for all boat operators.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Mitigates the 57% trash occurrence which is associated with coral loss."
+        }
+      ],
+      "monitoring": "Track trash accumulation and anchor damage frequency during routine patrols.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect a drift toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:12",
+        "scenario": "2026 to date",
+        "input_hash": "151bd6f89b1901a0"
+      }
+    },
+    "Redang": {
+      "island": "Redang",
+      "urgency": "yellow",
+      "headline": "Prioritize crown-of-thorns removal and waste management to support recovery.",
+      "why": "Coral cover is in the fair band at 27.9%. Losses occur in calm years, suggesting local pressures are significant.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "64% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "91% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Launch a crown-of-thorns starfish removal programme.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Directly addresses the 64% outbreak rate."
+        },
+        {
+          "action": "Organize regular reef clean-up events to remove marine debris.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Addresses the 91% trash presence which negatively impacts coral."
+        }
+      ],
+      "monitoring": "Survey crown-of-thorns density and monitor coral recovery at affected sites.",
+      "confidence": "high",
+      "caveats": "Small forecast changes reflect a drift toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:12",
+        "scenario": "2026 to date",
+        "input_hash": "b16383eb7abab77f"
+      }
+    },
+    "Rhu": {
+      "island": "Rhu",
+      "urgency": "yellow",
+      "headline": "Increase survey frequency to better understand local reef health.",
+      "why": "Projected cover is 28.9% in the fair band. Data is limited due to few surveys conducted.",
+      "drivers": [
+        {
+          "factor": "Trash",
+          "evidence": "50% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Conduct more frequent reef health surveys to improve data resolution.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "Current data is insufficient for precise management."
+        },
+        {
+          "action": "Adopt waste reduction practices to lower the 50% trash incidence.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash is a known stressor for coral reefs."
+        }
+      ],
+      "monitoring": "Increase the number of sites surveyed annually.",
+      "confidence": "low",
+      "caveats": "Evidence is weak due to low survey frequency.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:12",
+        "scenario": "2026 to date",
+        "input_hash": "7af1ef926eb854fc"
+      }
+    },
+    "Seri Buat": {
+      "island": "Seri Buat",
+      "urgency": "green",
+      "headline": "Maintain good coral cover by mitigating anchor damage and trash.",
+      "why": "Projected cover is 52.2% in the good band. Anchor damage and trash are present in 67% of surveys.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "67% of surveys"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "67% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Enforce strict no-anchoring zones and provide mooring buoys.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Addresses the 67% incidence of anchor damage."
+        },
+        {
+          "action": "Conduct regular waste collection and education for tourists.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Reduces the 67% trash incidence."
+        }
+      ],
+      "monitoring": "Monitor anchor damage and trash levels at popular sites.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect a drift toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:12",
+        "scenario": "2026 to date",
+        "input_hash": "dd2932c46a2fc6a9"
+      }
+    },
+    "Sibu": {
+      "island": "Sibu",
+      "urgency": "green",
+      "headline": "Manage pollution and trash to preserve current good coral cover.",
+      "why": "Projected cover is 50.1% in the good band. Pollution indicators are high at 20.3%.",
+      "drivers": [
+        {
+          "factor": "Pollution",
+          "evidence": "20.3% of non-coral seabed"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "73% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Improve sewage and waste management infrastructure on the island.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Addresses the 20.3% pollution indicator level."
+        },
+        {
+          "action": "Ensure all tour boats have proper waste storage and disposal systems.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Reduces the 73% trash incidence."
+        }
+      ],
+      "monitoring": "Track pollution indicators and trash levels during annual surveys.",
+      "confidence": "medium",
+      "caveats": "Forecast changes are small and reflect a drift toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:12",
+        "scenario": "2026 to date",
+        "input_hash": "678bfacb3a16fc25"
+      }
+    },
+    "Sipadan": {
+      "island": "Sipadan",
+      "urgency": "red",
+      "headline": "Severe heat stress threatens coral cover, requiring immediate local pressure reduction.",
+      "why": "The island faces severe heat stress with 13.4 DHW. Historical data shows losses occur in calm years, suggesting local management can mitigate further decline.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "40% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement strict waste management protocols for all dive boats.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash is present in 40% of surveys and is associated with a 3.0 point decline in coral cover."
+        },
+        {
+          "action": "Increase frequency of reef health monitoring surveys.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "High heat stress of 13.4 DHW necessitates close tracking of bleaching responses."
+        }
+      ],
+      "monitoring": "Bleaching prevalence and trash accumulation levels.",
+      "confidence": "high",
+      "caveats": "Small forecast changes reflect regional averages; the 6-point typical error applies.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:25",
+        "scenario": "2026 to date",
+        "input_hash": "ea6518c00da4d473"
+      }
+    },
+    "Tengah": {
+      "island": "Tengah",
+      "urgency": "yellow",
+      "headline": "Moderate heat stress and high pollution indicators require urgent management.",
+      "why": "Projected coral cover is 44.4%, placing it in the fair band. Pollution indicators cover 14.5% of the non-coral seabed.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "4.4 DHW"
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "14.5% of non-coral seabed"
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "60% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install and maintain permanent mooring buoys to replace anchoring.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage is found in 60% of surveys, which is linked to lower coral cover."
+        },
+        {
+          "action": "Conduct regular beach and reef clean-up events.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 100% of surveys, impacting reef health."
+        }
+      ],
+      "monitoring": "Anchor damage frequency and pollution levels.",
+      "confidence": "medium",
+      "caveats": "Data limited by few surveys; evidence is observational.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:25",
+        "scenario": "2026 to date",
+        "input_hash": "7812aa1c08113b1c"
+      }
+    },
+    "Tenggol": {
+      "island": "Tenggol",
+      "urgency": "green",
+      "headline": "Stable reef health requires ongoing maintenance of local pressure controls.",
+      "why": "Projected cover is 51.7%, remaining in the good band. Crown-of-thorns outbreaks have been observed in 36% of surveys.",
+      "drivers": [
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "36% of surveys"
+        },
+        {
+          "factor": "Pollution",
+          "evidence": "16.6% of non-coral seabed"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Execute crown-of-thorns starfish removal programme.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Outbreaks are present in 36% of surveys and can be controlled locally."
+        },
+        {
+          "action": "Enforce no-anchoring zones to protect reef structure.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Anchor damage is present in 55% of surveys."
+        }
+      ],
+      "monitoring": "Crown-of-thorns population density.",
+      "confidence": "medium",
+      "caveats": "Forecast changes reflect regional trends; small changes are expected.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:25",
+        "scenario": "2026 to date",
+        "input_hash": "f5afdf8341a3290d"
+      }
+    },
+    "Tiga": {
+      "island": "Tiga",
+      "urgency": "red",
+      "headline": "Poor coral cover requires immediate intervention to prevent further decline.",
+      "why": "Projected cover is 22.5%, which is in the poor band. The island is highly sensitive to thermal stress.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "44% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Restrict tourism access to highly degraded sites during peak heat.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Thermal stress of 13.4 DHW makes the reef highly vulnerable to additional stressors."
+        },
+        {
+          "action": "Organize regular underwater trash collection dives.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash is present in 44% of surveys, which negatively impacts recovery."
+        }
+      ],
+      "monitoring": "Coral recovery rates and bleaching signs.",
+      "confidence": "high",
+      "caveats": "Forecasts are subject to a 6-point error margin.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:25",
+        "scenario": "2026 to date",
+        "input_hash": "53a52338e0f48dc3"
+      }
+    },
+    "Tinggi": {
+      "island": "Tinggi",
+      "urgency": "green",
+      "headline": "Healthy reef status requires proactive management of local stressors.",
+      "why": "Projected cover is 50.4%, remaining in the good band. Losses in calm years indicate local pressures are the primary lever.",
+      "drivers": [
+        {
+          "factor": "Pollution",
+          "evidence": "20.8% of non-coral seabed"
+        },
+        {
+          "factor": "Trash",
+          "evidence": "91% of surveys"
+        }
+      ],
+      "actions": [
+        {
+          "action": "Improve waste disposal infrastructure to reduce marine debris.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Trash is present in 91% of surveys, significantly impacting reef health."
+        },
+        {
+          "action": "Educate guests on reef-safe practices to minimize pollution.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Pollution indicators cover 20.8% of the non-coral seabed."
+        }
+      ],
+      "monitoring": "Pollution indicators and trash levels.",
+      "confidence": "medium",
+      "caveats": "Small forecast changes reflect regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:25",
+        "scenario": "2026 to date",
+        "input_hash": "a72a25bb85f8ad55"
+      }
+    },
+    "Tioman": {
+      "island": "Tioman",
+      "urgency": "yellow",
+      "headline": "Local pressures drive coral loss during calm years.",
+      "why": "Coral cover is in the fair band at 43%. Losses are primarily occurring during calm years, suggesting local stressors are the main drivers.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "91% of surveys reported anchor damage."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "91% of surveys reported trash."
+        },
+        {
+          "factor": "Crown-of-thorns",
+          "evidence": "55% of surveys reported outbreaks."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install permanent mooring buoys at all dive sites.",
+          "actor": "Marine park authority",
+          "timeframe": "Ongoing",
+          "rationale": "High frequency of anchor damage (91%) necessitates alternatives to anchoring."
+        },
+        {
+          "action": "Implement a regular crown-of-thorns removal programme.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Outbreaks were recorded in 55% of surveys."
+        }
+      ],
+      "monitoring": "Track anchor damage and crown-of-thorns presence at all 18 sites.",
+      "confidence": "high",
+      "caveats": "Small forecast changes reflect reefs drifting toward regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:37",
+        "scenario": "2026 to date",
+        "input_hash": "b6ae366e96cc5f42"
+      }
+    },
+    "Tun Mustapha Park": {
+      "island": "Tun Mustapha Park",
+      "urgency": "yellow",
+      "headline": "High local pressure requires urgent management intervention.",
+      "why": "Projected coral cover is 39% in the fair band. Every survey recorded both anchor damage and trash.",
+      "drivers": [
+        {
+          "factor": "Anchor damage",
+          "evidence": "100% of surveys reported anchor damage."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "100% of surveys reported trash."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Enforce strict no-anchoring zones and install moorings.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Anchor damage was present in 100% of surveys."
+        },
+        {
+          "action": "Organize weekly reef and beach cleanup events.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "Trash was present in 100% of surveys."
+        }
+      ],
+      "monitoring": "Survey all 18 sites for evidence of physical damage and debris.",
+      "confidence": "medium",
+      "caveats": "Evidence is limited by a low number of historical surveys.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:37",
+        "scenario": "2026 to date",
+        "input_hash": "87895cb55346cd9e"
+      }
+    },
+    "Tun Sakaran Marine Park": {
+      "island": "Tun Sakaran Marine Park",
+      "urgency": "red",
+      "headline": "Severe heat stress threatens stable coral cover.",
+      "why": "Forecasted heat stress of 13.4 DHW is severe, likely causing a decline of 2.8 points in coral cover.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW projected for 2026."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "50% of surveys reported trash."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Reduce local stressors like trash to improve reef resilience.",
+          "actor": "Tourism operators",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Reducing trash is associated with mitigating coral loss."
+        },
+        {
+          "action": "Monitor for bleaching signs and report to authorities.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Severe heat (13.4 DHW) is expected to impact the reef."
+        }
+      ],
+      "monitoring": "Conduct bleaching surveys at all 12 sites.",
+      "confidence": "high",
+      "caveats": "Forecast error is approximately 6 points.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:37",
+        "scenario": "2026 to date",
+        "input_hash": "cec60901942c50c8"
+      }
+    },
+    "Tunku Abdul Rahman Park": {
+      "island": "Tunku Abdul Rahman Park",
+      "urgency": "red",
+      "headline": "Poor coral cover requires immediate stress reduction.",
+      "why": "Coral cover is in the poor band at 15%. Severe heat stress of 13.4 DHW poses a significant threat to recovery.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW projected for 2026."
+        },
+        {
+          "factor": "Trash",
+          "evidence": "78% of surveys reported trash."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Implement comprehensive waste management for all tour boats.",
+          "actor": "Tourism operators",
+          "timeframe": "Now",
+          "rationale": "Trash was reported in 78% of surveys."
+        },
+        {
+          "action": "Restrict access to sensitive, damaged reef areas.",
+          "actor": "Marine park authority",
+          "timeframe": "Now",
+          "rationale": "Coral cover is currently poor at 13.1%."
+        }
+      ],
+      "monitoring": "Assess coral recovery and bleaching status.",
+      "confidence": "high",
+      "caveats": "Forecast changes are small and reflect regional averages.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:37",
+        "scenario": "2026 to date",
+        "input_hash": "e5d2c7e9194f81d3"
+      }
+    },
+    "Usukan Cove": {
+      "island": "Usukan Cove",
+      "urgency": "red",
+      "headline": "Severe heat and local pressures hinder recovery.",
+      "why": "Coral cover is in the poor band at 19%. Severe heat stress of 13.4 DHW is expected to impact the area.",
+      "drivers": [
+        {
+          "factor": "Heat stress",
+          "evidence": "13.4 DHW projected for 2026."
+        },
+        {
+          "factor": "Anchor damage",
+          "evidence": "55% of surveys reported anchor damage."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Install mooring buoys to prevent further anchor damage.",
+          "actor": "Marine park authority",
+          "timeframe": "Before next bleaching season",
+          "rationale": "Anchor damage was present in 55% of surveys."
+        },
+        {
+          "action": "Educate guests on reef protection to reduce physical contact.",
+          "actor": "Tourism operators",
+          "timeframe": "Ongoing",
+          "rationale": "High boat pressure index of 0.8 increases risk to reefs."
+        }
+      ],
+      "monitoring": "Monitor for bleaching and physical damage at all 6 sites.",
+      "confidence": "medium",
+      "caveats": "Forecast error is approximately 6 points.",
+      "_meta": {
+        "model": "gemini-3.1-flash-lite",
+        "generated_at": "2026-09-13T20:52:37",
+        "scenario": "2026 to date",
+        "input_hash": "b465181d682a8905"
+      }
+    }
+  }
+}

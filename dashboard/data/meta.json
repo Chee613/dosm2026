@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-09-13T23:18:26",
+  "latest_survey_year": 2025,
+  "noaa_last_date": "2026-09-10",
+  "default_thresholds": {
+    "poor": 25.0,
+    "good": 50.0,
+    "severe_dhw": 8.0,
+    "severe_decline": -2.0
+  },
+  "boat_pressure_median": 0.3666666666666667,
+  "variation": {
+    "Coral level": {
+      "total_r2": 0.26091595040447213,
+      "chance95": 0.027290730807837924,
+      "p_local": 0.002,
+      "n": 268,
+      "islands": 28
+    },
+    "Coral change": {
+      "total_r2": 0.15837630445929196,
+      "chance95": 0.029898581358745117,
+      "p_local": 0.068,
+      "n": 260,
+      "islands": 28
+    }
+  },
+  "model_typical_error": 6.05,
+  "heat_band_means": {
+    "< 1": -0.26,
+    "1\u20134": -0.13,
+    "4\u20138": -1.46,
+    "\u2265 8": -3.15
+  },
+  "takeaways": {
+    "trends": "Average cover fell to 40% in 2025, the lowest of 2015\u20132025. Declines follow the regional heat events of 2016 and 2024. Sabah has the lowest cover and the most frequent heat stress.",
+    "heat2026": "By the last NOAA update, Sabah has reached its highest heat stress on record, above its 2024 peak.",
+    "typology": "Of 28 sites, 10 lose coral mainly after heat stress (mostly Sabah), 9 mainly in calm years (local action worthwhile: Redang, Tioman, the Johor islands) and 9 are stable or gaining.",
+    "local": "Local pressures account for about 7% of how much coral a reef has (islands with habitual anchor damage carry about 6 points less) but add nothing beyond chance to year-to-year change.",
+    "shutdown": "Anchor damage halved at busy islands in 2020 and their reefs improved more during the shutdown, but the difference is within the noise.",
+    "patterns": "Reefs drift back toward their regional average, lose more after hotter years, and small surveys (1\u20133 sites) swing about twice as much as larger ones."
+  }
+}

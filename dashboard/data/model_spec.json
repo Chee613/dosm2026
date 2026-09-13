@@ -1,0 +1,62 @@
+{
+  "intercept": -1.0930631863891331,
+  "alpha": 0.6812920690579608,
+  "features": [
+    {
+      "name": "n_sites",
+      "input_column": "n_sites",
+      "coef_per_sd": 0.09830515472407339,
+      "mean": 7.75,
+      "scale": 3.970165316920463,
+      "impute_median": 6.0
+    },
+    {
+      "name": "lcc_prev",
+      "input_column": "cover",
+      "coef_per_sd": -0.9090579463538203,
+      "mean": 45.27068965517241,
+      "scale": 13.382616816516457,
+      "impute_median": 46.625
+    },
+    {
+      "name": "dhw_peak_prev_year",
+      "input_column": null,
+      "coef_per_sd": -0.2525103478425533,
+      "mean": 3.811867816091954,
+      "scale": 3.9262097066621817,
+      "impute_median": 1.71
+    },
+    {
+      "name": "prev_fish_sweetlips",
+      "input_column": "sweetlips",
+      "coef_per_sd": 0.01642205122979813,
+      "mean": 0.22244252873563217,
+      "scale": 0.34172241142068616,
+      "impute_median": 0.08499999999999999
+    },
+    {
+      "name": "prev_n_curio_inverts_absent",
+      "input_column": "curio_absent",
+      "coef_per_sd": -0.1340105216474211,
+      "mean": 2.5660919540229883,
+      "scale": 0.6811920861336574,
+      "impute_median": 3.0
+    },
+    {
+      "name": "prev_lcc_change",
+      "input_column": "last_change",
+      "coef_per_sd": -0.7552446857097929,
+      "mean": -0.4643390804597702,
+      "scale": 7.991781401257432,
+      "impute_median": -0.12
+    },
+    {
+      "name": "prev_island_vs_region_pct",
+      "input_column": "vs_region",
+      "coef_per_sd": -0.8490523313709346,
+      "mean": -0.3064080459770112,
+      "scale": 11.167661442659616,
+      "impute_median": -1.62
+    }
+  ]
+}
