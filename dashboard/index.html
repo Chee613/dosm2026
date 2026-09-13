@@ -416,6 +416,49 @@
           </div>
         </div>
       </div>
+
+      <!-- Built Infrastructure & Physical Carrying Capacity Card -->
+      <div class="card" style="margin-top: 16px;">
+        <div class="card-title-row">
+          <div>
+            <div class="card-title" data-i18n="infrTitle">Physical Carrying Capacity & Built Infrastructure</div>
+            <div class="card-subtitle" data-i18n="infrSubtitle">Verified accommodation footprint, lodging inventory, and transport access</div>
+          </div>
+          <span id="diag-infr-badge" class="kpi-pill pill-slate">Verified Registry</span>
+        </div>
+
+        <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 12px;">
+          <div class="kpi-card" style="padding: 12px 14px;">
+            <div class="kpi-header"><span class="kpi-label">Commercial Lodgings</span></div>
+            <div id="diag-infr-resorts" class="kpi-value" style="font-size: 20px;">16</div>
+            <div class="kpi-subtext">Resorts, hotels & chalets</div>
+          </div>
+          <div class="kpi-card" style="padding: 12px 14px;">
+            <div class="kpi-header"><span class="kpi-label">Guest Room Capacity</span></div>
+            <div id="diag-infr-rooms" class="kpi-value" style="font-size: 20px;">1,350</div>
+            <div class="kpi-subtext">Estimated total rooms</div>
+          </div>
+          <div class="kpi-card" style="padding: 12px 14px;">
+            <div class="kpi-header"><span class="kpi-label">Dive Operators</span></div>
+            <div id="diag-infr-dives" class="kpi-value" style="font-size: 20px;">14</div>
+            <div class="kpi-subtext">Licensed dive centers</div>
+          </div>
+          <div class="kpi-card" style="padding: 12px 14px;">
+            <div class="kpi-header"><span class="kpi-label">Arrival Terminal</span></div>
+            <div id="diag-infr-jetty" class="kpi-value" style="font-size: 16px; margin-top: 4px;">Ferry Jetty</div>
+            <div class="kpi-subtext">Berthing infrastructure</div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: #64748B; background: #F8FAFC; padding: 8px 12px; border-radius: 6px; border: 1px solid #E2E8F0;">
+          <div>
+            <strong>Data Provenance:</strong> <span id="diag-infr-source">MOTAC / State Parks Registry</span>
+          </div>
+          <div id="diag-infr-status" style="font-weight: 600; color: #334155;">
+            High Tourist Infrastructure Load
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- TAB 3: Policy Simulator -->
@@ -455,6 +498,20 @@
               <span>Tolerant (-4.0%)</span>
               <span style="color: #0369A1; font-weight: 700;">★ 0.0% Optimal</span>
               <span>Early Rest (+2.0%)</span>
+            </div>
+          </div>
+
+          <!-- Slider 3: Accommodation Cap -->
+          <div class="control-group">
+            <div class="control-label-row">
+              <span data-i18n="capLabel">Peak Occupancy Ceiling:</span>
+              <span id="val-occupancy-cap" class="slider-val">100%</span>
+            </div>
+            <input id="slider-occupancy-cap" class="range-slider" type="range" min="50" max="100" step="5" value="100" aria-label="Peak Occupancy Ceiling">
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94A3B8; margin-top: 4px;">
+              <span>Strict Quota (50%)</span>
+              <span>Moderate (75%)</span>
+              <span>Uncapped (100%)</span>
             </div>
           </div>
 

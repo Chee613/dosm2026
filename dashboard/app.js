@@ -16,6 +16,7 @@
   // Simulator State
   let simCaution = 1.0; // 0.0 to 2.0
   let simThreshold = 0.0; // %/yr
+  let simOccupancyCap = 100; // 50 to 100%
 
   // Translations
   // Translations (Institutional, concise, free of AI slop)
@@ -68,10 +69,13 @@
       horizon5Yr: "5-Yr (2030)",
       trendTitle: "Historical Coverage & Forecast Trajectory",
       trendSubtitle: "13-year empirical survey series with Gradient Boosting predictive horizon (2026–2030)",
+      infrTitle: "Physical Carrying Capacity & Built Infrastructure",
+      infrSubtitle: "Verified accommodation footprint, lodging inventory, and transport access",
       simTitle: "Carrying Capacity Simulator",
       simSubtitle: "Dynamic simulation of visitor quota adjustments and economic trade-offs",
       cautionLabel: "Policy Caution Stance:",
       thresholdLabel: "Alert Trigger Threshold:",
+      capLabel: "Peak Occupancy Ceiling:",
       metricReefSaved: "Reef Area Preserved",
       metricDiverted: "Boat-Days Diverted",
       metricAssetSaved: "Resort Value Protected",
@@ -133,10 +137,13 @@
       horizon5Yr: "5-Thn (2030)",
       trendTitle: "Litupan Sejarah & Trajektori Ramalan",
       trendSubtitle: "Kajian empirikal 13 tahun digandingkan dengan horizon ramalan Gradient Boosting (2026–2030)",
+      infrTitle: "Kapasiti Daya Tampung Fizikal & Infrastruktur Binaan",
+      infrSubtitle: "Jejak penginapan disahkan, inventori bilik hotel, dan akses pengangkutan",
       simTitle: "Simulator Daya Tampung",
       simSubtitle: "Simulasi dinamik pelarasan kuota pelawat dan imbangan ekonomi",
       cautionLabel: "Tahap Berjaga-Jaga Dasar:",
       thresholdLabel: "Ambang Penggera Tindakan:",
+      capLabel: "Had Siling Penghunian Puncak:",
       metricReefSaved: "Kawasan Karang Dilindungi",
       metricDiverted: "Hari-Bot Dilencongkan",
       metricAssetSaved: "Nilai Aset Resort Dilindungi",
@@ -443,6 +450,58 @@
     }
     prescBody.textContent = pText;
 
+    // Built Infrastructure & Carrying Capacity
+    const infr = (data.islandAccommodations && data.islandAccommodations[name]) || {
+      resortCount: isl.resortCount || 0,
+      roomCapacity: isl.roomCapacity || 0,
+      diveCenters: isl.diveCenters || 0,
+      hasJetty: isl.hasJetty || 0,
+      dataSource: isl.infrSource || "Verified Registry"
+    };
+
+    const resortsEl = document.getElementById("diag-infr-resorts");
+    const roomsEl = document.getElementById("diag-infr-rooms");
+    const divesEl = document.getElementById("diag-infr-dives");
+    const jettyEl = document.getElementById("diag-infr-jetty");
+    const sourceEl = document.getElementById("diag-infr-source");
+    const statusEl = document.getElementById("diag-infr-status");
+    const badgeEl = document.getElementById("diag-infr-badge");
+
+    if (resortsEl) resortsEl.textContent = infr.resortCount;
+    if (roomsEl) roomsEl.textContent = infr.roomCapacity.toLocaleString();
+    if (divesEl) divesEl.textContent = infr.diveCenters;
+    if (jettyEl) {
+      jettyEl.textContent = infr.hasJetty
+        ? (currentLang === "bm" ? "Jeti Feri Konkrit" : "Commercial Ferry Jetty")
+        : (currentLang === "bm" ? "Pendaratan Pantai / Bot" : "Beach Landing / Boat Only");
+    }
+    if (sourceEl) sourceEl.textContent = infr.dataSource;
+
+    if (statusEl && badgeEl) {
+      if (infr.roomCapacity === 0) {
+        statusEl.textContent = currentLang === "bm"
+          ? "Zon Perlindungan Mutlak (Tiada Penginapan Komersial)"
+          : "Strict Conservation Sanctuary (Zero Commercial Lodging)";
+        statusEl.style.color = "#059669";
+        badgeEl.className = "kpi-pill pill-emerald";
+        badgeEl.textContent = currentLang === "bm" ? "Kawasan Terlindung" : "Sanctuary Island";
+      } else if (infr.roomCapacity > 500) {
+        statusEl.textContent = currentLang === "bm"
+          ? "Beban Infrastruktur Pelancongan Tinggi"
+          : "High Tourist Infrastructure Load";
+        statusEl.style.color = "#DC2626";
+        badgeEl.className = "kpi-pill pill-red";
+        badgeEl.textContent = currentLang === "bm" ? "Kepadatan Tinggi" : "High Density";
+      } else {
+        statusEl.textContent = currentLang === "bm"
+          ? "Skala Sederhana / Eko-Pelancongan"
+          : "Moderate Scale / Eco-Tourism Footprint";
+        statusEl.style.color = "#D97706";
+        badgeEl.className = "kpi-pill pill-amber";
+        badgeEl.textContent = currentLang === "bm" ? "Sederhana" : "Moderate Load";
+      }
+    }
+
     // Render Time Series Chart
     renderHistoricalChart(name);
   }
@@ -744,6 +803,7 @@
   function setupSimulator() {
     const sliderCaution = document.getElementById("slider-caution");
     const sliderThreshold = document.getElementById("slider-threshold");
+    const sliderCap = document.getElementById("slider-occupancy-cap");
 
     sliderCaution.addEventListener("input", (e) => {
       simCaution = parseFloat(e.target.value);
@@ -757,6 +817,14 @@
       renderSimOutputs();
     });
 
+    if (sliderCap) {
+      sliderCap.addEventListener("input", (e) => {
+        simOccupancyCap = parseInt(e.target.value, 10);
+        document.getElementById("val-occupancy-cap").textContent = `${simOccupancyCap}%`;
+        renderSimOutputs();
+      });
+    }
+
     renderSimOutputs();
   }
 
@@ -766,8 +834,11 @@
     const baseBoatDays = 210;
     const baseAssetRM = 54.8;
 
+    // Occupancy relief factor (capping peak occupancy from 100% to 50% reduces sewage and boat trampling)
+    const capRelief = (100 - simOccupancyCap) / 50 * 0.35;
+
     // Caution multiplier (0.0 to 2.0)
-    const factor = (simCaution * 0.7) + (Math.abs(simThreshold - 1.0) * 0.3);
+    const factor = ((simCaution * 0.7) + (Math.abs(simThreshold - 1.0) * 0.3)) * (1.0 + capRelief);
     const hectares = Math.round(baseHectares * factor);
     const boatDays = Math.round(baseBoatDays * factor);
     const assetRM = (baseAssetRM * factor).toFixed(1);

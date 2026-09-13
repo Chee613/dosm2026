@@ -35,7 +35,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": -4.157001505500161,
       "tier": "High screening priority",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 12,
+      "roomCapacity": 850,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "infrSource": "Federal Territory Labuan Hotel Registry (MOTAC)"
     },
     {
       "rank": 2,
@@ -60,7 +65,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 3.3190383680860043,
       "tier": "High screening priority",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "recommendation": "Prioritise field validation before imposing restrictions"
+      "recommendation": "Prioritise field validation before imposing restrictions",
+      "resortCount": 6,
+      "roomCapacity": 90,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "infrSource": "Terengganu Tourism Directory (Kapas Island Resort, Turtle Valley)"
     },
     {
       "rank": 3,
@@ -85,7 +95,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.035556674442165,
       "tier": "High screening priority",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 1,
+      "roomCapacity": 25,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "SIMCA Marine Protected Area Eco-Resort Registry"
     },
     {
       "rank": 4,
@@ -110,7 +125,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.1841688800340915,
       "tier": "High screening priority",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Pahang Marine Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 5,
@@ -135,7 +155,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.406264404998529,
       "tier": "High screening priority",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 6,
@@ -160,7 +185,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.628896628639255,
       "tier": "High screening priority",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Sultan Iskandar Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 7,
@@ -185,7 +215,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.702215652434524,
       "tier": "High screening priority",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 3,
+      "roomCapacity": 55,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "infrSource": "Terengganu Marine Park Dive Resort Registry (Tenggol Coral Beach)"
     },
     {
       "rank": 8,
@@ -210,7 +245,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.715648313855731,
       "tier": "High screening priority",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 4,
+      "roomCapacity": 110,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "infrSource": "Johor Parks Chalet Inventory (Sari Pacifica, Rimba Resort)"
     },
     {
       "rank": 9,
@@ -235,7 +275,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.842665959247233,
       "tier": "High screening priority",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 2,
+      "roomCapacity": 35,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Johor Tourism Board Mersing Islands Registry"
     },
     {
       "rank": 10,
@@ -260,7 +305,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 4.863530509203768,
       "tier": "High screening priority",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "infrSource": "Sabah Parks Marine Protection Zoning (Day-Trip Only)"
     },
     {
       "rank": 11,
@@ -285,7 +335,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 5.057984214708701,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 12,
@@ -310,7 +365,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 5.17287629750903,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Tun Sakaran Marine Park Community Island (Zero Resorts)"
     },
     {
       "rank": 13,
@@ -335,7 +395,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 5.568832262563561,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "infrSource": "Sabah Parks Sipadan Conservation Mandate (Cabinet Ban on Resorts since 2004)"
     },
     {
       "rank": 14,
@@ -360,7 +425,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 5.654769765968332,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 1,
+      "roomCapacity": 20,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "infrSource": "Turtle Islands National Park Visitor Quota Log (Capped at 50/day)"
     },
     {
       "rank": 15,
@@ -385,7 +455,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 5.767966498774723,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 2,
+      "roomCapacity": 40,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "infrSource": "Darvel Bay Eco-Tourism Directory"
     },
     {
       "rank": 16,
@@ -410,7 +485,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 6.23657226283517,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 17,
@@ -435,7 +515,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 6.33523460249882,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 5,
+      "roomCapacity": 40,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "infrSource": "Kudat Community Eco-Tourism Network"
     },
     {
       "rank": 18,
@@ -460,7 +545,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 6.4938678185415135,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 1,
+      "roomCapacity": 22,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Batu Batu Eco-Resort Registry / Johor Parks"
     },
     {
       "rank": 19,
@@ -485,7 +575,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 6.63878240481703,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 20,
@@ -510,7 +605,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 6.780969770967591,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 2,
+      "roomCapacity": 85,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "infrSource": "Rawa Island Resort & Alangs Rawa Registry"
     },
     {
       "rank": 21,
@@ -535,7 +635,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.028268691830315,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 4,
+      "roomCapacity": 120,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "infrSource": "MOTAC Registered Chalets (Aseania, Bayu Lestari)"
     },
     {
       "rank": 22,
@@ -560,7 +665,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.168361313092343,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 5,
+      "roomCapacity": 60,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "infrSource": "Johor National Parks & MOTAC Accommodation Directory"
     },
     {
       "rank": 23,
@@ -585,7 +695,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.269548343453465,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 24,
@@ -610,7 +725,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.2760405907893935,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 25,
+      "roomCapacity": 2000,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "infrSource": "Negeri Sembilan Coastal Hotel Registry (MOTAC)"
     },
     {
       "rank": 25,
@@ -635,7 +755,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.314247720313581,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 3,
+      "roomCapacity": 40,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "MOTAC Mersing Island Homestay/Chalet Registry"
     },
     {
       "rank": 26,
@@ -660,7 +785,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.680164081199394,
       "tier": "Monitor",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "recommendation": "Prioritise field validation before imposing restrictions"
+      "recommendation": "Prioritise field validation before imposing restrictions",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "infrSource": "Pulau Payar Marine Park Regulations (Strictly Day-Trip Sanctuary)"
     },
     {
       "rank": 27,
@@ -685,7 +815,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 7.846825621892181,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 38,
+      "roomCapacity": 1600,
+      "diveCenters": 18,
+      "hasJetty": 1,
+      "infrSource": "Tioman Development Authority (Berjaya Tioman, Paya Beach, Salang)"
     },
     {
       "rank": 28,
@@ -710,7 +845,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.028674786774715,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 3,
+      "roomCapacity": 240,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "infrSource": "Sabah Parks Island Concessions (Gaya Island Resort, Manukan Resort)"
     },
     {
       "rank": 29,
@@ -735,7 +875,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.059753337517733,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 2,
+      "roomCapacity": 45,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Pulau Tiga National Park Lodge Inventory"
     },
     {
       "rank": 30,
@@ -760,7 +905,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.098502986548775,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 1,
+      "roomCapacity": 70,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "The Reef Dive Resort Operator Registry"
     },
     {
       "rank": 31,
@@ -785,7 +935,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.266712618226263,
       "tier": "Monitor",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "recommendation": "Prioritise field validation before imposing restrictions"
+      "recommendation": "Prioritise field validation before imposing restrictions",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "infrSource": "Terengganu Marine Sanctuary Islet (Uninhabited)"
     },
     {
       "rank": 32,
@@ -810,7 +965,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.305849235406669,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 45,
+      "roomCapacity": 1200,
+      "diveCenters": 22,
+      "hasJetty": 1,
+      "infrSource": "Terengganu Tourism & Besut Municipal Council (Perhentian Kecil/Besar)"
     },
     {
       "rank": 33,
@@ -835,7 +995,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.333897517696249,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 8,
+      "roomCapacity": 350,
+      "diveCenters": 8,
+      "hasJetty": 1,
+      "infrSource": "Sabah Tourism Board & Semporna Municipal Council"
     },
     {
       "rank": 34,
@@ -860,7 +1025,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.555439824815675,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 16,
+      "roomCapacity": 1350,
+      "diveCenters": 14,
+      "hasJetty": 1,
+      "infrSource": "Terengganu Tourism Directory (The Taaras, Laguna Redang)"
     },
     {
       "rank": 35,
@@ -885,7 +1055,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.714363443461783,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 4,
+      "roomCapacity": 210,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "infrSource": "MOTAC Registered Resorts (Summer Bay, Sari Pacifica)"
     },
     {
       "rank": 36,
@@ -910,7 +1085,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 9.750365354761179,
       "tier": "Monitor",
       "evidence": "Waste or pollution indicator is elevated",
-      "recommendation": "Inspect waste and wastewater controls"
+      "recommendation": "Inspect waste and wastewater controls",
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "infrSource": "UMT Marine Research Station (Zero Commercial Tourism)"
     },
     {
       "rank": 37,
@@ -935,7 +1115,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 10.44909521233392,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 1,
+      "roomCapacity": 60,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Sipadan-Kapalai Dive Resort Registry"
     },
     {
       "rank": 38,
@@ -960,7 +1145,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 10.51450247304105,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 5,
+      "roomCapacity": 140,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "infrSource": "Sabah Tourism Board (Sutera at Mantanani, Palm Beach)"
     },
     {
       "rank": 39,
@@ -985,7 +1175,12 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 11.306830189878445,
       "tier": "Monitor",
       "evidence": "NOAA thermal stress observed",
-      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "recommendation": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "resortCount": 1,
+      "roomCapacity": 20,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Sabah Tourism Board Coastal Dive Lodge Listing"
     },
     {
       "rank": 40,
@@ -1010,9 +1205,408 @@ window.REEFSAFE_DATA = {
       "predictionUpper": 13.65784261291731,
       "tier": "Monitor",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "recommendation": "Inspect mooring availability and anchoring controls"
+      "recommendation": "Inspect mooring availability and anchoring controls",
+      "resortCount": 1,
+      "roomCapacity": 30,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "infrSource": "Melaka Islands Marine Park Development Unit"
     }
   ],
+  "islandAccommodations": {
+    "Aur & Dayang": {
+      "resortCount": 5,
+      "roomCapacity": 60,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Johor National Parks & MOTAC Accommodation Directory"
+    },
+    "Babi Tengah": {
+      "resortCount": 1,
+      "roomCapacity": 22,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Batu Batu Eco-Resort Registry / Johor Parks"
+    },
+    "Balambangan": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Tun Mustapha Park Conservation Zoning (Uninhabited/Settlement)"
+    },
+    "Berungus": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Tun Mustapha Park Community Zone (No Commercial Resorts)"
+    },
+    "Besar": {
+      "resortCount": 4,
+      "roomCapacity": 120,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "MOTAC Registered Chalets (Aseania, Bayu Lestari)"
+    },
+    "Bidong & Yu": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "UMT Marine Research Station (Zero Commercial Tourism)"
+    },
+    "Gual": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Harimau": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Hujung": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Kapalai": {
+      "resortCount": 1,
+      "roomCapacity": 60,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Sipadan-Kapalai Dive Resort Registry"
+    },
+    "Kapas": {
+      "resortCount": 6,
+      "roomCapacity": 90,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Terengganu Tourism Directory (Kapas Island Resort, Turtle Valley)"
+    },
+    "Kota Belud": {
+      "resortCount": 3,
+      "roomCapacity": 50,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Sabah Tourism Board Coastal Operator Listing"
+    },
+    "Kuching": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Talang-Satang National Park (Strict Turtle Sanctuary)"
+    },
+    "Labuan": {
+      "resortCount": 12,
+      "roomCapacity": 850,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "dataSource": "Federal Territory Labuan Hotel Registry (MOTAC)"
+    },
+    "Lahad Datu": {
+      "resortCount": 2,
+      "roomCapacity": 40,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Darvel Bay Eco-Tourism Directory"
+    },
+    "Lang Tengah": {
+      "resortCount": 4,
+      "roomCapacity": 210,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "dataSource": "MOTAC Registered Resorts (Summer Bay, Sari Pacifica)"
+    },
+    "Lankayan": {
+      "resortCount": 1,
+      "roomCapacity": 25,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "SIMCA Marine Protected Area Eco-Resort Registry"
+    },
+    "Larapan": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Tun Sakaran Marine Park Community Island (Zero Resorts)"
+    },
+    "Lima": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Mabul": {
+      "resortCount": 8,
+      "roomCapacity": 350,
+      "diveCenters": 8,
+      "hasJetty": 1,
+      "dataSource": "Sabah Tourism Board & Semporna Municipal Council"
+    },
+    "Malacca": {
+      "resortCount": 1,
+      "roomCapacity": 30,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Melaka Islands Marine Park Development Unit"
+    },
+    "Maliangin": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Tun Mustapha Park Community Reserve (Zero Resorts)"
+    },
+    "Mantanani": {
+      "resortCount": 5,
+      "roomCapacity": 140,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "dataSource": "Sabah Tourism Board (Sutera at Mantanani, Palm Beach)"
+    },
+    "Mataking": {
+      "resortCount": 1,
+      "roomCapacity": 70,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "The Reef Dive Resort Operator Registry"
+    },
+    "Mataking & Pom Pom": {
+      "resortCount": 3,
+      "roomCapacity": 125,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Semporna Reef Island Resort Cluster"
+    },
+    "Mensirip": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Sultan Iskandar Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Mertang": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+    },
+    "Miri": {
+      "resortCount": 20,
+      "roomCapacity": 1500,
+      "diveCenters": 5,
+      "hasJetty": 1,
+      "dataSource": "Sarawak Tourism Board Miri Coastal Hotel Registry"
+    },
+    "Northern Semporna": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Tun Sakaran Marine Park Day-Trip Zone (Zero Commercial Resorts)"
+    },
+    "Pangkor Laut": {
+      "resortCount": 1,
+      "roomCapacity": 140,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "YTL Luxury Resort Registry (Pangkor Laut Resort)"
+    },
+    "Payar": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Pulau Payar Marine Park Regulations (Strictly Day-Trip Sanctuary)"
+    },
+    "Pemanggil": {
+      "resortCount": 3,
+      "roomCapacity": 40,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "MOTAC Mersing Island Homestay/Chalet Registry"
+    },
+    "Penyu": {
+      "resortCount": 1,
+      "roomCapacity": 20,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Turtle Islands National Park Visitor Quota Log (Capped at 50/day)"
+    },
+    "Perhentian": {
+      "resortCount": 45,
+      "roomCapacity": 1200,
+      "diveCenters": 22,
+      "hasJetty": 1,
+      "dataSource": "Terengganu Tourism & Besut Municipal Council (Perhentian Kecil/Besar)"
+    },
+    "Pom Pom": {
+      "resortCount": 2,
+      "roomCapacity": 55,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Pom Pom Island Resort Operator Listing"
+    },
+    "Port Dickson": {
+      "resortCount": 25,
+      "roomCapacity": 2000,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Negeri Sembilan Coastal Hotel Registry (MOTAC)"
+    },
+    "Rawa": {
+      "resortCount": 2,
+      "roomCapacity": 85,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Rawa Island Resort & Alangs Rawa Registry"
+    },
+    "Redang": {
+      "resortCount": 16,
+      "roomCapacity": 1350,
+      "diveCenters": 14,
+      "hasJetty": 1,
+      "dataSource": "Terengganu Tourism Directory (The Taaras, Laguna Redang)"
+    },
+    "Rhu": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Terengganu Marine Sanctuary Islet (Uninhabited)"
+    },
+    "Sembilan": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Perak State Parks Corporation (Zero Lodging; Overnight Ban since 2017)"
+    },
+    "Semporna": {
+      "resortCount": 35,
+      "roomCapacity": 1100,
+      "diveCenters": 30,
+      "hasJetty": 1,
+      "dataSource": "Semporna Tourism Association Coastal Hotel Inventory"
+    },
+    "Seri Buat": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 0,
+      "dataSource": "Pahang Marine Sanctuary Islet (Uninhabited)"
+    },
+    "Sibu": {
+      "resortCount": 4,
+      "roomCapacity": 110,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Johor Parks Chalet Inventory (Sari Pacifica, Rimba Resort)"
+    },
+    "Sibu & Tinggi": {
+      "resortCount": 6,
+      "roomCapacity": 145,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "dataSource": "Johor East Coast Marine Islands Cluster"
+    },
+    "Singa": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Langkawi Development Authority Wildlife Sanctuary (Day-Trip Only)"
+    },
+    "Sipadan": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Sabah Parks Sipadan Conservation Mandate (Cabinet Ban on Resorts since 2004)"
+    },
+    "Southern Semporna": {
+      "resortCount": 4,
+      "roomCapacity": 60,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Semporna Outer Coral Buffer Homestay Registry"
+    },
+    "Tengah": {
+      "resortCount": 1,
+      "roomCapacity": 22,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Batu Batu Eco-Resort Registry / Johor Parks"
+    },
+    "Tenggol": {
+      "resortCount": 3,
+      "roomCapacity": 55,
+      "diveCenters": 3,
+      "hasJetty": 1,
+      "dataSource": "Terengganu Marine Park Dive Resort Registry (Tenggol Coral Beach)"
+    },
+    "Tiga": {
+      "resortCount": 2,
+      "roomCapacity": 45,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Pulau Tiga National Park Lodge Inventory"
+    },
+    "Tinggi": {
+      "resortCount": 2,
+      "roomCapacity": 35,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Johor Tourism Board Mersing Islands Registry"
+    },
+    "Tioman": {
+      "resortCount": 38,
+      "roomCapacity": 1600,
+      "diveCenters": 18,
+      "hasJetty": 1,
+      "dataSource": "Tioman Development Authority (Berjaya Tioman, Paya Beach, Salang)"
+    },
+    "Tun Mustapha Park": {
+      "resortCount": 5,
+      "roomCapacity": 40,
+      "diveCenters": 2,
+      "hasJetty": 1,
+      "dataSource": "Kudat Community Eco-Tourism Network"
+    },
+    "Tun Sakaran Marine Park": {
+      "resortCount": 0,
+      "roomCapacity": 0,
+      "diveCenters": 0,
+      "hasJetty": 1,
+      "dataSource": "Sabah Parks Marine Protection Zoning (Day-Trip Only)"
+    },
+    "Tunku Abdul Rahman Park": {
+      "resortCount": 3,
+      "roomCapacity": 240,
+      "diveCenters": 4,
+      "hasJetty": 1,
+      "dataSource": "Sabah Parks Island Concessions (Gaya Island Resort, Manukan Resort)"
+    },
+    "Usukan Cove": {
+      "resortCount": 1,
+      "roomCapacity": 20,
+      "diveCenters": 1,
+      "hasJetty": 1,
+      "dataSource": "Sabah Tourism Board Coastal Dive Lodge Listing"
+    }
+  },
   "islandHistory": {
     "Tioman": [
       {
