@@ -1,0 +1,57 @@
+island,state,latitude,longitude,pixel_lat,pixel_lon,pixel_dist_km,coords_on_land
+Aur & Dayang,Johor,2.4481,104.5164,2.425,104.525,2.74,False
+Babi Tengah,Johor,2.4764,103.9614,2.475,103.975,1.52,False
+Balambangan,Sabah,7.2347,116.9242,7.275,116.925,4.48,True
+Berungus,Sabah,6.9531,117.0347,6.975,117.025,2.66,False
+Besar,Johor,2.4333,103.9667,2.425,103.975,1.3,False
+Bidong & Yu,Terengganu,5.6167,103.05,5.625,103.025,2.92,False
+Gual,Johor,2.4719,104.0167,2.475,104.025,0.98,False
+Harimau,Johor,2.5083,103.9317,2.525,103.925,2.0,False
+Hujung,Johor,2.4833,103.9833,2.475,103.975,1.3,False
+Kapalai,Sabah,4.225,118.6833,4.225,118.675,0.92,False
+Kapas,Terengganu,5.2167,103.2667,5.225,103.275,1.3,False
+Kota Belud,Sabah,6.35,116.4333,6.375,116.425,2.93,False
+Kuching,Sarawak,1.9167,110.0833,1.925,110.075,1.3,False
+Labuan,Sabah,5.3167,115.2167,5.325,115.225,1.3,False
+Lahad Datu,Sabah,5.0167,118.3333,4.975,118.325,4.73,True
+Lang Tengah,Terengganu,5.7917,102.8917,5.775,102.875,2.62,False
+Lankayan,Sabah,6.5028,117.9239,6.525,117.925,2.47,False
+Larapan,Sabah,4.5167,118.5833,4.525,118.575,1.3,False
+Lima,Johor,2.2167,104.1667,2.225,104.175,1.3,False
+Mabul,Sabah,4.2464,118.6294,4.225,118.625,2.43,False
+Malacca,Malacca,2.05,102.3333,2.075,102.325,2.93,False
+Maliangin,Sabah,7.0667,117.05,7.075,117.025,2.91,False
+Mantanani,Sabah,6.7167,116.35,6.725,116.325,2.91,False
+Mataking,Sabah,4.58,118.95,4.575,118.925,2.83,False
+Mataking & Pom Pom,Sabah,4.59,118.88,4.575,118.875,1.76,False
+Mensirip,Johor,2.45,103.95,2.475,103.975,3.93,False
+Mertang,Johor,2.46,103.98,2.475,103.975,1.76,False
+Miri,Sarawak,4.3833,113.9667,4.375,113.975,1.3,False
+Northern Semporna,Sabah,4.6333,118.75,4.625,118.725,2.92,False
+Pangkor Laut,Perak,4.1972,100.5472,4.175,100.525,3.49,False
+Payar,Kedah,6.0639,100.0417,6.075,100.025,2.22,False
+Pemanggil,Johor,2.5833,104.3167,2.575,104.325,1.3,False
+Penyu,Sabah,6.1667,118.0667,6.175,118.075,1.3,False
+Perhentian,Terengganu,5.9,102.7333,5.925,102.725,2.93,False
+Pom Pom,Sabah,4.6,118.8667,4.625,118.875,2.93,False
+Port Dickson,Negeri Sembilan,2.4833,101.85,2.475,101.825,2.93,False
+Rawa,Johor,2.5186,103.9747,2.525,103.975,0.71,False
+Redang,Terengganu,5.7667,103.0167,5.775,103.025,1.3,False
+Rhu,Terengganu,5.8167,102.6167,5.825,102.625,1.3,False
+Sembilan,Perak,4.0167,100.55,4.025,100.525,2.92,False
+Semporna,Sabah,4.48,118.61,4.475,118.625,1.75,False
+Seri Buat,Pahang,2.6833,104.1333,2.675,104.125,1.3,False
+Sibu,Johor,2.2167,104.0667,2.225,104.075,1.3,False
+Sibu & Tinggi,Johor,2.25,104.1,2.275,104.075,3.93,False
+Singa,Kedah,6.1833,99.75,6.175,99.775,2.91,False
+Sipadan,Sabah,4.1147,118.6289,4.125,118.625,1.22,False
+Southern Semporna,Sabah,4.3,118.65,4.325,118.625,3.93,False
+Tengah,Johor,2.47,103.96,2.475,103.975,1.76,False
+Tenggol,Terengganu,4.8,103.6833,4.825,103.675,2.93,False
+Tiga,Sabah,5.725,115.6417,5.725,115.625,1.85,False
+Tinggi,Johor,2.3,104.1167,2.325,104.125,2.93,False
+Tioman,Pahang,2.7833,104.1667,2.775,104.125,4.72,True
+Tun Mustapha Park,Sabah,7.1,117.15,7.125,117.175,3.92,False
+Tun Sakaran Marine Park,Sabah,4.6,118.7833,4.625,118.775,2.93,False
+Tunku Abdul Rahman Park,Sabah,5.9667,115.9833,5.975,115.975,1.3,False
+Usukan Cove,Sabah,6.3833,116.4167,6.375,116.425,1.3,False
