@@ -40,7 +40,7 @@ FEATURES = [
     "fish_butterflyfish", "fish_snapper", "fish_parrotfish", "fish_grouper",
     "inv_diadema_urchin", "inv_crown_of_thorns", "grazer_ratio",
     "impact_anchor", "impact_nets", "impact_trash", "impact_bleaching",
-    "impact_cot", "noaa_max_dhw", "noaa_mean_ssta", "latitude", "longitude",
+    "impact_cot", "latitude", "longitude",
 ]
 
 CONTINUOUS_DIAGNOSTICS = [

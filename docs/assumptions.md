@@ -1,24 +1,20 @@
 # ReefSafe assumption register
 
-These assumptions define what the current evidence can support. They are not hidden model facts; each one should be revisited when better data arrives.
+These assumptions define what the evidence can support. ReefSafe is a screening tool, not a causal, carrying-capacity, or financial model.
 
-| Area | Working assumption | Risk if wrong | Current mitigation |
+| Area | Working assumption | Risk | Mitigation |
 |---|---|---|---|
-| Island identity | An island name refers to a sufficiently comparable monitoring unit across years. | Boundary or site-composition changes can look like ecological change. | Retain island, park, coordinates, year and extraction confidence; verify large movements against source reports. |
-| Survey comparability | Reported live coral cover is comparable enough across survey years for directional screening. | Method, site or observer changes can create artificial differences. | Treat results as screening only and retain source confidence. |
-| Irregular intervals | Annualized change is approximated as linear between two survey observations. | Short disturbances and recoveries between surveys are unobserved. | Store survey and target years; never describe intermediate annual values as observed. |
-| Thermal exposure | A NOAA regional station is an adequate proxy for broad heat exposure near its matched islands. | Local reefs can experience different temperature and current conditions. | Describe DHW as regional evidence and request in-water logger confirmation. |
-| Timing | Conditions recorded at the current survey can help screen the island's next observed change. | A stressor occurring after the current survey may drive the later outcome. | Use lagged wording and avoid causal attribution. |
-| Narrative flags | A reported anchor, trash or bleaching mention is evidence of presence; no mention is not proof of absence. | Reporting intensity varies by island and year. | Use group comparisons as descriptive only and show the limitation beside results. |
-| Missing values | Median imputation within each training fold is adequate for model comparison. | Missingness may be systematic rather than random. | Fit imputation inside each fold; retain missingness in the processed dataset. |
-| Temporal transfer | Earlier island-year patterns contain limited information relevant to later target years. | Regime shifts can make historical relationships unstable. | Use expanding-year validation and show the baseline comparison. |
-| Residual dependence | Repeated island observations are not fully independent. | Conventional uncertainty can be too narrow. | Do not present formal causal confidence intervals; use empirical screening bands. |
-| Priority threshold | The top quartile is a practical workload queue, not an ecological or legal threshold. | Users may mistake rank 10 versus 11 for a scientific boundary. | Label the tier “High screening priority” and require field verification. |
-| Economic context | State or national tourism totals cannot represent individual-island pressure without allocation data. | Downscaling would fabricate precision. | Keep OpenDOSM tourism/GDP series descriptive and outside the island prediction features. |
-| Physical accommodation footprint | Verified resort and room inventories represent the physical upper-bound ceiling of overnight tourist capacity, not observed daily occupancy. | Day-tripper volume is uncaptured without jetty tickets. | Present room metrics as static capacity bounds; do not synthesize daily tourist time series without ticketing manifests. |
-| Tourism data gap | Historical marine park visitor statistics (data.gov.my 2000–2017) cease after 2017 and exclude Sabah/Sarawak. | Extrapolating or inventing island footfall would misguide policy. | Explicitly display visitor data as an unclosed data gap; do not use non-existent daily footfall in regulatory formulas. |
-| Economic valuation | Total reef natural capital is benchmarked at RM 8.7B/yr across 4 pillars (tourism, coastal protection, fisheries, carbon). | Conflating state GDP with reef-specific yield overstates local revenue. | Ground valuation in published environmental economics literature (UNEP/Reef Check/DOSM TSA) and simulate 20-year NPV bounds. |
+| Monitoring unit | The same island label is comparable across survey years. | Site composition or methods may change. | Retain year and source confidence; verify large movements against the source reports. |
+| Change rate | Change between observations can be annualised for comparison. | Events between surveys are unobserved. | Store both observation years and never label interpolated years as observations. |
+| Temporal transfer | Earlier patterns contain limited information about later observations. | Regime shifts can weaken transfer. | Use past-only expanding-year validation and compare against a mean baseline. |
+| Regional heat | NOAA virtual stations describe broad regional thermal context. | Local reef conditions can differ. | Keep NOAA out of the scored model until DOSM confirms eligibility; request in-water logger verification. |
+| Narrative flags | An anchor, trash, or bleaching mention indicates a recorded observation. | No mention does not prove absence and reporting intensity varies. | Present descriptive group differences only. |
+| Missing values | Fold-local median imputation is acceptable for model comparison. | Missingness may be systematic. | Fit imputation within each training fold and retain missing values in processed data. |
+| Repeated observations | Island observations are not fully independent. | Ordinary uncertainty estimates can be too narrow. | Use empirical forward-validation residual bands and label them screening uncertainty. |
+| Priority tier | The top quartile is a field-work queue. | Rank boundaries can be mistaken for ecological thresholds. | Require ranger verification and do not prescribe closures or quotas. |
+| Tourism data gap | The cited visitor source verifies 2000-2009 aggregates only; no verified island-level exposure series is available. | Allocating totals to islands would fabricate precision. | Keep visitor and OpenDOSM context outside the model. |
+| Economic valuation | DMPM's RM8.7 billion is a rounded annual Total Economic Value for six evaluated archipelagos during 2011-2015. | Treating it as current ReefSafe revenue, avoided loss, or a national reef total would be incorrect. | Show the published components and scope only; do not calculate NPV or island allocations. |
 
-## Assumptions that would change with new data
+## What new data would change
 
-Island-level visitor counts, vessel trips, mooring use, wastewater discharge, closure records, site identifiers and in-water temperature would allow several assumptions above to be tested or removed. Until then, ReefSafe remains a transparent triage tool rather than a carrying-capacity or causal-impact model.
+Island-level visitor counts, vessel trips, mooring use, wastewater discharge, closure records, stable site identifiers, and in-water temperature would allow these assumptions to be tested. Until then, ReefSafe prioritises field verification rather than prescribing regulation.
