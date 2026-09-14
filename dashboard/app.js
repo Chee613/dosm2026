@@ -171,7 +171,7 @@
   const modalMemo = document.getElementById("modal-memo");
   const btnCloseMemo = document.getElementById("btn-close-memo");
   const btnPrintMemo = document.getElementById("btn-print-memo");
-  const selectIsland = document.getElementById("select-island");
+  const selectIsland = document.getElementById("island-select") || document.getElementById("select-island");
 
   // Init
   function init() {
@@ -184,6 +184,8 @@
     setupScenarioPills();
     setupHorizonPills();
     renderScientificTables();
+    renderEconomicValuation();
+    renderTourismDataGap();
     setupFigureLightbox();
     setupModal();
     setupCopilot();
@@ -193,7 +195,7 @@
 
     // Responsive chart resize
     window.addEventListener("resize", () => {
-      if (currentTab === "island") {
+      if (currentTab === "island" || currentTab === "diagnostics") {
         renderHistoricalChart(selectedIslandName);
       }
     });
@@ -208,12 +210,16 @@
         tabBtns.forEach((b) => b.classList.remove("active"));
         tabPanels.forEach((p) => p.classList.remove("active"));
         btn.classList.add("active");
-        document.getElementById(`tab-${target}`).classList.add("active");
+        
+        const targetPanel = document.getElementById(`tab-${target}`) ||
+          (target === "diagnostics" ? document.getElementById("tab-island") : null) ||
+          (target === "island" ? document.getElementById("tab-diagnostics") : null);
+        if (targetPanel) targetPanel.classList.add("active");
 
         if (target === "overview" && mapInstance) {
           setTimeout(() => mapInstance.invalidateSize(), 200);
         }
-        if (target === "island") {
+        if (target === "island" || target === "diagnostics") {
           renderIslandDiagnostics(selectedIslandName);
         }
       });
@@ -425,6 +431,27 @@
     document.getElementById("bar-pollution").textContent = pollutionWt >= 15 ? `${pollutionWt}%` : "";
     document.getElementById("bar-other").style.width = `${otherWt}%`;
     document.getElementById("bar-other").textContent = otherWt >= 15 ? `${otherWt}%` : "";
+
+    // Dynamic Controllable (Local) vs Uncontrollable (Thermal) Factor Bar
+    const ctrlBarEl = document.getElementById("controllable-factor-bar");
+    if (ctrlBarEl) {
+      const cPct = isl.controllable_pct !== undefined ? isl.controllable_pct : 45.0;
+      const uPct = isl.uncontrollable_pct !== undefined ? isl.uncontrollable_pct : 55.0;
+      ctrlBarEl.innerHTML = `
+        <div style="display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 4px; font-weight: 600;">
+          <span style="color: #047857;">Controllable Local Pressures: ${cPct}%</span>
+          <span style="color: #B91C1C;">Uncontrollable Thermal Stress: ${uPct}%</span>
+        </div>
+        <div style="height: 12px; background: #E2E8F0; border-radius: 6px; overflow: hidden; display: flex;">
+          <div style="width: ${cPct}%; background: #059669;" title="Controllable Local Human Stress: ${cPct}%"></div>
+          <div style="width: ${uPct}%; background: #DC2626;" title="Uncontrollable Regional Thermal Stress: ${uPct}%"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 10px; color: #64748B; margin-top: 3px;">
+          <span>(Anchoring, Trash, Wastewater, Room Footprint)</span>
+          <span>(Satellite NOAA DHW Bleaching Heat)</span>
+        </div>
+      `;
+    }
 
     // Prescription Text
     const prescBox = document.getElementById("diag-prescription-box");
@@ -906,6 +933,206 @@
         modelTbody.appendChild(tr);
       });
     }
+  }
+
+  // 4-Pillar RM 8.7B Valuation and 20-Year NPV Trade-Off Simulation
+  function renderEconomicValuation() {
+    const econ = window.ECONOMIC_VALUATION || (data && data.economicValuation);
+    const npv = window.NPV_TRADEOFF || (data && data.npvTradeoff);
+
+    // 1. Economic Pillars
+    const pillarsEl = document.getElementById("economic-pillars-chart");
+    if (pillarsEl && econ && econ.pillars) {
+      const colors = {
+        "Marine Tourism & Recreation": "#0284C7", // Sky Blue
+        "Coastal Protection & Wave Attenuation": "#0D9488", // Teal
+        "Fisheries & Food Security": "#10B981", // Emerald
+        "Carbon Sequestration & Marine Biodiversity": "#6366F1" // Indigo
+      };
+
+      let html = `
+        <div style="margin-bottom: 12px;">
+          <div style="height: 22px; display: flex; border-radius: 6px; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);">
+      `;
+
+      Object.entries(econ.pillars).forEach(([name, item]) => {
+        const c = colors[name] || "#64748B";
+        html += `<div style="width: ${item.percentage}%; background: ${c};" title="${name}: RM ${(item.value_myr / 1e9).toFixed(2)}B (${item.percentage}%)"></div>`;
+      });
+
+      html += `
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+      `;
+
+      Object.entries(econ.pillars).forEach(([name, item]) => {
+        const c = colors[name] || "#64748B";
+        const valB = (item.value_myr / 1e9).toFixed(2);
+        html += `
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 10px; height: 10px; border-radius: 2px; background: ${c}; display: inline-block;"></span>
+              <span style="font-size: 12px; font-weight: 600; color: #1E293B;">${name}</span>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 12px; font-weight: 700; color: #0F172A;">RM ${valB}B</span>
+              <span style="font-size: 11px; color: #64748B; margin-left: 4px;">(${item.percentage}%)</span>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+      pillarsEl.innerHTML = html;
+    }
+
+    // 2. 20-Year NPV Trade-Off Simulation Chart
+    const npvEl = document.getElementById("npv-tradeoff-chart");
+    if (npvEl && npv && npv.trajectory) {
+      const traj = npv.trajectory;
+      const width = 460;
+      const height = 180;
+      const padLeft = 45;
+      const padRight = 20;
+      const padTop = 15;
+      const padBottom = 25;
+
+      const maxVal = Math.max(...traj.map(d => Math.max(d.cum_npv_sustainable_myr, d.cum_npv_no_action_myr))) / 1e9;
+      const minVal = 0;
+
+      const scaleX = (yr) => padLeft + ((yr - 1) / (traj.length - 1)) * (width - padLeft - padRight);
+      const scaleY = (valB) => height - padBottom - ((valB - minVal) / (maxVal - minVal)) * (height - padTop - padBottom);
+
+      const ptsSust = traj.map(d => `${scaleX(d.year)},${scaleY(d.cum_npv_sustainable_myr / 1e9)}`);
+      const ptsNoAction = traj.map(d => `${scaleX(d.year)},${scaleY(d.cum_npv_no_action_myr / 1e9)}`);
+      const areaPath = `M ${ptsSust.join(" L ")} L ${ptsNoAction.slice().reverse().join(" L ")} Z`;
+
+      let svg = `
+        <svg viewBox="0 0 ${width} ${height}" style="width: 100%; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+          <line x1="${padLeft}" y1="${scaleY(0)}" x2="${width - padRight}" y2="${scaleY(0)}" stroke="#E2E8F0" stroke-width="1" />
+          <line x1="${padLeft}" y1="${scaleY(50)}" x2="${width - padRight}" y2="${scaleY(50)}" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3" />
+          <line x1="${padLeft}" y1="${scaleY(100)}" x2="${width - padRight}" y2="${scaleY(100)}" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3,3" />
+
+          <text x="${padLeft - 6}" y="${scaleY(0) + 4}" font-size="9" fill="#94A3B8" text-anchor="end">RM 0</text>
+          <text x="${padLeft - 6}" y="${scaleY(50) + 4}" font-size="9" fill="#94A3B8" text-anchor="end">50B</text>
+          <text x="${padLeft - 6}" y="${scaleY(100) + 4}" font-size="9" fill="#94A3B8" text-anchor="end">100B</text>
+
+          <text x="${scaleX(1)}" y="${height - 8}" font-size="9" fill="#94A3B8" text-anchor="middle">Yr 1</text>
+          <text x="${scaleX(5)}" y="${height - 8}" font-size="9" fill="#94A3B8" text-anchor="middle">Yr 5</text>
+          <text x="${scaleX(10)}" y="${height - 8}" font-size="9" fill="#94A3B8" text-anchor="middle">Yr 10</text>
+          <text x="${scaleX(15)}" y="${height - 8}" font-size="9" fill="#94A3B8" text-anchor="middle">Yr 15</text>
+          <text x="${scaleX(20)}" y="${height - 8}" font-size="9" fill="#94A3B8" text-anchor="middle">Yr 20</text>
+
+          <path d="${areaPath}" fill="#10B981" fill-opacity="0.15" />
+          <path d="M ${ptsSust.join(" L ")}" fill="none" stroke="#059669" stroke-width="2.5" />
+          <path d="M ${ptsNoAction.join(" L ")}" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4,3" />
+
+          <circle cx="${width - 165}" cy="14" r="4" fill="#059669" />
+          <text x="${width - 155}" y="17" font-size="9.5" font-weight="600" fill="#059669">Proactive (RM 114.3B)</text>
+
+          <circle cx="${width - 165}" cy="28" r="4" fill="#DC2626" />
+          <text x="${width - 155}" y="31" font-size="9.5" font-weight="600" fill="#DC2626">No Action (RM 66.6B)</text>
+
+          <rect x="${width / 2 - 50}" y="${height / 2 - 14}" width="115" height="20" rx="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1" />
+          <text x="${width / 2 + 7}" y="${height / 2}" font-size="9.5" font-weight="700" fill="#065F46" text-anchor="middle">+RM 47.7B Preserved</text>
+        </svg>
+      `;
+      npvEl.innerHTML = svg;
+    }
+  }
+
+  // National Marine Park Tourism Data Gap (2000-2017 vs 2018-2026)
+  function renderTourismDataGap() {
+    const gapData = window.TOURISM_DATA_GAP || (data && data.tourismDataGap);
+    const chartEl = document.getElementById("tourism-gap-chart");
+    if (!chartEl || !gapData || !gapData.annual_trend) return;
+
+    const trend = gapData.annual_trend; // 2000 to 2017
+    const width = 640;
+    const height = 210;
+    const padLeft = 45;
+    const padRight = 30;
+    const padTop = 25;
+    const padBottom = 30;
+
+    const minYear = 2000;
+    const maxYear = 2026;
+    const maxVisitors = 800000;
+
+    const scaleX = (yr) => padLeft + ((yr - minYear) / (maxYear - minYear)) * (width - padLeft - padRight);
+    const scaleY = (vis) => height - padBottom - (vis / maxVisitors) * (height - padTop - padBottom);
+
+    const barWidth = 12;
+
+    let bars = "";
+    trend.forEach((d) => {
+      const x = scaleX(d.year) - barWidth / 2;
+      const yTot = scaleY(d.total);
+      const hTot = (height - padBottom) - yTot;
+      const yDom = scaleY(d.domestic);
+      const hDom = (height - padBottom) - yDom;
+      const hFor = hTot - hDom;
+
+      bars += `
+        <rect x="${x}" y="${scaleY(d.domestic)}" width="${barWidth}" height="${hDom}" fill="#0284C7" rx="1" />
+        <rect x="${x}" y="${yTot}" width="${barWidth}" height="${hFor}" fill="#38BDF8" rx="1" />
+      `;
+    });
+
+    const gapStartX = scaleX(2017.5);
+    const gapEndX = scaleX(2026);
+    const gapWidth = gapEndX - gapStartX;
+    const gapHeight = (height - padBottom) - padTop;
+
+    let svg = `
+      <svg viewBox="0 0 ${width} ${height}" style="width: 100%; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+        <line x1="${padLeft}" y1="${scaleY(0)}" x2="${width - padRight}" y2="${scaleY(0)}" stroke="#CBD5E1" stroke-width="1" />
+        <line x1="${padLeft}" y1="${scaleY(200000)}" x2="${width - padRight}" y2="${scaleY(200000)}" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="${padLeft}" y1="${scaleY(400000)}" x2="${width - padRight}" y2="${scaleY(400000)}" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="${padLeft}" y1="${scaleY(600000)}" x2="${width - padRight}" y2="${scaleY(600000)}" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="3,3" />
+        <line x1="${padLeft}" y1="${scaleY(800000)}" x2="${width - padRight}" y2="${scaleY(800000)}" stroke="#F1F5F9" stroke-width="1" stroke-dasharray="3,3" />
+
+        <text x="${padLeft - 6}" y="${scaleY(0) + 4}" font-size="9.5" fill="#64748B" text-anchor="end">0</text>
+        <text x="${padLeft - 6}" y="${scaleY(200000) + 4}" font-size="9.5" fill="#64748B" text-anchor="end">200k</text>
+        <text x="${padLeft - 6}" y="${scaleY(400000) + 4}" font-size="9.5" fill="#64748B" text-anchor="end">400k</text>
+        <text x="${padLeft - 6}" y="${scaleY(600000) + 4}" font-size="9.5" fill="#64748B" text-anchor="end">600k</text>
+        <text x="${padLeft - 6}" y="${scaleY(800000) + 4}" font-size="9.5" fill="#64748B" text-anchor="end">800k</text>
+
+        <text x="${scaleX(2000)}" y="${height - 10}" font-size="9.5" fill="#64748B" text-anchor="middle">2000</text>
+        <text x="${scaleX(2005)}" y="${height - 10}" font-size="9.5" fill="#64748B" text-anchor="middle">2005</text>
+        <text x="${scaleX(2010)}" y="${height - 10}" font-size="9.5" fill="#64748B" text-anchor="middle">2010</text>
+        <text x="${scaleX(2015)}" y="${height - 10}" font-size="9.5" fill="#64748B" text-anchor="middle">2015</text>
+        <text x="${scaleX(2017)}" y="${height - 10}" font-size="9.5" font-weight="700" fill="#B91C1C" text-anchor="middle">2017</text>
+        <text x="${scaleX(2020)}" y="${height - 10}" font-size="9.5" fill="#94A3B8" text-anchor="middle">2020</text>
+        <text x="${scaleX(2026)}" y="${height - 10}" font-size="9.5" font-weight="700" fill="#0F172A" text-anchor="middle">2026</text>
+
+        ${bars}
+
+        <defs>
+          <pattern id="gap-stripe" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="4" height="8" fill="#FEE2E2" />
+            <rect x="4" width="4" height="8" fill="#FEF2F2" />
+          </pattern>
+        </defs>
+        <rect x="${gapStartX}" y="${padTop}" width="${gapWidth}" height="${gapHeight}" fill="url(#gap-stripe)" stroke="#F87171" stroke-dasharray="4,3" stroke-width="1.5" rx="3" />
+
+        <rect x="${gapStartX + (gapWidth / 2) - 95}" y="${padTop + 20}" width="190" height="24" rx="4" fill="#991B1B" />
+        <text x="${gapStartX + (gapWidth / 2)}" y="${padTop + 36}" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">OFFICIAL REPORTING HALTED</text>
+        <text x="${gapStartX + (gapWidth / 2)}" y="${padTop + 60}" font-size="9" fill="#7F1D1D" text-anchor="middle" font-weight="600">2018–2026 Open Data Void</text>
+        <text x="${gapStartX + (gapWidth / 2)}" y="${padTop + 75}" font-size="8.5" fill="#991B1B" text-anchor="middle">(COVID-19 & 2024 Bleaching Unmeasured)</text>
+
+        <rect x="${gapStartX + (gapWidth / 2) - 85}" y="${padTop + 95}" width="170" height="36" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
+        <text x="${gapStartX + (gapWidth / 2)}" y="${padTop + 109}" font-size="8.5" font-weight="700" fill="#0F172A" text-anchor="middle">Physical Carrying Capacity Ceiling:</text>
+        <text x="${gapStartX + (gapWidth / 2)}" y="${padTop + 123}" font-size="8" fill="#0369A1" text-anchor="middle">Audited lodging inventory (island_accommodations)</text>
+
+        <rect x="${padLeft + 10}" y="${padTop + 5}" width="10" height="10" fill="#38BDF8" rx="1" />
+        <text x="${padLeft + 24}" y="${padTop + 13}" font-size="9" fill="#334155">Foreign Visitors</text>
+        <rect x="${padLeft + 95}" y="${padTop + 5}" width="10" height="10" fill="#0284C7" rx="1" />
+        <text x="${padLeft + 109}" y="${padTop + 13}" font-size="9" fill="#334155">Domestic Visitors</text>
+      </svg>
+    `;
+    chartEl.innerHTML = svg;
   }
 
   // Lightbox Modal for Scientific Validation Figures

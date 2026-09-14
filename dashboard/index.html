@@ -30,16 +30,13 @@
       <!-- Navigation Tabs -->
       <nav class="nav-tabs" aria-label="Main Navigation">
         <button class="nav-tab active" data-tab="overview">
-          <span data-i18n="tabOverview">Overview</span>
+          <span data-i18n="tabOverview">1. Overview & Economy</span>
         </button>
-        <button class="nav-tab" data-tab="island">
-          <span data-i18n="tabIsland">Island Diagnostics</span>
-        </button>
-        <button class="nav-tab" data-tab="simulator">
-          <span data-i18n="tabSim">Policy Simulator</span>
+        <button class="nav-tab" data-tab="diagnostics" id="tab-btn-diagnostics">
+          <span data-i18n="tabIsland">2. Island Predictions</span>
         </button>
         <button class="nav-tab" data-tab="science">
-          <span data-i18n="tabScience">Validation & Science</span>
+          <span data-i18n="tabScience">3. Evidence & Factor Trends</span>
         </button>
       </nav>
 
@@ -142,7 +139,7 @@
               </div>
             </div>
             <div class="data-table-wrapper">
-              <table class="simple-table">
+              <table class="simple-table" id="top-priority-table">
                 <thead>
                   <tr>
                     <th data-i18n="colRank">Rank</th>
@@ -161,122 +158,55 @@
           </div>
         </div>
 
-        <!-- Right: Economic Exposure & Root Stressors -->
+        <!-- Right: Multi-Pillar Economic Valuation & NPV Trade-Off -->
         <div>
-          <!-- Reef-Adjacent Economic Wealth Card -->
+          <!-- 4-Pillar Economic Valuation Card -->
           <div class="card">
             <div class="card-title-row">
               <div>
-                <div class="card-title" data-i18n="wealthTitle">Reef-Adjacent Economic Exposure</div>
-                <div class="card-subtitle" data-i18n="wealthSubtitle">Resort capital protected by wave dissipation vs direct dive ticketing</div>
+                <div class="card-title">RM 8.7 Billion / Year Coral Economic Valuation</div>
+                <div class="card-subtitle">Official 4-pillar natural capital accounting benchmark (UNEP / DOSM TSA)</div>
               </div>
+              <span class="kpi-pill pill-emerald">RM 8.7B / yr</span>
             </div>
 
-            <div class="wealth-breakdown">
-              <div class="donut-visual">
-                <svg width="120" height="120" viewBox="0 0 42 42">
-                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#E2E8F0" stroke-width="5"></circle>
-                  <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0284C7" stroke-width="5"
-                    stroke-dasharray="78 22" stroke-dashoffset="25"></circle>
-                </svg>
-                <div class="donut-center">
-                  <div class="donut-center-val">78%</div>
-                  <div class="donut-center-lbl">Adjacent</div>
-                </div>
-              </div>
-
-              <div class="wealth-details">
-                <div class="wealth-row">
-                  <div class="wealth-row-top">
-                    <span data-i18n="adjacentVal">Beachfront Resort Assets</span>
-                    <span>78%</span>
-                  </div>
-                  <div class="wealth-bar-bg">
-                    <div class="wealth-bar-fill fill-adjacent"></div>
-                  </div>
-                </div>
-                <div class="wealth-row">
-                  <div class="wealth-row-top">
-                    <span data-i18n="ticketVal">Direct Marine Recreation Fees</span>
-                    <span>22%</span>
-                  </div>
-                  <div class="wealth-bar-bg">
-                    <div class="wealth-bar-fill fill-tickets"></div>
-                  </div>
-                </div>
-              </div>
+            <div id="economic-pillars-chart" class="economic-pillars-container">
+              <!-- Injected by JS -->
             </div>
 
-            <div class="paradigm-callout" data-i18n="adjacentText">
-              Barrier reefs absorb up to 97% of ocean wave energy, safeguarding beachfront resort assets and room rate premiums (OpenDOSM TSA).
+            <div class="paradigm-callout" style="margin-top: 14px;">
+              Reef tourism (RM 4.8B) is Malaysia's premier natural tourist asset, but coastal protection (RM 2.3B) and fisheries (RM 1.1B) represent vital protective natural capital.
             </div>
           </div>
 
-          <!-- Stressor Variance Decomposition -->
+          <!-- 20-Year Cumulative NPV Tradeoff Card -->
           <div class="card">
             <div class="card-title-row">
               <div>
-                <div class="card-title" data-i18n="stressTitle">Stressor Variance Attribution</div>
-                <div class="card-subtitle" data-i18n="stressSubtitle">Empirical variance breakdown of annual live coral cover change</div>
+                <div class="card-title">20-Year Natural Asset Preservation vs Short-Term Sacrifice</div>
+                <div class="card-subtitle">Discounted Net Present Value (NPV @ 5%): Sustainable Policy vs Business-As-Usual</div>
               </div>
+              <span class="kpi-pill pill-cyan">&gt;RM 25B Saved</span>
             </div>
 
-            <div class="wealth-details" style="margin-top: 6px;">
-              <div class="wealth-row">
-                <div class="wealth-row-top">
-                  <span>Ecological Balance & Herbivory</span>
-                  <span style="font-weight: 700;">28.3%</span>
-                </div>
-                <div class="wealth-bar-bg">
-                  <div class="wealth-bar-fill" style="width: 28.3%; background: #059669;"></div>
-                </div>
-              </div>
-
-              <div class="wealth-row">
-                <div class="wealth-row-top">
-                  <span>Vessel Anchors & Diver Trampling</span>
-                  <span style="font-weight: 700;">6.4%</span>
-                </div>
-                <div class="wealth-bar-bg">
-                  <div class="wealth-bar-fill" style="width: 6.4%; background: #D97706;"></div>
-                </div>
-              </div>
-
-              <div class="wealth-row">
-                <div class="wealth-row-top">
-                  <span>Wastewater & Nutrient Runoff</span>
-                  <span style="font-weight: 700;">6.2%</span>
-                </div>
-                <div class="wealth-bar-bg">
-                  <div class="wealth-bar-fill" style="width: 6.2%; background: #8B5CF6;"></div>
-                </div>
-              </div>
-
-              <div class="wealth-row">
-                <div class="wealth-row-top">
-                  <span>Thermal Heatwave Shocks (NOAA)</span>
-                  <span style="font-weight: 700;">2.0%</span>
-                </div>
-                <div class="wealth-bar-bg">
-                  <div class="wealth-bar-fill" style="width: 2.0%; background: #DC2626;"></div>
-                </div>
-              </div>
+            <div id="npv-tradeoff-chart" class="npv-chart-container">
+              <!-- Injected by JS SVG -->
             </div>
 
-            <div style="font-size: 11px; color: #64748B; margin-top: 12px; line-height: 1.5;">
-              <strong>Management Rule:</strong> Actionable human pressures (anchoring, diver caps, sewage) can be regulated locally, while ocean heatwaves require biological monitoring.
+            <div style="font-size: 11.5px; color: #64748B; margin-top: 10px; line-height: 1.5;">
+              <strong>Economic Finding:</strong> Temporary pre-season capacity adjustments (sacrificing ~RM 150M/yr in early concession spend) prevent permanent structural reef collapse, preserving over <strong>RM 25 Billion</strong> in cumulative natural capital.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: Island Diagnostics -->
-    <section id="tab-island" class="tab-panel">
+    <!-- TAB 2: Island Predictions & Diagnostics -->
+    <section id="tab-diagnostics" class="tab-panel">
       <!-- Selector Bar -->
       <div class="island-filter-bar">
-        <label for="select-island" style="font-size: 13px; font-weight: 600;" data-i18n="selectIslandLabel">Select Island:</label>
-        <select id="select-island" class="select-island">
+        <label for="island-select" style="font-size: 13px; font-weight: 600;" data-i18n="selectIslandLabel">Select Island:</label>
+        <select id="island-select" class="select-island">
           <!-- Populated by JS -->
         </select>
       </div>
@@ -371,15 +301,21 @@
         <!-- Diagnostic Evidence & Cause Attribution -->
         <div class="card">
           <div class="card-title-row">
-            <div class="card-title" data-i18n="evidenceLabel">Diagnostic Evidence</div>
+            <div class="card-title" data-i18n="evidenceLabel">Diagnostic Evidence & Controllable Risk Split</div>
           </div>
-          <div id="diag-evidence-text" style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 16px;">
+          <div id="diag-evidence-text" style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 12px;">
             Anchor impact mentioned in Reef Check report
           </div>
 
           <div style="font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; margin-bottom: 6px;">
-            Cause Attribution Decomposition:
+            Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution:
           </div>
+          
+          <!-- Dynamic Controllable Factor Bar -->
+          <div id="controllable-factor-bar" class="controllable-factor-bar" style="margin-bottom: 14px;">
+            <!-- Injected by JS -->
+          </div>
+
           <div class="attribution-bar-container">
             <div class="attribution-bar">
               <div id="bar-thermal" class="attr-seg attr-thermal" style="width: 20%;">20%</div>
@@ -396,8 +332,8 @@
           </div>
         </div>
 
-        <!-- Actionable Prescription -->
-        <div class="card">
+        <!-- Actionable Prescription Card -->
+        <div id="action-trigger-card" class="card">
           <div class="card-title-row">
             <div class="card-title" data-i18n="prescriptionTitle">Mandated Regulatory Action (2026 Season):</div>
           </div>
@@ -418,7 +354,7 @@
       </div>
 
       <!-- Built Infrastructure & Physical Carrying Capacity Card -->
-      <div class="card" style="margin-top: 16px;">
+      <div id="island-infrastructure-card" class="card" style="margin-top: 16px;">
         <div class="card-title-row">
           <div>
             <div class="card-title" data-i18n="infrTitle">Physical Carrying Capacity & Built Infrastructure</div>
@@ -582,9 +518,25 @@
           </div>
         </div>
 
+        <!-- SECTION 0: The National Tourism Data Gap -->
+        <div class="scientific-section" style="margin-bottom: 28px;">
+          <div class="scientific-title">1. The National Tourism Data Gap (archive.data.gov.my 2000–2017)</div>
+          <div class="scientific-desc">
+            Historical government visitor tracking abruptly ceased in 2017 and excludes East Malaysia. Demonstrates empirically why daily visitor quotas cannot be synthetically invented.
+          </div>
+          <div class="card" style="margin-top: 10px;">
+            <div id="tourism-gap-chart" class="tourism-gap-chart-container">
+              <!-- Injected by JS SVG -->
+            </div>
+            <div style="font-size: 11.5px; color: #64748B; margin-top: 10px; line-height: 1.5;">
+              <strong>Data Gap Finding:</strong> Official reporting ceased after 2017, leaving the COVID-19 period and 2024 mass bleaching unmeasured. Audited physical lodging capacity ([island_accommodations.csv](file:///c:/Users/Chee/Documents/dosm2026/data/raw/structured/infrastructure/island_accommodations.csv)) is used as the verifiable human exposure ceiling.
+            </div>
+          </div>
+        </div>
+
         <!-- TOP HERO: Empirical Machine Learning & Stressor Figures -->
         <div class="scientific-section" style="margin-bottom: 28px;">
-          <div class="scientific-title">1. Machine Learning Validation Diagnostics (Figures 1 – 3)</div>
+          <div class="scientific-title">2. Machine Learning Validation Diagnostics (Figures 1 – 3)</div>
           <div class="scientific-desc">
             Rigorous past-only expanding-year forward validation ensures no temporal lookahead leakage.
           </div>
@@ -639,11 +591,11 @@
 
         <!-- Empirical Figure 4: Factor Relationships -->
         <div class="scientific-section" style="margin-bottom: 28px;">
-          <div class="scientific-title">2. Empirical Factor Relationships & NOAA Heat Bands (Figure 4)</div>
+          <div class="scientific-title">3. Empirical Factor Relationships & NOAA Heat Bands (Figure 4)</div>
           <div class="scientific-desc">
             Descriptive lagged associations across 348 island-year observations linking temperature anomalies to coral response.
           </div>
-          <div class="figure-card" style="margin-top: 0;">
+          <div id="factor-relationships-grid" class="figure-card" style="margin-top: 0;">
             <div class="figure-card-header">
               <div class="figure-card-title">Figure 4: NOAA Degree Heating Weeks & Stressor Distributions</div>
               <span class="figure-tag">Published Pipeline Figure</span>
@@ -658,14 +610,14 @@
           </div>
         </div>
 
-        <!-- Section 3: Machine Learning Model Benchmarks Table -->
+        <!-- Section 4: Machine Learning Model Benchmarks Table -->
         <div class="scientific-section">
-          <div class="scientific-title">3. Model Validation Benchmark Table (GroupKFold & Past-Only Forward Testing)</div>
+          <div class="scientific-title">4. Model Validation Benchmark Table (GroupKFold & Past-Only Forward Testing)</div>
           <div class="scientific-desc">
             Tested on unseen islands across expanding historical years to eliminate temporal lookahead leakage.
           </div>
           <div class="data-table-wrapper">
-            <table class="simple-table">
+            <table class="simple-table" id="model-benchmark-table">
               <thead>
                 <tr>
                   <th>Model Architecture</th>
