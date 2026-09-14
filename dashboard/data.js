@@ -1,15 +1,14 @@
 // Auto-generated ReefSafe AI Data Bundle
 window.REEFSAFE_DATA = {
   "nationalKPIs": {
-    "meanCoralCover": 41.8,
-    "coralCoverBaselineYear": "2024/2025",
-    "dropSince2022": -8.3,
-    "reefAdjacentAtRiskRM": 842.5,
-    "coastalTourismGDPRM": 68.4,
-    "priorityAlertCount": 18,
+    "meanCoralCover": 39.8,
+    "coralCoverBaselineYear": "2025",
+    "dropSince2012": -17.3,
+    "totalEconomicValuationRM": 8.7,
+    "marineTourismValuationRM": 4.8,
+    "priorityAlertCount": 10,
     "totalMonitoredIslands": 56,
-    "reefAdjacentSharePct": 78,
-    "directTicketSharePct": 22
+    "activeHeatAlertDHW4Count": 11
   },
   "priorityIslands": [
     {
@@ -40,7 +39,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 850,
       "diveCenters": 4,
       "hasJetty": 1,
-      "infrSource": "Federal Territory Labuan Hotel Registry (MOTAC)"
+      "infrSource": "Federal Territory Labuan Hotel Registry (MOTAC)",
+      "uncontrollable_pct": 53.8,
+      "controllable_pct": 46.2
     },
     {
       "rank": 2,
@@ -70,7 +71,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 90,
       "diveCenters": 3,
       "hasJetty": 1,
-      "infrSource": "Terengganu Tourism Directory (Kapas Island Resort, Turtle Valley)"
+      "infrSource": "Terengganu Tourism Directory (Kapas Island Resort, Turtle Valley)",
+      "uncontrollable_pct": 83.4,
+      "controllable_pct": 16.6
     },
     {
       "rank": 3,
@@ -100,7 +103,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 25,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "SIMCA Marine Protected Area Eco-Resort Registry"
+      "infrSource": "SIMCA Marine Protected Area Eco-Resort Registry",
+      "uncontrollable_pct": 59.9,
+      "controllable_pct": 40.1
     },
     {
       "rank": 4,
@@ -130,7 +135,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Pahang Marine Sanctuary Islet (Uninhabited)"
+      "infrSource": "Pahang Marine Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 35.7,
+      "controllable_pct": 64.3
     },
     {
       "rank": 5,
@@ -160,7 +167,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 31.3,
+      "controllable_pct": 68.7
     },
     {
       "rank": 6,
@@ -190,7 +199,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Sultan Iskandar Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Sultan Iskandar Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 50.9,
+      "controllable_pct": 49.1
     },
     {
       "rank": 7,
@@ -220,7 +231,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 55,
       "diveCenters": 3,
       "hasJetty": 1,
-      "infrSource": "Terengganu Marine Park Dive Resort Registry (Tenggol Coral Beach)"
+      "infrSource": "Terengganu Marine Park Dive Resort Registry (Tenggol Coral Beach)",
+      "uncontrollable_pct": 42.4,
+      "controllable_pct": 57.6
     },
     {
       "rank": 8,
@@ -250,7 +263,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 110,
       "diveCenters": 3,
       "hasJetty": 1,
-      "infrSource": "Johor Parks Chalet Inventory (Sari Pacifica, Rimba Resort)"
+      "infrSource": "Johor Parks Chalet Inventory (Sari Pacifica, Rimba Resort)",
+      "uncontrollable_pct": 26.5,
+      "controllable_pct": 73.5
     },
     {
       "rank": 9,
@@ -280,7 +295,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 35,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Johor Tourism Board Mersing Islands Registry"
+      "infrSource": "Johor Tourism Board Mersing Islands Registry",
+      "uncontrollable_pct": 25.6,
+      "controllable_pct": 74.4
     },
     {
       "rank": 10,
@@ -310,7 +327,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 1,
-      "infrSource": "Sabah Parks Marine Protection Zoning (Day-Trip Only)"
+      "infrSource": "Sabah Parks Marine Protection Zoning (Day-Trip Only)",
+      "uncontrollable_pct": 62.0,
+      "controllable_pct": 38.0
     },
     {
       "rank": 11,
@@ -340,7 +359,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 25.6,
+      "controllable_pct": 74.4
     },
     {
       "rank": 12,
@@ -370,7 +391,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Tun Sakaran Marine Park Community Island (Zero Resorts)"
+      "infrSource": "Tun Sakaran Marine Park Community Island (Zero Resorts)",
+      "uncontrollable_pct": 46.9,
+      "controllable_pct": 53.1
     },
     {
       "rank": 13,
@@ -400,7 +423,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 1,
-      "infrSource": "Sabah Parks Sipadan Conservation Mandate (Cabinet Ban on Resorts since 2004)"
+      "infrSource": "Sabah Parks Sipadan Conservation Mandate (Cabinet Ban on Resorts since 2004)",
+      "uncontrollable_pct": 65.6,
+      "controllable_pct": 34.4
     },
     {
       "rank": 14,
@@ -430,7 +455,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 20,
       "diveCenters": 0,
       "hasJetty": 1,
-      "infrSource": "Turtle Islands National Park Visitor Quota Log (Capped at 50/day)"
+      "infrSource": "Turtle Islands National Park Visitor Quota Log (Capped at 50/day)",
+      "uncontrollable_pct": 60.1,
+      "controllable_pct": 39.9
     },
     {
       "rank": 15,
@@ -460,7 +487,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 40,
       "diveCenters": 2,
       "hasJetty": 1,
-      "infrSource": "Darvel Bay Eco-Tourism Directory"
+      "infrSource": "Darvel Bay Eco-Tourism Directory",
+      "uncontrollable_pct": 49.5,
+      "controllable_pct": 50.5
     },
     {
       "rank": 16,
@@ -490,7 +519,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 49.6,
+      "controllable_pct": 50.4
     },
     {
       "rank": 17,
@@ -520,7 +551,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 40,
       "diveCenters": 2,
       "hasJetty": 1,
-      "infrSource": "Kudat Community Eco-Tourism Network"
+      "infrSource": "Kudat Community Eco-Tourism Network",
+      "uncontrollable_pct": 46.4,
+      "controllable_pct": 53.6
     },
     {
       "rank": 18,
@@ -550,7 +583,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 22,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Batu Batu Eco-Resort Registry / Johor Parks"
+      "infrSource": "Batu Batu Eco-Resort Registry / Johor Parks",
+      "uncontrollable_pct": 43.0,
+      "controllable_pct": 57.0
     },
     {
       "rank": 19,
@@ -580,7 +615,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 43.1,
+      "controllable_pct": 56.9
     },
     {
       "rank": 20,
@@ -610,7 +647,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 85,
       "diveCenters": 2,
       "hasJetty": 1,
-      "infrSource": "Rawa Island Resort & Alangs Rawa Registry"
+      "infrSource": "Rawa Island Resort & Alangs Rawa Registry",
+      "uncontrollable_pct": 44.1,
+      "controllable_pct": 55.9
     },
     {
       "rank": 21,
@@ -640,7 +679,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 120,
       "diveCenters": 2,
       "hasJetty": 1,
-      "infrSource": "MOTAC Registered Chalets (Aseania, Bayu Lestari)"
+      "infrSource": "MOTAC Registered Chalets (Aseania, Bayu Lestari)",
+      "uncontrollable_pct": 26.0,
+      "controllable_pct": 74.0
     },
     {
       "rank": 22,
@@ -670,7 +711,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 60,
       "diveCenters": 3,
       "hasJetty": 1,
-      "infrSource": "Johor National Parks & MOTAC Accommodation Directory"
+      "infrSource": "Johor National Parks & MOTAC Accommodation Directory",
+      "uncontrollable_pct": 25.3,
+      "controllable_pct": 74.7
     },
     {
       "rank": 23,
@@ -700,7 +743,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)"
+      "infrSource": "Mersing Marine Park Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 31.5,
+      "controllable_pct": 68.5
     },
     {
       "rank": 24,
@@ -730,7 +775,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 2000,
       "diveCenters": 2,
       "hasJetty": 1,
-      "infrSource": "Negeri Sembilan Coastal Hotel Registry (MOTAC)"
+      "infrSource": "Negeri Sembilan Coastal Hotel Registry (MOTAC)",
+      "uncontrollable_pct": 26.1,
+      "controllable_pct": 73.9
     },
     {
       "rank": 25,
@@ -760,7 +807,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 40,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "MOTAC Mersing Island Homestay/Chalet Registry"
+      "infrSource": "MOTAC Mersing Island Homestay/Chalet Registry",
+      "uncontrollable_pct": 45.6,
+      "controllable_pct": 54.4
     },
     {
       "rank": 26,
@@ -790,7 +839,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 1,
-      "infrSource": "Pulau Payar Marine Park Regulations (Strictly Day-Trip Sanctuary)"
+      "infrSource": "Pulau Payar Marine Park Regulations (Strictly Day-Trip Sanctuary)",
+      "uncontrollable_pct": 77.3,
+      "controllable_pct": 22.7
     },
     {
       "rank": 27,
@@ -820,7 +871,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 1600,
       "diveCenters": 18,
       "hasJetty": 1,
-      "infrSource": "Tioman Development Authority (Berjaya Tioman, Paya Beach, Salang)"
+      "infrSource": "Tioman Development Authority (Berjaya Tioman, Paya Beach, Salang)",
+      "uncontrollable_pct": 23.6,
+      "controllable_pct": 76.4
     },
     {
       "rank": 28,
@@ -850,7 +903,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 240,
       "diveCenters": 4,
       "hasJetty": 1,
-      "infrSource": "Sabah Parks Island Concessions (Gaya Island Resort, Manukan Resort)"
+      "infrSource": "Sabah Parks Island Concessions (Gaya Island Resort, Manukan Resort)",
+      "uncontrollable_pct": 45.6,
+      "controllable_pct": 54.4
     },
     {
       "rank": 29,
@@ -880,7 +935,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 45,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Pulau Tiga National Park Lodge Inventory"
+      "infrSource": "Pulau Tiga National Park Lodge Inventory",
+      "uncontrollable_pct": 63.7,
+      "controllable_pct": 36.3
     },
     {
       "rank": 30,
@@ -910,7 +967,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 70,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "The Reef Dive Resort Operator Registry"
+      "infrSource": "The Reef Dive Resort Operator Registry",
+      "uncontrollable_pct": 52.3,
+      "controllable_pct": 47.7
     },
     {
       "rank": 31,
@@ -940,7 +999,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 0,
-      "infrSource": "Terengganu Marine Sanctuary Islet (Uninhabited)"
+      "infrSource": "Terengganu Marine Sanctuary Islet (Uninhabited)",
+      "uncontrollable_pct": 69.3,
+      "controllable_pct": 30.7
     },
     {
       "rank": 32,
@@ -970,7 +1031,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 1200,
       "diveCenters": 22,
       "hasJetty": 1,
-      "infrSource": "Terengganu Tourism & Besut Municipal Council (Perhentian Kecil/Besar)"
+      "infrSource": "Terengganu Tourism & Besut Municipal Council (Perhentian Kecil/Besar)",
+      "uncontrollable_pct": 29.1,
+      "controllable_pct": 70.9
     },
     {
       "rank": 33,
@@ -1000,7 +1063,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 350,
       "diveCenters": 8,
       "hasJetty": 1,
-      "infrSource": "Sabah Tourism Board & Semporna Municipal Council"
+      "infrSource": "Sabah Tourism Board & Semporna Municipal Council",
+      "uncontrollable_pct": 45.2,
+      "controllable_pct": 54.8
     },
     {
       "rank": 34,
@@ -1030,7 +1095,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 1350,
       "diveCenters": 14,
       "hasJetty": 1,
-      "infrSource": "Terengganu Tourism Directory (The Taaras, Laguna Redang)"
+      "infrSource": "Terengganu Tourism Directory (The Taaras, Laguna Redang)",
+      "uncontrollable_pct": 29.9,
+      "controllable_pct": 70.1
     },
     {
       "rank": 35,
@@ -1060,7 +1127,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 210,
       "diveCenters": 4,
       "hasJetty": 1,
-      "infrSource": "MOTAC Registered Resorts (Summer Bay, Sari Pacifica)"
+      "infrSource": "MOTAC Registered Resorts (Summer Bay, Sari Pacifica)",
+      "uncontrollable_pct": 27.4,
+      "controllable_pct": 72.6
     },
     {
       "rank": 36,
@@ -1090,7 +1159,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 0,
       "diveCenters": 0,
       "hasJetty": 1,
-      "infrSource": "UMT Marine Research Station (Zero Commercial Tourism)"
+      "infrSource": "UMT Marine Research Station (Zero Commercial Tourism)",
+      "uncontrollable_pct": 39.2,
+      "controllable_pct": 60.8
     },
     {
       "rank": 37,
@@ -1120,7 +1191,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 60,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Sipadan-Kapalai Dive Resort Registry"
+      "infrSource": "Sipadan-Kapalai Dive Resort Registry",
+      "uncontrollable_pct": 49.9,
+      "controllable_pct": 50.1
     },
     {
       "rank": 38,
@@ -1150,7 +1223,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 140,
       "diveCenters": 4,
       "hasJetty": 1,
-      "infrSource": "Sabah Tourism Board (Sutera at Mantanani, Palm Beach)"
+      "infrSource": "Sabah Tourism Board (Sutera at Mantanani, Palm Beach)",
+      "uncontrollable_pct": 47.3,
+      "controllable_pct": 52.7
     },
     {
       "rank": 39,
@@ -1180,7 +1255,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 20,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Sabah Tourism Board Coastal Dive Lodge Listing"
+      "infrSource": "Sabah Tourism Board Coastal Dive Lodge Listing",
+      "uncontrollable_pct": 42.4,
+      "controllable_pct": 57.6
     },
     {
       "rank": 40,
@@ -1210,7 +1287,9 @@ window.REEFSAFE_DATA = {
       "roomCapacity": 30,
       "diveCenters": 1,
       "hasJetty": 1,
-      "infrSource": "Melaka Islands Marine Park Development Unit"
+      "infrSource": "Melaka Islands Marine Park Development Unit",
+      "uncontrollable_pct": 27.2,
+      "controllable_pct": 72.8
     }
   ],
   "islandAccommodations": {
@@ -3869,5 +3948,404 @@ window.REEFSAFE_DATA = {
       "RMSE (%/yr)": "8.073",
       "R2 Score": "-0.012"
     }
-  ]
+  ],
+  "tourismDataGap": {
+    "source": "Jabatan Taman Laut Malaysia / data.gov.my (2000-2017)",
+    "portal_url": "https://archive.data.gov.my/data/ms_MY/dataset/jumlah-pelawat-taman-laut-malaysia-dari-tahun-2000-hingga-2009-",
+    "annual_trend": [
+      {
+        "year": 2000,
+        "domestic": 180541,
+        "foreign": 242688,
+        "total": 423229,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2001,
+        "domestic": 259204,
+        "foreign": 224917,
+        "total": 484121,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2002,
+        "domestic": 267432,
+        "foreign": 198155,
+        "total": 465587,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2003,
+        "domestic": 254637,
+        "foreign": 126435,
+        "total": 381072,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2004,
+        "domestic": 356189,
+        "foreign": 203673,
+        "total": 559862,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2005,
+        "domestic": 228480,
+        "foreign": 201400,
+        "total": 429880,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2006,
+        "domestic": 265401,
+        "foreign": 254614,
+        "total": 520015,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2007,
+        "domestic": 262670,
+        "foreign": 215012,
+        "total": 477682,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2008,
+        "domestic": 318702,
+        "foreign": 189786,
+        "total": 508488,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2009,
+        "domestic": 268780,
+        "foreign": 261978,
+        "total": 530758,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2010,
+        "domestic": 363022,
+        "foreign": 243133,
+        "total": 606155,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2011,
+        "domestic": 296586,
+        "foreign": 288348,
+        "total": 584934,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2012,
+        "domestic": 350071,
+        "foreign": 276534,
+        "total": 626605,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2013,
+        "domestic": 476979,
+        "foreign": 316380,
+        "total": 793359,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2014,
+        "domestic": 566463,
+        "foreign": 294673,
+        "total": 861136,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2015,
+        "domestic": 529795,
+        "foreign": 292703,
+        "total": 822498,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2016,
+        "domestic": 537698,
+        "foreign": 325093,
+        "total": 862791,
+        "covered_states_count": 5
+      },
+      {
+        "year": 2017,
+        "domestic": 457209,
+        "foreign": 279630,
+        "total": 736839,
+        "covered_states_count": 5
+      }
+    ],
+    "latest_recorded_year": 2017,
+    "missing_years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "missing_regions": [
+      "Sabah (Sabah Parks)",
+      "Sarawak (Sarawak Forestry Corp)"
+    ],
+    "status": "UNCLOSED DATA GAP: No island-level or post-2017 official visitor records exist in open data."
+  },
+  "economicValuation": {
+    "total_value_myr": 8700000000.0,
+    "total_value_label": "RM 8.7 Billion / Year",
+    "breakdown": [
+      {
+        "pillar": "Marine Tourism & Recreation",
+        "value_myr": 4800000000.0,
+        "value_label": "RM 4.80 Billion",
+        "share_pct": 55.17,
+        "description": "Direct accommodation, dive/snorkel operator concessions, equipment rentals, and island boat charters across 56 monitored islands.",
+        "policy_relevance": "Directly affected by visitor caps, but dependent on high live coral cover for aesthetic dive appeal."
+      },
+      {
+        "pillar": "Coastal Protection & Shoreline Buffering",
+        "value_myr": 2300000000.0,
+        "value_label": "RM 2.30 Billion",
+        "share_pct": 26.44,
+        "description": "Physical wave energy dissipation, monsoon storm surge attenuation, and prevention of coastal resort and infrastructure erosion.",
+        "policy_relevance": "Severely degraded reefs forfeit wave buffering, causing millions in coastal erosion repair costs."
+      },
+      {
+        "pillar": "Fisheries Nursery & Commercial Landings",
+        "value_myr": 1100000000.0,
+        "value_label": "RM 1.10 Billion",
+        "share_pct": 12.64,
+        "description": "Spawning biomass, larval export, and nursery habitat supporting coastal food security and state marine fish landings.",
+        "policy_relevance": "Direct link to OpenDOSM state marine fish landings; structural complexity directly sustains fish abundance."
+      },
+      {
+        "pillar": "Carbon Sequestration & Biodiversity Non-Use",
+        "value_myr": 500000000.0,
+        "value_label": "RM 0.50 Billion",
+        "share_pct": 5.75,
+        "description": "Blue carbon sedimentation, biogenic calcification, genetic biodiversity, and global scientific/conservation option value.",
+        "policy_relevance": "Non-extractive natural heritage asset backing national climate and sustainability commitments."
+      }
+    ]
+  },
+  "npvTradeoff": {
+    "years": 20,
+    "discount_rate": 0.05,
+    "base_annual_value_myr": 8700000000.0,
+    "npv_no_action_myr": 66562514797.76349,
+    "npv_sustainable_management_myr": 114293465653.5068,
+    "net_gain_preservation_myr": 47730950855.74332,
+    "yearly_trajectories": [
+      {
+        "year": 1,
+        "annual_val_no_action_myr": 8395500000.0,
+        "annual_val_sustainable_myr": 8376000000.0,
+        "pv_no_action_myr": 7995714285.714285,
+        "pv_sustainable_myr": 7977142857.142857,
+        "cum_npv_no_action_myr": 7995714285.714285,
+        "cum_npv_sustainable_myr": 7977142857.142857,
+        "net_preservation_benefit_myr": -18571428.5714283
+      },
+      {
+        "year": 2,
+        "annual_val_no_action_myr": 8024272191.510683,
+        "annual_val_sustainable_myr": 8376000000.0,
+        "pv_no_action_myr": 7278251420.871367,
+        "pv_sustainable_myr": 7597278911.564626,
+        "cum_npv_no_action_myr": 15273965706.585651,
+        "cum_npv_sustainable_myr": 15574421768.707481,
+        "net_preservation_benefit_myr": 300456062.12183
+      },
+      {
+        "year": 3,
+        "annual_val_no_action_myr": 7622848625.670072,
+        "annual_val_sustainable_myr": 8376000000.0,
+        "pv_no_action_myr": 6584903250.767797,
+        "pv_sustainable_myr": 7235503725.2996435,
+        "cum_npv_no_action_myr": 21858868957.353447,
+        "cum_npv_sustainable_myr": 22809925494.007126,
+        "net_preservation_benefit_myr": 951056536.6536789
+      },
+      {
+        "year": 4,
+        "annual_val_no_action_myr": 7200466104.545892,
+        "annual_val_sustainable_myr": 8804400000.0,
+        "pv_no_action_myr": 5923841283.864966,
+        "pv_sustainable_myr": 7243401669.057645,
+        "cum_npv_no_action_myr": 27782710241.218414,
+        "cum_npv_sustainable_myr": 30053327163.06477,
+        "net_preservation_benefit_myr": 2270616921.8463554
+      },
+      {
+        "year": 5,
+        "annual_val_no_action_myr": 6761781199.08057,
+        "annual_val_sustainable_myr": 8908800000.0,
+        "pv_no_action_myr": 5298032501.414098,
+        "pv_sustainable_myr": 6980277911.834207,
+        "cum_npv_no_action_myr": 33080742742.63251,
+        "cum_npv_sustainable_myr": 37033605074.89898,
+        "net_preservation_benefit_myr": 3952862332.266468
+      },
+      {
+        "year": 6,
+        "annual_val_no_action_myr": 6309651436.495175,
+        "annual_val_sustainable_myr": 9013200000.0,
+        "pv_no_action_myr": 4708359049.323113,
+        "pv_sustainable_myr": 6725788612.96525,
+        "cum_npv_no_action_myr": 37789101791.95563,
+        "cum_npv_sustainable_myr": 43759393687.86423,
+        "net_preservation_benefit_myr": 5970291895.9086
+      },
+      {
+        "year": 7,
+        "annual_val_no_action_myr": 5846025798.539967,
+        "annual_val_sustainable_myr": 9117600000.0,
+        "pv_no_action_myr": 4154661390.481388,
+        "pv_sustainable_myr": 6479708095.594395,
+        "cum_npv_no_action_myr": 41943763182.43701,
+        "cum_npv_sustainable_myr": 50239101783.45862,
+        "net_preservation_benefit_myr": 8295338601.021606
+      },
+      {
+        "year": 8,
+        "annual_val_no_action_myr": 5372325934.546292,
+        "annual_val_sustainable_myr": 9222000000.0,
+        "pv_no_action_myr": 3636201658.1484823,
+        "pv_sustainable_myr": 6241812596.6285515,
+        "cum_npv_no_action_myr": 45579964840.585495,
+        "cum_npv_sustainable_myr": 56480914380.08717,
+        "net_preservation_benefit_myr": 10900949539.501678
+      },
+      {
+        "year": 9,
+        "annual_val_no_action_myr": 4889638478.749251,
+        "annual_val_sustainable_myr": 9326400000.0,
+        "pv_no_action_myr": 3151904560.483393,
+        "pv_sustainable_myr": 6011880596.213663,
+        "cum_npv_no_action_myr": 48731869401.068886,
+        "cum_npv_sustainable_myr": 62492794976.300835,
+        "net_preservation_benefit_myr": 13760925575.231949
+      },
+      {
+        "year": 10,
+        "annual_val_no_action_myr": 4398823176.6237135,
+        "annual_val_sustainable_myr": 9430800000.0,
+        "pv_no_action_myr": 2700495848.1115613,
+        "pv_sustainable_myr": 5789693111.492191,
+        "cum_npv_no_action_myr": 51432365249.18045,
+        "cum_npv_sustainable_myr": 68282488087.79303,
+        "net_preservation_benefit_myr": 16850122838.61258
+      },
+      {
+        "year": 11,
+        "annual_val_no_action_myr": 3900578586.060116,
+        "annual_val_sustainable_myr": 9535200000.0,
+        "pv_no_action_myr": 2280587514.723409,
+        "pv_sustainable_myr": 5575033957.296997,
+        "cum_npv_no_action_myr": 53712952763.90386,
+        "cum_npv_sustainable_myr": 73857522045.09003,
+        "net_preservation_benefit_myr": 20144569281.186165
+      },
+      {
+        "year": 12,
+        "annual_val_no_action_myr": 3395484412.667641,
+        "annual_val_sustainable_myr": 9639600000.0,
+        "pv_no_action_myr": 1890732773.8119955,
+        "pv_sustainable_myr": 5367689976.2644005,
+        "cum_npv_no_action_myr": 55603685537.71586,
+        "cum_npv_sustainable_myr": 79225212021.35443,
+        "net_preservation_benefit_myr": 23621526483.638573
+      },
+      {
+        "year": 13,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1614828512.7149217,
+        "pv_sustainable_myr": 5167451240.68775,
+        "cum_npv_no_action_myr": 57218514050.43078,
+        "cum_npv_sustainable_myr": 84392663262.04218,
+        "net_preservation_benefit_myr": 27174149211.611397
+      },
+      {
+        "year": 14,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1537931916.8713539,
+        "pv_sustainable_myr": 4921382133.988333,
+        "cum_npv_no_action_myr": 58756445967.30213,
+        "cum_npv_sustainable_myr": 89314045396.0305,
+        "net_preservation_benefit_myr": 30557599428.72837
+      },
+      {
+        "year": 15,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1464697063.6870036,
+        "pv_sustainable_myr": 4687030603.798411,
+        "cum_npv_no_action_myr": 60221143030.989136,
+        "cum_npv_sustainable_myr": 94001075999.82892,
+        "net_preservation_benefit_myr": 33779932968.839783
+      },
+      {
+        "year": 16,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1394949584.463813,
+        "pv_sustainable_myr": 4463838670.284202,
+        "cum_npv_no_action_myr": 61616092615.45295,
+        "cum_npv_sustainable_myr": 98464914670.11311,
+        "net_preservation_benefit_myr": 36848822054.660164
+      },
+      {
+        "year": 17,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1328523413.77506,
+        "pv_sustainable_myr": 4251274924.0801916,
+        "cum_npv_no_action_myr": 62944616029.22801,
+        "cum_npv_sustainable_myr": 102716189594.1933,
+        "net_preservation_benefit_myr": 39771573564.96529
+      },
+      {
+        "year": 18,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1265260394.0714858,
+        "pv_sustainable_myr": 4048833261.0287547,
+        "cum_npv_no_action_myr": 64209876423.2995,
+        "cum_npv_sustainable_myr": 106765022855.22205,
+        "net_preservation_benefit_myr": 42555146431.92255
+      },
+      {
+        "year": 19,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1205009899.1157005,
+        "pv_sustainable_myr": 3856031677.170242,
+        "cum_npv_no_action_myr": 65414886322.4152,
+        "cum_npv_sustainable_myr": 110621054532.39229,
+        "net_preservation_benefit_myr": 45206168209.97709
+      },
+      {
+        "year": 20,
+        "annual_val_no_action_myr": 3045000000.0,
+        "annual_val_sustainable_myr": 9744000000.0,
+        "pv_no_action_myr": 1147628475.3482862,
+        "pv_sustainable_myr": 3672411121.114516,
+        "cum_npv_no_action_myr": 66562514797.76349,
+        "cum_npv_sustainable_myr": 114293465653.5068,
+        "net_preservation_benefit_myr": 47730950855.74332
+      }
+    ]
+  }
 };
+window.TOURISM_DATA_GAP = window.REEFSAFE_DATA.tourismDataGap;
+window.ECONOMIC_VALUATION = window.REEFSAFE_DATA.economicValuation;
+window.NPV_TRADEOFF = window.REEFSAFE_DATA.npvTradeoff;

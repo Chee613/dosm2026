@@ -29,6 +29,17 @@ class FactorDiagnosticTests(unittest.TestCase):
 
             self.assertTrue((target / "fig4_factor_relationships.png").exists())
 
+    def test_dashboard_data_has_visitor_gap_and_economics(self):
+        data_js_path = Path("dashboard/data.js")
+        self.assertTrue(data_js_path.exists())
+        data_js = data_js_path.read_text(encoding="utf-8")
+        self.assertIn("window.TOURISM_DATA_GAP", data_js)
+        self.assertIn("window.ECONOMIC_VALUATION", data_js)
+        self.assertIn("window.NPV_TRADEOFF", data_js)
+        self.assertIn("controllable_pct", data_js)
+        self.assertIn("uncontrollable_pct", data_js)
+
 
 if __name__ == "__main__":
     unittest.main()
+
