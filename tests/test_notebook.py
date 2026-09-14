@@ -18,7 +18,7 @@ class NotebookTests(unittest.TestCase):
                 compile("".join(cell["source"]), f"cell-{index}", "exec")
 
         self.assertFalse(any(output.get("output_type") == "error" for output in outputs))
-        self.assertEqual(sum("image/png" in output.get("data", {}) for output in outputs), 10)
+        self.assertEqual(sum("image/png" in output.get("data", {}) for output in outputs), 11)
 
         for phase in (
             "Phase 1: Data Provenance",
@@ -44,6 +44,8 @@ class NotebookTests(unittest.TestCase):
         self.assertIn("six evaluated Malaysian marine-park archipelagos", text)
         self.assertIn("load_dmpm_tev", text)
         self.assertIn("best_candidate", text)
+        self.assertIn("All measured factor associations", text)
+        self.assertIn("all_factor_relationships.csv", text)
 
         for unsupported in (
             "Variance Attribution Percentage",

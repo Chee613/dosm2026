@@ -7,6 +7,43 @@ import polars as pl
 
 
 class FactorDiagnosticTests(unittest.TestCase):
+    def test_all_factor_associations_cover_production_and_context(self):
+        import scripts.train_models as train_models
+        from scripts.pipeline import make_next_observation_rows
+
+        builder = getattr(train_models, "build_all_factor_associations", None)
+        self.assertIsNotNone(builder, "all-factor association builder is missing")
+        if builder is None:
+            return
+
+        master = pl.read_csv("data/processed/master_reef_tourism_dataset.csv")
+        transitions = pl.DataFrame(make_next_observation_rows(master.to_dicts())).filter(
+            pl.col("target_lcc_change_rate").is_not_null()
+        )
+        result = builder(transitions)
+        expected = set(train_models.FEATURES) | {"noaa_max_dhw", "noaa_mean_ssta"}
+
+        self.assertEqual(set(result["factor"]), expected)
+        self.assertEqual(result.height, 24)
+        self.assertAlmostEqual(
+            result.filter(pl.col("factor") == "island_vs_region_pct")["spearman_rho"][0],
+            -0.320,
+            places=3,
+        )
+        self.assertEqual(
+            result.filter(pl.col("factor") == "noaa_max_dhw")["evidence_role"][0],
+            "context_only",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory)
+            with (
+                patch("scripts.train_models.OUTPUT", target),
+                patch("scripts.train_models.FIGURES", target),
+                patch("scripts.train_models.REPORTS_FIGURES", target),
+            ):
+                train_models.plot_all_factor_associations(result)
+            self.assertTrue((target / "fig5_all_factor_associations.png").exists())
+
     def test_factor_plot_renders_with_supported_matplotlib_api(self):
         from scripts.train_models import plot_factor_relationships
 

@@ -80,6 +80,7 @@ master = pl.read_csv(processed / "master_reef_tourism_dataset.csv")
 annual = pl.read_csv(processed / "survey_year_summary.csv")
 paired = pl.read_csv(processed / "paired_change_summary.csv")
 factors = pl.read_csv(processed / "factor_relationships.csv")
+all_factors = pl.read_csv(processed / "all_factor_relationships.csv")
 priority = pl.read_csv(processed / "reef_priority_predictions.csv")
 validation_by_year = pl.read_csv(processed / "model_validation_by_year.csv")
 metrics = json.loads((ROOT / "output/model_evaluation_metrics.json").read_text())
@@ -197,6 +198,15 @@ These statistics describe associations; they do not estimate causal contribution
 
         cell("code", """display(factors)
 display(Image(filename=str(ROOT / "output/fig4_factor_relationships.png")))"""),
+
+        cell("markdown", """### Graph 6: All measured factor associations
+
+This common-scale view compares all 22 production features and two NOAA context variables against the next observed coral-cover change. Most relationships are weak or very weak. `island_vs_region_pct` is the island's live coral cover minus Reef Check's published eco-region average for that survey year, in percentage points. Its negative association is a baseline-condition signal, not a cause, and may partly reflect mean reversion. NOAA variables remain context only."""),
+
+        cell("code", """display(all_factors.select([
+    "factor", "group", "evidence_role", "n", "spearman_rho", "p_value", "strength"
+]))
+display(Image(filename=str(ROOT / "output/fig5_all_factor_associations.png")))"""),
 
         cell("markdown", """The former controllable-versus-uncontrollable percentage chart is intentionally retired because its weights were not estimated from data."""),
 

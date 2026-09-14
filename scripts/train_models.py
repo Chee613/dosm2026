@@ -48,6 +48,7 @@ CONTINUOUS_DIAGNOSTICS = [
     "grp_pollution_indicators", "fish_parrotfish", "grazer_ratio",
 ]
 BINARY_DIAGNOSTICS = ["impact_anchor", "impact_trash", "impact_bleaching"]
+ALL_ASSOCIATION_FACTORS = FEATURES + ["noaa_max_dhw", "noaa_mean_ssta"]
 
 
 def model_specs():
@@ -97,6 +98,8 @@ def main():
     transitions = transitions.filter(pl.col("target_lcc_change_rate").is_not_null())
     diagnostics, heat_summary = build_factor_diagnostics(transitions)
     plot_factor_relationships(transitions, diagnostics, heat_summary)
+    all_associations = build_all_factor_associations(transitions)
+    plot_all_factor_associations(all_associations)
 
     X = transitions.select(FEATURES).to_numpy()
     y = transitions["target_lcc_change_rate"].to_numpy().astype(float)
@@ -314,6 +317,106 @@ def build_factor_diagnostics(transitions):
     )
     heat_summary.write_csv(PROCESSED / "heat_category_summary.csv")
     return diagnostics, heat_summary
+
+
+def build_all_factor_associations(transitions):
+    """Calculate one comparable, descriptive lagged association for every measured factor."""
+    target = "target_lcc_change_rate"
+    records = []
+    for factor in ALL_ASSOCIATION_FACTORS:
+        pairs = transitions.select([factor, target]).drop_nulls()
+        rho, p_value = spearmanr(pairs[factor].to_numpy(), pairs[target].to_numpy())
+        magnitude = abs(rho)
+        if magnitude < 0.1:
+            strength = "Very weak"
+        elif magnitude < 0.3:
+            strength = "Weak"
+        elif magnitude < 0.5:
+            strength = "Moderate"
+        else:
+            strength = "Strong"
+
+        if factor.startswith("noaa_"):
+            group, role = "Regional heat context", "context_only"
+        elif factor in {"survey_year", "latitude", "longitude"}:
+            group, role = "Time and geography", "production_feature"
+        elif factor in {"live_coral_cover_pct", "lcc_change_rate", "island_vs_region_pct"}:
+            group, role = "Coral condition and trend", "production_feature"
+        elif factor.startswith("grp_"):
+            group, role = "Substrate condition", "production_feature"
+        elif factor.startswith(("fish_", "inv_")) or factor == "grazer_ratio":
+            group, role = "Fish and ecology", "production_feature"
+        else:
+            group, role = "Reported impacts", "production_feature"
+
+        records.append({
+            "factor": factor,
+            "label": "Coral Cover Vs Regional Average (Pp)" if factor == "island_vs_region_pct"
+            else factor.replace("grp_", "").replace("inv_", "").replace("_", " ").title(),
+            "group": group,
+            "evidence_role": role,
+            "n": pairs.height,
+            "spearman_rho": float(rho),
+            "p_value": float(p_value),
+            "strength": strength,
+        })
+
+    result = pl.DataFrame(records).sort("spearman_rho")
+    result.write_csv(PROCESSED / "all_factor_relationships.csv")
+    return result
+
+
+def plot_all_factor_associations(associations):
+    colors = {
+        "Coral condition and trend": "#0f766e",
+        "Substrate condition": "#ca8a04",
+        "Fish and ecology": "#2563eb",
+        "Reported impacts": "#dc2626",
+        "Time and geography": "#64748b",
+        "Regional heat context": "#ea580c",
+    }
+    labels = [
+        f"{row['label']}{' (context only)' if row['evidence_role'] == 'context_only' else ''}"
+        for row in associations.iter_rows(named=True)
+    ]
+    values = associations["spearman_rho"].to_numpy()
+    positions = np.arange(associations.height)
+
+    fig, axis = plt.subplots(figsize=(12, 10), dpi=180)
+    axis.axvspan(-0.1, 0.1, color="#f1f5f9", label="Very weak |ρ| < 0.10")
+    axis.axvspan(-0.3, -0.1, color="#fef3c7", alpha=0.55, label="Weak 0.10–<0.30")
+    axis.axvspan(0.1, 0.3, color="#fef3c7", alpha=0.55)
+    axis.axvspan(-0.5, -0.3, color="#fee2e2", alpha=0.45, label="Moderate 0.30–<0.50")
+    axis.axvspan(0.3, 0.5, color="#fee2e2", alpha=0.45)
+    axis.hlines(positions, 0, values, color="#94a3b8", linewidth=1)
+    for index, row in enumerate(associations.iter_rows(named=True)):
+        axis.scatter(row["spearman_rho"], index, s=55, color=colors[row["group"]], zorder=3)
+        p_label = "<0.001" if row["p_value"] < 0.001 else f"={row['p_value']:.3f}"
+        axis.text(
+            0.51,
+            index,
+            f"ρ={row['spearman_rho']:+.3f}   n={row['n']}   p{p_label}",
+            va="center",
+            fontsize=8,
+        )
+    axis.axvline(0, color="#334155", linewidth=1)
+    axis.set_xlim(-0.5, 0.78)
+    axis.set_yticks(positions, labels)
+    axis.invert_yaxis()
+    axis.set_xlabel("Spearman correlation with next observed coral-cover change")
+    axis.set_title(
+        "All measured factors versus next observed coral-cover change\n"
+        "Negative = associated with a more negative next change; descriptive and unadjusted, not causal",
+        fontweight="bold",
+    )
+    axis.grid(axis="x", alpha=0.2)
+    axis.legend(loc="lower center", bbox_to_anchor=(0.5, -0.1), ncol=3, frameon=False, fontsize=8)
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
+    fig.savefig(OUTPUT / "fig5_all_factor_associations.png")
+    fig.savefig(FIGURES / "all_factor_associations.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "11_all_factor_associations.png")
+    plt.close(fig)
 
 
 def plot_factor_relationships(transitions, diagnostics, heat_summary):
