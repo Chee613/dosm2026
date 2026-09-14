@@ -16,6 +16,8 @@ These assumptions define what the current evidence can support. They are not hid
 | Priority threshold | The top quartile is a practical workload queue, not an ecological or legal threshold. | Users may mistake rank 10 versus 11 for a scientific boundary. | Label the tier “High screening priority” and require field verification. |
 | Economic context | State or national tourism totals cannot represent individual-island pressure without allocation data. | Downscaling would fabricate precision. | Keep OpenDOSM tourism/GDP series descriptive and outside the island prediction features. |
 | Physical accommodation footprint | Verified resort and room inventories represent the physical upper-bound ceiling of overnight tourist capacity, not observed daily occupancy. | Day-tripper volume is uncaptured without jetty tickets. | Present room metrics as static capacity bounds; do not synthesize daily tourist time series without ticketing manifests. |
+| Tourism data gap | Historical marine park visitor statistics (data.gov.my 2000–2017) cease after 2017 and exclude Sabah/Sarawak. | Extrapolating or inventing island footfall would misguide policy. | Explicitly display visitor data as an unclosed data gap; do not use non-existent daily footfall in regulatory formulas. |
+| Economic valuation | Total reef natural capital is benchmarked at RM 8.7B/yr across 4 pillars (tourism, coastal protection, fisheries, carbon). | Conflating state GDP with reef-specific yield overstates local revenue. | Ground valuation in published environmental economics literature (UNEP/Reef Check/DOSM TSA) and simulate 20-year NPV bounds. |
 
 ## Assumptions that would change with new data
 

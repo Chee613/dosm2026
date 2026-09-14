@@ -107,3 +107,38 @@ dosm2026/
 * **Reference System:** WGS84 Geodetic Datum (EPSG:4326)
 * **Local Dataset File:** `data/raw/structured/geocoding/island_coordinates.csv`
 * **Contents:** Exact centroid coordinates (latitude, longitude) for all 56 survey islands, official administrative state, marine park gazettement year, and mapped NOAA CRW station ID.
+
+---
+
+### E. Marine Park Visitor Statistics & The National Tourism Data Gap
+* **Publisher:** Jabatan Taman Laut Malaysia (JTLM) / Ministry of Natural Resources and Environment & MAMPU
+* **Official Portal:** [data.gov.my Open Data Archive: Jumlah Pelawat Taman Laut Malaysia (2000–2009)](https://archive.data.gov.my/data/ms_MY/dataset/jumlah-pelawat-taman-laut-malaysia-dari-tahun-2000-hingga-2009-)
+* **Local Files:**
+  * `data/raw/structured/taman_laut_visitors_2000_2017.csv` (Extended 2000–2017 series by state)
+  * `data/raw/structured/marine_park_visitors_tidy (1).csv` (2000–2009 tidy series)
+* **Coverage & Structure:** Annual domestic and foreign visitor headcounts for gazetted marine parks across 5 states: Kedah, Terengganu, Pahang, Johor, and Federal Territory of Labuan.
+* **The Tourism Data Gap Audit:**
+  1. *Temporal Cessation:* Official open-data reporting abruptly ended in 2017. There is zero publicly published government visitor data for 2018–2025 (covering the crucial COVID-19 tourism pause and the 2024 mass bleaching event).
+  2. *Spatial Exclusion:* Excludes Sabah and Sarawak completely (which contain over 40% of monitored reefs, governed separately by Sabah Parks and Sarawak Forestry Corporation).
+  3. *Resolution Mismatch:* Aggregated at state marine park level rather than island-by-island, preventing direct site-level carrying capacity calculation without ground ticketing manifests.
+
+---
+
+### F. Audited Island Accommodations & Physical Carrying Capacity Ceiling
+* **Publishers:** Ministry of Tourism, Arts and Culture (MOTAC), State Tourism Boards (Terengganu, Sabah, Johor), Tioman Development Authority (TDA), Municipal Councils, and OpenStreetMap.
+* **Local Dataset File:** `data/raw/structured/infrastructure/island_accommodations.csv`
+* **Coverage:** Complete, ground-truthed 56-island panel matching all surveyed Reef Check locations.
+* **Metrics:** Operating resort count, total guest room capacity, registered dive center count, commercial jetty existence, and audit source trail.
+* **Methodological Role:** Serves as the verifiable, physical upper-bound ceiling for human presence on each island, replacing non-existent daily footfall numbers.
+
+---
+
+### G. Multi-Pillar Economic Valuation & Natural Capital Accounting
+* **Literature Sources:** UNEP Coral Reef Unit, World Bank Marine Protected Area Valuation, Reef Check Malaysia Economic Reports, and Department of Statistics Malaysia (DOSM) Tourism Satellite Accounts.
+* **Engine Script:** `scripts/economic_valuation.py`
+* **Benchmark Total:** **RM 8.70 Billion / Year** across 4 pillars:
+  1. *Marine Tourism & Recreation:* RM 4.80 Billion (55.2%) — Accommodation, dive concessions, rentals, boat charters.
+  2. *Coastal Protection & Shoreline Buffering:* RM 2.30 Billion (26.4%) — Wave attenuation and erosion prevention.
+  3. *Fisheries Nursery & Commercial Landings:* RM 1.10 Billion (12.6%) — Spawning biomass export supporting coastal food security.
+  4. *Carbon Sequestration & Non-Use Biodiversity:* RM 0.50 Billion (5.8%) — Blue carbon and conservation option value.
+* **NPV Simulation:** 20-year net present value simulation proving that temporary seasonal capacity controls preserve >RM 25 Billion in natural capital asset value over business-as-usual degradation.
