@@ -1,774 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ReefSafe - National Marine Carrying Capacity & Economic Intelligence Portal</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReefSafe — Evidence-Bounded Reef Screening</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Institutional Header -->
   <header class="app-header">
     <div class="header-inner">
       <div class="brand-section">
-        <div class="brand-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 12h20M2 17h20M2 7h20"/>
-          </svg>
-        </div>
         <div>
-          <div class="brand-title">
-            <span data-i18n="brandTitle">ReefSafe</span>
-            <span class="brand-badge">DOSM Datathon 2026</span>
-          </div>
-          <div class="brand-subtitle" data-i18n="brandSubtitle">National Marine Carrying Capacity & Economic Intelligence Portal</div>
+          <div class="brand-title">ReefSafe <span class="brand-badge">DOSM Datathon 2026</span></div>
+          <div class="brand-subtitle">Evidence-bounded reef screening for field verification</div>
         </div>
       </div>
-
-      <!-- Navigation Tabs -->
-      <nav class="nav-tabs" aria-label="Main Navigation">
-        <button class="nav-tab active" data-tab="overview">
-          <span data-i18n="tabOverview">1. Overview & Economy</span>
-        </button>
-        <button class="nav-tab" data-tab="diagnostics" id="tab-btn-diagnostics">
-          <span data-i18n="tabIsland">2. Island Predictions</span>
-        </button>
-        <button class="nav-tab" data-tab="science">
-          <span data-i18n="tabScience">3. Evidence & Factor Trends</span>
-        </button>
+      <nav class="nav-tabs" aria-label="Dashboard sections">
+        <button class="nav-tab active" data-tab="overview">1. Overview</button>
+        <button class="nav-tab" data-tab="diagnostics">2. Monitoring Unit</button>
+        <button class="nav-tab" data-tab="science">3. Evidence</button>
       </nav>
-
-      <!-- Utility Actions -->
-      <div class="header-actions">
-        <div class="lang-switch" role="group" aria-label="Language switcher">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="bm">BM</button>
-        </div>
-        <button class="btn-memo" id="btn-open-memo">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          <span data-i18n="btnMemo">Decision Paper</span>
-        </button>
-      </div>
     </div>
   </header>
 
-  <!-- Main Container -->
   <main class="main-container">
-
-    <!-- KPI Ribbon -->
-    <section class="kpi-grid" aria-label="National Key Performance Indicators">
+    <section class="kpi-grid" aria-label="Summary indicators">
       <div class="kpi-card">
-        <div class="kpi-header">
-          <span class="kpi-label" data-i18n="kpiNationalCover">National Mean Coral Cover</span>
-          <span class="kpi-pill pill-red">-17.3 pp vs 2012</span>
-        </div>
-        <div class="kpi-value" id="kpi-cover-val">39.8%</div>
-        <div class="kpi-subtext" data-i18n="subCover">Fair threshold: 40.0% • 40 surveyed islands (2025)</div>
+        <div class="kpi-label">Latest mean coral cover</div>
+        <div class="kpi-value" id="kpi-cover">—</div>
+        <div class="kpi-subtext" id="kpi-cover-note"></div>
       </div>
-
       <div class="kpi-card">
-        <div class="kpi-header">
-          <span class="kpi-label" data-i18n="kpiReefAdjacent">Shoreline Buffering Capital</span>
-          <span class="kpi-pill pill-teal">DOSM Pillar 2</span>
-        </div>
-        <div class="kpi-value" id="kpi-adjacent-val">RM 2.30B</div>
-        <div class="kpi-subtext" data-i18n="subAdjacent">Coastal storm & wave dissipation value</div>
+        <div class="kpi-label">Paired 2024–2025 change</div>
+        <div class="kpi-value" id="kpi-paired">—</div>
+        <div class="kpi-subtext" id="kpi-paired-note"></div>
       </div>
-
       <div class="kpi-card">
-        <div class="kpi-header">
-          <span class="kpi-label" data-i18n="kpiTourismGDP">Marine Tourism Economy</span>
-          <span class="kpi-pill pill-sky">DOSM Pillar 1</span>
-        </div>
-        <div class="kpi-value" id="kpi-gdp-val">RM 4.80B</div>
-        <div class="kpi-subtext" data-i18n="subGDP">Annual direct tourist & recreation spend</div>
+        <div class="kpi-label">Field-verification queue</div>
+        <div class="kpi-value" id="kpi-priority">—</div>
+        <div class="kpi-subtext">Top quartile is a workload tier, not an ecological threshold</div>
       </div>
-
       <div class="kpi-card">
-        <div class="kpi-header">
-          <span class="kpi-label" data-i18n="kpiPriorityAlerts">Priority Screening Islands</span>
-          <span class="kpi-pill pill-red">Top Quartile Triage</span>
-        </div>
-        <div class="kpi-value" id="kpi-alerts-val">10 / 40</div>
-        <div class="kpi-subtext" data-i18n="subAlerts">Top 25% triage queue (40 surveyed / 56 total registry)</div>
+        <div class="kpi-label">Historical DMPM TEV context</div>
+        <div class="kpi-value">RM8.7B/year</div>
+        <div class="kpi-subtext">Six evaluated archipelagos, studies conducted 2011–2015</div>
       </div>
     </section>
 
-    <!-- TAB 1: Executive Overview -->
     <section id="tab-overview" class="tab-panel active">
       <div class="dashboard-grid">
-        <!-- Left: Map & Watchlist -->
-        <div>
-          <div class="card">
-            <div class="card-title-row">
-              <div>
-                <div class="card-title" data-i18n="mapTitle">National Marine Risk Map</div>
-                <div class="card-subtitle" data-i18n="mapSubtitle">40 monitored island entities categorized by 2026 screening tier</div>
-              </div>
-            </div>
-            <div class="map-container">
-              <div id="map"></div>
-              <div class="map-legend">
-                <div class="legend-item">
-                  <span class="legend-dot dot-red"></span> <span data-i18n="legendRed">High Screening Priority</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-dot dot-amber"></span> <span data-i18n="legendAmber">Monitor</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-dot dot-green"></span> <span data-i18n="legendGreen">Resilient / Low Alert</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Watchlist Table -->
-          <div class="card">
-            <div class="card-title-row">
-              <div>
-                <div class="card-title" data-i18n="watchlistTitle">Priority Screening Watchlist</div>
-                <div class="card-subtitle" data-i18n="watchlistSubtitle">Select an island to inspect historical data and predictive trajectory</div>
-              </div>
-            </div>
-            <div class="data-table-wrapper">
-              <table class="simple-table" id="top-priority-table">
-                <thead>
-                  <tr>
-                    <th data-i18n="colRank">Rank</th>
-                    <th data-i18n="colIsland">Island</th>
-                    <th data-i18n="colState">State</th>
-                    <th class="num" data-i18n="colCover">2024/25 Cover</th>
-                    <th class="num" data-i18n="colPred">Predicted Trend</th>
-                    <th data-i18n="colAction">Status Tier</th>
-                  </tr>
-                </thead>
-                <tbody id="priority-table-body">
-                  <!-- Injected by JS -->
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <div class="card">
+          <div class="card-title">National monitoring-unit map</div>
+          <div class="card-subtitle">Latest observed cover and screening tier; select a marker for details</div>
+          <div class="map-container"><div id="map"></div></div>
         </div>
+        <div class="card">
+          <div class="card-title">Published economic context</div>
+          <div class="card-subtitle">DMPM annual component values—not ReefSafe revenue or avoided loss</div>
+          <div id="economic-pillars-chart"></div>
+          <p class="method-note" id="economic-source-note"></p>
+        </div>
+      </div>
 
-        <!-- Right: Multi-Pillar Economic Valuation & NPV Trade-Off -->
-        <div>
-          <!-- 4-Pillar Economic Valuation Card -->
-          <div class="card">
-            <div class="card-title-row">
-              <div>
-                <div class="card-title">RM 8.7 Billion / Year Coral Economic Valuation</div>
-                <div class="card-subtitle">Official 4-pillar natural capital accounting benchmark (UNEP / DOSM TSA)</div>
-              </div>
-              <span class="kpi-pill pill-emerald">RM 8.7B / yr</span>
-            </div>
-
-            <div id="economic-pillars-chart" class="economic-pillars-container">
-              <!-- Injected by JS -->
-            </div>
-
-            <div class="paradigm-callout" style="margin-top: 14px;">
-              Reef tourism (RM 4.8B) is Malaysia's premier natural tourist asset, but coastal protection (RM 2.3B) and fisheries (RM 1.1B) represent vital protective natural capital.
-            </div>
-          </div>
-
-          <!-- 20-Year Cumulative NPV Tradeoff Card -->
-          <div class="card">
-            <div class="card-title-row">
-              <div>
-                <div class="card-title">20-Year Natural Asset Preservation vs Short-Term Sacrifice</div>
-                <div class="card-subtitle">Discounted Net Present Value (NPV @ 5%): Sustainable Policy vs Business-As-Usual</div>
-              </div>
-              <span class="kpi-pill pill-cyan">&gt;RM 25B Saved</span>
-            </div>
-
-            <div id="npv-tradeoff-chart" class="npv-chart-container">
-              <!-- Injected by JS SVG -->
-            </div>
-
-            <div style="font-size: 11.5px; color: #64748B; margin-top: 10px; line-height: 1.5;">
-              <strong>Economic Finding:</strong> Temporary pre-season capacity adjustments (sacrificing ~RM 150M/yr in early concession spend) prevent permanent structural reef collapse, preserving over <strong>RM 25 Billion</strong> in cumulative natural capital.
-            </div>
-          </div>
+      <div class="card" style="margin-top:16px">
+        <div class="card-title">Priority field-verification queue</div>
+        <div class="card-subtitle">Ranked by the selected past-only model; all actions require field confirmation</div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Rank</th><th>Monitoring unit</th><th>State</th><th>Cover</th><th>Next-observation estimate</th><th>Evidence to verify</th></tr></thead>
+            <tbody id="top-priority-table"></tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: Island Predictions & Diagnostics -->
     <section id="tab-diagnostics" class="tab-panel">
-      <!-- Selector Bar -->
-      <div class="island-filter-bar">
-        <label for="island-select" style="font-size: 13px; font-weight: 600;" data-i18n="selectIslandLabel">Select Island:</label>
-        <select id="island-select" class="select-island">
-          <!-- Populated by JS -->
-        </select>
+      <div class="card">
+        <label for="island-select"><strong>Select monitoring unit</strong></label>
+        <select id="island-select"></select>
       </div>
-
-      <!-- Island Detail Header Card -->
-      <div class="island-header-card">
-        <div class="island-main-info">
-          <h2>
-            <span id="diag-island-name">Pulau Tioman</span>
-            <span id="diag-island-tier" class="kpi-pill pill-red">High Screening Priority</span>
-          </h2>
-          <div class="island-meta">
-            <span id="diag-island-state">Pahang • Tioman Marine Park Buffer</span>
-            <span id="diag-island-coords">Lat: 2.7833, Lng: 104.1667</span>
-          </div>
+      <div class="dashboard-grid" style="margin-top:16px">
+        <div class="card" id="next-observation-card">
+          <div class="card-title" id="unit-title">Monitoring-unit screening</div>
+          <div id="unit-summary"></div>
+          <div class="evidence-box" id="unit-evidence"></div>
         </div>
-        <div style="display: flex; gap: 20px;">
-          <div style="text-align: right;">
-            <div style="font-size: 11px; color: #64748B; text-transform: uppercase;">Current Live Cover</div>
-            <div id="diag-lcc-val" style="font-size: 24px; font-weight: 700;">43.0%</div>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 11px; color: #64748B; text-transform: uppercase;">Peak NOAA DHW</div>
-            <div id="diag-dhw-val" style="font-size: 24px; font-weight: 700;">1.9°C-wks</div>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 11px; color: #64748B; text-transform: uppercase;">Projected Trend</div>
-            <div id="diag-pred-val" style="font-size: 24px; font-weight: 700; color: var(--crimson-600);">-1.80%/yr</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- HERO SECTION: Coral Reef Historical Trajectory & Prediction -->
-      <div class="card hero-prediction-card">
-        <div class="card-title-row" style="flex-wrap: wrap; gap: 12px;">
-          <div>
-            <div class="card-title" style="font-size: 16px;" data-i18n="trendTitle">Historical Coverage & Forecast Trajectory</div>
-            <div class="card-subtitle" data-i18n="trendSubtitle">13-year empirical survey series with Gradient Boosting predictive horizon (2026–2030)</div>
-          </div>
-          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <!-- Horizon Selector -->
-            <div class="forecast-horizon-pills" role="group" aria-label="Forecast Horizon">
-              <span style="font-size: 11px; font-weight: 600; color: #64748B; margin-right: 4px; align-self: center;" data-i18n="horizonLabel">Horizon:</span>
-              <button class="horizon-btn" data-horizon="1" data-i18n="horizon1Yr">1-Yr (2026)</button>
-              <button class="horizon-btn" data-horizon="3" data-i18n="horizon3Yr">3-Yr (2028)</button>
-              <button class="horizon-btn active" data-horizon="5" data-i18n="horizon5Yr">5-Yr (2030)</button>
-            </div>
-            <!-- Scenario Filter -->
-            <div class="forecast-scenario-pills" role="group" aria-label="Forecast Scenarios">
-              <button class="scenario-btn active" data-scenario="both">Both</button>
-              <button class="scenario-btn" data-scenario="status-quo">Status Quo</button>
-              <button class="scenario-btn" data-scenario="managed">With Quota</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric Summary Strip -->
-        <div class="forecast-metrics-strip">
-          <div class="f-metric">
-            <span class="f-metric-lbl">2025 Baseline Survey</span>
-            <span class="f-metric-val" id="f-metric-baseline">43.0% (2025)</span>
-          </div>
-          <div class="f-metric">
-            <span class="f-metric-lbl" id="f-lbl-statusquo">2030 Status Quo (Unmanaged)</span>
-            <span class="f-metric-val f-red" id="f-metric-statusquo">35.0% (-8.0%)</span>
-          </div>
-          <div class="f-metric">
-            <span class="f-metric-lbl" id="f-lbl-managed">2030 With ReefSafe Quota</span>
-            <span class="f-metric-val f-green" id="f-metric-managed">49.5% (+14.5% protected)</span>
-          </div>
-        </div>
-
-        <div id="history-chart-container" class="chart-container">
-          <!-- Injected SVG -->
-        </div>
-
-        <!-- Chart Legend -->
-        <div class="chart-legend-row">
-          <div class="c-legend-item"><span class="c-line c-line-blue"></span> Observed Surveys (2012–2025)</div>
-          <div class="c-legend-item"><span class="c-line c-line-red"></span> Status Quo Trajectory (Unmanaged ML)</div>
-          <div class="c-legend-item"><span class="c-line c-line-green"></span> Managed Trajectory (Carrying Capacity Quota)</div>
-          <div class="c-legend-item"><span class="c-band"></span> Expanding 95% Confidence Fan</div>
-        </div>
-
-        <div style="font-size: 11px; color: #64748B; margin-top: 10px; line-height: 1.5;">
-          <strong>Model Note:</strong> Compounded out-of-sample forecast (GroupKFold Gradient Boosting). Shaded fan represents empirical 95% uncertainty interval.
-        </div>
-      </div>
-
-      <!-- Supporting Analysis: Root-Cause Attribution & Actionable Prescription -->
-      <div class="dashboard-grid">
-        <!-- Diagnostic Evidence & Cause Attribution -->
         <div class="card">
-          <div class="card-title-row">
-            <div class="card-title" data-i18n="evidenceLabel">Diagnostic Evidence & Controllable Risk Split</div>
-          </div>
-          <div id="diag-evidence-text" style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 12px;">
-            Anchor impact mentioned in Reef Check report
-          </div>
-
-          <div style="font-size: 12px; font-weight: 600; color: #64748B; text-transform: uppercase; margin-bottom: 6px;">
-            Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution:
-          </div>
-          
-          <!-- Dynamic Controllable Factor Bar -->
-          <div id="controllable-factor-bar" class="controllable-factor-bar" style="margin-bottom: 14px;">
-            <!-- Injected by JS -->
-          </div>
-
-          <div class="attribution-bar-container">
-            <div class="attribution-bar">
-              <div id="bar-thermal" class="attr-seg attr-thermal" style="width: 20%;">20%</div>
-              <div id="bar-anchor" class="attr-seg attr-anchor" style="width: 50%;">50%</div>
-              <div id="bar-pollution" class="attr-seg attr-pollution" style="width: 15%;">15%</div>
-              <div id="bar-other" class="attr-seg attr-other" style="width: 15%;">15%</div>
-            </div>
-            <div class="attribution-legend">
-              <div class="legend-item"><span class="legend-dot" style="background: #EF4444;"></span> Thermal Heat</div>
-              <div class="legend-item"><span class="legend-dot" style="background: #F59E0B;"></span> Boat / Anchors</div>
-              <div class="legend-item"><span class="legend-dot" style="background: #8B5CF6;"></span> Pollution / Waste</div>
-              <div class="legend-item"><span class="legend-dot" style="background: #0284C7;"></span> Baseline / Other</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Actionable Prescription Card -->
-        <div id="action-trigger-card" class="card">
-          <div class="card-title-row">
-            <div class="card-title" data-i18n="prescriptionTitle">Mandated Regulatory Action (2026 Season):</div>
-          </div>
-          <div id="diag-prescription-box" class="prescription-box alert-mode" style="margin-top: 0;">
-            <div id="diag-prescription-body" class="prescription-body">
-              Mandate permanent mooring buoys and limit anchoring in sensitive zones. Coordinate field diver validation.
-            </div>
-          </div>
-          <div style="margin-top: 14px; font-size: 12px; color: #64748B;">
-            <div style="font-weight: 600; margin-bottom: 4px; color: #334155;">Implementation Protocols:</div>
-            <ul style="padding-left: 18px; margin: 0; line-height: 1.6;">
-              <li>Coordinate with State Marine Park Rangers on zoning.</li>
-              <li>Deploy eco-buoys in shallow clusters (&lt; 8m depth).</li>
-              <li>Schedule post-monsoon diver transect verification.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Built Infrastructure & Physical Carrying Capacity Card -->
-      <div id="island-infrastructure-card" class="card" style="margin-top: 16px;">
-        <div class="card-title-row">
-          <div>
-            <div class="card-title" data-i18n="infrTitle">Physical Carrying Capacity & Built Infrastructure</div>
-            <div class="card-subtitle" data-i18n="infrSubtitle">Verified accommodation footprint, lodging inventory, and transport access</div>
-          </div>
-          <span id="diag-infr-badge" class="kpi-pill pill-slate">Verified Registry</span>
-        </div>
-
-        <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 12px;">
-          <div class="kpi-card" style="padding: 12px 14px;">
-            <div class="kpi-header"><span class="kpi-label">Commercial Lodgings</span></div>
-            <div id="diag-infr-resorts" class="kpi-value" style="font-size: 20px;">16</div>
-            <div class="kpi-subtext">Resorts, hotels & chalets</div>
-          </div>
-          <div class="kpi-card" style="padding: 12px 14px;">
-            <div class="kpi-header"><span class="kpi-label">Guest Room Capacity</span></div>
-            <div id="diag-infr-rooms" class="kpi-value" style="font-size: 20px;">1,350</div>
-            <div class="kpi-subtext">Estimated total rooms</div>
-          </div>
-          <div class="kpi-card" style="padding: 12px 14px;">
-            <div class="kpi-header"><span class="kpi-label">Dive Operators</span></div>
-            <div id="diag-infr-dives" class="kpi-value" style="font-size: 20px;">14</div>
-            <div class="kpi-subtext">Licensed dive centers</div>
-          </div>
-          <div class="kpi-card" style="padding: 12px 14px;">
-            <div class="kpi-header"><span class="kpi-label">Arrival Terminal</span></div>
-            <div id="diag-infr-jetty" class="kpi-value" style="font-size: 16px; margin-top: 4px;">Ferry Jetty</div>
-            <div class="kpi-subtext">Berthing infrastructure</div>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; color: #64748B; background: #F8FAFC; padding: 8px 12px; border-radius: 6px; border: 1px solid #E2E8F0;">
-          <div>
-            <strong>Data Provenance:</strong> <span id="diag-infr-source">MOTAC / State Parks Registry</span>
-          </div>
-          <div id="diag-infr-status" style="font-weight: 600; color: #334155;">
-            High Tourist Infrastructure Load
-          </div>
+          <div class="card-title">Observed coral-cover history</div>
+          <div class="card-subtitle">Lines connect survey observations; gaps are not interpolated observations</div>
+          <div id="island-history-chart"></div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: Policy Simulator -->
-    <section id="tab-simulator" class="tab-panel">
-      <div class="simulator-layout">
-        <!-- Controls Column -->
-        <div class="card">
-          <div class="card-title-row">
-            <div>
-              <div class="card-title" data-i18n="simTitle">Carrying Capacity Simulator</div>
-              <div class="card-subtitle" data-i18n="simSubtitle">Dynamic simulation of visitor quota adjustments and economic trade-offs</div>
-            </div>
-          </div>
-
-          <!-- Slider 1: Caution Stance -->
-          <div class="control-group">
-            <div class="control-label-row">
-              <span data-i18n="cautionLabel">Policy Caution Stance:</span>
-              <span id="val-caution" class="slider-val">1.0</span>
-            </div>
-            <input id="slider-caution" class="range-slider" type="range" min="0.0" max="2.0" step="0.1" value="1.0" aria-label="Policy Caution Stance">
-            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94A3B8; margin-top: 4px;">
-              <span>Laissez-Faire (0.0)</span>
-              <span>Balanced (1.0)</span>
-              <span>Strict Precaution (2.0)</span>
-            </div>
-          </div>
-
-          <!-- Slider 2: Alert Threshold -->
-          <div class="control-group">
-            <div class="control-label-row">
-              <span data-i18n="thresholdLabel">Alert Trigger Threshold:</span>
-              <span id="val-threshold" class="slider-val">0.0%/yr</span>
-            </div>
-            <input id="slider-threshold" class="range-slider" type="range" min="-4.0" max="2.0" step="0.2" value="0.0" aria-label="Alert Trigger Threshold">
-            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94A3B8; margin-top: 4px;">
-              <span>Tolerant (-4.0%)</span>
-              <span style="color: #0369A1; font-weight: 700;">★ 0.0% Optimal</span>
-              <span>Early Rest (+2.0%)</span>
-            </div>
-          </div>
-
-          <!-- Slider 3: Accommodation Cap -->
-          <div class="control-group">
-            <div class="control-label-row">
-              <span data-i18n="capLabel">Peak Occupancy Ceiling:</span>
-              <span id="val-occupancy-cap" class="slider-val">100%</span>
-            </div>
-            <input id="slider-occupancy-cap" class="range-slider" type="range" min="50" max="100" step="5" value="100" aria-label="Peak Occupancy Ceiling">
-            <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94A3B8; margin-top: 4px;">
-              <span>Strict Quota (50%)</span>
-              <span>Moderate (75%)</span>
-              <span>Uncapped (100%)</span>
-            </div>
-          </div>
-
-          <!-- Asymmetric Risk Box -->
-          <div class="asymmetric-box">
-            <div style="font-weight: 700; margin-bottom: 4px;" data-i18n="asymmTitle">Asymmetric Conservation Risk</div>
-            <p data-i18n="asymmText">
-              Structural coral loss requires 10–20 years of recovery. Pre-season recreational diversion mitigates irreversible capital loss at near-zero economic displacement.
-            </p>
-          </div>
-        </div>
-
-        <!-- Real-Time Outcomes Column -->
-        <div>
-          <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 20px;">
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label" data-i18n="metricReefSaved">Reef Area Preserved</span>
-                <span class="kpi-pill pill-emerald">Eco Gain</span>
-              </div>
-              <div id="sim-reef-saved" class="kpi-value">720 Ha</div>
-              <div class="kpi-subtext">Living coral protected from irreversible collapse</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label" data-i18n="metricDiverted">Boat-Days Diverted</span>
-                <span class="kpi-pill pill-amber">Diverted</span>
-              </div>
-              <div id="sim-diverted-days" class="kpi-value">210 days</div>
-              <div class="kpi-subtext">Boats redirected to alternate resilient green sites</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label" data-i18n="metricAssetSaved">Resort Value Protected</span>
-                <span class="kpi-pill pill-emerald">Protected</span>
-              </div>
-              <div id="sim-asset-protected" class="kpi-value">RM 54.8M</div>
-              <div class="kpi-subtext">Avoided beach erosion and room rate drop (OpenDOSM TSA)</div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-title-row">
-              <div class="card-title">Policy Decision Levers</div>
-            </div>
-            <div style="font-size: 13px; line-height: 1.6; color: #334155;">
-              <p style="margin-bottom: 8px;">
-                <strong>Pre-Season Quotas:</strong> Quotas are established during the Nov–Jan monsoon shutdown, well before March tourism bookings open.
-              </p>
-              <p>
-                <strong>Rotational Resting:</strong> Boats are redirected to resilient green sites, protecting 100% of seasonal tourism income while allowing vulnerable reefs to rest.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 4: Scientific Diagnostics -->
     <section id="tab-science" class="tab-panel">
       <div class="card">
-        <div class="card-title-row">
-          <div>
-            <div class="card-title" data-i18n="sciTitle">Scientific Diagnostics & Model Validation</div>
-            <div class="card-subtitle" data-i18n="sciDesc">Out-of-sample forward testing, feature importance, and stressor distributions</div>
-          </div>
+        <div class="card-title">Tourism data gap</div>
+        <div class="card-subtitle">Verified 2000–2009 aggregate context only; no island-level exposure series</div>
+        <div id="tourism-gap-chart"></div>
+      </div>
+      <div class="card" style="margin-top:16px" id="factor-relationships-grid">
+        <div class="card-title">Associated factors</div>
+        <div class="card-subtitle">Descriptive lagged associations, not causal effects; NOAA remains supporting context only</div>
+        <img src="figures/factor_relationships.png" alt="Descriptive factor relationships" style="width:100%;height:auto">
+      </div>
+      <div class="dashboard-grid" style="margin-top:16px">
+        <div class="card">
+          <div class="card-title">Model comparison</div>
+          <img src="figures/model_performance.png" alt="Past-only model comparison" style="width:100%;height:auto">
         </div>
-
-        <!-- SECTION 0: The National Tourism Data Gap -->
-        <div class="scientific-section" style="margin-bottom: 28px;">
-          <div class="scientific-title">1. The National Tourism Data Gap (archive.data.gov.my 2000–2017)</div>
-          <div class="scientific-desc">
-            Historical government visitor tracking abruptly ceased in 2017 and excludes East Malaysia. Demonstrates empirically why daily visitor quotas cannot be synthetically invented.
+        <div class="card">
+          <div class="card-title">Validation by target year</div>
+          <div class="table-scroll">
+            <table><thead><tr><th>Year</th><th>n</th><th>MAE</th><th>R²</th><th>Bias</th></tr></thead><tbody id="model-benchmark-table"></tbody></table>
           </div>
-          <div class="card" style="margin-top: 10px;">
-            <div id="tourism-gap-chart" class="tourism-gap-chart-container">
-              <!-- Injected by JS SVG -->
-            </div>
-            <div style="font-size: 11.5px; color: #64748B; margin-top: 10px; line-height: 1.5;">
-              <strong>Data Gap Finding:</strong> Official reporting ceased after 2017, leaving the COVID-19 period and 2024 mass bleaching unmeasured. Audited physical lodging capacity ([island_accommodations.csv](file:///c:/Users/Chee/Documents/dosm2026/data/raw/structured/infrastructure/island_accommodations.csv)) is used as the verifiable human exposure ceiling.
-            </div>
-          </div>
-        </div>
-
-        <!-- TOP HERO: Empirical Machine Learning & Stressor Figures -->
-        <div class="scientific-section" style="margin-bottom: 28px;">
-          <div class="scientific-title">2. Machine Learning Validation Diagnostics (Figures 1 – 3)</div>
-          <div class="scientific-desc">
-            Rigorous past-only expanding-year forward validation ensures no temporal lookahead leakage.
-          </div>
-
-          <div class="figures-grid-3">
-            <!-- Figure 1 -->
-            <div class="figure-card" style="margin-top: 0;">
-              <div class="figure-card-header">
-                <div class="figure-card-title">Figure 1: Model Comparison</div>
-                <span class="figure-tag">Forward CV</span>
-              </div>
-              <div class="figure-img-wrapper" data-img="figures/model_performance.png" data-title="Figure 1: Model Comparison (Past-Only Expanding-Year Validation)" data-caption="Forward-test Mean Absolute Error (MAE in % points/yr) across 4 algorithms: Baseline Mean (5.99%), Ridge Regression (5.99%), Gradient Boosting (5.90%), and Random Forest (6.12%). Lower is better.">
-                <img src="figures/model_performance.png" alt="Figure 1: Model Comparison">
-                <span class="figure-zoom-hint">🔍 Enlarge</span>
-              </div>
-              <div class="figure-caption">
-                <strong>Figure 1 Takeaway:</strong> Gradient Boosting achieves the lowest out-of-sample error (5.90% MAE vs 5.99% baseline). Retained for screening priority.
-              </div>
-            </div>
-
-            <!-- Figure 2 -->
-            <div class="figure-card" style="margin-top: 0;">
-              <div class="figure-card-header">
-                <div class="figure-card-title">Figure 2: Actual vs Predicted</div>
-                <span class="figure-tag">Out-of-Fold</span>
-              </div>
-              <div class="figure-img-wrapper" data-img="figures/actual_vs_predicted_oof.png" data-title="Figure 2: Actual vs Predicted Out-of-Fold Scatter Plot" data-caption="Held-forward out-of-fold validation for Gradient Boosting. Red dashed line indicates the 1:1 perfect prediction line. Model avoids overconfidence and shrinks towards historical mean.">
-                <img src="figures/actual_vs_predicted_oof.png" alt="Figure 2: Actual vs Predicted">
-                <span class="figure-zoom-hint">🔍 Enlarge</span>
-              </div>
-              <div class="figure-caption">
-                <strong>Figure 2 Takeaway:</strong> Out-of-fold scatter shows conservative shrinkage around the mean, ensuring transparent uncertainty cones.
-              </div>
-            </div>
-
-            <!-- Figure 3 -->
-            <div class="figure-card" style="margin-top: 0;">
-              <div class="figure-card-header">
-                <div class="figure-card-title">Figure 3: Feature Importance</div>
-                <span class="figure-tag">Permutation</span>
-              </div>
-              <div class="figure-img-wrapper" data-img="figures/feature_importance.png" data-title="Figure 3: Permutation Feature Importance" data-caption="Permutation importance measured as the increase in test MAE when each feature is shuffled. Values reflect predictive association, not causal claims.">
-                <img src="figures/feature_importance.png" alt="Figure 3: Feature Importance">
-                <span class="figure-zoom-hint">🔍 Enlarge</span>
-              </div>
-              <div class="figure-caption">
-                <strong>Figure 3 Takeaway:</strong> Relative reef position (Island vs Region LCC %), baseline momentum, and Parrotfish herbivory hold the strongest predictive weight.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Empirical Figure 4: Factor Relationships -->
-        <div class="scientific-section" style="margin-bottom: 28px;">
-          <div class="scientific-title">3. Empirical Factor Relationships & NOAA Heat Bands (Figure 4)</div>
-          <div class="scientific-desc">
-            Descriptive lagged associations across 348 island-year observations linking temperature anomalies to coral response.
-          </div>
-          <div id="factor-relationships-grid" class="figure-card" style="margin-top: 0;">
-            <div class="figure-card-header">
-              <div class="figure-card-title">Figure 4: NOAA Degree Heating Weeks & Stressor Distributions</div>
-              <span class="figure-tag">Published Pipeline Figure</span>
-            </div>
-            <div class="figure-img-wrapper" data-img="figures/factor_relationships.png" data-title="Figure 4: Empirical Factor Relationships & NOAA Heat Bands" data-caption="Panel 1: Scatter plot of Next Observed Change vs NOAA Max DHW (Spearman ρ = -0.10, n=348). Panel 2: Boxplot distributions across DHW heat stress tiers (DHW < 1, 1–<4, ≥ 4). Panel 3: Narrative stressor mention differences for Anchor damage, Trash pollution, and Bleaching.">
-              <img src="figures/factor_relationships.png" alt="Figure 4: Empirical Factor Relationships">
-              <span class="figure-zoom-hint">🔍 Click to Enlarge (Full Resolution)</span>
-            </div>
-            <div class="figure-caption">
-              <strong>Scientific Guardrail:</strong> Demonstrates that severe heat stress (DHW ≥ 4) doubles annual live coral loss (-1.2% vs -0.6%/yr). Narrative anchor and trash flags prompt localized enforcement rather than broad closure orders.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 4: Machine Learning Model Benchmarks Table -->
-        <div class="scientific-section">
-          <div class="scientific-title">4. Model Validation Benchmark Table (GroupKFold & Past-Only Forward Testing)</div>
-          <div class="scientific-desc">
-            Tested on unseen islands across expanding historical years to eliminate temporal lookahead leakage.
-          </div>
-          <div class="data-table-wrapper">
-            <table class="simple-table" id="model-benchmark-table">
-              <thead>
-                <tr>
-                  <th>Model Architecture</th>
-                  <th class="num">MAE (%/yr)</th>
-                  <th class="num">RMSE (%/yr)</th>
-                  <th class="num">R² Score</th>
-                </tr>
-              </thead>
-              <tbody id="table-models-body">
-                <!-- Injected by JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Section 4: Heat Category Binned Tiers Table -->
-        <div class="scientific-section">
-          <div class="scientific-title">4. Heat Stress Category Summary Table (NOAA DHW)</div>
-          <div class="scientific-desc">
-            Severe heat (DHW ≥ 4) doubles annual coral loss across monitored reef clusters.
-          </div>
-          <div class="data-table-wrapper">
-            <table class="simple-table">
-              <thead>
-                <tr>
-                  <th>Heat Category Tier</th>
-                  <th class="num">Sample Size (n)</th>
-                  <th class="num">Median Next Change</th>
-                  <th class="num">Mean Next Change</th>
-                </tr>
-              </thead>
-              <tbody id="table-heat-body">
-                <!-- Injected by JS -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Section 5: Lagged Factor Correlation Table (Spearman) -->
-        <div class="scientific-section">
-          <div class="scientific-title">5. Lagged Factor Correlation Table (Spearman Rank)</div>
-          <div class="scientific-desc">
-            Lagged associations across 348 island-year observations.
-          </div>
-          <div class="data-table-wrapper">
-            <table class="simple-table">
-              <thead>
-                <tr>
-                  <th>Input Stressor Factor</th>
-                  <th>Analysis Type</th>
-                  <th class="num">Sample (N)</th>
-                  <th class="num">Statistic (ρ)</th>
-                  <th class="num">p-value</th>
-                  <th>Methodological Caution</th>
-                </tr>
-              </thead>
-              <tbody id="table-factors-body">
-                <!-- Injected by JS -->
-              </tbody>
-            </table>
-          </div>
+          <p class="method-note" id="model-note"></p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Modal: Official Government Decision Memorandum -->
-  <div id="modal-memo" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title-memo">
-    <div class="modal-sheet">
-      <div class="modal-header">
-        <div id="modal-title-memo" class="modal-title">Official Government Decision Memorandum (Bilingual)</div>
-        <button id="btn-close-memo" class="modal-close" aria-label="Close modal">&times;</button>
-      </div>
-      <div class="modal-body" id="memo-body-container">
-        <!-- Injected by JS -->
-      </div>
-      <div class="modal-footer">
-        <button id="btn-print-memo" class="btn-primary" data-i18n="btnPrint">Print Official Memo</button>
-        <button onclick="document.getElementById('modal-memo').classList.remove('open')" class="btn-secondary" data-i18n="btnClose">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lightbox Modal for Full-Resolution Figure Viewing -->
-  <div id="modal-figure-zoom" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Figure Zoom">
-    <div class="lightbox-content">
-      <div class="lightbox-header">
-        <div id="lightbox-modal-title" class="lightbox-title">Figure Preview</div>
-        <button id="lightbox-modal-close" class="lightbox-close" aria-label="Close figure modal">&times;</button>
-      </div>
-      <div class="lightbox-body">
-        <img id="lightbox-modal-img" src="" alt="Enlarged figure">
-        <div id="lightbox-modal-caption" class="lightbox-caption"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating Institutional Copilot Trigger -->
-  <button id="copilot-launcher" class="copilot-launcher" aria-label="Open AI Copilot">
-    <span class="copilot-launcher-dot"></span>
-    <span id="copilot-btn-text">ReefSafe Assistant</span>
-  </button>
-
-  <!-- Copilot Window -->
-  <div id="copilot-window" class="copilot-window" role="dialog" aria-modal="false" aria-label="ReefSafe Assistant">
-    <div class="copilot-header">
-      <div class="copilot-header-title">
-        <span id="copilot-title-text">ReefSafe Assistant</span>
-      </div>
-      <button id="copilot-close" class="copilot-close" aria-label="Close copilot">&times;</button>
-    </div>
-
-    <div class="copilot-persona-bar">
-      <span class="persona-lbl">Persona:</span>
-      <div class="persona-pills">
-        <button class="persona-btn active" data-persona="local">Community & Operators</button>
-        <button class="persona-btn" data-persona="exco">Executive & Policy</button>
-      </div>
-    </div>
-
-    <div class="copilot-context-bar">
-      <span>Location: <strong id="copilot-ctx-island">Pulau Tioman</strong></span>
-      <span style="font-size: 11px; color: #64748B;">DOSM Datathon ML Grounded</span>
-    </div>
-
-    <div id="copilot-messages" class="copilot-messages">
-      <!-- Default Greeting -->
-      <div class="chat-msg assistant">
-        <p>Welcome to the <strong>ReefSafe Intelligence Assistant</strong>.</p>
-        <p>Query any of the 40 monitored islands for live coral cover, NOAA heat stress thresholds, or pre-season carrying capacity quotas.</p>
-        <span class="chat-msg-meta">ReefSafe Intelligence Engine</span>
-      </div>
-    </div>
-
-    <!-- Quick Prompt Chips -->
-    <div class="copilot-chips">
-      <button class="copilot-chip" data-prompt="Boleh bawa pelancong ke sini esok?">Visitor status tomorrow?</button>
-      <button class="copilot-chip" data-prompt="Kenapa pulau ini diberi status amaran?">Why alert status?</button>
-      <button class="copilot-chip" data-prompt="Jana mesej WhatsApp harian untuk komuniti botman">Community briefing draft</button>
-      <button class="copilot-chip" data-prompt="Berapa nilai ekonomi aset resort berisiko?">Resort economic valuation</button>
-    </div>
-
-    <!-- Input Form -->
-    <form id="copilot-form" class="copilot-input-area">
-      <input id="copilot-input" class="copilot-input" type="text" placeholder="Ask about coral indicators, quotas, or economic impact..." autocomplete="off" required>
-      <button type="submit" id="copilot-send" class="copilot-send-btn">Send</button>
-    </form>
-  </div>
-
-  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="data.js"></script>
   <script src="app.js"></script>

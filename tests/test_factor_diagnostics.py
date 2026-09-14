@@ -24,7 +24,12 @@ class FactorDiagnosticTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory)
-            with patch("scripts.train_models.OUTPUT", target), patch("scripts.train_models.FIGURES", target):
+            with (
+                patch("scripts.train_models.OUTPUT", target),
+                patch("scripts.train_models.FIGURES", target),
+                patch("scripts.train_models.REPORTS_FIGURES", target),
+                patch("scripts.train_models.DASHBOARD_FIGURES", target),
+            ):
                 plot_factor_relationships(transitions, diagnostics, heat_summary)
 
             self.assertTrue((target / "fig4_factor_relationships.png").exists())
@@ -35,9 +40,11 @@ class FactorDiagnosticTests(unittest.TestCase):
         data_js = data_js_path.read_text(encoding="utf-8")
         self.assertIn("window.TOURISM_DATA_GAP", data_js)
         self.assertIn("window.ECONOMIC_VALUATION", data_js)
-        self.assertIn("window.NPV_TRADEOFF", data_js)
-        self.assertIn("controllable_pct", data_js)
-        self.assertIn("uncontrollable_pct", data_js)
+        self.assertIn('"evaluated_archipelagos": 6', data_js)
+        self.assertIn('"reported_total_myr": 8700000000', data_js)
+        self.assertNotIn("window.NPV_TRADEOFF", data_js)
+        self.assertNotIn("controllable_pct", data_js)
+        self.assertNotIn("uncontrollable_pct", data_js)
 
 
 if __name__ == "__main__":
