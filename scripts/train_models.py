@@ -1,5 +1,10 @@
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 import matplotlib
 matplotlib.use("Agg")
@@ -19,11 +24,14 @@ from scipy.stats import mannwhitneyu, spearmanr
 from scripts.pipeline import expanding_year_splits, heat_category, make_next_observation_rows
 
 
-ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data/processed/master_reef_tourism_dataset.csv"
 PROCESSED = ROOT / "data/processed"
 OUTPUT = ROOT / "output"
 FIGURES = ROOT / "figures"
+REPORTS_FIGURES = ROOT / "reports" / "figures"
+DASHBOARD_FIGURES = ROOT / "dashboard" / "figures"
+for _d in (OUTPUT, FIGURES, REPORTS_FIGURES, DASHBOARD_FIGURES):
+    _d.mkdir(parents=True, exist_ok=True)
 
 FEATURES = [
     "survey_year", "live_coral_cover_pct", "lcc_change_rate",
@@ -297,6 +305,11 @@ def plot_factor_relationships(transitions, diagnostics, heat_summary):
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig4_factor_relationships.png")
     fig.savefig(FIGURES / "factor_relationships.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "10_factor_relationships.png")
+        fig.savefig(REPORTS_FIGURES / "factor_relationships.png")
+    if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
+        fig.savefig(DASHBOARD_FIGURES / "factor_relationships.png")
     plt.close(fig)
 
 
@@ -314,6 +327,11 @@ def plot_model_comparison(results):
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig1_model_performance_cv.png")
     fig.savefig(FIGURES / "model_performance.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "09_model_performance.png")
+        fig.savefig(REPORTS_FIGURES / "model_performance.png")
+    if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
+        fig.savefig(DASHBOARD_FIGURES / "model_performance.png")
     plt.close(fig)
 
 
@@ -332,6 +350,11 @@ def plot_validation(actual, predicted, model_name):
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig2_actual_vs_predicted.png")
     fig.savefig(FIGURES / "actual_vs_predicted_oof.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "07_actual_vs_predicted_oof.png")
+        fig.savefig(REPORTS_FIGURES / "actual_vs_predicted_oof.png")
+    if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
+        fig.savefig(DASHBOARD_FIGURES / "actual_vs_predicted_oof.png")
     plt.close(fig)
 
 
@@ -348,6 +371,11 @@ def plot_importance(importance):
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig3_feature_importance.png")
     fig.savefig(FIGURES / "feature_importance.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "08_feature_importance.png")
+        fig.savefig(REPORTS_FIGURES / "feature_importance.png")
+    if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
+        fig.savefig(DASHBOARD_FIGURES / "feature_importance.png")
     plt.close(fig)
 
 

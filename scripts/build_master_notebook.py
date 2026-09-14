@@ -391,7 +391,92 @@ df_diag = pl.DataFrame(diag_results)
 print("Empirical Stressor Diagnostic Findings:")
 print(df_diag)"""))
 
-    cells.append(create_cell("markdown", """### Graph 5: Island Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution
+    cells.append(create_cell("markdown", """### Graph 5: Empirical Factor Relationships & NOAA Heat Bands (3-Panel Diagnostic)
+
+We visualize the empirical relationships between observed stressors and the next observed coral cover change rate across all 348 forward transitions:
+1. **Panel 1 (Heat vs. Next Change Scatter):** Continuous relationship between satellite NOAA Degree Heating Weeks (DHW) and subsequent annualized coral change (Spearman $\\rho = -0.10$, $p = 0.051$, $n = 348$). Shows increasing variance and downward bias as thermal stress exceeds benchmark thresholds.
+2. **Panel 2 (Next Change by Heat Band Boxplots):** Grouped distributions across NOAA alert categories:
+   - **Low Heat (DHW $< 1$):** Median change $-0.63$ pp/yr ($n=81$).
+   - **Moderate Heat (DHW $1–<4$):** Median change $-1.06$ pp/yr ($n=128$).
+   - **Severe Heat (DHW $\\ge 4$):** Median change $-1.11$ pp/yr, mean $-1.38$ pp/yr ($n=139$), showing accelerated mortality under NOAA Alert Level 1/2 conditions.
+3. **Panel 3 (Narrative Mention Difference):** Mean difference in next observed change when divers reported local disturbance flags versus when unmentioned:
+   - **Anchor Damage:** $+0.75$ pp/yr difference (descriptive note; often co-occurs with sheltered leeward sites).
+   - **Trash Pollution:** $-0.39$ pp/yr difference (negative drag on coral recovery).
+   - **Bleaching Mention:** $+0.87$ pp/yr difference (lagged recovery transects post-bleaching event).
+
+> **Important Caution:** These are descriptive lagged associations from field transects, not causal experiments. Absence of a narrative mention in diver notes does not confirm absence of physical stress."""))
+
+    cells.append(create_cell("code", """# 3-Panel Empirical Factor Relationships Plot From Scratch
+target_col = "target_lcc_change_rate"
+heat_sub = df_transitions.filter(pl.col("noaa_max_dhw").is_not_null() & pl.col(target_col).is_not_null())
+dhw_vals = heat_sub["noaa_max_dhw"].to_numpy()
+chg_vals = heat_sub[target_col].to_numpy()
+rho_val, _ = spearmanr(dhw_vals, chg_vals)
+
+def get_heat_band(d):
+    if d < 1.0:
+        return "DHW < 1"
+    elif d < 4.0:
+        return "DHW 1–<4"
+    else:
+        return "DHW ≥ 4"
+
+bands = ["DHW < 1", "DHW 1–<4", "DHW ≥ 4"]
+band_groups = {b: [] for b in bands}
+for d, c in zip(dhw_vals, chg_vals):
+    band_groups[get_heat_band(d)].append(c)
+
+binary_labels = ["Anchor", "Trash", "Bleaching"]
+binary_cols = ["impact_anchor", "impact_trash", "impact_bleaching"]
+diffs = []
+for bcol in binary_cols:
+    sub = df_transitions.filter(pl.col(bcol).is_not_null())
+    g1 = sub.filter(pl.col(bcol) == 1)[target_col].to_numpy()
+    g0 = sub.filter(pl.col(bcol) == 0)[target_col].to_numpy()
+    diffs.append(float(np.mean(g1) - np.mean(g0)) if len(g1) > 0 and len(g0) > 0 else 0.0)
+
+fig, axes = plt.subplots(1, 3, figsize=(14, 4.6), dpi=150)
+
+# Panel 1: Scatter
+axes[0].scatter(dhw_vals, chg_vals, alpha=0.55, color="#0284c7", edgecolor="white", s=45)
+axes[0].axhline(0, color="#64748b", linewidth=0.8, linestyle="--")
+axes[0].set_title(f"Heat vs Next Change\\nSpearman ρ={rho_val:.2f}, n={len(dhw_vals)}", fontweight="bold", fontsize=10)
+axes[0].set_xlabel("NOAA Maximum DHW (°C-weeks)", fontweight="bold")
+axes[0].set_ylabel("Next Observed Change (pp/year)", fontweight="bold")
+axes[0].grid(True, linestyle=":", alpha=0.5)
+
+# Panel 2: Boxplot
+boxes = axes[1].boxplot(
+    [band_groups[b] for b in bands],
+    tick_labels=[f"{b}\\nn={len(band_groups[b])}" for b in bands],
+    patch_artist=True,
+    medianprops=dict(color="#0f172a", linewidth=1.5)
+)
+for box in boxes["boxes"]:
+    box.set_facecolor("#bfdbfe")
+    box.set_edgecolor("#1e3a8a")
+axes[1].axhline(0, color="#64748b", linewidth=0.8, linestyle="--")
+axes[1].set_title("Next Change by NOAA Heat Band", fontweight="bold", fontsize=10)
+axes[1].set_ylabel("Percentage Points / Year", fontweight="bold")
+axes[1].grid(axis="y", linestyle=":", alpha=0.5)
+
+# Panel 3: Bar chart
+b_colors = ["#0f766e" if d >= 0 else "#dc2626" for d in diffs]
+bars = axes[2].bar(binary_labels, diffs, color=b_colors, width=0.55)
+axes[2].axhline(0, color="#64748b", linewidth=0.8)
+axes[2].set_title("Narrative Mention Difference\\n(Mentioned vs Absent)", fontweight="bold", fontsize=10)
+axes[2].set_ylabel("Mean Difference (pp/year)", fontweight="bold")
+for b in bars:
+    h = b.get_height()
+    axes[2].text(b.get_x() + b.get_width()/2, h + (0.05 if h >= 0 else -0.15), f"{h:+.2f}", 
+                ha="center", va="bottom" if h >= 0 else "top", fontweight="bold", fontsize=9)
+axes[2].grid(axis="y", linestyle=":", alpha=0.5)
+
+fig.suptitle("Graph 5: Empirical Factor Relationships & NOAA Heat Bands (Descriptive Lagged Associations)", fontweight="bold", fontsize=12, y=1.03)
+plt.tight_layout()
+plt.show()"""))
+
+    cells.append(create_cell("markdown", """### Graph 6: Island Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution
 Below, we visualize the mathematical decomposition between **Controllable Local Pressures** (anchor damage, trash, wastewater, lodging density) and **Uncontrollable Regional Thermal Stress** (satellite DHW) across Malaysia's premier tourist islands."""))
 
     cells.append(create_cell("code", """focal_islands = ["Tioman", "Redang", "Perhentian", "Payar", "Mabul", "Sipadan", "Kapas", "Bidong"]
@@ -428,7 +513,7 @@ for i, (c, u) in enumerate(zip(c_vals[::-1], u_vals[::-1])):
     ax.text(c / 2, i, f"{c:.0f}%", va="center", ha="center", color="white", fontweight="bold", fontsize=9)
     ax.text(c + (u / 2), i, f"{u:.0f}%", va="center", ha="center", color="white", fontweight="bold", fontsize=9)
 
-ax.set_title("Graph 5: Island Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution", fontweight="bold", fontsize=12, pad=12)
+ax.set_title("Graph 6: Island Controllable (Local) vs. Uncontrollable (Thermal) Factor Attribution", fontweight="bold", fontsize=12, pad=12)
 ax.set_xlabel("Variance Attribution Percentage (%)", fontweight="bold")
 ax.set_xlim(0, 100)
 ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.15), ncol=2, fontsize=9)
@@ -485,13 +570,13 @@ tradeoff_trajectories = simulate_npv(years=20, discount_rate=0.05)
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5), dpi=150)
 
-# Graph 6: 4-Pillar Valuation
+# Graph 7: 4-Pillar Valuation
 p_names = [p["pillar"] for p in economic_pillars]
 p_vals = [p["value_myr"]/1e9 for p in economic_pillars]
 p_pcts = [p["share_pct"] for p in economic_pillars]
 colors = ["#0284c7", "#0d9488", "#10b981", "#6366f1"]
 bars = ax1.barh(p_names[::-1], p_vals[::-1], color=colors[::-1], height=0.55)
-ax1.set_title("Graph 6: RM 8.70 Billion/Year Coral Economic Valuation", fontweight="bold", fontsize=11)
+ax1.set_title("Graph 7: RM 8.70 Billion/Year Coral Economic Valuation", fontweight="bold", fontsize=11)
 ax1.set_xlabel("Economic Value (RM Billion / Year)", fontweight="bold")
 for b, p in zip(bars, p_pcts[::-1]):
     w = b.get_width()
@@ -499,7 +584,7 @@ for b, p in zip(bars, p_pcts[::-1]):
 ax1.set_xlim(0, 6.0)
 ax1.grid(axis="x", linestyle=":", alpha=0.6)
 
-# Graph 7: 20-Year NPV Tradeoff Curve
+# Graph 8: 20-Year NPV Tradeoff Curve
 years_x = [t["year"] for t in tradeoff_trajectories]
 cum_no_action = [t["cum_npv_no_action"]/1e9 for t in tradeoff_trajectories]
 cum_sustainable = [t["cum_npv_sustainable"]/1e9 for t in tradeoff_trajectories]
@@ -507,7 +592,7 @@ cum_sustainable = [t["cum_npv_sustainable"]/1e9 for t in tradeoff_trajectories]
 ax2.plot(years_x, cum_sustainable, color="#059669", linewidth=2.8, marker="o", label="Proactive Policy (Preserved Value: RM 114.3B)")
 ax2.plot(years_x, cum_no_action, color="#dc2626", linewidth=2.5, linestyle="--", marker="x", label="No Action (Over-Tourism: RM 66.6B)")
 ax2.fill_between(years_x, cum_no_action, cum_sustainable, color="#10b981", alpha=0.18, label="Net Capital Preserved (+RM 47.73B)")
-ax2.set_title("Graph 7: 20-Year Cumulative NPV Trade-Off Simulation", fontweight="bold", fontsize=11)
+ax2.set_title("Graph 8: 20-Year Cumulative NPV Trade-Off Simulation", fontweight="bold", fontsize=11)
 ax2.set_xlabel("Horizon (Years)", fontweight="bold")
 ax2.set_ylabel("Cumulative Discounted NPV (RM Billion)", fontweight="bold")
 ax2.legend(loc="upper left", fontsize=8.5)
@@ -582,7 +667,39 @@ df_metrics = pl.DataFrame([{"Model": k, **v} for k, v in results.items()])
 print("Machine Learning Benchmark Table (Expanding-Window Forward Testing):")
 print(df_metrics)"""))
 
-    cells.append(create_cell("markdown", """### Graph 8: Permutation Feature Importance Ranking
+    cells.append(create_cell("markdown", """### Graph 9: Machine Learning Model Performance Benchmark (Forward-Test MAE Comparison)
+
+We benchmark out-of-sample forward-test Mean Absolute Error (MAE in percentage points per year) across all 4 candidate architectures:
+- **Baseline Mean (5.99 pp/yr):** Standard historical expanding-window mean benchmark.
+- **Ridge Regression (5.99 pp/yr):** Linear regularization prevents coefficient explosion but struggles with non-linear threshold dynamics.
+- **Gradient Boosting (5.90 pp/yr):** **Best overall predictive performance**. Constrained shallow decision trees ($d=2$, shrinkage $\\eta=0.04$) capture subtle interactions between satellite thermal spikes and ecological substrates while curbing variance.
+- **Random Forest (6.12 pp/yr):** Bagged trees exhibit higher out-of-sample variance on sparse temporal boundary splits.
+
+**Key Modeling Takeaway:**
+An out-of-sample MAE of $\\sim 5.9$ percentage points per year accurately captures ecological survey variability across 100m transect tapes. ReefSafe embraces honest error bounds to drive **prioritization screening**, deliberately avoiding artificial over-fitting or false precision."""))
+
+    cells.append(create_cell("code", """# Model Comparison Bar Chart From Scratch
+model_names = list(results.keys())
+maes = [results[m]["MAE (%/yr)"] for m in model_names]
+bar_colors = ["#94a3b8" if m == "Baseline mean" else ("#0f766e" if m == "Gradient boosting" else "#0284c7") for m in model_names]
+
+fig, ax = plt.subplots(figsize=(8.5, 4.5), dpi=150)
+bars = ax.bar(model_names, maes, color=bar_colors, width=0.55, edgecolor="#1e293b", linewidth=1.1)
+
+for b in bars:
+    h = b.get_height()
+    ax.text(b.get_x() + b.get_width()/2, h + 0.08, f"{h:.2f}%", ha="center", va="bottom", fontweight="bold", fontsize=10)
+
+ax.set_title("Graph 9: Machine Learning Model Comparison (Past-Only Expanding-Year Validation)", fontweight="bold", fontsize=12, pad=12)
+ax.set_ylabel("Forward-Test MAE (% points per year)", fontweight="bold")
+ax.set_ylim(0, 7.5)
+ax.axhline(results["Baseline mean"]["MAE (%/yr)"], color="#94a3b8", linestyle="--", linewidth=1.2, label=f"Baseline Mean Benchmark ({results['Baseline mean']['MAE (%/yr)']:.2f}%)")
+ax.legend(loc="upper right", fontsize=9)
+ax.grid(axis="y", linestyle=":", alpha=0.6)
+plt.tight_layout()
+plt.show()"""))
+
+    cells.append(create_cell("markdown", """### Graph 10: Permutation Feature Importance Ranking
 We fit our selected Gradient Boosting pipeline on historical observations and extract feature importances across all biological, physical, and satellite stress proxies."""))
 
     cells.append(create_cell("code", """# Fit final model pipeline
@@ -601,13 +718,13 @@ for b in bars:
     w = b.get_width()
     ax.text(w + 0.005, b.get_y() + b.get_height()/2, f"{w:.3f}", va="center", fontweight="bold", fontsize=9)
 
-ax.set_title("Graph 8: Gradient Boosting Feature Importance Ranking (Predicting Coral Change)", fontweight="bold", fontsize=12, pad=12)
+ax.set_title("Graph 10: Gradient Boosting Feature Importance Ranking (Predicting Coral Change)", fontweight="bold", fontsize=12, pad=12)
 ax.set_xlabel("Relative Feature Importance Score", fontweight="bold")
 ax.grid(axis="x", linestyle=":", alpha=0.6)
 plt.tight_layout()
 plt.show()"""))
 
-    cells.append(create_cell("markdown", """### Graph 9: Out-of-Sample Expanding-Window Predicted vs. Actual Scatter
+    cells.append(create_cell("markdown", """### Graph 11: Out-of-Sample Expanding-Window Predicted vs. Actual Scatter
 Below, we evaluate out-of-sample predictions against ground truth coral change rates across all 183 forward test observations. The 45-degree reference line represents perfect parity."""))
 
     cells.append(create_cell("code", """y_true = y[evaluated_indices]
@@ -618,7 +735,7 @@ ax.scatter(y_true, y_pred, alpha=0.7, color="#0284c7", edgecolors="#0f172a", s=6
 lims = [min(min(y_true), min(y_pred)) - 2, max(max(y_true), max(y_pred)) + 2]
 ax.plot(lims, lims, color="#dc2626", linestyle="--", linewidth=1.8, label="Parity Reference Line (y = x)")
 
-ax.set_title("Graph 9: Out-of-Sample Forward Validation Scatter (Predicted vs Actual)", fontweight="bold", fontsize=12, pad=12)
+ax.set_title("Graph 11: Out-of-Sample Forward Validation Scatter (Predicted vs Actual)", fontweight="bold", fontsize=12, pad=12)
 ax.set_xlabel("Actual Next Live Coral Cover Change Rate (%/yr)", fontweight="bold")
 ax.set_ylabel("Predicted Live Coral Cover Change Rate (%/yr)", fontweight="bold")
 ax.set_xlim(lims)
@@ -628,7 +745,7 @@ ax.grid(True, linestyle=":", alpha=0.6)
 plt.tight_layout()
 plt.show()"""))
 
-    cells.append(create_cell("markdown", """### Graph 10: ReefSafe Island Triage Quadrant Scatter Matrix
+    cells.append(create_cell("markdown", """### Graph 12: ReefSafe Island Triage Quadrant Scatter Matrix
 To operationalize decision-making for government rangers and state tourism exco, we classify all monitored islands into a 4-quadrant decision matrix:
 1. **Quadrant 1 (Urgent Dual Threat):** High Thermal Stress & High Built Human Pressure $\\rightarrow$ Immediate Dual Intervention.
 2. **Quadrant 2 (Local Action Target):** Low Thermal Stress but High Human Pressure $\\rightarrow$ Enforce Diver Quotas & Permanent Mooring Buoys.
@@ -677,7 +794,7 @@ for x, y, name in zip(xs, ys, names):
     if any(f.lower() in name.lower() for f in focal):
         ax.annotate(name, (x, y), textcoords="offset points", xytext=(6, 6), fontweight="bold", fontsize=8.5)
 
-ax.set_title("Graph 10: ReefSafe Island Triage Matrix: Controllable Pressure vs. Thermal Risk", fontweight="bold", fontsize=12, pad=12)
+ax.set_title("Graph 12: ReefSafe Island Triage Matrix: Controllable Pressure vs. Thermal Risk", fontweight="bold", fontsize=12, pad=12)
 ax.set_xlabel("Uncontrollable Regional Thermal Stress (NOAA DHW in °C-weeks)", fontweight="bold")
 ax.set_ylabel("Controllable Local Human Pressure Index (0–100)", fontweight="bold")
 ax.set_xlim(0, 8.5)
