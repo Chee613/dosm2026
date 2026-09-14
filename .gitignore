@@ -17,4 +17,4 @@ dist/dashboard_package/audit/
 Thumbs.db
 .vscode/
 .idea/
-
+.worktrees/
