@@ -1,8 +1,10 @@
 import csv
 import json
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
 PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 DASHBOARD_DIR = os.path.join(BASE_DIR, "dashboard")
 os.makedirs(DASHBOARD_DIR, exist_ok=True)
@@ -156,8 +158,10 @@ data_bundle = {
         "dropSince2012": -17.3,
         "totalEconomicValuationRM": 8.7,
         "marineTourismValuationRM": 4.8,
+        "coastalProtectionValuationRM": 2.3,
         "priorityAlertCount": 10,
-        "totalMonitoredIslands": 56,
+        "totalSurveyedIslands": 40,
+        "totalRegistryIslands": 56,
         "activeHeatAlertDHW4Count": 11
     },
     "priorityIslands": priority_islands,

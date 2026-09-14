@@ -32,13 +32,12 @@
       kpiNationalCover: "National Mean Coral Cover",
       kpiReefAdjacent: "Beachfront Assets at Risk",
       kpiTourismGDP: "Coastal Tourism Gross Value",
-      kpiPriorityAlerts: "Priority Screening Islands",
-      subCover: "Fair threshold: 40.0% • 40 monitored islands",
-      subAdjacent: "Wave-exposed beachfront resort inventory",
-      subGDP: "Tourism Satellite Account benchmark",
-      subAlerts: "Exceeding degradation screening threshold",
+      subCover: "Fair threshold: 40.0% • 40 surveyed islands (2025)",
+      subAdjacent: "Coastal storm & wave dissipation value (Pillar 2)",
+      subGDP: "Annual direct marine tourism spending (Pillar 1)",
+      subAlerts: "Top 25% triage queue (40 surveyed / 56 total registry)",
       mapTitle: "National Marine Risk Map",
-      mapSubtitle: "40 monitored island entities categorized by 2026 screening tier",
+      mapSubtitle: "40 actively surveyed island entities categorized by 2026 screening tier (56 national registry entities)",
       legendRed: "High Screening Priority",
       legendAmber: "Monitor",
       legendGreen: "Resilient / Low Alert",
@@ -100,13 +99,12 @@
       kpiNationalCover: "Purata Liputan Karang Kebangsaan",
       kpiReefAdjacent: "Aset Resort Tepi Pantai Berisiko",
       kpiTourismGDP: "Nilai Kasar Pelancongan Pesisir",
-      kpiPriorityAlerts: "Pulau Saringan Keutamaan",
-      subCover: "Ambang wajar: 40.0% • 40 pulau dipantau",
-      subAdjacent: "Inventori resort pantai terdedah hakisan ombak",
-      subGDP: "Penanda aras Akaun Satelit Pelancongan",
-      subAlerts: "Melebihi ambang amaran kemerosotan",
+      subCover: "Ambang wajar: 40.0% • 40 pulau ditinjau (2025)",
+      subAdjacent: "Nilai penampan ombak & ribut pantai (Tonggak 2)",
+      subGDP: "Perbelanjaan pelancongan marin langsung tahunan (Tonggak 1)",
+      subAlerts: "Barisan saringan 25% teratas (40 ditinjau / 56 daftar marin)",
       mapTitle: "Peta Status Risiko Marin Kebangsaan",
-      mapSubtitle: "40 entiti pulau dikategorikan mengikut tahap saringan 2026",
+      mapSubtitle: "40 entiti pulau dipantau dikategorikan mengikut tahap saringan 2026 (56 entiti daftar)",
       legendRed: "Keutamaan Saringan Tinggi",
       legendAmber: "Pantau",
       legendGreen: "Daya Tahan / Amaran Rendah",
@@ -255,9 +253,9 @@
   function renderKPIs() {
     const kpis = data.nationalKPIs;
     document.getElementById("kpi-cover-val").textContent = `${kpis.meanCoralCover.toFixed(1)}%`;
-    document.getElementById("kpi-adjacent-val").textContent = `RM ${kpis.reefAdjacentAtRiskRM.toFixed(1)}M`;
-    document.getElementById("kpi-gdp-val").textContent = `RM ${kpis.coastalTourismGDPRM.toFixed(1)}B`;
-    document.getElementById("kpi-alerts-val").textContent = `${kpis.priorityAlertCount} / ${kpis.totalMonitoredIslands}`;
+    document.getElementById("kpi-adjacent-val").textContent = `RM ${(kpis.coastalProtectionValuationRM || 2.3).toFixed(2)}B`;
+    document.getElementById("kpi-gdp-val").textContent = `RM ${(kpis.marineTourismValuationRM || 4.8).toFixed(2)}B`;
+    document.getElementById("kpi-alerts-val").textContent = `${kpis.priorityAlertCount} / ${kpis.totalSurveyedIslands || 40}`;
   }
 
   // Interactive Map using Leaflet

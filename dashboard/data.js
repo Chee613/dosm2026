@@ -6,8 +6,10 @@ window.REEFSAFE_DATA = {
     "dropSince2012": -17.3,
     "totalEconomicValuationRM": 8.7,
     "marineTourismValuationRM": 4.8,
+    "coastalProtectionValuationRM": 2.3,
     "priorityAlertCount": 10,
-    "totalMonitoredIslands": 56,
+    "totalSurveyedIslands": 40,
+    "totalRegistryIslands": 56,
     "activeHeatAlertDHW4Count": 11
   },
   "priorityIslands": [
