@@ -16,6 +16,9 @@
   "mae_improvement_pct": 1.4848129730557118,
   "beats_baseline": true,
   "deployment_status": "screening_only",
+  "uncertainty_label": "Pooled empirical 95% forward-residual range",
+  "lower_residual_quantile": -15.608242859974554,
+  "upper_residual_quantile": 13.650697144396757,
   "model_comparison": {
     "Baseline mean": {
       "MAE": 5.991036572720733,
@@ -38,6 +41,48 @@
       "R2": -0.012314964869737821
     }
   },
+  "validation_by_year": [
+    {
+      "target_year": 2021,
+      "n": 24,
+      "mae": 5.609839138479639,
+      "rmse": 7.48505088025183,
+      "r2": 0.12924698549518732,
+      "bias": -2.509342805887789
+    },
+    {
+      "target_year": 2022,
+      "n": 35,
+      "mae": 6.9947803796067385,
+      "rmse": 10.108979200479183,
+      "r2": 0.08918436276226971,
+      "bias": 0.05569727107760757
+    },
+    {
+      "target_year": 2023,
+      "n": 43,
+      "mae": 5.805308194457525,
+      "rmse": 7.360546196695095,
+      "r2": 0.15064306931772997,
+      "bias": 1.1759847053795207
+    },
+    {
+      "target_year": 2024,
+      "n": 41,
+      "mae": 5.676989514852444,
+      "rmse": 7.1195726264428565,
+      "r2": -0.3078375244522318,
+      "bias": 2.005150644462796
+    },
+    {
+      "target_year": 2025,
+      "n": 40,
+      "mae": 5.456063169433944,
+      "rmse": 6.806193389232309,
+      "r2": -0.6887756892158432,
+      "bias": 4.424202624972024
+    }
+  ],
   "permutation_importance": {
     "survey_year": 0.0006892107482976338,
     "live_coral_cover_pct": -0.051269353812864946,

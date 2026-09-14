@@ -68,6 +68,31 @@ def main():
     FIGURES.mkdir(exist_ok=True)
 
     master = pl.read_csv(DATA_PATH)
+    year_summary = (
+        master.group_by("survey_year")
+        .agg([
+            pl.col("island").n_unique().alias("surveyed_units"),
+            pl.col("live_coral_cover_pct").mean().alias("mean_lcc"),
+        ])
+        .sort("survey_year")
+    )
+    year_summary.write_csv(PROCESSED / "survey_year_summary.csv")
+
+    paired = (
+        master.filter(pl.col("survey_year").is_in([2024, 2025]))
+        .select(["island", "survey_year", "live_coral_cover_pct"])
+        .pivot(on="survey_year", index="island", values="live_coral_cover_pct")
+        .drop_nulls()
+    )
+    pl.DataFrame([{
+        "start_year": 2024,
+        "end_year": 2025,
+        "paired_units": paired.height,
+        "start_mean_lcc": paired["2024"].mean(),
+        "end_mean_lcc": paired["2025"].mean(),
+        "change_pp": paired["2025"].mean() - paired["2024"].mean(),
+    }]).write_csv(PROCESSED / "paired_change_summary.csv")
+
     transitions = pl.DataFrame(make_next_observation_rows(master.to_dicts()))
     transitions = transitions.filter(pl.col("target_lcc_change_rate").is_not_null())
     diagnostics, heat_summary = build_factor_diagnostics(transitions)
@@ -122,7 +147,10 @@ def main():
     latest_year = int(master["survey_year"].max())
     latest = master.filter(pl.col("survey_year") == latest_year)
     latest_predictions = final_model.predict(latest.select(FEATURES).to_numpy())
-    residual_rmse = results[best_name]["RMSE"]
+    evaluated_truth = y[evaluated]
+    evaluated_prediction = predictions[best_name][evaluated]
+    residuals = evaluated_truth - evaluated_prediction
+    lower_residual, upper_residual = np.quantile(residuals, [0.025, 0.975])
 
     priority = latest.select([
         "island", "state", "ecoregion", "latitude", "longitude", "marine_park",
@@ -131,8 +159,8 @@ def main():
         "impact_trash", "impact_bleaching", "confidence",
     ]).with_columns([
         pl.Series("predicted_next_change_pct_per_year", latest_predictions),
-        pl.Series("prediction_lower", latest_predictions - residual_rmse),
-        pl.Series("prediction_upper", latest_predictions + residual_rmse),
+        pl.Series("prediction_lower", latest_predictions + lower_residual),
+        pl.Series("prediction_upper", latest_predictions + upper_residual),
     ]).sort("predicted_next_change_pct_per_year")
 
     high_count = max(1, round(priority.height * 0.25))
@@ -176,6 +204,21 @@ def main():
         for name, values in results.items()
     ]).write_csv(PROCESSED / "model_evaluation_metrics.csv")
 
+    per_year = []
+    for year in sorted(set(target_years[index] for index in evaluated)):
+        indexes = [index for index in evaluated if target_years[index] == year]
+        actual = y[indexes]
+        predicted = predictions[best_name][indexes]
+        per_year.append({
+            "target_year": year,
+            "n": len(indexes),
+            "mae": float(mean_absolute_error(actual, predicted)),
+            "rmse": float(mean_squared_error(actual, predicted) ** 0.5),
+            "r2": float(r2_score(actual, predicted)),
+            "bias": float(np.mean(predicted - actual)),
+        })
+    pl.DataFrame(per_year).write_csv(PROCESSED / "model_validation_by_year.csv")
+
     summary = {
         "prediction_target": "Next observed annualised live coral cover change",
         "validation": "Expanding-window evaluation on the five latest target years",
@@ -188,7 +231,11 @@ def main():
         "mae_improvement_pct": improvement,
         "beats_baseline": best_mae < baseline_mae,
         "deployment_status": "screening_only",
+        "uncertainty_label": "Pooled empirical 95% forward-residual range",
+        "lower_residual_quantile": float(lower_residual),
+        "upper_residual_quantile": float(upper_residual),
         "model_comparison": results,
+        "validation_by_year": per_year,
         "permutation_importance": dict(zip(FEATURES, importance.tolist())),
         "factor_diagnostics": diagnostics.to_dicts(),
     }
