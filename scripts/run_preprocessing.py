@@ -1,10 +1,16 @@
 import os
 import json
+import sys
 import polars as pl
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from scripts.pipeline import parse_noaa_row
 
-base_dir = str(Path(__file__).resolve().parents[1])
+base_dir = str(ROOT)
 raw_dir = os.path.join(base_dir, "data", "raw")
 proc_dir = os.path.join(base_dir, "data", "processed")
 os.makedirs(proc_dir, exist_ok=True)
@@ -23,6 +29,12 @@ headers = [str(h) if h is not None else f"col_{i}" for i, h in enumerate(data[0]
 rows = data[1:]
 cols = {h: [r[i] for r in rows] for i, h in enumerate(headers)}
 df_rc = pl.DataFrame(cols, strict=False)
+df_rc = df_rc.with_columns(
+    pl.when(pl.col("island") == "Labuan")
+    .then(pl.lit("W.P. Labuan"))
+    .otherwise(pl.col("state"))
+    .alias("state")
+)
 print(f"\n[1] Reef Check Survey Panel (model_ready): {df_rc.shape[0]} rows, {df_rc.shape[1]} columns")
 print("Columns:", df_rc.columns[:10], "... (total", len(df_rc.columns), ")")
 print("Null counts per column BEFORE merge:")
@@ -65,7 +77,7 @@ station_files = {
 def get_station_id(state, island):
     isl_lower = island.lower()
     st_lower = state.lower() if state else ""
-    if "sabah" in st_lower or "sipadan" in isl_lower or "mabul" in isl_lower or "kudat" in isl_lower:
+    if "sabah" in st_lower or any(name in isl_lower for name in ("sipadan", "mabul", "kudat", "labuan")):
         return "sabah"
     elif "sarawak" in st_lower:
         return "northern_borneo"

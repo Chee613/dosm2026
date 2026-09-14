@@ -25,6 +25,9 @@ class ProvenanceTests(unittest.TestCase):
 
         coordinates = (ROOT / "data/raw/structured/geocoding/island_coordinates.csv").read_text(encoding="utf-8")
         self.assertIn("Labuan,5.3167,115.2167,Labuan,W.P. Labuan,Labuan Marine Park", coordinates)
+        with (ROOT / "data/processed/reef_priority_predictions.csv").open(encoding="utf-8", newline="") as stream:
+            priorities = {row["island"]: row for row in csv.DictReader(stream)}
+        self.assertEqual(priorities["Labuan"]["state"], "W.P. Labuan")
 
         assumptions = (ROOT / "docs/assumptions.md").read_text(encoding="utf-8")
         self.assertIn("six evaluated archipelagos", assumptions)
