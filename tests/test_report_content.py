@@ -1,4 +1,7 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from docx import Document
 
@@ -7,8 +10,8 @@ from src.generate_report import build_report
 
 class ReportContentTests(unittest.TestCase):
     def test_report_stays_within_evidence_boundary(self):
-        report = build_report()
-        document = Document(report)
+        with TemporaryDirectory() as directory, patch("src.generate_report.OUTPUT", Path(directory)):
+            document = Document(build_report())
         text = "\n".join(
             [paragraph.text for paragraph in document.paragraphs]
             + [cell.text for table in document.tables for row in table.rows for cell in row.cells]
