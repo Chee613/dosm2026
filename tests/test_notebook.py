@@ -8,12 +8,18 @@ ASSUMPTIONS = ROOT / "docs" / "assumptions.md"
 
 
 class NotebookTests(unittest.TestCase):
-    def test_notebook_has_all_7_phases_and_core_analyses(self):
+    def test_notebook_presents_four_evidence_bounded_objectives(self):
         self.assertTrue(NOTEBOOK.exists())
         notebook = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
         text = "\n".join("".join(cell.get("source", [])) for cell in notebook["cells"])
-        
-        # Check all 7 phases exist
+        outputs = [output for cell in notebook["cells"] for output in cell.get("outputs", [])]
+        for index, cell in enumerate(notebook["cells"]):
+            if cell["cell_type"] == "code":
+                compile("".join(cell["source"]), f"cell-{index}", "exec")
+
+        self.assertFalse(any(output.get("output_type") == "error" for output in outputs))
+        self.assertEqual(sum("image/png" in output.get("data", {}) for output in outputs), 10)
+
         for phase in (
             "Phase 1: Data Provenance",
             "Phase 2: Preprocessing",
@@ -24,15 +30,30 @@ class NotebookTests(unittest.TestCase):
             "Phase 7: Predictive Modeling",
         ):
             self.assertIn(phase, text)
-            
-        # Check key topics and required narrative elements
+
+        for objective in (
+            "Identify Associated Factors",
+            "Compare Available Stressor Evidence",
+            "Prioritise Field Verification",
+            "Frame Conservation with Economic Context",
+        ):
+            self.assertIn(objective, text)
+
         self.assertIn("Tourism Data Gap", text)
-        self.assertIn("archive.data.gov.my", text)
-        self.assertIn("Controllable vs Uncontrollable", text)
-        self.assertIn("RM 8.7 Billion", text)
-        self.assertIn("NPV", text)
-        self.assertIn("scripts.run_preprocessing", text)
-        self.assertIn("scripts.train_models", text)
+        self.assertIn("RM8.7 billion", text)
+        self.assertIn("six evaluated Malaysian marine-park archipelagos", text)
+        self.assertIn("load_dmpm_tev", text)
+        self.assertIn("best_candidate", text)
+
+        for unsupported in (
+            "Variance Attribution Percentage",
+            "simulate_npv",
+            "Net Capital Preserved",
+            "Mandate Diver Quotas",
+            "final_pipeline = make_pipeline",
+            "RM 47.73",
+        ):
+            self.assertNotIn(unsupported, text)
 
         assumptions = ASSUMPTIONS.read_text(encoding="utf-8")
         self.assertIn("Tourism data gap", assumptions)
