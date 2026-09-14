@@ -66,14 +66,16 @@ async function main() {
   const parserCheck = parseCsv('a,b\n"x,y",2\n');
   if (parserCheck[0].a !== "x,y" || parserCheck[0].b !== "2") throw new Error("CSV parser self-check failed");
 
-  const [priorityText, masterText, metricsText] = await Promise.all([
+  const [priorityText, masterText, metricsText, metricsJsonText] = await Promise.all([
     fs.readFile(path.join(DATA, "reef_priority_predictions.csv"), "utf8"),
     fs.readFile(path.join(DATA, "master_reef_tourism_dataset.csv"), "utf8"),
     fs.readFile(path.join(DATA, "model_evaluation_metrics.csv"), "utf8"),
+    fs.readFile(path.join(ROOT, "output", "model_evaluation_metrics.json"), "utf8"),
   ]);
   const priority = parseCsv(priorityText);
   const master = parseCsv(masterText);
   const metrics = parseCsv(metricsText);
+  const metricsSummary = JSON.parse(metricsJsonText);
   if (!priority.length || !master.length || !metrics.length) throw new Error("Dashboard inputs are empty");
 
   await fs.mkdir(AUDIT, { recursive: true });
@@ -95,7 +97,7 @@ async function main() {
     r.recommended_next_step, r.confidence,
   ]);
   writeTable(prioritySheet, 1,
-    ["Island", "Rank", "State", "Current LCC (%)", "Observed change (pp/yr)", "Max DHW", "Predicted next change (pp/yr)", "Lower", "Upper", "Priority tier", "Evidence", "Recommended next step", "Source confidence"],
+    ["Island", "Rank", "State", "Current LCC (%)", "Observed change (pp/yr)", "Max DHW (context only)", "Predicted next change (pp/yr)", "Lower", "Upper", "Priority tier", "Evidence", "Recommended next step", "Source confidence"],
     priorityRows, "PriorityTable");
   prioritySheet.freezePanes.freezeRows(1);
   prioritySheet.getRange("A:M").format.verticalAlignment = "center";
@@ -113,7 +115,7 @@ async function main() {
     number(r.lcc_change_rate), number(r.noaa_max_dhw), r.confidence,
   ]);
   writeTable(historySheet, 1,
-    ["Island", "State", "Survey year", "Live coral cover (%)", "Observed change (pp/yr)", "Max DHW", "Source confidence"],
+    ["Island", "State", "Survey year", "Live coral cover (%)", "Observed change (pp/yr)", "Max DHW (context only)", "Source confidence"],
     historyRows, "HistoryTable");
   historySheet.freezePanes.freezeRows(1);
   historySheet.getRange("A:A").format.columnWidth = 18;
@@ -129,10 +131,10 @@ async function main() {
   modelSheet.getRange("B2:D5").format.numberFormat = "0.000";
   modelSheet.getRange("F1:G5").values = [
     ["Check", "Value"],
-    ["Evaluation design", "Past-only expanding-window"],
-    ["Forward evaluation rows", 183],
-    ["Best-model MAE improvement", 0.015],
-    ["Decision status", "Screening only; field verification required"],
+    ["Evaluation design", metricsSummary.validation],
+    ["Forward evaluation rows", metricsSummary.evaluation_observations],
+    ["Best-model MAE improvement", metricsSummary.mae_improvement_pct / 100],
+    ["Decision status", "Screening only. NOAA heat is context, not a production-model feature."],
   ];
   styleHeader(modelSheet.getRange("F1:G1"));
   modelSheet.getRange("F:F").format.columnWidth = 26;
@@ -220,7 +222,8 @@ async function main() {
   dashboard.getRange("I38:K41").format.numberFormat = "0.000";
   dashboard.getRange("H43").values = [["Model check"]];
   dashboard.mergeCells("H43:H44");
-  dashboard.getRange("I43").values = [["Gradient boosting MAE 5.90 pp/yr vs baseline 5.99 pp/yr (+1.5%). R² 0.051. Use only to rank field checks; never as proof of tourism causality."]];
+  const best = metricsSummary.model_comparison[metricsSummary.best_candidate];
+  dashboard.getRange("I43").values = [[`${metricsSummary.best_candidate} MAE ${best.MAE.toFixed(2)} pp/yr vs baseline ${metricsSummary.baseline_mae.toFixed(2)} pp/yr (+${metricsSummary.mae_improvement_pct.toFixed(1)}%). R² ${best.R2.toFixed(3)}. NOAA heat is context only. Use the model to rank field checks, not as proof of tourism causality.`]];
   dashboard.mergeCells("I43:M44");
   dashboard.getRange("H43:M44").format = { fill: RED, font: { name: FONT, size: 9, bold: true, color: "#9C0006" }, wrapText: true, verticalAlignment: "top" };
 
