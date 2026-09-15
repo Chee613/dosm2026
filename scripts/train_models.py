@@ -22,6 +22,7 @@ from sklearn.pipeline import make_pipeline
 from scipy.stats import mannwhitneyu, spearmanr
 
 from scripts.pipeline import expanding_year_splits, heat_category, make_next_observation_rows
+from scripts.stress_attribution import INSIGHTS, group_contributions, top_stressor, tree_path_contributions
 
 
 DATA_PATH = ROOT / "data/processed/master_reef_tourism_dataset.csv"
@@ -190,6 +191,27 @@ def main():
         pl.Series("recommended_next_step", actions),
     ]).with_row_index("priority_rank", offset=1)
     priority.write_csv(PROCESSED / "reef_priority_predictions.csv")
+
+    # Split each unit's prediction into factor-group contributions from the same fitted
+    # model, so baseline + groups equals the published prediction exactly.
+    baseline, contributions = tree_path_contributions(final_model, latest.select(FEATURES).to_numpy())
+    stress_rows = []
+    for island, row in zip(latest["island"].to_list(), contributions):
+        groups = group_contributions(FEATURES, row)
+        stressor, push = top_stressor(groups)
+        stress_rows.append({
+            "island": island,
+            "baseline_pp": baseline,
+            **groups,
+            "top_stressor": stressor or "",
+            "top_stressor_pp": push,
+            "insight": INSIGHTS[stressor],
+        })
+    pl.DataFrame(stress_rows).write_csv(PROCESSED / "stress_contributions.csv")
+    pl.DataFrame([
+        {"island": island, **{name: float(value) for name, value in zip(FEATURES, row)}}
+        for island, row in zip(latest["island"].to_list(), contributions)
+    ]).write_csv(PROCESSED / "stress_feature_contributions.csv")
 
     transitions[evaluated].select([
         "island", "survey_year", "target_year", "target_lcc_change_rate"
