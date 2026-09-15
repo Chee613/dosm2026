@@ -36,7 +36,8 @@ def save(fig, name):
 def plot_tourism_gap():
     path = ROOT / "data/raw/structured/taman_laut_visitors_2000_2017.csv"
     with path.open(encoding="utf-8", newline="") as stream:
-        source = [row for row in csv.DictReader(stream) if int(row["year"]) <= 2009]
+        # All 90 rows match the five Department of Marine Park state datasets (2000-2017).
+        source = list(csv.DictReader(stream))
     totals = {}
     for row in source:
         year = int(row["year"])
@@ -50,12 +51,13 @@ def plot_tourism_gap():
     fig, axis = plt.subplots(figsize=(10, 4.5))
     axis.bar(years, domestic, label="Domestic ('000)", color="#0284c7")
     axis.bar(years, foreign, bottom=domestic, label="Foreign ('000)", color="#38bdf8")
-    axis.axvspan(2009.5, 2025.5, color="#fee2e2")
-    axis.text(2017.5, max(a + b for a, b in zip(domestic, foreign)) * 0.5,
-              "No verified island-level series\nafter the cited 2000-2009 source",
-              ha="center", color="#991b1b")
+    axis.axvspan(2017.5, 2025.5, color="#fee2e2")
+    peak = max(a + b for a, b in zip(domestic, foreign))
+    axis.text(2021.5, peak * 0.62, "No state series\nafter 2017", ha="center", color="#991b1b")
+    axis.text(2021.5, peak * 0.40, "2024: arrivals published\nfor 11 units only",
+              ha="center", color="#475569", fontsize=9)
     axis.set(xlim=(1999.5, 2025.5), xlabel="Year", ylabel="Recorded visitors ('000)",
-             title="Verified marine-park visitor context and data gap")
+             title="State marine-park visitors, 2000-2017 (Department of Marine Park Malaysia)")
     axis.legend()
     axis.grid(axis="y", alpha=0.25)
     save(fig, "01_tourism_data_gap.png")
