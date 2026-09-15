@@ -2,6 +2,8 @@
 
 import csv
 import json
+import shutil
+import statistics
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -11,10 +13,24 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.economic_valuation import load_dmpm_tev
+from scripts.stress_attribution import (
+    FACTOR_GROUPS, FEATURE_INFO, GROUP_NOTES, MIN_STRESSOR_PUSH_PP, STRESSOR_GROUPS, strongest_stressor,
+)
 
 
 PROCESSED = ROOT / "data/processed"
 DASHBOARD = ROOT / "dashboard"
+REPORT_FIGURES = ROOT / "reports/figures"
+
+# Evidence-tab figures not already written to dashboard/figures by train_models.py.
+EVIDENCE_FIGURES = [
+    "01_tourism_data_gap.png",
+    "02_national_coral_cover_trajectory.png",
+    "03_satellite_thermal_stress_dhw.png",
+    "04_economic_valuation_pillars.png",
+    "11_all_factor_associations.png",
+    "12_dataset_completeness_matrix.png",
+]
 
 
 def read_csv(path):
@@ -24,6 +40,56 @@ def read_csv(path):
 
 def number(value, cast=float, default=0):
     return cast(value) if value not in (None, "") else default
+
+
+# Inputs whose push rounds to 0.00 pp/yr did not move the prediction and are left out.
+MIN_INPUT_PUSH_PP = 0.005
+
+
+def attach_stress_evidence(priorities):
+    """For each unit's top (or strongest) stressor group, list the surveyed value of each
+    input, how it compares across the ranked units, and that input's push in pp/yr."""
+    pushes = {row["island"]: row for row in read_csv(PROCESSED / "stress_feature_contributions.csv")}
+    surveys = {(row["island"], int(row["survey_year"])): row
+               for row in read_csv(PROCESSED / "master_reef_tourism_dataset.csv")}
+    latest = {item["island"]: surveys[(item["island"], item["surveyYear"])] for item in priorities}
+    across = {feature: [float(row[feature]) for row in latest.values() if row[feature] not in ("", None)]
+              for feature in FEATURE_INFO}
+
+    for item in priorities:
+        groups = {group["name"]: group["pp"] for group in item["stress"]["groups"]}
+        group, push = strongest_stressor(groups)
+        if group is None:
+            item["stress"]["evidence"] = None
+            continue
+        entries = []
+        for feature in FACTOR_GROUPS[group]:
+            pp = float(pushes[item["island"]][feature])
+            if abs(pp) < MIN_INPUT_PUSH_PP:
+                continue
+            label, kind = FEATURE_INFO[feature]
+            raw = latest[item["island"]][feature]
+            value = float(raw) if raw not in ("", None) else None
+            column = across[feature]
+            entries.append({
+                "label": label,
+                "kind": kind,
+                "value": value,
+                "rank": None if value is None else 1 + sum(other > value for other in column),
+                "ties": None if value is None else sum(other == value for other in column),
+                "of": len(column),
+                "median": statistics.median(column),
+                "mentioned": sum(other >= 1 for other in column) if kind == "flag" else None,
+                "pp": pp,
+            })
+        entries.sort(key=lambda entry: entry["pp"])
+        item["stress"]["evidence"] = {
+            "group": group,
+            "pp": push,
+            "belowThreshold": push > -MIN_STRESSOR_PUSH_PP,
+            "note": GROUP_NOTES[group],
+            "items": entries,
+        }
 
 
 def build_bundle():
@@ -49,6 +115,21 @@ def build_bundle():
             "evidence": row["evidence"],
             "nextStep": row["recommended_next_step"],
         })
+
+    # Each unit's prediction split into factor groups (baseline + groups = prediction).
+    stress = {row["island"]: row for row in read_csv(PROCESSED / "stress_contributions.csv")}
+    for item in priorities:
+        row = stress[item["island"]]
+        item["stress"] = {
+            "baseline": float(row["baseline_pp"]),
+            "groups": [{"name": group, "pp": float(row[group]), "stressor": group in STRESSOR_GROUPS}
+                       for group in FACTOR_GROUPS],
+            "topStressor": row["top_stressor"] or None,
+            "topStressorPp": float(row["top_stressor_pp"]),
+            "insight": row["insight"],
+        }
+
+    attach_stress_evidence(priorities)
 
     history = defaultdict(list)
     for row in read_csv(PROCESSED / "master_reef_tourism_dataset.csv"):
@@ -82,9 +163,9 @@ def build_bundle():
     bleaching_sites = read_csv(ROOT / "data/raw/structured/reef_check/bleaching_2024.csv")
 
     economics = json.loads((PROCESSED / "tourism_economics.json").read_text(encoding="utf-8"))
-    island_economics = read_csv(PROCESSED / "island_economics.csv")
-    for row in island_economics:
-        for key in ("priority_rank", "visitors_per_year", "spending_rm", "reef_adjacent_rm"):
+    park_economics = read_csv(PROCESSED / "park_economics.csv")
+    for row in park_economics:
+        for key in ("visitors_per_year", "spending_rm", "reef_adjacent_rm"):
             row[key] = int(row[key])
 
     return {
@@ -101,7 +182,7 @@ def build_bundle():
             "bleachingSiteRecords": len(bleaching_sites),
         },
         "tourismEconomics": economics,
-        "islandEconomics": island_economics,
+        "parkEconomics": park_economics,
         "priorityIslands": priorities,
         "islandHistory": dict(history),
         "factorRelationships": read_csv(PROCESSED / "factor_relationships.csv"),
@@ -130,6 +211,8 @@ def main():
         "window.TOURISM_DATA_GAP = window.REEFSAFE_DATA.tourismDataGap;\n"
         "window.ECONOMIC_VALUATION = window.REEFSAFE_DATA.economicValuation;\n"
     )
+    for name in EVIDENCE_FIGURES:
+        shutil.copyfile(REPORT_FIGURES / name, DASHBOARD / "figures" / name)
     target = DASHBOARD / "data.js"
     target.write_text(output, encoding="utf-8")
     print(f"Built {target} with {len(bundle['priorityIslands'])} monitoring units")

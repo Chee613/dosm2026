@@ -2,8 +2,6 @@
   "use strict";
 
   const data = window.REEFSAFE_DATA;
-  const ECONOMIC_VALUATION = window.ECONOMIC_VALUATION;
-  const TOURISM_DATA_GAP = window.TOURISM_DATA_GAP;
   if (!data) return;
 
   const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({
@@ -22,179 +20,311 @@
 
   const kpi = data.nationalKPIs;
   document.getElementById("kpi-cover").textContent = `${fmt(kpi.latestMeanCoralCover)}%`;
-  document.getElementById("kpi-cover-note").textContent = `${kpi.surveyedUnits} units observed in ${kpi.latestSurveyYear}`;
+  document.getElementById("kpi-cover-note").textContent = `${kpi.surveyedUnits} units surveyed`;
   document.getElementById("kpi-paired").textContent = `${fmt(kpi.pairedChange2024To2025, 2)} pp`;
   document.getElementById("kpi-paired-note").textContent = `Same ${kpi.pairedUnits} units in both years`;
   document.getElementById("kpi-priority").textContent = `${kpi.priorityCount} / ${kpi.surveyedUnits}`;
   document.getElementById("kpi-bleach").textContent = `${fmt(kpi.bleachingMortality)}%`;
-  document.getElementById("kpi-bleach-note").textContent =
-    `${fmt(kpi.bleachingCoralsBleached)}% of corals bleached; Terengganu archipelago ${fmt(kpi.bleachingTerengganuMortality)}% mortality`;
+  document.getElementById("kpi-bleach-note").textContent = `${fmt(kpi.bleachingCoralsBleached)}% of corals bleached`;
 
-  // Reef Check Malaysia condition bands (after Gomez et al. 1981), measured on live coral
-  // cover including soft coral; a reef within 3 pp of a boundary could sit in either band.
-  function reefCheckBand(cover) {
-    const label = cover < 25 ? "Poor" : cover < 50 ? "Fair" : cover < 75 ? "Good" : "Excellent";
-    const distance = Math.min(...[25, 50, 75].map((edge) => Math.abs(cover - edge)));
-    return { label, borderline: distance < 3, distance };
-  }
+  const isHigh = (unit) => unit.tier === "High screening priority";
+  const tierLabel = (unit) => (isHigh(unit) ? "High Priority" : "Monitor");
+  const changeText = (value) => `${value > 0 ? "+" : ""}${fmt(value, 2)} pp/yr`;
+
+  // Marker colour: screening tier first, then the sign of the predicted change.
+  const MARKER_GROUPS = [
+    { label: "High Priority", color: "#DC2626", test: (unit) => isHigh(unit) },
+    { label: "Monitor, decline predicted", color: "#F59E0B", test: (unit) => !isHigh(unit) && unit.predictedNextChange < 0 },
+    { label: "Monitor, gain predicted", color: "#10B981", test: (unit) => !isHigh(unit) && unit.predictedNextChange >= 0 },
+  ];
 
   function renderMap() {
     if (!window.L) return;
-    // Wheel zoom off, so scrolling the page past the map does not zoom it instead.
-    const map = L.map("map", { scrollWheelZoom: false }).setView([4.3, 108.5], 5);
+    const map = L.map("map").setView([4.3, 108.5], 5);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
     data.priorityIslands.forEach((unit) => {
-      const color = unit.tier === "High screening priority" ? "#b91c1c" : "#0f766e";
-      L.circleMarker([unit.lat, unit.lng], { radius: 7, color, fillColor: color, fillOpacity: 0.75 })
-        .bindPopup(`<strong>${escapeHtml(unit.island)}</strong><br>Observed cover: ${fmt(unit.lcc)}%<br>Screening rank: ${unit.rank}`)
-        .addTo(map)
-        .on("click", () => selectUnit(unit.island));
+      const group = MARKER_GROUPS.find((item) => item.test(unit));
+      const popup = `
+        <div class="map-popup">
+          <strong>${escapeHtml(unit.island)}</strong>
+          <span class="map-popup-state">${escapeHtml(unit.state)}</span>
+          <div>Observed cover: <strong>${fmt(unit.lcc)}%</strong></div>
+          <div>Predicted change: <strong style="color:${unit.predictedNextChange < 0 ? "#DC2626" : "#059669"}">${changeText(unit.predictedNextChange)}</strong></div>
+          <div>Status tier: <strong>${tierLabel(unit)}</strong></div>
+          <button type="button" class="map-popup-btn">View Diagnostics →</button>
+        </div>`;
+      L.circleMarker([unit.lat, unit.lng], {
+        radius: isHigh(unit) ? 8 : 6, color: group.color, weight: 1.5, fillColor: group.color, fillOpacity: 0.85,
+      })
+        .bindPopup(popup)
+        // Wire the button when the popup opens, so island names need no inline escaping.
+        .on("popupopen", (event) => {
+          event.popup.getElement().querySelector(".map-popup-btn")
+            .addEventListener("click", () => selectUnit(unit.island), { once: true });
+        })
+        .addTo(map);
     });
+    document.getElementById("map-legend").innerHTML = MARKER_GROUPS.map((group) => `
+      <span class="map-key-item"><span class="map-key-dot" style="background:${group.color}"></span>${group.label} (${data.priorityIslands.filter(group.test).length})</span>`).join("");
     window.reefMap = map;
-  }
-
-  function renderEconomics() {
-    const max = Math.max(...ECONOMIC_VALUATION.components.map((item) => item.annual_value_myr));
-    document.getElementById("economic-pillars-chart").innerHTML = ECONOMIC_VALUATION.components.map((item) => `
-      <div style="margin:12px 0">
-        <div style="display:flex;justify-content:space-between;gap:12px"><span>${escapeHtml(item.component)}</span><strong>${money(item.annual_value_myr)}</strong></div>
-        <div style="height:10px;background:#e2e8f0;border-radius:5px"><div style="width:${Math.max(1, 100 * item.annual_value_myr / max)}%;height:100%;background:#0f766e;border-radius:5px"></div></div>
-        <small>Source page ${item.source_page}</small>
-      </div>`).join("");
-    document.getElementById("economic-source-note").innerHTML = `${escapeHtml(ECONOMIC_VALUATION.scope_note)}. <a href="${ECONOMIC_VALUATION.source_url}" target="_blank" rel="noopener">Primary source</a>.`;
+    // The printed page is narrower than the screen; refit the map before and after printing.
+    window.addEventListener("beforeprint", () => map.invalidateSize());
+    window.addEventListener("afterprint", () => map.invalidateSize());
   }
 
   function renderQueue() {
-    document.getElementById("top-priority-table").innerHTML = data.priorityIslands.slice(0, 10).map((unit) => {
-      const band = reefCheckBand(unit.lcc);
-      const bandTip = band.borderline
-        ? `Reef Check band: ${band.label}, within ${fmt(band.distance)} pp of a boundary`
-        : `Reef Check band: ${band.label}`;
-      const isHigh = unit.tier === "High screening priority";
-      return `
+    document.getElementById("top-priority-table").innerHTML = data.priorityIslands.slice(0, 5).map((unit) => `
       <tr data-island="${escapeHtml(unit.island)}">
-        <td>${unit.rank}</td><td><button class="table-link" type="button">${escapeHtml(unit.island)}</button></td>
+        <td>${unit.rank}</td>
+        <td><button class="table-link" type="button">${escapeHtml(unit.island)}</button></td>
         <td>${escapeHtml(unit.state)}</td>
-        <td title="${escapeHtml(bandTip)}">${fmt(unit.lcc)}%${band.borderline ? " ≈" : ""}</td>
-        <td>${fmt(unit.predictedNextChange, 2)} pp/year<br><small>${fmt(unit.predictionLower, 1)} to ${fmt(unit.predictionUpper, 1)}</small></td>
-        <td><span class="kpi-pill ${isHigh ? "pill-red" : "pill-amber"}">${isHigh ? "High Priority" : "Monitor"}</span></td>
-      </tr>`;
-    }).join("");
+        <td>${fmt(unit.lcc)}%</td>
+        <td title="Range: ${fmt(unit.predictionLower, 1)} to ${fmt(unit.predictionUpper, 1)} pp/yr">${changeText(unit.predictedNextChange)}</td>
+        <td><span class="kpi-pill ${isHigh(unit) ? "pill-red" : "pill-amber"}">${tierLabel(unit)}</span></td>
+      </tr>`).join("");
     document.querySelectorAll("#top-priority-table tr").forEach((row) => row.addEventListener("click", () => selectUnit(row.dataset.island)));
 
-    // The queue is ranked by predicted change, so the most degraded reefs can sit far
-    // down it. Name them rather than let the table imply every struggling reef is listed.
+    // Ranked by predicted change, so the most degraded reefs can sit far down the list.
     const lowest = [...data.priorityIslands].sort((a, b) => a.lcc - b.lcc).slice(0, 3);
     document.getElementById("queue-note").textContent =
-      "Ranked by predicted change, not by condition: the lowest-cover units (" +
-      lowest.map((unit) => `${unit.island} ${fmt(unit.lcc)}%`).join(", ") +
-      `) sit at ranks ${lowest.map((unit) => unit.rank).join(", ")}. Hover a cover value for its Reef Check band; ≈ marks a unit within 3 pp of a band boundary.`;
+      `Ranked by predicted change, not condition. Lowest cover: ${lowest.map((unit) => `${unit.island} ${fmt(unit.lcc)}% (#${unit.rank})`).join(", ")}. Hover a prediction for its range.`;
+  }
+
+  // DMPM Total Economic Value as a donut. Components under 1.5% get a 1.5% slice so all
+  // seven stay visible; the larger ones share the rest in proportion. The legend and
+  // hover text keep the true shares.
+  const POTENTIAL_COLOURS = ["#0F766E", "#0284C7", "#6366F1", "#64748B", "#A855F7", "#F59E0B", "#84CC16"];
+  const MIN_SLICE = 1.5;
+
+  function renderReefPotential() {
+    const tev = data.economicValuation;
+    if (!tev) return;
+    const parts = [...tev.components].sort((a, b) => b.annual_value_myr - a.annual_value_myr);
+    const sum = parts.reduce((total, part) => total + part.annual_value_myr, 0);
+    const trueShare = parts.map((part) => 100 * part.annual_value_myr / sum);
+    const small = trueShare.map((share) => share < MIN_SLICE);
+    const reserved = MIN_SLICE * small.filter(Boolean).length;
+    const largeTotal = trueShare.reduce((total, share, index) => total + (small[index] ? 0 : share), 0);
+    const shown = trueShare.map((share, index) => (small[index] ? MIN_SLICE : share * (100 - reserved) / largeTotal));
+    const pct = (share) => `${fmt(share, share >= 1 ? 1 : 2)}%`;
+
+    const cx = 80, cy = 80, r = 58, gap = 0.3;
+    let offset = 0;
+    const slices = parts.map((part, index) => {
+      const length = shown[index] - gap;
+      const slice = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${POTENTIAL_COLOURS[index]}" stroke-width="24" pathLength="100"
+          stroke-dasharray="${length} ${100 - length}" stroke-dashoffset="${-offset}">
+          <title>${escapeHtml(part.component)}: ${money(part.annual_value_myr)} a year, ${pct(trueShare[index])} (DMPM p.${part.source_page})</title></circle>`;
+      offset += shown[index];
+      return slice;
+    }).join("");
+    const legend = parts.map((part, index) => `
+      <span class="map-key-dot" style="background:${POTENTIAL_COLOURS[index]}"></span>
+      <span>${escapeHtml(part.component)}</span>
+      <span class="potential-value">${money(part.annual_value_myr)}</span>
+      <span class="potential-pct">${pct(trueShare[index])}</span>`).join("");
+
+    document.getElementById("reef-potential-donut").innerHTML = `
+      <svg viewBox="0 0 160 160" role="img" aria-label="${escapeHtml(parts.map((part, index) => `${part.component} ${pct(trueShare[index])}`).join("; "))}">
+        <g transform="rotate(-90 ${cx} ${cy})">${slices}</g>
+        <text x="${cx}" y="${cy + 2}" text-anchor="middle" font-size="17" font-weight="700" fill="#0F172A">RM${fmt(tev.reported_total_myr / 1e9, 1)}B</text>
+        <text x="${cx}" y="${cy + 18}" text-anchor="middle" font-size="10" fill="#64748B">per year</text>
+      </svg>
+      <div class="potential-legend">${legend}</div>`;
   }
 
   function renderReefEconomy() {
     const economics = data.tourismEconomics;
-    const rows = data.islandEconomics || [];
+    const rows = data.parkEconomics || [];
     if (!economics || !rows.length) return;
-    document.getElementById("economy-value").textContent = money(economics.measured_reef_adjacent_rm);
-    document.getElementById("economy-coverage").textContent = `${economics.islands_measured} of ${economics.islands_total} units measured`;
+    document.getElementById("economy-value").textContent = money(economics.national_reef_adjacent_rm);
+    document.getElementById("economy-coverage").textContent = `${economics.units_covered} of ${economics.units_total} units`;
     document.getElementById("economy-split").innerHTML =
-      `${Math.round(economics.measured_visitors).toLocaleString("en-MY")} visitors/year<br>${money(economics.measured_spending_rm)} tourism spending`;
-    document.getElementById("economy-body").innerHTML = rows.slice(0, 6).map((row) => `
-      <tr data-island="${escapeHtml(row.island)}">
-        <td><button class="table-link" type="button">${escapeHtml(row.island)}</button><br><small>rank ${row.priority_rank}</small></td>
-        <td><small>${escapeHtml(row.basis)}</small></td>
+      `${Math.round(economics.national_visitors).toLocaleString("en-MY")} visitors/yr<br>${money(economics.national_spending_rm)} spending`;
+    document.getElementById("economy-body").innerHTML = rows.map((row) => `
+      <tr>
+        <td title="Units: ${escapeHtml(row.units)}"><strong>${escapeHtml(row.park)}</strong> <small class="park-state">${escapeHtml(row.state)}</small></td>
+        <td title="${escapeHtml(row.basis)}">${row.visitors_per_year.toLocaleString("en-MY")}</td>
         <td>${money(row.spending_rm)}</td>
         <td><strong>${money(row.reef_adjacent_rm)}</strong></td>
       </tr>`).join("");
-    document.querySelectorAll("#economy-body tr").forEach((row) => row.addEventListener("click", () => selectUnit(row.dataset.island)));
-    document.getElementById("economy-source").textContent =
-      `${economics.sources.reef_adjacent} ${economics.sources.spend} ${economics.sources.arrivals} ` +
-      "An annual flow attributable to reef presence, not an asset value, and not a forecast of losses from coral decline.";
+    document.getElementById("economy-caption").textContent =
+      `${rows.length} parks. Excludes Malacca and non-park reefs (${economics.units_excluded.length} units).`;
   }
 
   function renderSeasonRest() {
     const economics = data.tourismEconomics;
     if (!economics) return;
     const rest = economics.tradeoff;
-    const [low, high] = rest.recovery_years;
+    const [lowYears, highYears] = rest.recovery_years;
     document.getElementById("rest-scenario").textContent =
-      `One month of rest on the ${rest.islands_measured} of ${rest.islands_total} high-priority units with published arrivals (${rest.island_names.join(", ")})`;
-    document.getElementById("rest-short").textContent = money(rest.short_term_loss_rm);
-    document.getElementById("rest-long").textContent = `${money(rest.long_term_low_rm)} – ${money(rest.long_term_high_rm)}`;
-    document.getElementById("rest-short-note").textContent = "Foregone tourism spending on these units for one month.";
-    document.getElementById("rest-long-note").textContent =
-      `Reef-adjacent value of ${money(rest.reef_adjacent_annual_rm)}/year held over a ${low}–${high} year recovery window.`;
-    const widest = Math.max(rest.short_term_loss_rm, rest.long_term_high_rm) || 1;
-    document.getElementById("rest-short-bar").style.width = `${Math.max(2, 100 * rest.short_term_loss_rm / widest)}%`;
-    document.getElementById("rest-long-bar").style.width = `${100 * rest.long_term_high_rm / widest}%`;
-    document.getElementById("rest-callout").textContent =
-      `${economics.sources.recovery} A reef that is lost stops earning for that whole window, while a rest costs one month.`;
-    document.getElementById("rest-source").textContent =
-      `${rest.ratio_note} Arithmetic on published arrivals, not a prediction: it assumes rested-month visitors do not return later and does not model how coral responds to a rest.`;
+      `One month of rest across ${rest.park_names.length} parks holding ${rest.units_covered} of ${rest.units_total} high-priority units`;
+    document.getElementById("rest-scenario").title =
+      `Parks: ${rest.park_names.join(", ")}. Not covered: ${rest.units_uncovered_names.join(", ") || "none"}.`;
+    document.getElementById("rest-short").textContent = `-${money(rest.short_term_loss_rm)}`;
+    document.getElementById("rest-long-low").textContent = `+${money(rest.long_term_low_rm)}`;
+    document.getElementById("rest-long-high").textContent = `+${money(rest.long_term_high_rm)}`;
+    renderRestBars([
+      { label: "One month of rest", value: rest.short_term_loss_rm, kind: "rest" },
+      { label: `Reef revenue, ${lowYears} yrs`, value: rest.long_term_low_rm, kind: "revenue" },
+      { label: `Reef revenue, ${highYears} yrs`, value: rest.long_term_high_rm, kind: "revenue" },
+    ]);
   }
 
-  function renderHistory(name) {
-    const rows = data.islandHistory[name] || [];
+  // Horizontal bars on one RM-millions axis, gridlines every 50M.
+  function renderRestBars(rows) {
+    const step = 50;
+    const max = Math.ceil(Math.max(...rows.map((row) => row.value)) / 1e6 / step) * step;
+    const ticks = Array.from({ length: max / step + 1 }, (_, index) => index * step);
+    const labelEvery = window.innerWidth < 640 ? 2 : 1;
+    // Rest is a loss, reef revenue a gain.
+    const signed = (row) => `${row.kind === "rest" ? "-" : "+"}${money(row.value)}`;
+    const chart = document.getElementById("rest-bars");
+    chart.setAttribute("aria-label", rows.map((row) => `${row.label} ${signed(row)}`).join("; "));
+    chart.innerHTML = `
+      <div class="hbar-labels">${rows.map((row) => `<span>${escapeHtml(row.label)}</span>`).join("")}</div>
+      <div class="hbar-plot">
+        ${ticks.map((tick) => `<span class="hbar-grid" style="left:${100 * tick / max}%"></span>`).join("")}
+        ${rows.map((row) => `<div class="hbar-row"><div class="hbar hbar-${row.kind}" style="width:${100 * row.value / 1e6 / max}%" title="${escapeHtml(row.label)}: ${signed(row)}"></div></div>`).join("")}
+        <div class="hbar-ticks">${ticks.map((tick, index) => index % labelEvery ? "" : `<span style="left:${100 * tick / max}%">${tick}</span>`).join("")}</div>
+      </div>
+      <div class="hbar-axis-title">RM millions</div>`;
+  }
+
+  // Observed surveys (solid) plus the model's next-year point (dashed; red for a
+  // predicted decline, green for a gain): latest cover + predicted change x 1 year.
+  function renderHistory(unit) {
+    const rows = data.islandHistory[unit.island] || [];
     if (!rows.length) return;
-    const width = 620, height = 280, left = 48, top = 20, right = 20, bottom = 38;
-    const years = rows.map((row) => row.year), values = rows.map((row) => row.lcc);
-    const minYear = Math.min(...years), maxYear = Math.max(...years);
-    const x = (year) => left + (year - minYear) / Math.max(1, maxYear - minYear) * (width - left - right);
+    const last = rows[rows.length - 1];
+    const next = { year: last.year + 1, lcc: Math.min(100, Math.max(0, last.lcc + unit.predictedNextChange)) };
+    const colour = unit.predictedNextChange < 0 ? "#DC2626" : "#059669";
+    // Narrow screens get a narrower drawing so the SVG text stays readable.
+    const narrow = window.innerWidth < 640;
+    const width = narrow ? 420 : 1000, height = narrow ? 280 : 250, left = 44, top = 16, right = narrow ? 96 : 150, bottom = 34;
+    const x = (year) => left + (year - rows[0].year) / Math.max(1, next.year - rows[0].year) * (width - left - right);
     const y = (value) => top + (100 - value) / 100 * (height - top - bottom);
-    const points = rows.map((row) => `${x(row.year)},${y(row.lcc)}`).join(" ");
+    const grid = [0, 25, 50, 75, 100].map((value) => `
+      <line x1="${left}" y1="${y(value)}" x2="${width-right}" y2="${y(value)}" stroke="#E2E8F0"/>
+      <text x="${left-6}" y="${y(value)+4}" text-anchor="end" font-size="11" fill="#64748B">${value}%</text>`).join("");
+    const bands = [[50, "Fair/Good", "#94A3B8", "#475569"], [25, "Poor/Fair", "#DC2626", "#B91C1C"]].map(([value, label, line, text]) => `
+      <line x1="${left}" y1="${y(value)}" x2="${width-right}" y2="${y(value)}" stroke="${line}" stroke-dasharray="5 4"/>
+      <text x="${width-right+(narrow ? 14 : 26)}" y="${y(value)+4}" font-size="11" fill="${text}">${value}% ${label}</text>`).join("");
+    // Year labels from the predicted year backwards, skipping any that would overlap.
+    const tickYears = [];
+    for (const year of [next.year, ...rows.map((row) => row.year).reverse()]) {
+      if (!tickYears.length || x(tickYears[tickYears.length - 1]) - x(year) >= 32) tickYears.push(year);
+    }
+    const ticks = tickYears.map((year) =>
+      `<text x="${x(year)}" y="${height-12}" text-anchor="middle" font-size="11" fill="${year === next.year ? colour : "#64748B"}">${year}</text>`).join("");
+    // Label below a falling point and above a rising one, so it never sits on the dashed line.
+    const below = unit.predictedNextChange < 0 && y(next.lcc) + 20 < height - bottom;
+    document.getElementById("legend-predicted").style.borderTopColor = colour;
     document.getElementById("island-history-chart").innerHTML = `
-      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Observed coral-cover history for ${escapeHtml(name)}" style="width:100%;height:auto">
-        <line x1="${left}" y1="${y(50)}" x2="${width-right}" y2="${y(50)}" stroke="#94a3b8" stroke-dasharray="5 4"/>
-        <line x1="${left}" y1="${y(25)}" x2="${width-right}" y2="${y(25)}" stroke="#dc2626" stroke-dasharray="5 4"/>
-        <polyline points="${points}" fill="none" stroke="#0f766e" stroke-width="3"/>
-        ${rows.map((row) => `<circle cx="${x(row.year)}" cy="${y(row.lcc)}" r="4" fill="#0284c7"><title>${row.year}: ${fmt(row.lcc)}%</title></circle>`).join("")}
-        <text x="${left}" y="${height-10}" font-size="12">${minYear}</text><text x="${width-right}" y="${height-10}" text-anchor="end" font-size="12">${maxYear}</text>
-        <text x="${left+4}" y="${y(50)-5}" font-size="11" fill="#475569">50% Fair/Good boundary (Reef Check)</text>
-        <text x="${left+4}" y="${y(25)-5}" font-size="11" fill="#b91c1c">25% Poor/Fair boundary (Reef Check)</text>
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Observed and predicted coral cover for ${escapeHtml(unit.island)}" style="width:100%;height:auto">
+        ${grid}${bands}
+        <polyline points="${rows.map((row) => `${x(row.year)},${y(row.lcc)}`).join(" ")}" fill="none" stroke="#0F766E" stroke-width="3"/>
+        <line x1="${x(last.year)}" y1="${y(last.lcc)}" x2="${x(next.year)}" y2="${y(next.lcc)}" stroke="${colour}" stroke-width="3" stroke-dasharray="7 5"/>
+        ${rows.map((row) => `<circle cx="${x(row.year)}" cy="${y(row.lcc)}" r="4" fill="#0284C7"><title>${row.year}: ${fmt(row.lcc)}%</title></circle>`).join("")}
+        <circle cx="${x(next.year)}" cy="${y(next.lcc)}" r="5.5" fill="#FFFFFF" stroke="${colour}" stroke-width="2.5"><title>${next.year} predicted: ${fmt(next.lcc)}% (${changeText(unit.predictedNextChange)})</title></circle>
+        <text x="${x(next.year)}" y="${below ? y(next.lcc) + 20 : y(next.lcc) - 11}" text-anchor="middle" font-size="12" font-weight="700" fill="${colour}">${fmt(next.lcc)}%</text>
+        ${ticks}
       </svg>`;
+  }
+
+  // Urgency uses the same three groups, in the same order, as the map colours.
+  const URGENCY = ["High", "Medium", "Low"];
+
+  // Diverging bars: decline extends left of the centre line, recovery to the right,
+  // each scaled to the unit's largest group so the biggest push fills half the track.
+  function renderStressBreakdown(stress, prediction) {
+    const widest = Math.max(...stress.groups.map((group) => Math.abs(group.pp)), 0.01);
+    const rows = stress.groups.map((group) => {
+      const side = group.pp < 0 ? "decline" : "recovery";
+      return `
+        <div class="stress-row${group.stressor ? "" : " stress-context"}">
+          <span class="stress-name">${escapeHtml(group.name)}${group.stressor ? "" : " <small>(context)</small>"}</span>
+          <span class="stress-track"><span class="stress-bar stress-${side}" style="width:${50 * Math.abs(group.pp) / widest}%"></span></span>
+          <span class="stress-value">${group.pp > 0 ? "+" : ""}${fmt(group.pp, 2)}</span>
+        </div>`;
+    }).join("");
+    document.getElementById("stress-breakdown").innerHTML = `${rows}
+      <div class="stress-total">Model baseline ${changeText(stress.baseline)} + factors = prediction ${changeText(prediction)}</div>`;
+  }
+
+  // Evidence for the top (or strongest) stressor: each input's surveyed value, how it
+  // compares across the ranked units, and its own push on the prediction.
+  const ordinal = (n) => `${n}${[, "st", "nd", "rd"][(n % 100 >> 3 ^ 1 && n % 10) || 0] || "th"}`;
+
+  function evidenceValue(entry, surveyYear) {
+    if (entry.value === null) return "Not recorded; the model used the median";
+    if (entry.kind === "flag") {
+      const said = entry.value >= 1 ? `Mentioned in the ${surveyYear} report` : "Not mentioned";
+      return `${said} · mentioned for ${entry.mentioned} of ${entry.of} units`;
+    }
+    const show = (value) => entry.kind === "pct" ? `${fmt(value, 1)}%` : fmt(value, 2);
+    const unit = { pct: " of substrate", count: " per 100 m²", ratio: "" }[entry.kind];
+    // Count from whichever end is nearer: "3rd highest" or "2nd lowest".
+    const joint = entry.ties > 1 ? "joint " : "";
+    const fromBottom = entry.of - (entry.rank + entry.ties - 1) + 1;
+    const place = entry.rank === 1 ? `${joint}highest`
+      : fromBottom === 1 ? `${joint}lowest`
+      : entry.rank <= fromBottom ? `${joint}${ordinal(entry.rank)} highest`
+      : `${joint}${ordinal(fromBottom)} lowest`;
+    return `${show(entry.value)}${unit} · ${place} of ${entry.of} (median ${show(entry.median)})`;
+  }
+
+  function renderUnitEvidence(evidence, surveyYear) {
+    const box = document.getElementById("unit-evidence");
+    if (!evidence) {
+      box.innerHTML = `<p class="evidence-empty">No measured stressor pushes this prediction towards decline.</p>`;
+      return;
+    }
+    const threshold = evidence.belowThreshold
+      ? ` · <span class="evidence-flag">strongest stressor, below the 0.25 pp/yr threshold</span>` : "";
+    box.innerHTML = `
+      <div class="evidence-head">${escapeHtml(evidence.group)} · Reef Check Malaysia, ${surveyYear} survey${threshold}</div>
+      ${evidence.items.length ? "" : `<p class="evidence-empty">No single input moved the prediction by 0.01 pp/yr or more.</p>`}
+      <ul class="evidence-list">${evidence.items.map((entry) => `
+        <li>
+          <span class="evidence-name">${escapeHtml(entry.label)}</span>
+          <span class="evidence-pp ${entry.pp < -0.005 ? "decline" : entry.pp > 0.005 ? "recovery" : ""}">${entry.pp > 0 ? "+" : ""}${fmt(entry.pp, 2)} pp/yr</span>
+          <span class="evidence-detail">${escapeHtml(evidenceValue(entry, surveyYear))}</span>
+        </li>`).join("")}
+      </ul>
+      <p class="evidence-note">${escapeHtml(evidence.note)}</p>`;
   }
 
   function selectUnit(name, navigate = true) {
     const unit = data.priorityIslands.find((item) => item.island === name);
     if (!unit) return;
+    const level = MARKER_GROUPS.findIndex((group) => group.test(unit));
     document.getElementById("island-select").value = name;
-    document.getElementById("unit-title").textContent = `${unit.island} — screening rank ${unit.rank}`;
-    document.getElementById("unit-summary").innerHTML = `
-      <p><strong>Observed cover:</strong> ${fmt(unit.lcc)}% (${unit.surveyYear})</p>
-      <p><strong>Next-observation estimate:</strong> ${fmt(unit.predictedNextChange, 2)} percentage points/year</p>
-      <p><strong>Empirical forward-residual range:</strong> ${fmt(unit.predictionLower, 1)} to ${fmt(unit.predictionUpper, 1)}</p>
-      <p><strong>Source confidence:</strong> ${escapeHtml(unit.sourceConfidence)}</p>`;
-    document.getElementById("unit-evidence").innerHTML = `<strong>Verify:</strong> ${escapeHtml(unit.evidence)}<br><strong>Next step:</strong> ${escapeHtml(unit.nextStep)}`;
-    renderHistory(name);
-    if (navigate) document.querySelector('[data-tab="diagnostics"]').click();
-  }
+    document.getElementById("unit-title").textContent = `${unit.island} — rank ${unit.rank} of ${data.priorityIslands.length}`;
+    document.getElementById("unit-cover").textContent = `${fmt(unit.lcc)}% (${unit.surveyYear})`;
 
-  function renderTourismGap() {
-    const rows = TOURISM_DATA_GAP.annualTrend;
-    const max = Math.max(...rows.map((row) => row.total));
-    const width = 900, height = 250, left = 35, top = 15, bottom = 35, gapWidth = 170;
-    const plotWidth = width - left - gapWidth - 20;
-    const barWidth = plotWidth / rows.length - 6;
-    const bars = rows.map((row, index) => {
-      const x = left + index * (plotWidth / rows.length);
-      const totalHeight = (height - top - bottom) * row.total / max;
-      const domesticHeight = totalHeight * row.domestic / row.total;
-      return `<rect x="${x}" y="${height-bottom-totalHeight}" width="${barWidth}" height="${domesticHeight}" fill="#0284c7"><title>${row.year}: ${row.domestic.toLocaleString()} domestic</title></rect>
-        <rect x="${x}" y="${height-bottom-totalHeight+domesticHeight}" width="${barWidth}" height="${totalHeight-domesticHeight}" fill="#38bdf8"><title>${row.year}: ${row.foreign.toLocaleString()} foreign</title></rect>
-        <text x="${x+barWidth/2}" y="${height-14}" text-anchor="middle" font-size="11">${row.year}</text>`;
-    }).join("");
-    document.getElementById("tourism-gap-chart").innerHTML = `
-      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Verified 2000 to 2017 state marine-park visitor totals and the gap after 2017" style="width:100%;height:auto">
-        <line x1="${left}" y1="${height-bottom}" x2="${width-10}" y2="${height-bottom}" stroke="#94a3b8"/>
-        ${bars}
-        <rect x="${left+plotWidth}" y="${top}" width="${gapWidth}" height="${height-top-bottom}" fill="#fee2e2"/>
-        <text x="${left+plotWidth+gapWidth/2}" y="95" text-anchor="middle" font-size="13" fill="#991b1b">No state series</text>
-        <text x="${left+plotWidth+gapWidth/2}" y="113" text-anchor="middle" font-size="13" fill="#991b1b">after 2017</text>
-        <text x="${left+plotWidth+gapWidth/2}" y="145" text-anchor="middle" font-size="11" fill="#475569">2024: arrivals published</text>
-        <text x="${left+plotWidth+gapWidth/2}" y="160" text-anchor="middle" font-size="11" fill="#475569">for 11 units only</text>
-      </svg><p class="method-note">${escapeHtml(TOURISM_DATA_GAP.limitation)}</p>`;
+    const prediction = document.getElementById("unit-prediction");
+    prediction.textContent = changeText(unit.predictedNextChange);
+    prediction.title = `Range: ${fmt(unit.predictionLower, 1)} to ${fmt(unit.predictionUpper, 1)} pp/yr`;
+    prediction.style.color = unit.predictedNextChange < 0 ? "#DC2626" : "#059669";
+
+    document.getElementById("unit-urgency").innerHTML =
+      `<span class="urgency-pill" style="background:${MARKER_GROUPS[level].color}" title="${MARKER_GROUPS[level].label}">${URGENCY[level]}</span>`;
+
+    const stress = unit.stress;
+    document.getElementById("unit-insight").textContent = stress.insight;
+    document.getElementById("unit-top-stressor").textContent = stress.topStressor
+      ? `${stress.topStressor} (${fmt(stress.topStressorPp, 2)} pp/yr)`
+      : "None above 0.25 pp/yr";
+    renderUnitEvidence(stress.evidence, unit.surveyYear);
+    renderStressBreakdown(stress, unit.predictedNextChange);
+    document.getElementById("unit-heat-note").textContent =
+      `Regional heat (NOAA): max DHW ${fmt(unit.dhwContext, 1)} °C-weeks. Context only; not in the model.`;
+
+    renderHistory(unit);
+    if (navigate) document.querySelector('[data-tab="diagnostics"]').click();
   }
 
   function renderValidation() {
@@ -204,17 +334,47 @@
     document.getElementById("model-note").textContent = `${metrics.best_candidate} improves MAE ${fmt(metrics.mae_improvement_pct, 1)}% over the mean baseline. Latest-year R² is weak, so outputs remain screening-only.`;
   }
 
+  // Evidence figures: numbers in the captions come from the data bundle so they
+  // follow a retrain; clicking a figure opens it full size.
+  function renderEvidence() {
+    const metrics = data.modelMetrics;
+    const set = (id, text) => { document.getElementById(id).textContent = text; };
+    set("ev-paired-units", kpi.pairedUnits);
+    set("ev-paired-change", `${fmt(kpi.pairedChange2024To2025, 2)}`.replace("-", "−"));
+    set("ev-latest-mean", fmt(kpi.latestMeanCoralCover));
+    set("ev-best-mae", fmt(metrics.best_mae, 3));
+    set("ev-baseline-mae", fmt(metrics.baseline_mae, 3));
+    set("ev-improvement", fmt(metrics.mae_improvement_pct, 1));
+    set("ev-eval-obs", metrics.evaluation_observations);
+
+    const lightbox = document.getElementById("figure-lightbox");
+    const close = () => lightbox.classList.remove("open");
+    document.querySelectorAll("#tab-science .figure-img-wrapper").forEach((button) => {
+      button.addEventListener("click", () => {
+        const img = button.querySelector("img");
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox-img").alt = img.alt;
+        document.getElementById("lightbox-title").textContent = button.dataset.title;
+        lightbox.classList.add("open");
+        document.getElementById("lightbox-close").focus();
+      });
+    });
+    document.getElementById("lightbox-close").addEventListener("click", close);
+    lightbox.addEventListener("click", (event) => { if (event.target === lightbox) close(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
+  }
+
   const select = document.getElementById("island-select");
   select.innerHTML = data.priorityIslands.map((unit) => `<option value="${escapeHtml(unit.island)}">${escapeHtml(unit.island)} — rank ${unit.rank}</option>`).join("");
   select.addEventListener("change", () => selectUnit(select.value));
 
   renderMap();
-  renderEconomics();
   renderQueue();
   renderReefEconomy();
+  renderReefPotential();
   renderSeasonRest();
-  renderTourismGap();
   renderValidation();
+  renderEvidence();
   const initial = data.priorityIslands[0];
   if (initial) selectUnit(initial.island, false);
 }());
