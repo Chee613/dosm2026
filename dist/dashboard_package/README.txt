@@ -26,10 +26,10 @@ MODEL CHECK
 - Target: next observed annualized live-coral-cover change.
 - Validation: expanding-year, past-only evaluation on the latest five target years.
 - Forward evaluation observations: 183.
-- Gradient Boosting MAE: 5.859 percentage points/year.
+- Gradient Boosting MAE: 5.862 percentage points/year.
 - Mean baseline MAE: 5.991 percentage points/year.
-- Improvement over baseline: 2.2%.
-- Forward-test R²: 0.070.
+- Improvement over baseline: 2.1%.
+- Forward-test R²: 0.069.
 
 Because performance is weak, rankings must not be treated as forecasts or enforcement
 decisions. The workbook keeps these diagnostics visible.

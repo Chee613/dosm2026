@@ -63,7 +63,7 @@ The accommodation inventory is read for audit compatibility but its fields are e
 - Model evaluation uses expanding-year validation over target years 2021–2025. Every test year is trained only on earlier target years.
 - Missing feature values are median-imputed inside each training fold to prevent leakage.
 - Mean prediction is the benchmark. Ridge regression, Gradient Boosting and Random Forest are compared using the same folds.
-- Gradient Boosting has the lowest forward-test MAE: 5.859 percentage points/year versus 5.991 for the mean baseline, a 2.2% improvement. R² is 0.070, so the model remains screening-only.
+- Gradient Boosting has the lowest forward-test MAE: 5.862 percentage points/year versus 5.991 for the mean baseline, a 2.1% improvement. R² is 0.069, so the model remains screening-only.
 - Prediction bands use pooled empirical 2.5th and 97.5th percentiles of forward-validation residuals rather than a normal-error assumption.
 
 ## Factor analysis
