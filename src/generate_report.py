@@ -170,7 +170,9 @@ def build_report():
         ["Reef Check Malaysia annual reports", "Ecological condition and documented impact mentions", "Verified input to scored model"],
         ["Coordinates and marine-park labels", "Location and grouping", "Verified input; Labuan recorded as W.P. Labuan"],
         ["NOAA Coral Reef Watch virtual stations", "Regional heat context and descriptive diagnostics", "Eligibility pending; excluded from scored model"],
-        ["Marine-park visitors", "Historical aggregate context", "Verified only for cited 2000-2009 scope; excluded from model"],
+        ["Marine-park visitors (Department of Marine Park)", "State visitor context", "Verified 2000-2017 for five states; excluded from model"],
+        ["Island arrivals (Sabah Parks; Terengganu tourism)", "Economic context for 11 units", "Verified 2024 figures; excluded from model"],
+        ["2024 bleaching impact report (Coralku, Reef Check Malaysia)", "Bleaching mortality context", "Verified published figures; excluded from model"],
         ["DMPM Total Economic Value booklet", "Historical economic context", "Verified context for six evaluated archipelagos"],
         ["Local accommodation inventory", "None", "Excluded: reproducible source trail not available"],
     ], widths=[2.0, 2.5, 1.9])
@@ -183,11 +185,11 @@ def build_report():
     picture(document, "12_dataset_completeness_matrix.png", "Figure 1. Availability of the verified features admitted to the scored model.")
     document.add_page_break()
 
-    heading(document, "2. Observed trends and the tourism data gap")
+    heading(document, "2. Observed trends and the tourism evidence gap")
     picture(document, "02_national_coral_cover_trajectory.png", "Figure 2. Unbalanced annual means with surveyed-unit counts and the paired 2024-2025 comparison.")
     paragraph(document, f"The same {paired['paired_units']} units averaged {float(paired['start_mean_lcc']):.2f}% live coral cover in 2024 and {float(paired['end_mean_lcc']):.2f}% in 2025, a change of {float(paired['change_pp']):+.2f} percentage points. This paired comparison is preferred to subtracting two changing annual samples.")
-    picture(document, "01_tourism_data_gap.png", "Figure 3. Verified 2000-2009 visitor context and the unresolved island-level exposure gap.")
-    paragraph(document, "The available visitor totals cannot identify how many visitors, vessels, anchor drops, or wastewater loads reached a given monitoring unit. ReefSafe therefore does not estimate tourism's causal contribution to coral change.")
+    picture(document, "01_tourism_data_gap.png", "Figure 3. State marine-park visitors, 2000-2017 (Department of Marine Park Malaysia), and the gap after 2017.")
+    paragraph(document, "State marine-park visitor totals are published for 2000-2017, and 2024 arrivals are published for only 11 monitoring units. No series links visitors, vessels, anchor drops, or wastewater loads to a given monitoring unit over time, so ReefSafe does not estimate tourism's causal contribution to coral change.")
     document.add_page_break()
 
     heading(document, "3. Predictive method")
@@ -256,7 +258,10 @@ def build_report():
     for reference in (
         "Reef Check Malaysia. Annual Survey Reports. https://reefcheck.org.my/annualsurveyreports/",
         "NOAA Coral Reef Watch. 5 km Virtual Stations. https://coralreefwatch.noaa.gov/product/vs/data.php",
-        "Jabatan Taman Laut Malaysia / data.gov.my. Jumlah Pelawat Taman Laut Malaysia, 2000-2009. https://archive.data.gov.my/data/ms_MY/dataset/jumlah-pelawat-taman-laut-malaysia-dari-tahun-2000-hingga-2009-",
+        "Department of Marine Park Malaysia / data.gov.my. Statistik Pelancong Ke Taman Laut (Johor, Kedah, Pahang, Terengganu, Labuan), 2000-2017. https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia",
+        "Sabah Parks. Public visitor statistics dashboard. https://dashboard.sabahparks.org.my",
+        "Szereday, S., Chen, S. Y., Chew, K. L., et al. (2025). The 4th Global Coral Bleaching Event in Malaysia: Insights, Outcomes, and Paths Forward. Coralku and Reef Check Malaysia. https://reefcheck.org.my/wp-content/uploads/2025/07/2024CoralBleachingImpactReportMalaysia.pdf",
+        "Spalding, M., et al. (2017). Mapping the global value and distribution of coral reef tourism. Marine Policy 82: 104-113. Coefficient used as supporting context only.",
         "Department of Marine Park Malaysia. Total Economic Value of Marine Biodiversity: Malaysia Marine Parks. Studies 2011-2015. Archived PDF: https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf",
         "Burke, L., Reytar, K., and Spalding, M. (2012). Reefs at Risk Revisited in the Coral Triangle. World Resources Institute. ISBN 978-1-56973-791-0. Used for regional context, not the RM8.7 billion benchmark.",
         "Department of Statistics Malaysia. OpenDOSM data catalogue. https://open.dosm.gov.my/data-catalogue",

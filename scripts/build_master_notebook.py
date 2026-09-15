@@ -39,7 +39,8 @@ ReefSafe answers four decision-focused objectives:
 |---|---|---|---|
 | Reef surveys | Reef Check Malaysia | 404 monitoring-unit/year observations | Ecological condition and documented impact mentions |
 | Thermal context | NOAA Coral Reef Watch | Five regional virtual stations | Supporting regional heat signal, subject to DOSM eligibility confirmation |
-| Marine-park visitors | Jabatan Taman Laut / data.gov.my | Verified portal scope: 2000-2009 | National context only; never allocated to monitoring units |
+| Marine-park visitors | Department of Marine Park Malaysia / data.gov.my | Five state datasets, 2000-2017; every row matches the published CSV | State context only; never allocated to monitoring units |
+| Island arrivals | Sabah Parks; Terengganu State Tourism Department | 11 monitoring units, 2024 | Measured arrivals for economic context only |
 | Total Economic Value | Department of Marine Park Malaysia | Six evaluated archipelagos, 2011-2015 | Historical literature benchmark only |
 
 The primary economic source is `TOTAL ECONOMIC VALUE OF MARINE BIODIVERSITY.pdf`. Its component values are transcribed with source pages in `dmpm_tev_2011_2015.csv`."""),
@@ -109,11 +110,11 @@ plt.show()"""),
 
 ### Graph 2: Tourism Data Gap
 
-The official portal cited in this repository explicitly covers 2000-2009. Later values remain excluded until their original records are preserved and traced."""),
+The Department of Marine Park publishes state marine-park visitor totals for 2000-2017 (Johor, Kedah, Pahang, Terengganu, Labuan). There is no state series after 2017, and 2024 arrivals are published for only 11 monitoring units, so no series links visitor exposure to reef change over time."""),
 
         cell("code", """visitor_path = ROOT / "data/raw/structured/taman_laut_visitors_2000_2017.csv"
 with visitor_path.open(encoding="utf-8") as stream:
-    visitor_rows = [row for row in csv.DictReader(stream) if int(row["year"]) <= 2009]
+    visitor_rows = list(csv.DictReader(stream))
 
 visitor = pl.DataFrame(visitor_rows).with_columns([
     pl.col("year").cast(pl.Int64),
@@ -131,12 +132,12 @@ foreign = visitor_annual["foreign"].to_numpy() / 1000
 fig, ax = plt.subplots(figsize=(10, 4.5), dpi=150)
 ax.bar(years, domestic, label="Domestic visitors ('000)", color="#0284c7")
 ax.bar(years, foreign, bottom=domestic, label="Foreign visitors ('000)", color="#38bdf8")
-ax.axvspan(2009.5, 2025.5, color="#fee2e2", alpha=0.7)
-ax.text(2017.5, max(domestic + foreign) * 0.55, "No verified island-level series\\nafter the cited 2000-2009 source", ha="center", color="#991b1b")
+ax.axvspan(2017.5, 2025.5, color="#fee2e2", alpha=0.7)
+ax.text(2021.5, max(domestic + foreign) * 0.6, "No state series\\nafter 2017", ha="center", color="#991b1b")
 ax.set_xlim(1999.5, 2025.5)
 ax.set_xlabel("Year")
 ax.set_ylabel("Recorded visitors ('000)")
-ax.set_title("Graph 2: Verified marine-park visitor context and data gap")
+ax.set_title("Graph 2: State marine-park visitors, 2000-2017, and the gap after 2017")
 ax.legend()
 ax.grid(axis="y", alpha=0.25)
 plt.tight_layout()
