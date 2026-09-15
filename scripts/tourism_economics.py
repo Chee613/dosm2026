@@ -1,9 +1,10 @@
-"""Reef-attributable tourism spending and the season-rest comparison.
+"""Park-level reef-attributable tourism spending, a national estimate, and the season rest.
 
-Uses only islands with published arrivals (Sabah Parks, Terengganu state tourism).
-No island is estimated from room counts: the accommodation inventory is excluded
-from every claim in this repository. Nothing here is a forecast; the figures are
-arithmetic on published inputs, each carried with the source shown beside it.
+Visitors come from two official sources only: the Department of Marine Park state
+series (2013-2017 average, peninsular parks and Labuan) and Sabah Parks (2024).
+Units outside those parks - Malacca and non-park reefs - are excluded rather than
+estimated. The accommodation inventory is never used. Nothing here is a forecast;
+every figure is arithmetic on published inputs.
 """
 
 import csv
@@ -20,20 +21,39 @@ DTS_VISITORS = 260.1e6             # DOSM Domestic Tourism Survey 2024
 REEF_ADJACENT_SHARE = 0.10         # Spalding et al. 2017, Marine Policy 82:104-113
 RECOVERY_YEARS = (10, 15)          # James Cook University (2019): at least 10-15 years undisturbed
 CLOSURE_MONTHS = 1
+DMPM_YEARS = range(2013, 2018)     # Department of Marine Park series ends in 2017
 
 SPEND_PER_VISITOR_RM = DTS_RECEIPTS_RM / DTS_VISITORS
 
+DMPM_SOURCE = ("Department of Marine Park Malaysia / data.gov.my",
+               "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia")
+
+# Each park, where its visitors come from, and which monitoring units (by the
+# marine_park label in the ranking) it contains.
+DMPM_PARKS = [
+    ("Mersing Marine Parks", "Johor", ["Mersing Marine Park"]),
+    ("Pulau Payar Marine Park", "Kedah", ["Pulau Payar Marine Park"]),
+    ("Tioman Marine Parks", "Pahang", ["Tioman Marine Park", "Tioman Marine Park Buffer"]),
+    ("Terengganu Marine Parks", "Terengganu", ["Terengganu Marine Park"]),
+    ("Labuan Marine Park", "Labuan", ["Labuan Marine Park"]),
+]
+SABAH_PARKS = [
+    # (row in island_arrivals.csv, park name, marine_park labels it contains)
+    ("Tunku Abdul Rahman Park", "Tunku Abdul Rahman Park", ["Tunku Abdul Rahman Park"]),
+    ("Tun Sakaran Marine Park", "Tun Sakaran Marine Park", ["Tun Sakaran Marine Park"]),
+    ("Sipadan", "Sipadan Island Park", ["Sipadan Island Park"]),
+    ("Penyu", "Turtle Islands Park", ["Turtle Islands National Park"]),
+    ("Tiga", "Pulau Tiga Park", ["Pulau Tiga National Park"]),
+]
+
 SOURCES = {
     "spend": "DOSM Domestic Tourism Survey 2024: RM106.7bn / 260.1m domestic visitors "
-             f"= RM{SPEND_PER_VISITOR_RM:.0f} per visitor, applied to all visitors, so island "
-             "spending is a floor. DMPM's marine-park estimate of RM450 per visitor is a cross-check.",
-    "reef_adjacent": "Reef-adjacent share: 10% of island tourism spending (Spalding et al. 2017, "
-                     "Marine Policy 82:104-113). A foreign method coefficient used as supporting "
-                     "context only; every input it multiplies is Malaysian.",
-    "arrivals": "Arrivals: Sabah Parks public visitor statistics (full year 2024) and the "
-                "Terengganu State Tourism Department (January-August 2024, annualised).",
-    "recovery": "Reef recovery needs at least 10-15 years without new disturbance "
-                "(James Cook University, 2019).",
+             f"= RM{SPEND_PER_VISITOR_RM:.0f} per visitor, applied to all visitors, so spending is a floor.",
+    "reef_adjacent": "Reef-adjacent share: 10% of tourism spending (Spalding et al. 2017), a foreign "
+                     "method coefficient applied to Malaysian inputs only.",
+    "visitors": "Visitors: Department of Marine Park state series, 2013-2017 average (data.gov.my); "
+                "Sabah Parks public visitor statistics, 2024.",
+    "recovery": "Reef recovery needs at least 10-15 years without new disturbance (James Cook University, 2019).",
 }
 
 
@@ -42,79 +62,96 @@ def read_csv(path):
         return list(csv.DictReader(handle))
 
 
-def island_economics(priority, arrivals):
-    """One record per island that has published arrivals and a current screening rank."""
-    ranked = {row["island"]: row for row in priority}
+def park_records(priority):
+    units_by_park = {}
+    for row in priority:
+        units_by_park.setdefault(row["marine_park"], []).append(row)
+
+    dmpm = read_csv(RAW / "taman_laut_visitors_2000_2017.csv")
+    arrivals = {row["island"]: row for row in read_csv(RAW / "tourism" / "island_arrivals.csv")}
+
+    parks = []
+    for name, state, labels in DMPM_PARKS:
+        # A zero total means the year was not recorded (Labuan shows 0 for 2013-2015),
+        # so average only the years with records.
+        recorded = {int(row["year"]): int(row["total_visitors"]) for row in dmpm
+                    if row["state"] == state and int(row["year"]) in DMPM_YEARS and int(row["total_visitors"]) > 0}
+        years = sorted(recorded)
+        parks.append((name, state, labels, sum(recorded.values()) / len(recorded),
+                      f"{years[0]}-{years[-1]} average", *DMPM_SOURCE))
+    for arrival_row, name, labels in SABAH_PARKS:
+        row = arrivals[arrival_row]
+        parks.append((name, "Sabah", labels, float(row["arrivals_total"]),
+                      f"{row['year']} full year", row["source_name"], row["source_url"]))
+
     records = []
-    for row in arrivals:
-        island = row["island"]
-        if island not in ranked:
-            continue
-        reported = float(row["arrivals_total"])
-        months = float(row["period_months"])
-        visitors = reported * 12.0 / months
-        window = "full year" if months == 12 else "Jan-Aug"
-        basis = f"{reported:,.0f} visitors reported for {window} {row['year']}"
-        if months != 12:
-            basis += f", annualised to {visitors:,.0f}"
+    for name, state, labels, visitors, basis, source_name, source_url in parks:
+        units = [unit for label in labels for unit in units_by_park.get(label, [])]
         spending = visitors * SPEND_PER_VISITOR_RM
         records.append({
-            "island": island,
-            "state": ranked[island]["state"],
-            "priority_rank": int(ranked[island]["priority_rank"]),
-            "priority_tier": ranked[island]["priority_tier"],
+            "park": name,
+            "state": state,
             "visitors_per_year": round(visitors),
             "spending_rm": round(spending),
             "reef_adjacent_rm": round(spending * REEF_ADJACENT_SHARE),
             "basis": basis,
-            "source_name": row["source_name"],
-            "source_url": row["source_url"],
+            "units": "; ".join(sorted(unit["island"] for unit in units)),
+            "high_priority_units": "; ".join(sorted(unit["island"] for unit in units if "High" in unit["priority_tier"])),
+            "source_name": source_name,
+            "source_url": source_url,
         })
     return sorted(records, key=lambda record: -record["reef_adjacent_rm"])
 
 
 def season_tradeoff(records, priority):
-    """One month of rest on the high-priority islands with published arrivals, against the
-    reef-attributable revenue those same islands earn across a recovery window."""
-    high_total = sum(1 for row in priority if "High" in row["priority_tier"])
-    measured = [row for row in records if "High" in row["priority_tier"]]
-    monthly_loss = sum(row["spending_rm"] for row in measured) * CLOSURE_MONTHS / 12.0
-    annual_reef_value = sum(row["reef_adjacent_rm"] for row in measured)
+    """One month of rest across the parks that contain high-priority units, against the
+    reef-attributable revenue those parks earn across a recovery window."""
+    high_units = [row["island"] for row in priority if "High" in row["priority_tier"]]
+    parks = [row for row in records if row["high_priority_units"]]
+    covered = sorted(unit for row in parks for unit in row["high_priority_units"].split("; "))
+    monthly_loss = sum(row["spending_rm"] for row in parks) * CLOSURE_MONTHS / 12.0
+    annual_reef_value = sum(row["reef_adjacent_rm"] for row in parks)
     low_years, high_years = RECOVERY_YEARS
     return {
         "closure_months": CLOSURE_MONTHS,
-        "islands_total": high_total,
-        "islands_measured": len(measured),
-        "island_names": [row["island"] for row in measured],
+        "park_names": [row["park"] for row in parks],
+        "units_total": len(high_units),
+        "units_covered": len(covered),
+        "units_covered_names": covered,
+        "units_uncovered_names": sorted(set(high_units) - set(covered)),
         "short_term_loss_rm": round(monthly_loss),
         "reef_adjacent_annual_rm": annual_reef_value,
         "long_term_low_rm": annual_reef_value * low_years,
         "long_term_high_rm": annual_reef_value * high_years,
         "recovery_years": list(RECOVERY_YEARS),
+        "recovery_mid_years": (low_years + high_years) / 2,
+        "long_term_mid_rm": round(annual_reef_value * (low_years + high_years) / 2),
         # Both sides scale with the same spending, so their ratio is fixed by the
         # assumptions (share x 12 months x years) and must not be shown as a finding.
         "ratio_note": f"The ratio between the two figures is {REEF_ADJACENT_SHARE * 12 * low_years:.0f}-"
                       f"{REEF_ADJACENT_SHARE * 12 * high_years:.0f}x by construction (10% share x 12 months "
-                      f"x {low_years}-{high_years} years); published arrivals set only the scale.",
+                      f"x {low_years}-{high_years} years); published visitors set only the scale.",
     }
 
 
 def main():
     priority = read_csv(PROCESSED / "reef_priority_predictions.csv")
-    arrivals = read_csv(RAW / "tourism" / "island_arrivals.csv")
-    records = island_economics(priority, arrivals)
+    records = park_records(priority)
 
-    with open(PROCESSED / "island_economics.csv", "w", encoding="utf-8", newline="") as handle:
+    with open(PROCESSED / "park_economics.csv", "w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(records[0]))
         writer.writeheader()
         writer.writerows(records)
 
+    covered_units = {unit for row in records for unit in row["units"].split("; ") if unit}
     payload = {
-        "islands_measured": len(records),
-        "islands_total": len(priority),
-        "measured_visitors": sum(row["visitors_per_year"] for row in records),
-        "measured_spending_rm": sum(row["spending_rm"] for row in records),
-        "measured_reef_adjacent_rm": sum(row["reef_adjacent_rm"] for row in records),
+        "parks": len(records),
+        "units_total": len(priority),
+        "units_covered": len(covered_units),
+        "units_excluded": sorted(row["island"] for row in priority if row["island"] not in covered_units),
+        "national_visitors": sum(row["visitors_per_year"] for row in records),
+        "national_spending_rm": sum(row["spending_rm"] for row in records),
+        "national_reef_adjacent_rm": sum(row["reef_adjacent_rm"] for row in records),
         "spend_per_visitor_rm": round(SPEND_PER_VISITOR_RM),
         "reef_adjacent_share": REEF_ADJACENT_SHARE,
         "tradeoff": season_tradeoff(records, priority),
@@ -123,13 +160,12 @@ def main():
     (PROCESSED / "tourism_economics.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     tradeoff = payload["tradeoff"]
-    print(f"Islands with published arrivals: {len(records)} of {len(priority)} ranked")
-    print(f"Reef-attributable spending: RM{payload['measured_reef_adjacent_rm'] / 1e6:.1f}M/year")
-    if tradeoff["short_term_loss_rm"]:
-        print(f"One-month rest on {tradeoff['islands_measured']}/{tradeoff['islands_total']} high-priority islands: "
-              f"RM{tradeoff['short_term_loss_rm'] / 1e6:.2f}M against "
-              f"RM{tradeoff['long_term_low_rm'] / 1e6:.1f}-{tradeoff['long_term_high_rm'] / 1e6:.1f}M "
-              f"over {RECOVERY_YEARS[0]}-{RECOVERY_YEARS[1]} years")
+    print(f"National estimate: {payload['parks']} parks, {payload['national_visitors']:,} visitors/yr, "
+          f"reef-adjacent RM{payload['national_reef_adjacent_rm'] / 1e6:.1f}M/yr")
+    print(f"Units covered: {payload['units_covered']} of {payload['units_total']}; excluded: {', '.join(payload['units_excluded'])}")
+    print(f"Season rest across {len(tradeoff['park_names'])} parks ({tradeoff['units_covered']}/{tradeoff['units_total']} "
+          f"high-priority units): RM{tradeoff['short_term_loss_rm'] / 1e6:.1f}M against "
+          f"RM{tradeoff['long_term_low_rm'] / 1e6:.0f}-{tradeoff['long_term_high_rm'] / 1e6:.0f}M")
 
 
 if __name__ == "__main__":
