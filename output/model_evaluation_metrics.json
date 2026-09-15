@@ -12,13 +12,13 @@
   ],
   "best_candidate": "Gradient boosting",
   "baseline_mae": 5.991036572720733,
-  "best_mae": 5.859442920192883,
-  "mae_improvement_pct": 2.1965089167881495,
+  "best_mae": 5.862299984583832,
+  "mae_improvement_pct": 2.1488199341510157,
   "beats_baseline": true,
   "deployment_status": "screening_only",
   "uncertainty_label": "Pooled empirical 95% forward-residual range",
   "lower_residual_quantile": -16.254385476103764,
-  "upper_residual_quantile": 13.662016959329842,
+  "upper_residual_quantile": 13.66201695932984,
   "model_comparison": {
     "Baseline mean": {
       "MAE": 5.991036572720733,
@@ -31,14 +31,14 @@
       "R2": 0.02102592672483794
     },
     "Gradient boosting": {
-      "MAE": 5.859442920192883,
-      "RMSE": 7.738822726942544,
-      "R2": 0.06976121965758453
+      "MAE": 5.862299984583832,
+      "RMSE": 7.740654234899031,
+      "R2": 0.0693208577587594
     },
     "Random forest": {
-      "MAE": 6.073604250849071,
-      "RMSE": 8.016583062605548,
-      "R2": 0.001786963255266727
+      "MAE": 6.073567001248703,
+      "RMSE": 8.016002333851366,
+      "R2": 0.0019315809838006404
     }
   },
   "validation_by_year": [
@@ -53,17 +53,17 @@
     {
       "target_year": 2022,
       "n": 35,
-      "mae": 6.943627326142161,
-      "rmse": 9.95500600929782,
-      "r2": 0.11671892537391992,
-      "bias": -0.02610073128010702
+      "mae": 6.958565691386269,
+      "rmse": 9.962448431521413,
+      "r2": 0.11539773923278318,
+      "bias": -0.036245852338398825
     },
     {
       "target_year": 2023,
       "n": 43,
       "mae": 5.75575686509108,
-      "rmse": 7.239246743069443,
-      "r2": 0.1784066636772661,
+      "rmse": 7.239246743069442,
+      "r2": 0.1784066636772662,
       "bias": 0.8746988044550557
     },
     {
@@ -84,28 +84,28 @@
     }
   ],
   "permutation_importance": {
-    "survey_year": -0.0007260397408757549,
-    "live_coral_cover_pct": -0.02031872488877245,
-    "lcc_change_rate": 0.1416344392504228,
-    "island_vs_region_pct": 0.27836434454882836,
-    "grp_available_substrate": -0.0745429138098649,
-    "grp_sand": 0.026751856815825835,
-    "grp_disturbance_indicators": -0.006506107900597298,
-    "grp_pollution_indicators": -0.005273941601058144,
-    "fish_butterflyfish": -0.0006043312329523188,
-    "fish_snapper": 0.030873099763612046,
-    "fish_parrotfish": 0.0564443553694937,
-    "fish_grouper": 0.022735032626926097,
-    "inv_diadema_urchin": -0.009465143350088277,
-    "inv_crown_of_thorns": -0.002669424228163267,
-    "grazer_ratio": -0.00628433526639064,
+    "survey_year": -0.0007260397408757974,
+    "live_coral_cover_pct": -0.02153145127292236,
+    "lcc_change_rate": 0.14103592517096078,
+    "island_vs_region_pct": 0.2823495513266668,
+    "grp_available_substrate": -0.07454291380986494,
+    "grp_sand": 0.024952836281842125,
+    "grp_disturbance_indicators": -0.006506107900597174,
+    "grp_pollution_indicators": -0.006103332655825932,
+    "fish_butterflyfish": -0.0006043312329524,
+    "fish_snapper": 0.031250313890115476,
+    "fish_parrotfish": 0.05644435536949363,
+    "fish_grouper": 0.022735032626926027,
+    "inv_diadema_urchin": -0.007227229846250519,
+    "inv_crown_of_thorns": -0.005646660073436518,
+    "grazer_ratio": -0.009268474420846256,
     "impact_anchor": 0.0,
     "impact_nets": -0.0022730923504003997,
-    "impact_trash": -0.007070225083601929,
-    "impact_bleaching": 0.00046140194900651276,
-    "impact_cot": -0.004160315877368911,
-    "latitude": -0.010159796572629736,
-    "longitude": 0.05955713498725778
+    "impact_trash": -0.007070225083601922,
+    "impact_bleaching": 0.0004614019490064381,
+    "impact_cot": -0.003928027325948645,
+    "latitude": -0.010159796572629722,
+    "longitude": 0.06007231692665432
   },
   "factor_diagnostics": [
     {
@@ -114,7 +114,7 @@
       "n": 348,
       "statistic": -0.1045779727630862,
       "statistic_unit": "rho",
-      "p_value": 0.051270888572376425,
+      "p_value": 0.051270888572376445,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -123,7 +123,7 @@
       "n": 348,
       "statistic": -0.06056818930566387,
       "statistic_unit": "rho",
-      "p_value": 0.2598039926898717,
+      "p_value": 0.25980399268987187,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -132,7 +132,7 @@
       "n": 338,
       "statistic": 0.07772612436258132,
       "statistic_unit": "rho",
-      "p_value": 0.15391408226206862,
+      "p_value": 0.15391408226206857,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -141,7 +141,7 @@
       "n": 338,
       "statistic": 0.14597611401784685,
       "statistic_unit": "rho",
-      "p_value": 0.00718360745525168,
+      "p_value": 0.00718360745525167,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -150,7 +150,7 @@
       "n": 348,
       "statistic": -0.0326674872877121,
       "statistic_unit": "rho",
-      "p_value": 0.5436029873395897,
+      "p_value": 0.5436029873395899,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {

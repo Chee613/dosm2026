@@ -1,5 +1,5 @@
 Model,MAE (%/yr),RMSE (%/yr),R2 Score
 Baseline mean,5.991,8.1,-0.019
 Ridge regression,5.99,7.939,0.021
-Gradient boosting,5.859,7.739,0.07
-Random forest,6.074,8.017,0.002
+Gradient boosting,5.862,7.741,0.069
+Random forest,6.074,8.016,0.002
