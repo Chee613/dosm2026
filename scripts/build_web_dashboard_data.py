@@ -61,12 +61,12 @@ def build_bundle():
     for rows in history.values():
         rows.sort(key=lambda item: item["year"])
 
+    # All 90 rows match the five Department of Marine Park state datasets (2000-2017).
     visitors = defaultdict(lambda: {"domestic": 0, "foreign": 0})
     for row in read_csv(ROOT / "data/raw/structured/taman_laut_visitors_2000_2017.csv"):
         year = int(row["year"])
-        if year <= 2009:
-            visitors[year]["domestic"] += int(row["domestic_visitors"])
-            visitors[year]["foreign"] += int(row["foreign_visitors"])
+        visitors[year]["domestic"] += int(row["domestic_visitors"])
+        visitors[year]["foreign"] += int(row["foreign_visitors"])
     visitor_trend = [
         {"year": year, **values, "total": values["domestic"] + values["foreign"]}
         for year, values in sorted(visitors.items())
@@ -76,6 +76,17 @@ def build_bundle():
     paired = read_csv(PROCESSED / "paired_change_summary.csv")[0]
     latest_mean = sum(item["lcc"] for item in priorities) / len(priorities)
 
+    # 2024 bleaching: the report's own headline figures (p.4), plus the site table size.
+    headline = {row["metric"]: float(row["value_pct"])
+                for row in read_csv(ROOT / "data/raw/structured/reef_check/bleaching_2024_headline.csv")}
+    bleaching_sites = read_csv(ROOT / "data/raw/structured/reef_check/bleaching_2024.csv")
+
+    economics = json.loads((PROCESSED / "tourism_economics.json").read_text(encoding="utf-8"))
+    island_economics = read_csv(PROCESSED / "island_economics.csv")
+    for row in island_economics:
+        for key in ("priority_rank", "visitors_per_year", "spending_rm", "reef_adjacent_rm"):
+            row[key] = int(row[key])
+
     return {
         "nationalKPIs": {
             "latestMeanCoralCover": latest_mean,
@@ -84,7 +95,13 @@ def build_bundle():
             "pairedUnits": int(paired["paired_units"]),
             "priorityCount": sum(item["tier"] == "High screening priority" for item in priorities),
             "surveyedUnits": len(priorities),
+            "bleachingMortality": headline["mean_bleaching_mortality"],
+            "bleachingCoralsBleached": headline["corals_bleached"],
+            "bleachingTerengganuMortality": headline["terengganu_mean_mortality"],
+            "bleachingSiteRecords": len(bleaching_sites),
         },
+        "tourismEconomics": economics,
+        "islandEconomics": island_economics,
         "priorityIslands": priorities,
         "islandHistory": dict(history),
         "factorRelationships": read_csv(PROCESSED / "factor_relationships.csv"),
@@ -92,10 +109,13 @@ def build_bundle():
         "modelMetrics": metrics,
         "validationByYear": read_csv(PROCESSED / "model_validation_by_year.csv"),
         "tourismDataGap": {
-            "source": "Jabatan Taman Laut Malaysia / data.gov.my",
-            "verifiedCoverage": "2000-2009 aggregate context",
+            "source": "Department of Marine Park Malaysia / data.gov.my (five state datasets)",
+            "verifiedCoverage": "2000-2017 state marine-park totals",
             "annualTrend": visitor_trend,
-            "limitation": "No verified island-level exposure series; 2010-2017 local extension excluded",
+            "limitation": "State marine-park totals end in 2017 and cannot be assigned to individual reefs. "
+                          "Island-level arrivals are published only for 11 monitoring units in 2024 "
+                          "(Sabah Parks; Terengganu State Tourism Department), so no series links visitor "
+                          "exposure to reef change over time.",
         },
         "economicValuation": load_dmpm_tev(),
     }

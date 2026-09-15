@@ -1540,3 +1540,161 @@ body {
   border-radius: 6px;
 }
 
+
+/* ===== onn-v2: classes used by the evidence-bounded dashboard ===== */
+.table-scroll {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.table-scroll th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+}
+
+.table-scroll td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+
+.table-scroll tbody tr {
+  cursor: pointer;
+}
+
+.table-scroll tbody tr:hover {
+  background: #F8FAFC;
+}
+
+.table-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: #0F172A;
+  cursor: pointer;
+  text-align: left;
+}
+
+.method-note {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.evidence-box {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #0C4A6E;
+}
+
+.kpi-source {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-subtle);
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.dashboard-grid.even {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 16px;
+}
+
+.pill-slate {
+  background: #F8FAFC;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+}
+
+.economy-headline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 4px 0 6px;
+}
+
+.economy-figure {
+  font-size: 26px;
+  font-weight: 700;
+  color: #12304A;
+  letter-spacing: -0.5px;
+}
+
+.economy-figure-label,
+.economy-split {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.economy-split {
+  text-align: right;
+}
+
+.rest-row {
+  margin-top: 14px;
+}
+
+.rest-row-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  margin-bottom: 6px;
+}
+
+.rest-amount {
+  font-size: 14px;
+}
+
+.rest-short { color: #B91C1C; }
+.rest-long { color: #047857; }
+
+.rest-bar-bg {
+  height: 8px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.rest-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.rest-fill-short { background: #DC2626; }
+.rest-fill-long { background: #059669; }
+
+.rest-note {
+  margin-top: 5px;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.table-scroll .kpi-pill {
+  white-space: nowrap;
+}

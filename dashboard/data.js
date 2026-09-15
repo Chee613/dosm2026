@@ -6,8 +6,179 @@ window.REEFSAFE_DATA = {
     "pairedChange2024To2025": -4.758717948717937,
     "pairedUnits": 39,
     "priorityCount": 10,
-    "surveyedUnits": 40
+    "surveyedUnits": 40,
+    "bleachingMortality": 34.1,
+    "bleachingCoralsBleached": 50.7,
+    "bleachingTerengganuMortality": 44.2,
+    "bleachingSiteRecords": 26
   },
+  "tourismEconomics": {
+    "islands_measured": 11,
+    "islands_total": 40,
+    "measured_visitors": 1142399,
+    "measured_spending_rm": 468642317,
+    "measured_reef_adjacent_rm": 46864232,
+    "spend_per_visitor_rm": 410,
+    "reef_adjacent_share": 0.1,
+    "tradeoff": {
+      "closure_months": 1,
+      "islands_total": 10,
+      "islands_measured": 2,
+      "island_names": [
+        "Kapas",
+        "Tenggol"
+      ],
+      "short_term_loss_rm": 3020449,
+      "reef_adjacent_annual_rm": 3624539,
+      "long_term_low_rm": 36245390,
+      "long_term_high_rm": 54368085,
+      "recovery_years": [
+        10,
+        15
+      ],
+      "ratio_note": "The ratio between the two figures is 12-18x by construction (10% share x 12 months x 10-15 years); published arrivals set only the scale."
+    },
+    "sources": {
+      "spend": "DOSM Domestic Tourism Survey 2024: RM106.7bn / 260.1m domestic visitors = RM410 per visitor, applied to all visitors, so island spending is a floor. DMPM's marine-park estimate of RM450 per visitor is a cross-check.",
+      "reef_adjacent": "Reef-adjacent share: 10% of island tourism spending (Spalding et al. 2017, Marine Policy 82:104-113). A foreign method coefficient used as supporting context only; every input it multiplies is Malaysian.",
+      "arrivals": "Arrivals: Sabah Parks public visitor statistics (full year 2024) and the Terengganu State Tourism Department (January-August 2024, annualised).",
+      "recovery": "Reef recovery needs at least 10-15 years without new disturbance (James Cook University, 2019)."
+    }
+  },
+  "islandEconomics": [
+    {
+      "island": "Tunku Abdul Rahman Park",
+      "state": "Sabah",
+      "priority_rank": 33,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 497199,
+      "spending_rm": 203964373,
+      "reef_adjacent_rm": 20396437,
+      "basis": "497,199 visitors reported for full year 2024",
+      "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
+      "source_url": "https://dashboard.sabahparks.org.my/dashboard/tunku-abdul-rahman-park"
+    },
+    {
+      "island": "Redang",
+      "state": "Terengganu",
+      "priority_rank": 31,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 212432,
+      "spending_rm": 87145102,
+      "reef_adjacent_rm": 8714510,
+      "basis": "141,621 visitors reported for Jan-Aug 2024, annualised to 212,432",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    },
+    {
+      "island": "Perhentian",
+      "state": "Terengganu",
+      "priority_rank": 32,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 165387,
+      "spending_rm": 67846186,
+      "reef_adjacent_rm": 6784619,
+      "basis": "110,258 visitors reported for Jan-Aug 2024, annualised to 165,387",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    },
+    {
+      "island": "Tun Sakaran Marine Park",
+      "state": "Sabah",
+      "priority_rank": 12,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 100369,
+      "spending_rm": 41174057,
+      "reef_adjacent_rm": 4117406,
+      "basis": "100,369 visitors reported for full year 2024",
+      "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
+      "source_url": "https://dashboard.sabahparks.org.my/dashboard/tun-sakaran-marine-park"
+    },
+    {
+      "island": "Kapas",
+      "state": "Terengganu",
+      "priority_rank": 2,
+      "priority_tier": "High screening priority",
+      "visitors_per_year": 83162,
+      "spending_rm": 34115079,
+      "reef_adjacent_rm": 3411508,
+      "basis": "55,441 visitors reported for Jan-Aug 2024, annualised to 83,162",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    },
+    {
+      "island": "Sipadan",
+      "state": "Sabah",
+      "priority_rank": 11,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 36719,
+      "spending_rm": 15063119,
+      "reef_adjacent_rm": 1506312,
+      "basis": "36,719 visitors reported for full year 2024",
+      "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
+      "source_url": "https://dashboard.sabahparks.org.my/dashboard/sipadan-island-park"
+    },
+    {
+      "island": "Lang Tengah",
+      "state": "Terengganu",
+      "priority_rank": 35,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 23487,
+      "spending_rm": 9634998,
+      "reef_adjacent_rm": 963500,
+      "basis": "15,658 visitors reported for Jan-Aug 2024, annualised to 23,487",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    },
+    {
+      "island": "Penyu",
+      "state": "Sabah",
+      "priority_rank": 18,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 10333,
+      "spending_rm": 4238874,
+      "reef_adjacent_rm": 423887,
+      "basis": "10,333 visitors reported for full year 2024",
+      "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
+      "source_url": "https://dashboard.sabahparks.org.my/dashboard/turtle-islands-park"
+    },
+    {
+      "island": "Tenggol",
+      "state": "Terengganu",
+      "priority_rank": 6,
+      "priority_tier": "High screening priority",
+      "visitors_per_year": 5193,
+      "spending_rm": 2130308,
+      "reef_adjacent_rm": 213031,
+      "basis": "3,462 visitors reported for Jan-Aug 2024, annualised to 5,193",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    },
+    {
+      "island": "Tiga",
+      "state": "Sabah",
+      "priority_rank": 29,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 4110,
+      "spending_rm": 1686032,
+      "reef_adjacent_rm": 168603,
+      "basis": "4,110 visitors reported for full year 2024",
+      "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
+      "source_url": "https://dashboard.sabahparks.org.my/dashboard/pulau-tiga-park"
+    },
+    {
+      "island": "Bidong & Yu",
+      "state": "Terengganu",
+      "priority_rank": 37,
+      "priority_tier": "Monitor",
+      "visitors_per_year": 4008,
+      "spending_rm": 1644189,
+      "reef_adjacent_rm": 164419,
+      "basis": "2,672 visitors reported for Jan-Aug 2024, annualised to 4,008",
+      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
+      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+    }
+  ],
   "priorityIslands": [
     {
       "rank": 1,
@@ -3283,8 +3454,8 @@ window.REEFSAFE_DATA = {
     }
   ],
   "tourismDataGap": {
-    "source": "Jabatan Taman Laut Malaysia / data.gov.my",
-    "verifiedCoverage": "2000-2009 aggregate context",
+    "source": "Department of Marine Park Malaysia / data.gov.my (five state datasets)",
+    "verifiedCoverage": "2000-2017 state marine-park totals",
     "annualTrend": [
       {
         "year": 2000,
@@ -3345,9 +3516,57 @@ window.REEFSAFE_DATA = {
         "domestic": 268780,
         "foreign": 261978,
         "total": 530758
+      },
+      {
+        "year": 2010,
+        "domestic": 363022,
+        "foreign": 243133,
+        "total": 606155
+      },
+      {
+        "year": 2011,
+        "domestic": 296586,
+        "foreign": 288348,
+        "total": 584934
+      },
+      {
+        "year": 2012,
+        "domestic": 350071,
+        "foreign": 276534,
+        "total": 626605
+      },
+      {
+        "year": 2013,
+        "domestic": 476979,
+        "foreign": 316380,
+        "total": 793359
+      },
+      {
+        "year": 2014,
+        "domestic": 566463,
+        "foreign": 294673,
+        "total": 861136
+      },
+      {
+        "year": 2015,
+        "domestic": 529795,
+        "foreign": 292703,
+        "total": 822498
+      },
+      {
+        "year": 2016,
+        "domestic": 537698,
+        "foreign": 325093,
+        "total": 862791
+      },
+      {
+        "year": 2017,
+        "domestic": 457209,
+        "foreign": 279630,
+        "total": 736839
       }
     ],
-    "limitation": "No verified island-level exposure series; 2010-2017 local extension excluded"
+    "limitation": "State marine-park totals end in 2017 and cannot be assigned to individual reefs. Island-level arrivals are published only for 11 monitoring units in 2024 (Sabah Parks; Terengganu State Tourism Department), so no series links visitor exposure to reef change over time."
   },
   "economicValuation": {
     "publication": "Total Economic Value of Marine Biodiversity: Malaysia Marine Parks",
