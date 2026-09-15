@@ -1,0 +1,33 @@
+{
+  "islands_measured": 11,
+  "islands_total": 40,
+  "measured_visitors": 1142399,
+  "measured_spending_rm": 468642317,
+  "measured_reef_adjacent_rm": 46864232,
+  "spend_per_visitor_rm": 410,
+  "reef_adjacent_share": 0.1,
+  "tradeoff": {
+    "closure_months": 1,
+    "islands_total": 10,
+    "islands_measured": 2,
+    "island_names": [
+      "Kapas",
+      "Tenggol"
+    ],
+    "short_term_loss_rm": 3020449,
+    "reef_adjacent_annual_rm": 3624539,
+    "long_term_low_rm": 36245390,
+    "long_term_high_rm": 54368085,
+    "recovery_years": [
+      10,
+      15
+    ],
+    "ratio_note": "The ratio between the two figures is 12-18x by construction (10% share x 12 months x 10-15 years); published arrivals set only the scale."
+  },
+  "sources": {
+    "spend": "DOSM Domestic Tourism Survey 2024: RM106.7bn / 260.1m domestic visitors = RM410 per visitor, applied to all visitors, so island spending is a floor. DMPM's marine-park estimate of RM450 per visitor is a cross-check.",
+    "reef_adjacent": "Reef-adjacent share: 10% of island tourism spending (Spalding et al. 2017, Marine Policy 82:104-113). A foreign method coefficient used as supporting context only; every input it multiplies is Malaysian.",
+    "arrivals": "Arrivals: Sabah Parks public visitor statistics (full year 2024) and the Terengganu State Tourism Department (January-August 2024, annualised).",
+    "recovery": "Reef recovery needs at least 10-15 years without new disturbance (James Cook University, 2019)."
+  }
+}
