@@ -30,21 +30,25 @@
         <div class="kpi-label">Latest mean coral cover</div>
         <div class="kpi-value" id="kpi-cover">—</div>
         <div class="kpi-subtext" id="kpi-cover-note"></div>
+        <div class="kpi-source">Reef Check Malaysia surveys, mean of monitoring-unit values. Reef Check's own 2025 national figure is 39.94% across 297 surveys.</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Paired 2024–2025 change</div>
         <div class="kpi-value" id="kpi-paired">—</div>
         <div class="kpi-subtext" id="kpi-paired-note"></div>
+        <div class="kpi-source">Only units surveyed in both years are compared, so a change in survey coverage cannot be read as reef change.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">2024 bleaching: mean coral mortality</div>
+        <div class="kpi-value" id="kpi-bleach">—</div>
+        <div class="kpi-subtext" id="kpi-bleach-note"></div>
+        <div class="kpi-source">Szereday et al. (2025), <em>The 4th Global Coral Bleaching Event in Malaysia</em>, Coralku and Reef Check Malaysia, p.4.</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Field-verification queue</div>
         <div class="kpi-value" id="kpi-priority">—</div>
         <div class="kpi-subtext">Top quartile is a workload tier, not an ecological threshold</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-label">Historical DMPM TEV context</div>
-        <div class="kpi-value">RM8.7B/year</div>
-        <div class="kpi-subtext">Six evaluated archipelagos, studies conducted 2011–2015</div>
+        <div class="kpi-source">Gradient boosting, past-only expanding-year validation; NOAA heat excluded from the scored model.</div>
       </div>
     </section>
 
@@ -56,22 +60,67 @@
           <div class="map-container"><div id="map"></div></div>
         </div>
         <div class="card">
-          <div class="card-title">Published economic context</div>
-          <div class="card-subtitle">DMPM annual component values—not ReefSafe revenue or avoided loss</div>
-          <div id="economic-pillars-chart"></div>
-          <p class="method-note" id="economic-source-note"></p>
+          <div class="card-title">Top 10 field-verification queue</div>
+          <div class="card-subtitle">Ranks 1–10 from the selected past-only model; select a row to open the monitoring unit</div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Rank</th><th>Monitoring unit</th><th>State</th><th>Cover</th><th>Next-observation estimate</th><th>Status tier</th></tr></thead>
+              <tbody id="top-priority-table"></tbody>
+            </table>
+          </div>
+          <p class="method-note" id="queue-note"></p>
+        </div>
+      </div>
+
+      <div class="dashboard-grid even">
+        <div class="card" id="reef-economy-card">
+          <div class="card-title-row">
+            <div>
+              <div class="card-title">Reef-adjacent economy</div>
+              <div class="card-subtitle">Tourism spending attributable to reef presence, islands with published arrivals only</div>
+            </div>
+            <span class="kpi-pill pill-slate" id="economy-coverage"></span>
+          </div>
+          <div class="economy-headline">
+            <div>
+              <div class="economy-figure" id="economy-value">—</div>
+              <div class="economy-figure-label">per year across the islands listed below</div>
+            </div>
+            <div class="economy-split" id="economy-split"></div>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Island</th><th>Visitor basis</th><th>Tourism spending</th><th>Reef-adjacent</th></tr></thead>
+              <tbody id="economy-body"></tbody>
+            </table>
+          </div>
+          <p class="method-note" id="economy-source"></p>
+        </div>
+
+        <div class="card" id="season-rest-card">
+          <div class="card-title">Season rest vs long-term reef revenue</div>
+          <div class="card-subtitle" id="rest-scenario"></div>
+          <div class="rest-row">
+            <div class="rest-row-top"><span>Short term: one month of rest</span><strong class="rest-amount rest-short" id="rest-short">—</strong></div>
+            <div class="rest-bar-bg"><div class="rest-bar-fill rest-fill-short" id="rest-short-bar"></div></div>
+            <div class="rest-note" id="rest-short-note"></div>
+          </div>
+          <div class="rest-row">
+            <div class="rest-row-top"><span>Long term: reef-attributable revenue over recovery</span><strong class="rest-amount rest-long" id="rest-long">—</strong></div>
+            <div class="rest-bar-bg"><div class="rest-bar-fill rest-fill-long" id="rest-long-bar"></div></div>
+            <div class="rest-note" id="rest-long-note"></div>
+          </div>
+          <div class="evidence-box" id="rest-callout"></div>
+          <p class="method-note" id="rest-source"></p>
         </div>
       </div>
 
       <div class="card" style="margin-top:16px">
-        <div class="card-title">Priority field-verification queue</div>
-        <div class="card-subtitle">Ranked by the selected past-only model; all actions require field confirmation</div>
-        <div class="table-scroll">
-          <table>
-            <thead><tr><th>Rank</th><th>Monitoring unit</th><th>State</th><th>Cover</th><th>Next-observation estimate</th><th>Evidence to verify</th></tr></thead>
-            <tbody id="top-priority-table"></tbody>
-          </table>
-        </div>
+        <div class="card-title">Published economic context</div>
+        <div class="card-subtitle">DMPM annual component values—not ReefSafe revenue or avoided loss</div>
+        <div id="economic-pillars-chart"></div>
+        <p class="method-note" id="economic-source-note"></p>
+        <p class="method-note">The tourism component (RM4.6M) is the value of marine-park services to the tourism industry. The same booklet estimates marine-park visitors spend about RM283 million a year (630,000 visitors × RM450, p.7).</p>
       </div>
     </section>
 
@@ -96,8 +145,8 @@
 
     <section id="tab-science" class="tab-panel">
       <div class="card">
-        <div class="card-title">Tourism data gap</div>
-        <div class="card-subtitle">Verified 2000–2009 aggregate context only; no island-level exposure series</div>
+        <div class="card-title">Tourism evidence and data gap</div>
+        <div class="card-subtitle">Verified 2000–2017 state marine-park totals; no series links visitors to individual reefs over time</div>
         <div id="tourism-gap-chart"></div>
       </div>
       <div class="card" style="margin-top:16px" id="factor-relationships-grid">
