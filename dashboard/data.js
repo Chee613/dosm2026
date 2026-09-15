@@ -13,170 +13,189 @@ window.REEFSAFE_DATA = {
     "bleachingSiteRecords": 26
   },
   "tourismEconomics": {
-    "islands_measured": 11,
-    "islands_total": 40,
-    "measured_visitors": 1142399,
-    "measured_spending_rm": 468642317,
-    "measured_reef_adjacent_rm": 46864232,
+    "parks": 10,
+    "units_total": 40,
+    "units_covered": 30,
+    "units_excluded": [
+      "Kapalai",
+      "Lahad Datu",
+      "Lankayan",
+      "Mabul",
+      "Malacca",
+      "Mantanani",
+      "Mataking",
+      "Port Dickson",
+      "Tun Mustapha Park",
+      "Usukan Cove"
+    ],
+    "national_visitors": 1464770,
+    "national_spending_rm": 600887757,
+    "national_reef_adjacent_rm": 60088775,
     "spend_per_visitor_rm": 410,
     "reef_adjacent_share": 0.1,
     "tradeoff": {
       "closure_months": 1,
-      "islands_total": 10,
-      "islands_measured": 2,
-      "island_names": [
-        "Kapas",
-        "Tenggol"
+      "park_names": [
+        "Terengganu Marine Parks",
+        "Mersing Marine Parks",
+        "Tioman Marine Parks",
+        "Labuan Marine Park"
       ],
-      "short_term_loss_rm": 3020449,
-      "reef_adjacent_annual_rm": 3624539,
-      "long_term_low_rm": 36245390,
-      "long_term_high_rm": 54368085,
+      "units_total": 10,
+      "units_covered": 9,
+      "units_covered_names": [
+        "Kapas",
+        "Labuan",
+        "Lima",
+        "Mensirip",
+        "Mertang",
+        "Seri Buat",
+        "Sibu",
+        "Tenggol",
+        "Tinggi"
+      ],
+      "units_uncovered_names": [
+        "Lankayan"
+      ],
+      "short_term_loss_rm": 23721897,
+      "reef_adjacent_annual_rm": 28466276,
+      "long_term_low_rm": 284662760,
+      "long_term_high_rm": 426994140,
       "recovery_years": [
         10,
         15
       ],
-      "ratio_note": "The ratio between the two figures is 12-18x by construction (10% share x 12 months x 10-15 years); published arrivals set only the scale."
+      "recovery_mid_years": 12.5,
+      "long_term_mid_rm": 355828450,
+      "ratio_note": "The ratio between the two figures is 12-18x by construction (10% share x 12 months x 10-15 years); published visitors set only the scale."
     },
     "sources": {
-      "spend": "DOSM Domestic Tourism Survey 2024: RM106.7bn / 260.1m domestic visitors = RM410 per visitor, applied to all visitors, so island spending is a floor. DMPM's marine-park estimate of RM450 per visitor is a cross-check.",
-      "reef_adjacent": "Reef-adjacent share: 10% of island tourism spending (Spalding et al. 2017, Marine Policy 82:104-113). A foreign method coefficient used as supporting context only; every input it multiplies is Malaysian.",
-      "arrivals": "Arrivals: Sabah Parks public visitor statistics (full year 2024) and the Terengganu State Tourism Department (January-August 2024, annualised).",
+      "spend": "DOSM Domestic Tourism Survey 2024: RM106.7bn / 260.1m domestic visitors = RM410 per visitor, applied to all visitors, so spending is a floor.",
+      "reef_adjacent": "Reef-adjacent share: 10% of tourism spending (Spalding et al. 2017), a foreign method coefficient applied to Malaysian inputs only.",
+      "visitors": "Visitors: Department of Marine Park state series, 2013-2017 average (data.gov.my); Sabah Parks public visitor statistics, 2024.",
       "recovery": "Reef recovery needs at least 10-15 years without new disturbance (James Cook University, 2019)."
     }
   },
-  "islandEconomics": [
+  "parkEconomics": [
     {
-      "island": "Tunku Abdul Rahman Park",
+      "park": "Tunku Abdul Rahman Park",
       "state": "Sabah",
-      "priority_rank": 33,
-      "priority_tier": "Monitor",
       "visitors_per_year": 497199,
       "spending_rm": 203964373,
       "reef_adjacent_rm": 20396437,
-      "basis": "497,199 visitors reported for full year 2024",
+      "basis": "2024 full year",
+      "units": "Tunku Abdul Rahman Park",
+      "high_priority_units": "",
       "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
       "source_url": "https://dashboard.sabahparks.org.my/dashboard/tunku-abdul-rahman-park"
     },
     {
-      "island": "Redang",
+      "park": "Terengganu Marine Parks",
       "state": "Terengganu",
-      "priority_rank": 31,
-      "priority_tier": "Monitor",
-      "visitors_per_year": 212432,
-      "spending_rm": 87145102,
-      "reef_adjacent_rm": 8714510,
-      "basis": "141,621 visitors reported for Jan-Aug 2024, annualised to 212,432",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+      "visitors_per_year": 275295,
+      "spending_rm": 112933233,
+      "reef_adjacent_rm": 11293323,
+      "basis": "2013-2017 average",
+      "units": "Bidong & Yu; Kapas; Lang Tengah; Perhentian; Redang; Rhu; Tenggol",
+      "high_priority_units": "Kapas; Tenggol",
+      "source_name": "Department of Marine Park Malaysia / data.gov.my",
+      "source_url": "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia"
     },
     {
-      "island": "Perhentian",
-      "state": "Terengganu",
-      "priority_rank": 32,
-      "priority_tier": "Monitor",
-      "visitors_per_year": 165387,
-      "spending_rm": 67846186,
-      "reef_adjacent_rm": 6784619,
-      "basis": "110,258 visitors reported for Jan-Aug 2024, annualised to 165,387",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+      "park": "Mersing Marine Parks",
+      "state": "Johor",
+      "visitors_per_year": 208734,
+      "spending_rm": 85628288,
+      "reef_adjacent_rm": 8562829,
+      "basis": "2013-2017 average",
+      "units": "Aur & Dayang; Besar; Gual; Harimau; Hujung; Lima; Mensirip; Mertang; Pemanggil; Rawa; Sibu; Tengah; Tinggi",
+      "high_priority_units": "Lima; Mensirip; Mertang; Sibu; Tinggi",
+      "source_name": "Department of Marine Park Malaysia / data.gov.my",
+      "source_url": "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia"
     },
     {
-      "island": "Tun Sakaran Marine Park",
+      "park": "Tioman Marine Parks",
+      "state": "Pahang",
+      "visitors_per_year": 208695,
+      "spending_rm": 85612454,
+      "reef_adjacent_rm": 8561245,
+      "basis": "2013-2017 average",
+      "units": "Seri Buat; Tioman",
+      "high_priority_units": "Seri Buat",
+      "source_name": "Department of Marine Park Malaysia / data.gov.my",
+      "source_url": "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia"
+    },
+    {
+      "park": "Pulau Payar Marine Park",
+      "state": "Kedah",
+      "visitors_per_year": 122124,
+      "spending_rm": 50098542,
+      "reef_adjacent_rm": 5009854,
+      "basis": "2013-2017 average",
+      "units": "Payar",
+      "high_priority_units": "",
+      "source_name": "Department of Marine Park Malaysia / data.gov.my",
+      "source_url": "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia"
+    },
+    {
+      "park": "Tun Sakaran Marine Park",
       "state": "Sabah",
-      "priority_rank": 12,
-      "priority_tier": "Monitor",
       "visitors_per_year": 100369,
       "spending_rm": 41174057,
       "reef_adjacent_rm": 4117406,
-      "basis": "100,369 visitors reported for full year 2024",
+      "basis": "2024 full year",
+      "units": "Larapan; Tun Sakaran Marine Park",
+      "high_priority_units": "",
       "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
       "source_url": "https://dashboard.sabahparks.org.my/dashboard/tun-sakaran-marine-park"
     },
     {
-      "island": "Kapas",
-      "state": "Terengganu",
-      "priority_rank": 2,
-      "priority_tier": "High screening priority",
-      "visitors_per_year": 83162,
-      "spending_rm": 34115079,
-      "reef_adjacent_rm": 3411508,
-      "basis": "55,441 visitors reported for Jan-Aug 2024, annualised to 83,162",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
-    },
-    {
-      "island": "Sipadan",
+      "park": "Sipadan Island Park",
       "state": "Sabah",
-      "priority_rank": 11,
-      "priority_tier": "Monitor",
       "visitors_per_year": 36719,
       "spending_rm": 15063119,
       "reef_adjacent_rm": 1506312,
-      "basis": "36,719 visitors reported for full year 2024",
+      "basis": "2024 full year",
+      "units": "Sipadan",
+      "high_priority_units": "",
       "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
       "source_url": "https://dashboard.sabahparks.org.my/dashboard/sipadan-island-park"
     },
     {
-      "island": "Lang Tengah",
-      "state": "Terengganu",
-      "priority_rank": 35,
-      "priority_tier": "Monitor",
-      "visitors_per_year": 23487,
-      "spending_rm": 9634998,
-      "reef_adjacent_rm": 963500,
-      "basis": "15,658 visitors reported for Jan-Aug 2024, annualised to 23,487",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
-    },
-    {
-      "island": "Penyu",
+      "park": "Turtle Islands Park",
       "state": "Sabah",
-      "priority_rank": 18,
-      "priority_tier": "Monitor",
       "visitors_per_year": 10333,
       "spending_rm": 4238874,
       "reef_adjacent_rm": 423887,
-      "basis": "10,333 visitors reported for full year 2024",
+      "basis": "2024 full year",
+      "units": "Penyu",
+      "high_priority_units": "",
       "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
       "source_url": "https://dashboard.sabahparks.org.my/dashboard/turtle-islands-park"
     },
     {
-      "island": "Tenggol",
-      "state": "Terengganu",
-      "priority_rank": 6,
-      "priority_tier": "High screening priority",
-      "visitors_per_year": 5193,
-      "spending_rm": 2130308,
-      "reef_adjacent_rm": 213031,
-      "basis": "3,462 visitors reported for Jan-Aug 2024, annualised to 5,193",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
-    },
-    {
-      "island": "Tiga",
+      "park": "Pulau Tiga Park",
       "state": "Sabah",
-      "priority_rank": 29,
-      "priority_tier": "Monitor",
       "visitors_per_year": 4110,
       "spending_rm": 1686032,
       "reef_adjacent_rm": 168603,
-      "basis": "4,110 visitors reported for full year 2024",
+      "basis": "2024 full year",
+      "units": "Tiga",
+      "high_priority_units": "",
       "source_name": "Sabah Parks Public Data - Visitor Statistics dashboard",
       "source_url": "https://dashboard.sabahparks.org.my/dashboard/pulau-tiga-park"
     },
     {
-      "island": "Bidong & Yu",
-      "state": "Terengganu",
-      "priority_rank": 37,
-      "priority_tier": "Monitor",
-      "visitors_per_year": 4008,
-      "spending_rm": 1644189,
-      "reef_adjacent_rm": 164419,
-      "basis": "2,672 visitors reported for Jan-Aug 2024, annualised to 4,008",
-      "source_name": "Terengganu State Tourism Department (state tourism director, reported 26 September 2024)",
-      "source_url": "https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html"
+      "park": "Labuan Marine Park",
+      "state": "Labuan",
+      "visitors_per_year": 1192,
+      "spending_rm": 488785,
+      "reef_adjacent_rm": 48879,
+      "basis": "2016-2017 average",
+      "units": "Labuan",
+      "high_priority_units": "Labuan",
+      "source_name": "Department of Marine Park Malaysia / data.gov.my",
+      "source_url": "https://archive.data.gov.my/data/en_US/organization/department-of-marine-park-malaysia"
     }
   ],
   "priorityIslands": [
@@ -194,11 +213,78 @@ window.REEFSAFE_DATA = {
       "dhwContext": 4.04,
       "predictedNextChange": -14.417288249580414,
       "predictionLower": -30.67167372568418,
-      "predictionUpper": -0.7552712902505725,
+      "predictionUpper": -0.7552712902505743,
       "tier": "High screening priority",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.67235734586363,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.30256210934862854,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": -0.24504504866491822,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -13.640499789756872,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.9629865243929814,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Pollution & waste",
+        "topStressorPp": -13.640499789756872,
+        "insight": "Inspect wastewater and waste controls",
+        "evidence": {
+          "group": "Pollution & waste",
+          "pp": -13.640499789756872,
+          "belowThreshold": false,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "items": [
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 37.81,
+              "rank": 1,
+              "ties": 1,
+              "of": 40,
+              "median": 5.835,
+              "mentioned": null,
+              "pp": -13.640499789756872
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 2,
@@ -212,13 +298,124 @@ window.REEFSAFE_DATA = {
       "lcc": 52.63,
       "lccChangeRate": 5.11,
       "dhwContext": 2.05,
-      "predictedNextChange": -5.751054835884399,
-      "predictionLower": -22.005440311988163,
-      "predictionUpper": 7.910962123445443,
+      "predictedNextChange": -5.751054835884398,
+      "predictionLower": -22.00544031198816,
+      "predictionUpper": 7.910962123445442,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "nextStep": "Prioritise field validation before imposing restrictions"
+      "nextStep": "Prioritise field validation before imposing restrictions",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.8236438925183958,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.297674190128789,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.03183430055466442,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7447297703252571,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.297674190128789,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.297674190128789,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 17.0,
+              "rank": 16,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.2036895352645503
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.75,
+              "rank": 12,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.11704037131742182
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 3.2,
+              "rank": 14,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 1.7,
+              "rank": 5,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.011629414045945155
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 3.05,
+              "rank": 29,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 3,
@@ -232,13 +429,124 @@ window.REEFSAFE_DATA = {
       "lcc": 54.22,
       "lccChangeRate": -7.84,
       "dhwContext": 2.05,
-      "predictedNextChange": -5.154702883712362,
+      "predictedNextChange": -5.154702883712361,
       "predictionLower": -21.409088359816124,
       "predictionUpper": 8.50731407561748,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.3914927244179274,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.03183430055466442,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.3914927244179274,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.3914927244179274,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.81,
+              "rank": 31,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 36.5,
+              "rank": 14,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.12733987608743536
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.88,
+              "rank": 11,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.69,
+              "rank": 22,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 13.69,
+              "rank": 2,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 4,
@@ -252,13 +560,102 @@ window.REEFSAFE_DATA = {
       "lcc": 58.33,
       "lccChangeRate": -11.25,
       "dhwContext": 1.88,
-      "predictedNextChange": -5.0266139003205,
+      "predictedNextChange": -5.026613900320498,
       "predictionLower": -21.280999376424262,
       "predictionUpper": 8.635403059009342,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -1.8788258879201836,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.019319002575934136,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.9769701485280178,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Disturbance & substrate",
+        "topStressorPp": -0.9769701485280178,
+        "insight": "Survey physical reef damage",
+        "evidence": {
+          "group": "Disturbance & substrate",
+          "pp": -0.9769701485280178,
+          "belowThreshold": false,
+          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "items": [
+            {
+              "label": "Bare rock available for coral recruitment",
+              "kind": "pct",
+              "value": 8.13,
+              "rank": 39,
+              "ties": 1,
+              "of": 40,
+              "median": 24.9,
+              "mentioned": null,
+              "pp": -0.991791438880476
+            },
+            {
+              "label": "Sand",
+              "kind": "pct",
+              "value": 5.94,
+              "rank": 25,
+              "ties": 2,
+              "of": 40,
+              "median": 7.395,
+              "mentioned": null,
+              "pp": -0.02186672053922182
+            },
+            {
+              "label": "Disturbance indicators (recently killed coral + rubble)",
+              "kind": "pct",
+              "value": 22.5,
+              "rank": 9,
+              "ties": 2,
+              "of": 40,
+              "median": 14.64,
+              "mentioned": null,
+              "pp": 0.03668801089168005
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 5,
@@ -274,11 +671,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 1.88,
       "predictedNextChange": -4.849858937927289,
       "predictionLower": -21.10424441403105,
-      "predictionUpper": 8.812158021402553,
+      "predictionUpper": 8.812158021402551,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.08664877863285486,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.03183430055466442,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.08664877863285486,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.58,
+              "rank": 37,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.58,
+              "rank": 20,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.38,
+              "rank": 24,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 13.83,
+              "rank": 1,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 156.58,
+              "rank": 3,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": 0.17750406969763716
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 6,
@@ -298,7 +806,118 @@ window.REEFSAFE_DATA = {
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.4688654360346936,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.1002007312758042,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.4688654360346936,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.4688654360346936,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 9.13,
+              "rank": 3,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.1616044398043018
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 5.25,
+              "rank": 8,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 0.88,
+              "rank": 31,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.12733987608743536
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.75,
+              "rank": 13,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 6.0,
+              "rank": 15,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 7,
@@ -312,13 +931,124 @@ window.REEFSAFE_DATA = {
       "lcc": 52.5,
       "lccChangeRate": -4.22,
       "dhwContext": 1.88,
-      "predictedNextChange": -4.625227283981603,
+      "predictedNextChange": -4.625227283981602,
       "predictionLower": -20.879612760085365,
       "predictionUpper": 9.036789675348238,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.488482321452116,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.030651005082727056,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.030651005082727056,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.13,
+              "rank": 18,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.69,
+              "rank": 17,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.75,
+              "rank": 21,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.19,
+              "rank": 25,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 67.88,
+              "rank": 11,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": 0.17750406969763716
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 8,
@@ -332,13 +1062,124 @@ window.REEFSAFE_DATA = {
       "lcc": 51.88,
       "lccChangeRate": -10.4,
       "dhwContext": 1.88,
-      "predictedNextChange": -4.372997869193041,
-      "predictionLower": -20.627383345296806,
+      "predictedNextChange": -4.37299786919304,
+      "predictionLower": -20.627383345296803,
       "predictionUpper": 9.2890190901368,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.247882320709498,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.019021591036781915,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7587772877196757,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.019021591036781915,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 7.33,
+              "rank": 6,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 2.25,
+              "rank": 3,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.08791645320196428
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 4.08,
+              "rank": 12,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 7.58,
+              "rank": 11,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 166.08,
+              "rank": 2,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": 0.17750406969763716
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 9,
@@ -354,11 +1195,60 @@ window.REEFSAFE_DATA = {
       "dhwContext": 1.88,
       "predictedNextChange": -4.3361716781234225,
       "predictionLower": -20.590557154227184,
-      "predictionUpper": 9.32584528120642,
+      "predictionUpper": 9.325845281206417,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.4545874597290815,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 0.2104622216579991,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7447297703252571,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": null
+      }
     },
     {
       "rank": 10,
@@ -372,13 +1262,124 @@ window.REEFSAFE_DATA = {
       "lcc": 51.04,
       "lccChangeRate": 1.51,
       "dhwContext": 4.04,
-      "predictedNextChange": -4.073063575373093,
+      "predictedNextChange": -4.073063575373092,
       "predictionLower": -20.327449051476854,
       "predictionUpper": 9.58895338395675,
       "tier": "High screening priority",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.4545874597290815,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.23055847777884825,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.0406009681380803,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.23055847777884825,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 0.98,
+              "rank": 30,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.2036895352645503
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.87,
+              "rank": 11,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.11704037131742182
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.15,
+              "rank": 33,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.011629414045945155
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.2,
+              "rank": 39,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": 0.03888175771253295
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 3.12,
+              "rank": 28,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 11,
@@ -392,13 +1393,124 @@ window.REEFSAFE_DATA = {
       "lcc": 55.21,
       "lccChangeRate": -8.08,
       "dhwContext": 4.04,
-      "predictedNextChange": -4.061045802819757,
+      "predictedNextChange": -4.0610458028197565,
       "predictionLower": -20.31543127892352,
       "predictionUpper": 9.600971156510084,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.2003374904126932,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.03183430055466442,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -0.8562754408323038,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.2003374904126932,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 1.71,
+              "rank": 25,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 0.0,
+              "rank": 36,
+              "ties": 4,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.12733987608743536
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 2.79,
+              "rank": 1,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 7.96,
+              "rank": 9,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 6.83,
+              "rank": 4,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": 0.10692350581769859
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 12,
@@ -414,11 +1526,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 4.04,
       "predictedNextChange": -3.9730662979087525,
       "predictionLower": -20.227451774012515,
-      "predictionUpper": 9.688950661421089,
+      "predictionUpper": 9.688950661421087,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.11235798550169082,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.03183430055466442,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -0.8562754408323038,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.11235798550169082,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.75,
+              "rank": 33,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 2.98,
+              "rank": 24,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.12733987608743536
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 5.48,
+              "rank": 9,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.6,
+              "rank": 21,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.25,
+              "rank": 28,
+              "ties": 3,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": 0.17958887166832715
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 13,
@@ -434,11 +1657,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 4.04,
       "predictedNextChange": -3.4353759847238763,
       "predictionLower": -19.68976146082764,
-      "predictionUpper": 10.226640974605965,
+      "predictionUpper": 10.226640974605964,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -2.1194258886628017,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.11235798550169082,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.5058560126302101,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -0.8562754408323038,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.11235798550169082,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.2,
+              "rank": 40,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 0.0,
+              "rank": 36,
+              "ties": 4,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.12733987608743536
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 2.0,
+              "rank": 19,
+              "ties": 2,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 1.45,
+              "rank": 39,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.0,
+              "rank": 40,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": 0.17958887166832715
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 14,
@@ -452,13 +1786,80 @@ window.REEFSAFE_DATA = {
       "lcc": 48.96,
       "lccChangeRate": -11.31,
       "dhwContext": 1.88,
-      "predictedNextChange": -3.1494546809297406,
+      "predictedNextChange": -3.149454680929741,
       "predictionLower": -19.403840157033503,
-      "predictionUpper": 10.5125622784001,
+      "predictionUpper": 10.512562278400098,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.12609640388525364,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.019021591036781915,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.2250711044061571,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.9260928992442554,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Pollution & waste",
+          "pp": -0.2250711044061571,
+          "belowThreshold": true,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "items": [
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 2.5,
+              "rank": 36,
+              "ties": 1,
+              "of": 40,
+              "median": 5.835,
+              "mentioned": null,
+              "pp": -0.2250711044061571
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 15,
@@ -472,13 +1873,113 @@ window.REEFSAFE_DATA = {
       "lcc": 45.73,
       "lccChangeRate": -2.22,
       "dhwContext": 1.88,
-      "predictedNextChange": -3.025109729649479,
+      "predictedNextChange": -3.0251097296494796,
       "predictionLower": -19.279495205753243,
-      "predictionUpper": 10.636907229680363,
+      "predictionUpper": 10.63690722968036,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.19799209925154584,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.1970371359805513,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.0895270208388075,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.1970371359805513,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.88,
+              "rank": 29,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.42,
+              "rank": 25,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.21,
+              "rank": 38,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": 0.03888175771253295
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 12.46,
+              "rank": 3,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 16,
@@ -492,13 +1993,80 @@ window.REEFSAFE_DATA = {
       "lcc": 48.85,
       "lccChangeRate": -7.68,
       "dhwContext": 1.88,
-      "predictedNextChange": -2.9055323888925804,
+      "predictedNextChange": -2.905532388892581,
       "predictionLower": -19.159917864996345,
-      "predictionUpper": 10.756484570437262,
+      "predictionUpper": 10.756484570437259,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.36669640462787156,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 0.24848373383350952,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.008054136496670927,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.9260928992442554,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Pollution & waste",
+          "pp": -0.008054136496670927,
+          "belowThreshold": true,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "items": [
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 4.38,
+              "rank": 29,
+              "ties": 1,
+              "of": 40,
+              "median": 5.835,
+              "mentioned": null,
+              "pp": -0.008054136496670927
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 17,
@@ -512,13 +2080,113 @@ window.REEFSAFE_DATA = {
       "lcc": 45.31,
       "lccChangeRate": -10.45,
       "dhwContext": 1.88,
-      "predictedNextChange": -2.8399960272108564,
-      "predictionLower": -19.09438150331462,
-      "predictionUpper": 10.822020932118985,
+      "predictedNextChange": -2.839996027210857,
+      "predictionLower": -19.094381503314622,
+      "predictionUpper": 10.822020932118983,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 0.0426079014910721,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.25252343428454693,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.0895270208388075,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.25252343428454693,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.25252343428454693,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.96,
+              "rank": 27,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 1.17,
+              "rank": 9,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.08791645320196428
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.04,
+              "rank": 29,
+              "ties": 2,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 7.88,
+              "rank": 10,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 18,
@@ -532,13 +2200,124 @@ window.REEFSAFE_DATA = {
       "lcc": 37.77,
       "lccChangeRate": -1.53,
       "dhwContext": 4.04,
-      "predictedNextChange": -2.758453602683239,
+      "predictedNextChange": -2.7584536026832396,
       "predictionLower": -19.012839078787003,
-      "predictionUpper": 10.903563356646602,
+      "predictionUpper": 10.9035633566466,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.5331536703178263,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.047518239680437266,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.008054136496670927,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.1002007312758042,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.371350701257212,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.047518239680437266,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 1.89,
+              "rank": 23,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.11704037131742182
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 1.78,
+              "rank": 28,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.07634965917711495
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.17,
+              "rank": 32,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.011629414045945155
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 2.81,
+              "rank": 32,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.56,
+              "rank": 33,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": 0.09458211972350855
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 19,
@@ -552,13 +2331,80 @@ window.REEFSAFE_DATA = {
       "lcc": 42.29,
       "lccChangeRate": -6.84,
       "dhwContext": 1.94,
-      "predictedNextChange": -2.753521664652438,
+      "predictedNextChange": -2.7535216646524394,
       "predictionLower": -19.007907140756203,
-      "predictionUpper": 10.908495294677405,
+      "predictionUpper": 10.908495294677401,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "nextStep": "Prioritise field validation before imposing restrictions"
+      "nextStep": "Prioritise field validation before imposing restrictions",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.19799209925154584,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.2081550747803642,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.2250711044061571,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.269130703857079,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Pollution & waste",
+          "pp": -0.2250711044061571,
+          "belowThreshold": true,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "items": [
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 3.13,
+              "rank": 35,
+              "ties": 1,
+              "of": 40,
+              "median": 5.835,
+              "mentioned": null,
+              "pp": -0.2250711044061571
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 20,
@@ -572,13 +2418,124 @@ window.REEFSAFE_DATA = {
       "lcc": 41.42,
       "lccChangeRate": 5.73,
       "dhwContext": 4.04,
-      "predictedNextChange": -2.675723159139596,
+      "predictedNextChange": -2.6757231591395962,
       "predictionLower": -18.93010863524336,
-      "predictionUpper": 10.986293800190246,
+      "predictionUpper": 10.986293800190243,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.5331536703178263,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.10836501341079,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.008054136496670927,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.04540490384960392,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.1729776565570167,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.10836501341079,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.33,
+              "rank": 38,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.2583635366885738
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.06,
+              "rank": 28,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.028233954637407785
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.07,
+              "rank": 39,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.011629414045945155
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 2.72,
+              "rank": 35,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 136.29,
+              "rank": 5,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": 0.12694280682460066
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 21,
@@ -592,13 +2549,113 @@ window.REEFSAFE_DATA = {
       "lcc": 40.35,
       "lccChangeRate": -4.48,
       "dhwContext": 4.04,
-      "predictedNextChange": -2.4018311478189034,
+      "predictedNextChange": -2.401831147818904,
       "predictionLower": -18.656216623922667,
-      "predictionUpper": 11.260185811510938,
+      "predictionUpper": 11.260185811510937,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": -0.19799209925154584,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.1524547127693886,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.1002007312758042,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.565626689645594,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.1524547127693886,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 5.26,
+              "rank": 7,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.42,
+              "rank": 25,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 2.75,
+              "rank": 17,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": 0.02746640737356782
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 3.18,
+              "rank": 27,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 22,
@@ -612,13 +2669,113 @@ window.REEFSAFE_DATA = {
       "lcc": 41.77,
       "lccChangeRate": -4.83,
       "dhwContext": 1.88,
-      "predictedNextChange": -2.305376552555445,
+      "predictedNextChange": -2.3053765525554444,
       "predictionLower": -18.559762028659208,
       "predictionUpper": 11.356640406774396,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 1.11808694714441,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.30495711576448165,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.008054136496670927,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.171900124158064,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.30495711576448165,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.30495711576448165,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 1.13,
+              "rank": 26,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.71,
+              "rank": 15,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.42,
+              "rank": 35,
+              "ties": 2,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.06903822207139738
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 8.38,
+              "rank": 5,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 23,
@@ -632,13 +2789,113 @@ window.REEFSAFE_DATA = {
       "lcc": 43.75,
       "lccChangeRate": -3.75,
       "dhwContext": 1.88,
-      "predictedNextChange": -2.2655422927152866,
+      "predictedNextChange": -2.265542292715287,
       "predictionLower": -18.519927768819052,
-      "predictionUpper": 11.396474666614555,
+      "predictionUpper": 11.396474666614553,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 0.4373124047959029,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.040872758605842496,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.013503459361639665,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.0895270208388075,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.040872758605842496,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.63,
+              "rank": 35,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 3.0,
+              "rank": 15,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.08408860382899483
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 7.56,
+              "rank": 12,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.19,
+              "rank": 31,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": 0.17958887166832715
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 24,
@@ -654,11 +2911,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 1.88,
       "predictedNextChange": -2.211998726662781,
       "predictionLower": -18.466384202766545,
-      "predictionUpper": 11.45001823266706,
+      "predictionUpper": 11.450018232667059,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 0.7829253760781294,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.2111385814753432,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.1578526067636457,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.2111385814753432,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.57,
+              "rank": 13,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.11704037131742182
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 26.18,
+              "rank": 15,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.07634965917711495
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.25,
+              "rank": 37,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.06903822207139738
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 1.43,
+              "rank": 6,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.011629414045945155
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 5.79,
+              "rank": 17,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 25,
@@ -678,7 +3046,107 @@ window.REEFSAFE_DATA = {
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.94829301798303,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -2.03053187067517,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.6303432599276757,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -2.03053187067517,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -2.03053187067517,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 0.83,
+              "rank": 40,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": -2.390925235188372
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.79,
+              "rank": 32,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.09936908883288005
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.63,
+              "rank": 32,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.013337860060421772
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.13,
+              "rank": 34,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": 0.47310031340650377
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 26,
@@ -692,13 +3160,113 @@ window.REEFSAFE_DATA = {
       "lcc": 35.01,
       "lccChangeRate": -7.5,
       "dhwContext": 2.05,
-      "predictedNextChange": -2.0251321151123203,
+      "predictedNextChange": -2.02513211511232,
       "predictionLower": -18.279517591216084,
-      "predictionUpper": 11.636884844217521,
+      "predictionUpper": 11.63688484421752,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 1.11808694714441,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.2603746925533189,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.3117072826276903,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.2603746925533189,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.2603746925533189,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.25,
+              "rank": 16,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.63,
+              "rank": 18,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 1.13,
+              "rank": 26,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.08045357241036251
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.63,
+              "rank": 20,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 27,
@@ -712,13 +3280,102 @@ window.REEFSAFE_DATA = {
       "lcc": 35.42,
       "lccChangeRate": -2.61,
       "dhwContext": 1.88,
-      "predictedNextChange": -1.9166614591748918,
-      "predictionLower": -18.171046935278657,
-      "predictionUpper": 11.74535550015495,
+      "predictedNextChange": -1.9166614591748914,
+      "predictionLower": -18.171046935278653,
+      "predictionUpper": 11.745355500154949,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 1.11808694714441,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.236915367659316,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.171900124158064,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.236915367659316,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.21,
+              "rank": 39,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.19929211158171092
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.38,
+              "rank": 27,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.09954586724790943
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.42,
+              "rank": 23,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 28,
@@ -732,13 +3389,113 @@ window.REEFSAFE_DATA = {
       "lcc": 42.99,
       "lccChangeRate": -15.3,
       "dhwContext": 1.88,
-      "predictedNextChange": -1.6330955418541313,
+      "predictedNextChange": -1.6330955418541309,
       "predictionLower": -17.887481017957896,
-      "predictionUpper": 12.028921417475711,
+      "predictionUpper": 12.02892141747571,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 1.3586869478870278,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.2487452785073738,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.31261920877871746,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.171900124158064,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.2487452785073738,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 3.92,
+              "rank": 9,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.1432943380315831
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.75,
+              "rank": 13,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.08791645320196428
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 2.24,
+              "rank": 18,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.08045357241036251
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.33,
+              "rank": 24,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 29,
@@ -754,11 +3511,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 4.04,
       "predictedNextChange": -1.5732425039281994,
       "predictionLower": -17.827627980031963,
-      "predictionUpper": 12.088774455401643,
+      "predictionUpper": 12.08877445540164,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.372531446174131,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.5452611506169103,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.011844874127233269,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.616295742533257,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.5452611506169103,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.5452611506169103,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 18.21,
+              "rank": 1,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.26952441958823214
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 1.29,
+              "rank": 8,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.24518880841950835
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 0.75,
+              "rank": 33,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.07634965917711495
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 16.0,
+              "rank": 4,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.01711734856859097
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.71,
+              "rank": 19,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 30,
@@ -774,11 +3642,122 @@ window.REEFSAFE_DATA = {
       "dhwContext": 2.05,
       "predictedNextChange": -1.1947556438251963,
       "predictionLower": -17.44914111992896,
-      "predictionUpper": 12.467261315504645,
+      "predictionUpper": 12.467261315504643,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Modelled decline; no single dominant observed stressor",
-      "nextStep": "Prioritise field validation before imposing restrictions"
+      "nextStep": "Prioritise field validation before imposing restrictions",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.372531446174131,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.28907459108909994,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.8146687872334524,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.28907459108909994,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.28907459108909994,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.25,
+              "rank": 28,
+              "ties": 3,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.24518880841950835
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 5.75,
+              "rank": 22,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.07634965917711495
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 1.92,
+              "rank": 21,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.01711734856859097
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 0.42,
+              "rank": 35,
+              "ties": 2,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.013337860060421772
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 5.17,
+              "rank": 18,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 31,
@@ -792,13 +3771,113 @@ window.REEFSAFE_DATA = {
       "lcc": 25.89,
       "lccChangeRate": -3.28,
       "dhwContext": 2.05,
-      "predictedNextChange": -1.109083024189587,
+      "predictedNextChange": -1.1090830241895868,
       "predictionLower": -17.36346850029335,
-      "predictionUpper": 12.552933935140254,
+      "predictionUpper": 12.552933935140253,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.7076930172404117,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.5830819113559209,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.770150418397302,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.5830819113559209,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.5830819113559209,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.54,
+              "rank": 23,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.33310526162147264
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 6.04,
+              "rank": 7,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.26952441958823214
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 7.35,
+              "rank": 5,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.04337131528275225
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 3.65,
+              "rank": 26,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 32,
@@ -818,7 +3897,96 @@ window.REEFSAFE_DATA = {
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.523390615269152,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.3145539657339205,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.770150418397302,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.3145539657339205,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.3145539657339205,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.98,
+              "rank": 10,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.33310526162147264
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 1.98,
+              "rank": 20,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.04337131528275225
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 4.48,
+              "rank": 22,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 33,
@@ -832,13 +4000,124 @@ window.REEFSAFE_DATA = {
       "lcc": 13.12,
       "lccChangeRate": -0.86,
       "dhwContext": 4.04,
-      "predictedNextChange": -1.0585788901734219,
+      "predictedNextChange": -1.0585788901734217,
       "predictionLower": -17.312964366277185,
-      "predictionUpper": 12.60343806915642,
+      "predictionUpper": 12.603438069156418,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.372531446174131,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.15289783743732507,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.8146687872334524,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.15289783743732507,
+          "belowThreshold": true,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.44,
+              "rank": 24,
+              "ties": 1,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.24518880841950835
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 2.94,
+              "rank": 16,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.08045357241036251
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.13,
+              "rank": 18,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.01711734856859097
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 2.47,
+              "rank": 36,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 57.25,
+              "rank": 12,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": 0.12694280682460066
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 34,
@@ -852,13 +4131,124 @@ window.REEFSAFE_DATA = {
       "lcc": 28.75,
       "lccChangeRate": 1.86,
       "dhwContext": 4.04,
-      "predictedNextChange": -1.029080790321467,
+      "predictedNextChange": -1.0290807903214667,
       "predictionLower": -17.28346626642523,
-      "predictionUpper": 12.632936169008374,
+      "predictionUpper": 12.632936169008373,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.372531446174131,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.6865843159880622,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.22886184203671947,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.7137938956458854,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.6865843159880622,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.6865843159880622,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 5.67,
+              "rank": 8,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.26952441958823214
+            },
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.71,
+              "rank": 15,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.24518880841950835
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 0.75,
+              "rank": 33,
+              "ties": 2,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.15844051393974293
+            },
+            {
+              "label": "Diadema urchins",
+              "kind": "count",
+              "value": 2.0,
+              "rank": 27,
+              "ties": 1,
+              "of": 39,
+              "median": 7.35,
+              "mentioned": null,
+              "pp": -0.07634965917711495
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 7.25,
+              "rank": 13,
+              "ties": 1,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 35,
@@ -874,34 +4264,114 @@ window.REEFSAFE_DATA = {
       "dhwContext": 2.05,
       "predictedNextChange": -0.7782789516603302,
       "predictionLower": -17.032664427764093,
-      "predictionUpper": 12.883738007669512,
+      "predictionUpper": 12.88373800766951,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.94829301798303,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": -0.43808201214308173,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.039974537073742045,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.770150418397302,
+            "stressor": false
+          }
+        ],
+        "topStressor": "Herbivory & fish",
+        "topStressorPp": -0.43808201214308173,
+        "insight": "Review fishing pressure on grazing fish",
+        "evidence": {
+          "group": "Herbivory & fish",
+          "pp": -0.43808201214308173,
+          "belowThreshold": false,
+          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "items": [
+            {
+              "label": "Grouper",
+              "kind": "count",
+              "value": 0.63,
+              "rank": 18,
+              "ties": 2,
+              "of": 40,
+              "median": 0.58,
+              "mentioned": null,
+              "pp": -0.3214758475755275
+            },
+            {
+              "label": "Parrotfish",
+              "kind": "count",
+              "value": 4.44,
+              "rank": 11,
+              "ties": 1,
+              "of": 40,
+              "median": 1.875,
+              "mentioned": null,
+              "pp": -0.1361539344213381
+            },
+            {
+              "label": "Snapper",
+              "kind": "count",
+              "value": 2.5,
+              "rank": 15,
+              "ties": 1,
+              "of": 40,
+              "median": 1.95,
+              "mentioned": null,
+              "pp": -0.04337131528275225
+            },
+            {
+              "label": "Butterflyfish",
+              "kind": "count",
+              "value": 8.13,
+              "rank": 7,
+              "ties": 2,
+              "of": 40,
+              "median": 4.615,
+              "mentioned": null,
+              "pp": 0.06291908513653609
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 36,
-      "island": "Mantanani",
-      "state": "Sabah",
-      "ecoregion": "North Borneo",
-      "lat": 6.7167,
-      "lng": 116.35,
-      "marinePark": "Mantanani Islands",
-      "surveyYear": 2025,
-      "lcc": 22.55,
-      "lccChangeRate": -10.29,
-      "dhwContext": 4.04,
-      "predictedNextChange": -0.14582637801605128,
-      "predictionLower": -16.400211854119814,
-      "predictionUpper": 13.51619058131379,
-      "tier": "Monitor",
-      "sourceConfidence": "PDF geometry only - not cross-checked",
-      "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
-    },
-    {
-      "rank": 37,
       "island": "Bidong & Yu",
       "state": "Terengganu",
       "ecoregion": "Sunda Shelf",
@@ -912,36 +4382,152 @@ window.REEFSAFE_DATA = {
       "lcc": 48.02,
       "lccChangeRate": -11.25,
       "dhwContext": 2.05,
-      "predictedNextChange": 0.5914051583112688,
-      "predictionLower": -15.662980317792496,
-      "predictionUpper": 14.25342211764111,
+      "predictedNextChange": -0.6145464227998586,
+      "predictionLower": -16.86893189890362,
+      "predictionUpper": 13.047470536529982,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "Waste or pollution indicator is elevated",
-      "nextStep": "Inspect waste and wastewater controls"
+      "nextStep": "Inspect waste and wastewater controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 0.12372449922433856,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 3.3715911950389903,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.05401252794541239,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.060356739698665396,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -3.325653798500367,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": null
+      }
     },
     {
-      "rank": 38,
-      "island": "Kapalai",
+      "rank": 37,
+      "island": "Mantanani",
       "state": "Sabah",
       "ecoregion": "North Borneo",
-      "lat": 4.225,
-      "lng": 118.6833,
-      "marinePark": "Non-Park Reef (Semporna)",
+      "lat": 6.7167,
+      "lng": 116.35,
+      "marinePark": "Mantanani Islands",
       "surveyYear": 2025,
-      "lcc": 14.69,
-      "lccChangeRate": -5.81,
+      "lcc": 22.55,
+      "lccChangeRate": -10.29,
       "dhwContext": 4.04,
-      "predictedNextChange": 0.7700912926492062,
-      "predictionLower": -15.484294183454557,
-      "predictionUpper": 14.432108251979049,
+      "predictedNextChange": -0.14582637801605147,
+      "predictionLower": -16.400211854119814,
+      "predictionUpper": 13.516190581313788,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.94829301798303,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 0.3561967372997973,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": -0.24504504866491822,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.6303432599276757,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Anchors & nets",
+          "pp": -0.24504504866491822,
+          "belowThreshold": true,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
+          "items": [
+            {
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 35,
+              "ties": 6,
+              "of": 40,
+              "median": 1.0,
+              "mentioned": 34,
+              "pp": -0.24504504866491822
+            }
+          ]
+        }
+      }
     },
     {
-      "rank": 39,
+      "rank": 38,
       "island": "Mabul",
       "state": "Sabah",
       "ecoregion": "North Borneo",
@@ -952,13 +4538,167 @@ window.REEFSAFE_DATA = {
       "lcc": 26.56,
       "lccChangeRate": 4.27,
       "dhwContext": 4.04,
-      "predictedNextChange": 1.1751986249231563,
-      "predictionLower": -15.079186851180607,
-      "predictionUpper": 14.837215584252998,
+      "predictedNextChange": -0.03075295618797179,
+      "predictionLower": -16.285138432291735,
+      "predictionUpper": 13.631264003141869,
       "tier": "Monitor",
       "sourceConfidence": "mixed - markdown primary, PDF filled gaps",
       "evidence": "NOAA thermal stress observed",
-      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors"
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.2693456419361375,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 1.2650944161107691,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.05022179031485002,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": -0.01810781653452023,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.810113514837819,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Disturbance & substrate",
+          "pp": -0.01810781653452023,
+          "belowThreshold": true,
+          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "items": [
+            {
+              "label": "Disturbance indicators (recently killed coral + rubble)",
+              "kind": "pct",
+              "value": 14.06,
+              "rank": 22,
+              "ties": 1,
+              "of": 40,
+              "median": 14.64,
+              "mentioned": null,
+              "pp": -0.01810781653452023
+            }
+          ]
+        }
+      }
+    },
+    {
+      "rank": 39,
+      "island": "Kapalai",
+      "state": "Sabah",
+      "ecoregion": "North Borneo",
+      "lat": 4.225,
+      "lng": 118.6833,
+      "marinePark": "Non-Park Reef (Semporna)",
+      "surveyYear": 2025,
+      "lcc": 14.69,
+      "lccChangeRate": -5.81,
+      "dhwContext": 4.04,
+      "predictedNextChange": 0.770091292649206,
+      "predictionLower": -15.484294183454558,
+      "predictionUpper": 14.432108251979045,
+      "tier": "Monitor",
+      "sourceConfidence": "PDF geometry only - not cross-checked",
+      "evidence": "NOAA thermal stress observed",
+      "nextStep": "Coordinate bleaching survey; do not attribute thermal loss to visitors",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.7076930172404117,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 0.41198044714294507,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": -0.22886184203671947,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.3943145565202619,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -1.727841413040304,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": {
+          "group": "Pollution & waste",
+          "pp": -0.22886184203671947,
+          "belowThreshold": true,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "items": [
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 3.85,
+              "rank": 32,
+              "ties": 1,
+              "of": 40,
+              "median": 5.835,
+              "mentioned": null,
+              "pp": -0.22886184203671947
+            }
+          ]
+        }
+      }
     },
     {
       "rank": 40,
@@ -974,11 +4714,60 @@ window.REEFSAFE_DATA = {
       "dhwContext": 2.05,
       "predictedNextChange": 3.483540430919274,
       "predictionLower": -12.77084504518449,
-      "predictionUpper": 17.145557390249117,
+      "predictionUpper": 17.145557390249113,
       "tier": "Monitor",
       "sourceConfidence": "PDF geometry only - not cross-checked",
       "evidence": "Anchor impact mentioned in Reef Check report",
-      "nextStep": "Inspect mooring availability and anchoring controls"
+      "nextStep": "Inspect mooring availability and anchoring controls",
+      "stress": {
+        "baseline": -0.8985775862068965,
+        "groups": [
+          {
+            "name": "Starting condition & trend",
+            "pp": 2.1882290442028713,
+            "stressor": false
+          },
+          {
+            "name": "Herbivory & fish",
+            "pp": 4.375150840926436,
+            "stressor": true
+          },
+          {
+            "name": "Anchors & nets",
+            "pp": 0.11138411302950832,
+            "stressor": true
+          },
+          {
+            "name": "Pollution & waste",
+            "pp": 0.3088284711481551,
+            "stressor": true
+          },
+          {
+            "name": "Disturbance & substrate",
+            "pp": 0.01482129035245823,
+            "stressor": true
+          },
+          {
+            "name": "Crown-of-thorns",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Bleaching reported",
+            "pp": 0.0,
+            "stressor": true
+          },
+          {
+            "name": "Region & survey year",
+            "pp": -2.616295742533257,
+            "stressor": false
+          }
+        ],
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "evidence": null
+      }
     }
   ],
   "islandHistory": {
@@ -3232,13 +7021,13 @@ window.REEFSAFE_DATA = {
     ],
     "best_candidate": "Gradient boosting",
     "baseline_mae": 5.991036572720733,
-    "best_mae": 5.859442920192883,
-    "mae_improvement_pct": 2.1965089167881495,
+    "best_mae": 5.862299984583832,
+    "mae_improvement_pct": 2.1488199341510157,
     "beats_baseline": true,
     "deployment_status": "screening_only",
     "uncertainty_label": "Pooled empirical 95% forward-residual range",
     "lower_residual_quantile": -16.254385476103764,
-    "upper_residual_quantile": 13.662016959329842,
+    "upper_residual_quantile": 13.66201695932984,
     "model_comparison": {
       "Baseline mean": {
         "MAE": 5.991036572720733,
@@ -3251,14 +7040,14 @@ window.REEFSAFE_DATA = {
         "R2": 0.02102592672483794
       },
       "Gradient boosting": {
-        "MAE": 5.859442920192883,
-        "RMSE": 7.738822726942544,
-        "R2": 0.06976121965758453
+        "MAE": 5.862299984583832,
+        "RMSE": 7.740654234899031,
+        "R2": 0.0693208577587594
       },
       "Random forest": {
-        "MAE": 6.073604250849071,
-        "RMSE": 8.016583062605548,
-        "R2": 0.001786963255266727
+        "MAE": 6.073567001248703,
+        "RMSE": 8.016002333851366,
+        "R2": 0.0019315809838006404
       }
     },
     "validation_by_year": [
@@ -3273,17 +7062,17 @@ window.REEFSAFE_DATA = {
       {
         "target_year": 2022,
         "n": 35,
-        "mae": 6.943627326142161,
-        "rmse": 9.95500600929782,
-        "r2": 0.11671892537391992,
-        "bias": -0.02610073128010702
+        "mae": 6.958565691386269,
+        "rmse": 9.962448431521413,
+        "r2": 0.11539773923278318,
+        "bias": -0.036245852338398825
       },
       {
         "target_year": 2023,
         "n": 43,
         "mae": 5.75575686509108,
-        "rmse": 7.239246743069443,
-        "r2": 0.1784066636772661,
+        "rmse": 7.239246743069442,
+        "r2": 0.1784066636772662,
         "bias": 0.8746988044550557
       },
       {
@@ -3304,28 +7093,28 @@ window.REEFSAFE_DATA = {
       }
     ],
     "permutation_importance": {
-      "survey_year": -0.0007260397408757549,
-      "live_coral_cover_pct": -0.02031872488877245,
-      "lcc_change_rate": 0.1416344392504228,
-      "island_vs_region_pct": 0.27836434454882836,
-      "grp_available_substrate": -0.0745429138098649,
-      "grp_sand": 0.026751856815825835,
-      "grp_disturbance_indicators": -0.006506107900597298,
-      "grp_pollution_indicators": -0.005273941601058144,
-      "fish_butterflyfish": -0.0006043312329523188,
-      "fish_snapper": 0.030873099763612046,
-      "fish_parrotfish": 0.0564443553694937,
-      "fish_grouper": 0.022735032626926097,
-      "inv_diadema_urchin": -0.009465143350088277,
-      "inv_crown_of_thorns": -0.002669424228163267,
-      "grazer_ratio": -0.00628433526639064,
+      "survey_year": -0.0007260397408757974,
+      "live_coral_cover_pct": -0.02153145127292236,
+      "lcc_change_rate": 0.14103592517096078,
+      "island_vs_region_pct": 0.2823495513266668,
+      "grp_available_substrate": -0.07454291380986494,
+      "grp_sand": 0.024952836281842125,
+      "grp_disturbance_indicators": -0.006506107900597174,
+      "grp_pollution_indicators": -0.006103332655825932,
+      "fish_butterflyfish": -0.0006043312329524,
+      "fish_snapper": 0.031250313890115476,
+      "fish_parrotfish": 0.05644435536949363,
+      "fish_grouper": 0.022735032626926027,
+      "inv_diadema_urchin": -0.007227229846250519,
+      "inv_crown_of_thorns": -0.005646660073436518,
+      "grazer_ratio": -0.009268474420846256,
       "impact_anchor": 0.0,
       "impact_nets": -0.0022730923504003997,
-      "impact_trash": -0.007070225083601929,
-      "impact_bleaching": 0.00046140194900651276,
-      "impact_cot": -0.004160315877368911,
-      "latitude": -0.010159796572629736,
-      "longitude": 0.05955713498725778
+      "impact_trash": -0.007070225083601922,
+      "impact_bleaching": 0.0004614019490064381,
+      "impact_cot": -0.003928027325948645,
+      "latitude": -0.010159796572629722,
+      "longitude": 0.06007231692665432
     },
     "factor_diagnostics": [
       {
@@ -3334,7 +7123,7 @@ window.REEFSAFE_DATA = {
         "n": 348,
         "statistic": -0.1045779727630862,
         "statistic_unit": "rho",
-        "p_value": 0.051270888572376425,
+        "p_value": 0.051270888572376445,
         "caution": "Descriptive lagged association; not a causal effect"
       },
       {
@@ -3343,7 +7132,7 @@ window.REEFSAFE_DATA = {
         "n": 348,
         "statistic": -0.06056818930566387,
         "statistic_unit": "rho",
-        "p_value": 0.2598039926898717,
+        "p_value": 0.25980399268987187,
         "caution": "Descriptive lagged association; not a causal effect"
       },
       {
@@ -3352,7 +7141,7 @@ window.REEFSAFE_DATA = {
         "n": 338,
         "statistic": 0.07772612436258132,
         "statistic_unit": "rho",
-        "p_value": 0.15391408226206862,
+        "p_value": 0.15391408226206857,
         "caution": "Descriptive lagged association; not a causal effect"
       },
       {
@@ -3361,7 +7150,7 @@ window.REEFSAFE_DATA = {
         "n": 338,
         "statistic": 0.14597611401784685,
         "statistic_unit": "rho",
-        "p_value": 0.00718360745525168,
+        "p_value": 0.00718360745525167,
         "caution": "Descriptive lagged association; not a causal effect"
       },
       {
@@ -3370,7 +7159,7 @@ window.REEFSAFE_DATA = {
         "n": 348,
         "statistic": -0.0326674872877121,
         "statistic_unit": "rho",
-        "p_value": 0.5436029873395897,
+        "p_value": 0.5436029873395899,
         "caution": "Descriptive lagged association; not a causal effect"
       },
       {
@@ -3423,17 +7212,17 @@ window.REEFSAFE_DATA = {
     {
       "target_year": "2022",
       "n": "35",
-      "mae": "6.943627326142161",
-      "rmse": "9.95500600929782",
-      "r2": "0.11671892537391992",
-      "bias": "-0.02610073128010702"
+      "mae": "6.958565691386269",
+      "rmse": "9.962448431521413",
+      "r2": "0.11539773923278318",
+      "bias": "-0.036245852338398825"
     },
     {
       "target_year": "2023",
       "n": "43",
       "mae": "5.75575686509108",
-      "rmse": "7.239246743069443",
-      "r2": "0.1784066636772661",
+      "rmse": "7.239246743069442",
+      "r2": "0.1784066636772662",
       "bias": "0.8746988044550557"
     },
     {

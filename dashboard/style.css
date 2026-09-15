@@ -1303,26 +1303,39 @@ body {
 }
 
 /* Print Optimization */
+/* Print / Save as PDF: all three tabs, A4 landscape, one tab per page run. */
 @media print {
-  body * {
-    visibility: hidden;
+  @page { size: A4 landscape; margin: 10mm; }
+  body {
+    background: #FFFFFF;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .modal-backdrop, .modal-sheet, .modal-body, .modal-body * {
-    visibility: visible;
+  .nav-tabs, .figure-zoom-hint, .lightbox-modal { display: none !important; }
+  .tab-panel { display: block !important; }
+  .tab-panel + .tab-panel { break-before: page; }
+  .tab-panel::before {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
   }
-  .modal-backdrop {
-    position: static;
-    background: none;
-    padding: 0;
-  }
-  .modal-sheet {
-    box-shadow: none;
-    max-width: 100%;
-    max-height: none;
-  }
-  .modal-header, .modal-footer {
-    display: none;
-  }
+  #tab-overview::before { content: "1. Overview"; }
+  #tab-diagnostics::before { content: "2. Monitoring Unit"; }
+  #tab-science::before { content: "3. Evidence"; }
+  .card { box-shadow: none; break-inside: avoid; }
+  /* Chrome evaluates width breakpoints against its default paper, so keep the desktop grid explicitly. */
+  .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .dashboard-grid { grid-template-columns: 7fr 5fr !important; }
+  .dashboard-grid.even { grid-template-columns: 1fr 1fr !important; }
+  .unit-body { grid-template-columns: 1fr 1fr !important; }
+  /* 70% so the Overview stat cards and map row fit on one landscape page. */
+  html { zoom: 0.7; }
+  .dashboard-grid { break-inside: avoid; }
+  .table-scroll, .table-scroll-y { overflow: visible !important; max-height: none !important; }
+  #next-observation-card { break-inside: auto; }
+  .evidence-section-title { break-after: avoid; }
 }
 
 /* Responsive */
@@ -1654,40 +1667,6 @@ body {
   text-align: right;
 }
 
-.rest-row {
-  margin-top: 14px;
-}
-
-.rest-row-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 12.5px;
-  margin-bottom: 6px;
-}
-
-.rest-amount {
-  font-size: 14px;
-}
-
-.rest-short { color: #B91C1C; }
-.rest-long { color: #047857; }
-
-.rest-bar-bg {
-  height: 8px;
-  background: #E2E8F0;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.rest-bar-fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.rest-fill-short { background: #DC2626; }
-.rest-fill-long { background: #059669; }
-
 .rest-note {
   margin-top: 5px;
   font-size: 10.5px;
@@ -1698,3 +1677,611 @@ body {
 .table-scroll .kpi-pill {
   white-space: nowrap;
 }
+
+/* ===== Overview simplification: map key, popup, donut, compact queue ===== */
+.map-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: #334155;
+}
+
+.map-key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-key-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.map-popup {
+  min-width: 190px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.map-popup strong:first-child {
+  font-size: 14px;
+  color: #0F172A;
+}
+
+.map-popup-state {
+  display: block;
+  font-size: 11px;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.map-popup-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #0369A1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.map-popup-btn:hover {
+  background: #075985;
+}
+
+.queue-table th,
+.queue-table td {
+  white-space: nowrap;
+}
+
+.table-caption {
+  margin-top: 6px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Park list scrolls inside the card instead of stretching it. */
+.table-scroll-y {
+  max-height: 232px;
+  overflow-y: auto;
+}
+
+.table-scroll-y thead th {
+  position: sticky;
+  top: 0;
+  background: #FFFFFF;
+  z-index: 1;
+}
+
+.table-scroll-y td,
+.table-scroll-y th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  white-space: nowrap;
+}
+
+.park-state {
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* ===== Monitoring-unit card: facts, urgency, stress breakdown ===== */
+.unit-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+
+.unit-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: #F8FAFC;
+}
+
+.unit-fact-label,
+.unit-row-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.unit-fact-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.urgency-pill {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.unit-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.unit-row-value {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.stress-title {
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.stress-unit {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.stress-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.stress-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-left: 6px;
+}
+
+.stress-key-decline { background: #DC2626; }
+.stress-key-recovery { background: #059669; }
+
+.stress-row {
+  display: grid;
+  grid-template-columns: 11.5em 1fr 4em;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.stress-name {
+  color: #0F172A;
+}
+
+.stress-context .stress-name {
+  color: var(--text-muted);
+}
+
+.stress-track {
+  position: relative;
+  height: 10px;
+  background: #F1F5F9;
+  border-radius: 3px;
+}
+
+.stress-track::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  bottom: -2px;
+  width: 1px;
+  background: #94A3B8;
+}
+
+.stress-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.stress-decline {
+  right: 50%;
+  background: #DC2626;
+  border-radius: 3px 0 0 3px;
+}
+
+.stress-recovery {
+  left: 50%;
+  background: #059669;
+  border-radius: 0 3px 3px 0;
+}
+
+.stress-value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.stress-total {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-subtle);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ===== Combined unit card: chart on top, facts and stress bars below ===== */
+.history-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 4px 0 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.legend-line {
+  display: inline-block;
+  width: 20px;
+  margin-left: 10px;
+  border-top: 3px solid #0F766E;
+}
+
+.legend-line:first-child { margin-left: 0; }
+.legend-predicted { border-top-style: dashed; border-top-color: #DC2626; }
+.legend-band { border-top: 2px dashed #94A3B8; }
+
+.unit-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.unit-body .stress-title { margin-top: 10px; }
+
+@media (max-width: 1024px) {
+  .unit-body { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ===== Evidence tab: grouped figure gallery ===== */
+.evidence-section-title {
+  margin: 28px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.evidence-section-title.first { margin-top: 4px; }
+.evidence-section-title + .card { margin-top: 16px; }
+
+.evidence-figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.evidence-figure .figure-img-wrapper {
+  width: 100%;
+  margin-top: 6px;
+  font: inherit;
+}
+
+.evidence-figure .figure-img-wrapper:focus-visible {
+  outline: 2px solid #0284C7;
+  outline-offset: 2px;
+}
+
+.figure-desc {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #0F172A;
+}
+
+.evidence-figure .method-note a { color: #0369A1; }
+
+/* Cards in a row share its height; the grid gap handles spacing. */
+#tab-science .dashboard-grid > .card { margin: 0; }
+
+/* The even two-column grid is declared after the base breakpoint, so collapse it here too. */
+@media (max-width: 1024px) {
+  .dashboard-grid.even { grid-template-columns: 1fr; }
+}
+
+/* Let grid cards shrink below their widest content; wide tables scroll inside .table-scroll. */
+.dashboard-grid > * { min-width: 0; }
+
+/* ===== Season rest card: stat figures and horizontal bars ===== */
+.rest-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+
+.rest-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.rest-stat-label {
+  font-size: 12px;
+  color: #334155;
+}
+
+.rest-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F172A;
+  white-space: nowrap;
+}
+
+.hbar-chart {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  margin-bottom: 4px;
+}
+
+.hbar-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 22px;
+}
+
+.hbar-labels span {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 12px;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.hbar-plot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 22px;
+  border-left: 1px solid #CBD5E1;
+}
+
+.hbar-grid {
+  position: absolute;
+  top: 0;
+  bottom: 22px;
+  width: 1px;
+  background: #E5E7EB;
+}
+
+.hbar-row {
+  position: relative;
+  height: 30px;
+}
+
+.hbar {
+  height: 100%;
+  min-width: 2px;
+  border-radius: 0 4px 4px 0;
+}
+
+.hbar-rest { background: #DC2626; }
+.hbar-revenue { background: #059669; }
+
+.hbar-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+}
+
+.hbar-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: #64748B;
+}
+
+.hbar-axis-title {
+  grid-column: 2;
+  text-align: center;
+  font-size: 11px;
+  color: #64748B;
+}
+
+@media (max-width: 640px) {
+  .rest-stats { grid-template-columns: 1fr; gap: 6px; }
+  .rest-stat-value { font-size: 18px; }
+}
+
+/* Rest is a loss (red, minus); reef revenue is a gain (green, plus). */
+.rest-stat-value.rest-stat-loss { color: #DC2626; }
+.rest-stat-value.rest-stat-gain { color: #059669; }
+
+/* ===== Overview side column: top-5 queue over the economy-potential donut ===== */
+.overview-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.overview-side > .card { margin: 0; }
+.overview-side > #reef-potential-card { flex: 1; }
+
+.potential-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.potential-block svg {
+  width: 150px;
+  flex: none;
+  height: auto;
+}
+
+.potential-legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 11.5px;
+  color: #334155;
+  font-variant-numeric: tabular-nums;
+}
+
+.potential-value { text-align: right; font-weight: 600; color: #0F172A; }
+.potential-pct { text-align: right; color: var(--text-muted); min-width: 3.6em; }
+
+.potential-note {
+  margin: 10px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #0F172A;
+}
+
+#reef-potential-card .method-note a { color: #0369A1; }
+
+@media (max-width: 640px) {
+  .potential-block { flex-direction: column; align-items: stretch; }
+  .potential-block svg { align-self: center; }
+}
+
+/* The map grows to fill its card so it lines up with the side column. */
+#map-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#map-card .map-container {
+  flex: 1;
+  height: auto;
+  min-height: 480px;
+}
+
+/* ===== Monitoring unit: evidence behind the top stress contributor ===== */
+.evidence-head {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.evidence-flag { font-weight: 400; color: #B45309; }
+
+.evidence-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+
+.evidence-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 10px;
+  padding: 5px 0;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.evidence-list li:first-child { border-top: none; }
+
+.evidence-name { font-size: 12.5px; font-weight: 600; color: #0F172A; }
+.evidence-detail { grid-column: 1 / -1; font-size: 11.5px; color: #475569; }
+
+.evidence-pp {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.evidence-pp.decline { color: #DC2626; }
+.evidence-pp.recovery { color: #059669; }
+
+.evidence-note,
+.evidence-empty {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* Monitoring unit: larger text under the chart, evidence especially. */
+#next-observation-card .unit-fact-label,
+#next-observation-card .unit-row-label { font-size: 11.5px; }
+#next-observation-card .unit-fact-value { font-size: 22px; }
+#next-observation-card .unit-row-value { font-size: 15px; }
+#next-observation-card .evidence-head { font-size: 14px; }
+#next-observation-card .evidence-name { font-size: 14.5px; }
+#next-observation-card .evidence-pp { font-size: 14px; }
+#next-observation-card .evidence-detail { font-size: 13.5px; }
+#next-observation-card .evidence-note,
+#next-observation-card .evidence-empty { font-size: 13px; }
+#next-observation-card .stress-title { font-size: 14.5px; }
+#next-observation-card .stress-legend { font-size: 12px; }
+#next-observation-card .stress-row { font-size: 13px; }
+#next-observation-card .stress-total { font-size: 12.5px; }
+#next-observation-card .method-note { font-size: 12.5px; }
+
+/* Season-rest card fills the economy card's height: the bar chart takes the spare room. */
+#season-rest-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px;
+}
+
+#season-rest-card .rest-stats { margin: 16px 0 20px; }
+
+#season-rest-card .hbar-chart {
+  flex: 1;
+  grid-template-rows: 1fr auto;
+  row-gap: 4px;
+}
+
+#season-rest-card .hbar-labels,
+#season-rest-card .hbar-plot { gap: 14px; }
+
+#season-rest-card .hbar-labels span,
+#season-rest-card .hbar-row {
+  flex: 1;
+  height: auto;
+  min-height: 34px;
+}
+
+#season-rest-card .method-note { margin-top: 16px; }
+
+/* Both economy cards share the row height; the grid gap handles spacing. */
+#tab-overview .dashboard-grid.even > .card { margin: 0; }
