@@ -10,7 +10,9 @@
 ## Context kept outside the scored model
 
 - NOAA Coral Reef Watch virtual stations provide regional heat context. Because written DOSM confirmation of external-data eligibility is not on file, NOAA variables are excluded from model features. They remain useful for descriptive associations and field-verification questions. Source: [NOAA Coral Reef Watch](https://coralreefwatch.noaa.gov/product/vs/data.php).
-- The verified marine-park visitor source covers 2000-2009 aggregates for Johor, Kedah, Labuan, Pahang, and Terengganu. It is not allocated to islands. Source: [data.gov.my archive](https://archive.data.gov.my/data/ms_MY/dataset/jumlah-pelawat-taman-laut-malaysia-dari-tahun-2000-hingga-2009-).
+- State marine-park visitor totals for 2000-2017 come from five Department of Marine Park datasets on the data.gov.my archive (Creative Commons Attribution): [Johor](https://archive.data.gov.my/data/ms_MY/dataset/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017), [Kedah](https://archive.data.gov.my/data/ms_MY/dataset/statistik-pelancong-ke-taman-laut-kedah-dari-2000-2017), [Pahang](https://archive.data.gov.my/data/ms_MY/dataset/statistik-pelancong-ke-taman-laut-pahang-dari-2000-2017), [Terengganu](https://archive.data.gov.my/data/en_US/dataset/statistik-pelancong-ke-taman-laut-terengganu-dari-2000-2017) and [Labuan](https://archive.data.gov.my/data/en_US/dataset/statistik-pelancong-ke-taman-laut-labuan-dari-2000-2017). All 90 rows of `taman_laut_visitors_2000_2017.csv` were checked against the published CSVs on 2026-09-15 with no mismatches. State totals are not allocated to islands.
+- Island arrivals for 11 monitoring units in 2024 (`data/raw/structured/tourism/island_arrivals.csv`): Sabah Parks' [public visitor statistics](https://dashboard.sabahparks.org.my) for Tunku Abdul Rahman Park, Tun Sakaran Marine Park, Sipadan, Turtle Islands and Pulau Tiga (full year, Malaysian/international split); and the Terengganu State Tourism Department's January-August 2024 figures for Redang, Perhentian, Kapas, Lang Tengah, Tenggol and Bidong, as [reported by Malay Mail](https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html). Used only for the economic-context cards, never as model features.
+- 2024 bleaching: `data/raw/structured/reef_check/bleaching_2024.csv` reproduces Table 1 (p.14) of Szereday et al. (2025), [*The 4th Global Coral Bleaching Event in Malaysia*](https://reefcheck.org.my/wp-content/uploads/2025/07/2024CoralBleachingImpactReportMalaysia.pdf) (Coralku and Reef Check Malaysia). The dashboard cites the report's own headline figures (p.4): 50.7% of corals bleached and 34.1% average mortality, transcribed in `bleaching_2024_headline.csv`.
 - OpenDOSM state series are descriptive context only and are not proxies for individual-reef tourism exposure.
 
 ## Economic context
@@ -24,10 +26,12 @@ The component values sum to RM8.68699 billion before rounding. ReefSafe does not
 
 ## Excluded pending verification
 
-- The local 2010-2017 visitor extension has no traceable source beyond the verified 2000-2009 portal coverage.
-- The accommodation inventory has no reproducible audit trail supporting its claimed completeness.
+- The accommodation inventory has no reproducible audit trail supporting its claimed completeness. It remains in `data/raw` for traceability but is excluded from charts, model features, rankings, economic figures and policy claims.
 
-Both files remain in `data/raw` for traceability but are excluded from charts, model features, rankings, and policy claims.
+## Supporting methods from foreign sources
+
+- Spalding et al. (2017), *Marine Policy* 82:104-113, supplies the 10% share of island tourism spending attributed to reef presence. It is a method coefficient applied to Malaysian inputs, used to support a statement, not raw data.
+- James Cook University (2019) supplies the 10-15 year recovery window used in the season-rest comparison.
 
 ## Interpretation boundary
 

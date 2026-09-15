@@ -20,7 +20,15 @@ class ProvenanceTests(unittest.TestCase):
         self.assertEqual(sources["reef_check_surveys"]["status"], "verified_input")
         self.assertEqual(sources["dmpm_tev_2011_2015"]["status"], "verified_context")
         self.assertEqual(sources["noaa_crw_virtual_stations"]["status"], "eligibility_pending")
-        self.assertEqual(sources["marine_park_visitors_2010_2017"]["status"], "excluded_unverified")
+        # Every row of the visitor file matches one of five published state datasets.
+        for state in ("johor", "kedah", "pahang", "terengganu", "labuan"):
+            row = sources[f"marine_park_visitors_{state}_2000_2017"]
+            self.assertEqual(row["status"], "verified_context")
+            self.assertTrue(row["source_url"].startswith("https://archive.data.gov.my/"))
+        self.assertNotIn("marine_park_visitors_2010_2017", sources)
+        for dataset in ("island_arrivals_sabah_parks_2024", "island_arrivals_terengganu_2024", "bleaching_impact_2024"):
+            self.assertEqual(sources[dataset]["status"], "verified_context")
+            self.assertTrue(sources[dataset]["source_url"].startswith("https://"))
         self.assertEqual(sources["island_accommodations"]["status"], "excluded_unverified")
 
         coordinates = (ROOT / "data/raw/structured/geocoding/island_coordinates.csv").read_text(encoding="utf-8")
