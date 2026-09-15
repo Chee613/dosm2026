@@ -13,8 +13,8 @@ ReefSafe is an evidence-led screening tool for deciding which monitored Malaysia
 
 - 404 island-year observations, 56 islands, 2012–2025.
 - 348 next-observation transitions; 183 observations in the five forward-test years.
-- Best model: Gradient Boosting, MAE 5.859 pp/year, RMSE 7.739 pp/year, R² 0.070.
-- Mean baseline MAE: 5.991 pp/year. Improvement: 2.2%, so the model is screening-only.
+- Best model: Gradient Boosting, MAE 5.862 pp/year, RMSE 7.741 pp/year, R² 0.069.
+- Mean baseline MAE: 5.991 pp/year. Improvement: 2.1%, so the model is screening-only.
 
 ## Reproduce
 

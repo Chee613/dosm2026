@@ -30,7 +30,7 @@ Replace the bracketed team details before recording. Keep the final video below 
 
 > Each example uses conditions at one island survey to predict the annualized coral-cover change recorded at that island's next survey. Evaluation uses the latest five target years, and every test year is trained only on earlier target years. This prevents future information from leaking into training.
 >
-> We compared a mean baseline, Ridge regression, Gradient Boosting and Random Forest. Gradient Boosting achieved the best forward-test MAE at 5.859 percentage points per year, versus 5.991 for the baseline. That is only a 2.2 percent improvement, with R-squared of 0.070. We therefore use the model only to rank field checks, never as an automated forecast or enforcement rule. XGBoost is not presented as the answer because the limiting issue is evidence quality and temporal transfer, not algorithm complexity.
+> We compared a mean baseline, Ridge regression, Gradient Boosting and Random Forest. Gradient Boosting achieved the best forward-test MAE at 5.862 percentage points per year, versus 5.991 for the baseline. That is only a 2.1 percent improvement, with R-squared of 0.069. We therefore use the model only to rank field checks, never as an automated forecast or enforcement rule. XGBoost is not presented as the answer because the limiting issue is evidence quality and temporal transfer, not algorithm complexity.
 
 ## 4:40-5:55 — Factor relationships and assumptions
 

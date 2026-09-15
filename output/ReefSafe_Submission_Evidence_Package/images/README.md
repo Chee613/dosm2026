@@ -4,7 +4,7 @@ The folder contains ten unique, canonical figures. Four unnumbered files elsewhe
 
 ## `01_tourism_data_gap.png` — verified visitor context and evidence gap
 
-- **Measures:** Recorded domestic and foreign marine-park visitors in the cited 2000–2009 source.
+- **Measures:** Recorded domestic and foreign marine-park visitors in the cited 2000–2017 source.
 - **Finding:** Historical aggregate visitor counts exist, but there is no verified recent island-level exposure series suitable for joining to reef observations.
 - **Interpretation:** This graph establishes a data limitation, not a relationship between tourism and reef condition.
 - **Cannot support:** Island visitor estimates, carrying-capacity quotas or tourism-causality claims.
@@ -53,7 +53,7 @@ The folder contains ten unique, canonical figures. Four unnumbered files elsewhe
 ## `09_model_performance.png` — model comparison
 
 - **Measures:** Forward-test MAE for the mean baseline, Ridge regression, Gradient Boosting and Random Forest using identical expanding-year folds.
-- **Finding:** Gradient Boosting has the lowest MAE at 5.859 percentage points/year versus 5.991 for the baseline, only a 2.2% improvement.
+- **Finding:** Gradient Boosting has the lowest MAE at 5.862 percentage points/year versus 5.991 for the baseline, only a 2.1% improvement.
 - **Interpretation:** The model marginally improves ranking information, but evidence quality is the main limitation.
 - **Cannot support:** A claim of high predictive accuracy or the assumption that a more complex algorithm such as XGBoost would solve the data limitations.
 - **Objective:** Prioritise Field Verification.

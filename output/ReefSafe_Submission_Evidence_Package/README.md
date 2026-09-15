@@ -26,7 +26,7 @@ This package is the judge-facing evidence bundle for ReefSafe. Start with the no
 - The same 39 monitoring units surveyed in 2024 and 2025 declined by 4.76 percentage points on average.
 - The strongest negative all-factor association is coral cover versus the regional average (rho = -0.320, n = 346, p < 0.001), followed by current coral cover (rho = -0.295) and current change rate (rho = -0.218). The first equals island coral cover minus Reef Check's published eco-region average for that survey year. These are condition signals, not identified causes, and may partly reflect mean reversion.
 - Most measured factors have weak or very weak individual associations. NOAA maximum DHW is weakly negative (rho = -0.105, n = 348, p = 0.051) and remains context only.
-- Gradient Boosting has forward-test MAE 5.859 percentage points/year versus 5.991 for the mean baseline: a 2.2% improvement, with R² 0.070. This supports prioritisation only, not precise forecasting.
+- Gradient Boosting has forward-test MAE 5.862 percentage points/year versus 5.991 for the mean baseline: a 2.1% improvement, with R² 0.069. This supports prioritisation only, not precise forecasting.
 - The verified visitor source covers 2000–2009 aggregates. No recent island-level visitor exposure series is available, so tourism causality is not estimable.
 - DMPM reports a rounded RM8.7 billion annual Total Economic Value for six evaluated marine-park archipelagos in studies conducted during 2011–2015. This is historical context, not a ReefSafe calculation.
 
