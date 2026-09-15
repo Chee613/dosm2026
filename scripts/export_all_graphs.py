@@ -53,11 +53,10 @@ def plot_tourism_gap():
     axis.bar(years, foreign, bottom=domestic, label="Foreign ('000)", color="#38bdf8")
     axis.axvspan(2017.5, 2025.5, color="#fee2e2")
     peak = max(a + b for a, b in zip(domestic, foreign))
-    axis.text(2021.5, peak * 0.62, "No state series\nafter 2017", ha="center", color="#991b1b")
-    axis.text(2021.5, peak * 0.40, "2024: arrivals published\nfor 11 units only",
-              ha="center", color="#475569", fontsize=9)
+    axis.text(2021.5, peak * 0.5, "No verified island-level series\nafter the cited 2000-2017 source",
+              ha="center", color="#991b1b")
     axis.set(xlim=(1999.5, 2025.5), xlabel="Year", ylabel="Recorded visitors ('000)",
-             title="State marine-park visitors, 2000-2017 (Department of Marine Park Malaysia)")
+             title="Verified marine-park visitor context and data gap")
     axis.legend()
     axis.grid(axis="y", alpha=0.25)
     save(fig, "01_tourism_data_gap.png")
