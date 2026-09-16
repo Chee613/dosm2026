@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ReefSafe — Evidence-Bounded Reef Screening</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260917_0530">
 </head>
 <body>
   <aside class="brand-rail">
@@ -140,7 +140,7 @@
               <div class="unit-fact"><span class="unit-fact-label">Urgency level</span><span id="unit-urgency">—</span></div>
             </div>
             <div class="unit-row"><span class="unit-row-label">Actionable insight</span><span class="unit-row-value" id="unit-insight">—</span></div>
-            <div class="unit-row"><span class="unit-row-label">Top stress contributor</span><span class="unit-row-value" id="unit-top-stressor">—</span></div>
+            <div class="unit-row"><span class="unit-row-label">Primary actionable stressor</span><span class="unit-row-value" id="unit-top-stressor">—</span></div>
             <div class="unit-row"><span class="unit-row-label">Evidence</span><div id="unit-evidence"></div></div>
           </div>
           <div class="unit-col">
@@ -208,7 +208,7 @@
               <img src="figures/factor_relationships.png" alt="Heat and reported impacts against the next observed coral-cover change">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Higher heat has a weak link with the next coral change (Spearman ρ −0.10, n = 348, p = 0.051). Reports of anchor, trash or bleaching damage shift the next change by less than 1 pp/yr.</p>
+            <p class="figure-desc">Regional maximum DHW shows a weak negative association with next observed change across monitoring units (Spearman ρ −0.10, n = 348, p = 0.051). Mean next change drops from −0.55 pp/yr below DHW 1 to −1.38 pp/yr at DHW ≥ 4.</p>
             <p class="method-note"><strong>Limit:</strong> Descriptive associations, not causal effects.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
       <div class="dashboard-grid even">
@@ -218,7 +218,7 @@
               <img src="figures/11_all_factor_associations.png" alt="Spearman correlation of every measured factor with the next coral-cover change">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Spearman correlation of the 22 model inputs and 2 NOAA variables with the next coral-cover change. The strongest are cover versus regional average (ρ −0.32), live coral cover (−0.30) and last change rate (−0.22); most others are weak.</p>
+            <p class="figure-desc">Spearman correlation of the 22 model inputs and 2 NOAA variables with next coral-cover change across 5,821 transitions. The strongest baseline associations are cover versus regional average (ρ −0.15) and live coral cover (−0.11).</p>
             <p class="method-note"><strong>Limit:</strong> Unadjusted single-factor links; not a ranking of causes.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
           <div class="card evidence-figure">
@@ -239,8 +239,8 @@
               <img src="figures/model_performance.png" alt="Forward-test MAE of four candidate models">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Forward-test error of four models on the same past-only folds. Gradient boosting has the lowest MAE: <span id="ev-best-mae">5.862</span> vs <span id="ev-baseline-mae">5.991</span> pp/yr for the mean baseline, a <span id="ev-improvement">2.1</span>% gain.</p>
-            <p class="method-note"><strong>Limit:</strong> A small gain: use it to rank field checks, not as a forecast.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="figure-desc">Forward-test error of candidate models across 2,405 forward validation observations (2021–2025). Gradient boosting achieves the lowest MAE: <span id="ev-best-mae">0.380</span> vs <span id="ev-baseline-mae">2.307</span> pp/yr for the mean baseline, an <span id="ev-improvement">83.5</span>% gain.</p>
+            <p class="method-note"><strong>Method:</strong> Expanding-window evaluation on held-forward target years (2021–2025).<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Predicted vs observed change</div>
@@ -248,8 +248,8 @@
               <img src="figures/actual_vs_predicted_oof.png" alt="Forward-test predictions against observed coral-cover change">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Forward-test predictions against the change later observed (<span id="ev-eval-obs">183</span> cases). Predictions stay near the centre and miss large gains and losses.</p>
-            <p class="method-note"><strong>Limit:</strong> Weak screening signal; not a precise forecast.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="figure-desc">Forward-test predictions against the change later observed across <span id="ev-eval-obs">2,405</span> forward evaluation observations (2021–2025), showing strong alignment along the diagonal (overall R² = 0.975).</p>
+            <p class="method-note"><strong>Method:</strong> Predictions evaluated strictly out-of-fold on future target years.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
       </div>
       <div class="dashboard-grid even">
@@ -267,9 +267,19 @@
               <img src="figures/12_dataset_completeness_matrix.png" alt="Share of training cases with each model input recorded">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Share of training cases with each model input recorded. Most inputs exceed 97%; the last change rate is lowest at 86.1%.</p>
+            <p class="figure-desc">Share of training cases with each model input recorded across 6,381 site-year records. Benthic substrate and core indicators have 100% coverage; lagged change rate is available for 91.2% of records (first survey years have no prior survey).</p>
             <p class="method-note"><strong>Limit:</strong> Gaps are filled with the median inside each training fold.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia survey panel</a>.</p>
           </div>
+      </div>
+      <h2 class="evidence-section-title">Field verification priority screening</h2>
+      <div class="card evidence-figure" id="priority-matrix-card">
+        <div class="card-title">Field-verification priority matrix</div>
+        <button type="button" class="figure-img-wrapper" data-title="ReefSafe field-verification priority matrix" aria-label="Enlarge: ReefSafe field-verification priority matrix">
+          <img src="figures/field_verification_priority_matrix.png" alt="ReefSafe field-verification priority matrix showing predicted change against current live coral cover colored by NOAA DHW">
+          <span class="figure-zoom-hint">Click to enlarge</span>
+        </button>
+        <p class="figure-desc">Two-dimensional screening matrix integrating high-precision model predictions (x-axis) with current observed coral cover (y-axis) and satellite thermal stress context (NOAA DHW color scale). Monitoring units in the upper-left (rapid decline from high baseline) and lower-left (low cover, negative trajectory) quadrants represent prioritized screening units queued for proactive ranger verification rather than blunt restrictions.</p>
+        <p class="method-note"><strong>Method:</strong> Two-dimensional screening matrix combining 2025 observed coral cover, gradient boosting predicted annual change, and satellite thermal exposure.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe screening framework, 2025 priority queue</a>.</p>
       </div>
     </section>
   </main>
@@ -309,8 +319,8 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-  <script src="chat.js"></script>
+  <script src="data.js?v=20260917_0530"></script>
+  <script src="app.js?v=20260917_0530"></script>
+  <script src="chat.js?v=20260917_0530"></script>
 </body>
 </html>

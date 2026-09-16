@@ -337,10 +337,10 @@ body {
   color: var(--text-muted);
 }
 
-/* 2-Column Grid */
+/* 2-Column Grid (Map 45%, Overview queue/potential column 55%) */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 7fr 5fr;
+  grid-template-columns: 9fr 11fr;
   gap: 16px;
 }
 
@@ -1353,7 +1353,7 @@ body {
   .card { box-shadow: none; break-inside: avoid; }
   /* Chrome evaluates width breakpoints against its default paper, so keep the desktop grid explicitly. */
   .kpi-grid { grid-template-columns: repeat(4, 1fr) !important; }
-  .dashboard-grid { grid-template-columns: 7fr 5fr !important; }
+  .dashboard-grid { grid-template-columns: 9fr 11fr !important; }
   .dashboard-grid.even { grid-template-columns: 1fr 1fr !important; }
   .unit-body { grid-template-columns: 1fr 1fr !important; }
   /* 70% so the Overview stat cards and map row fit on one landscape page. */
@@ -1768,9 +1768,34 @@ body {
   background: #075985;
 }
 
+#top5-card .table-scroll {
+  overflow-x: visible;
+}
+
+.queue-table {
+  width: 100%;
+}
+
 .queue-table th,
 .queue-table td {
   white-space: nowrap;
+  padding: 8px 8px;
+}
+
+.queue-table th:first-child,
+.queue-table td:first-child {
+  padding-left: 2px;
+}
+
+.queue-table th:last-child,
+.queue-table td:last-child {
+  padding-right: 2px;
+}
+
+@media (max-width: 768px) {
+  #top5-card .table-scroll {
+    overflow-x: auto;
+  }
 }
 
 .table-caption {
