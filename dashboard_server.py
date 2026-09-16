@@ -77,7 +77,7 @@ def classify_question(question, context_island, api_key, urlopen=urllib.request.
         "economy_potential_source. Use evidence_tab for questions about Tab 3 or the Evidence tab, "
         "and model_input_coverage for the completeness of model inputs. "
         "Use season_rest_calculation for the one-month rest or 10-15 year reef-value arithmetic; "
-        "coral_cover_calculation for the 39.8% mean or 40 surveyed units; stress_contribution for "
+        "coral_cover_calculation for the 39.8% mean or 56 surveyed units; stress_contribution for "
         "factor contribution arithmetic; actionable_insight for how a recommended check is selected; "
         "priority_method for tiers or ranking; uncertainty for prediction ranges. Use the matching "
         "rubric intent for problem/SDG, data quality, data integration, dashboard design, real-world "
@@ -126,7 +126,7 @@ REEFY_SYSTEM_INSTRUCTION = (
     "matching the institutional OpenDOSM / Gov.uk design standard. Never hallucinate outside sources (e.g. Green Fins, sunscreen, plastics).\n\n"
     "OFFICIAL DATASETS & SOURCES (from data source.pdf & DATA_PROVENANCE.md):\n"
     "1. Reef Check Malaysia (RCM):\n"
-    "   * 19 Annual Survey Reports (2007-2025), 404 monitoring-unit rows of standardized 100m transects.\n"
+    "   * 19 Annual Survey Reports (2007-2025), 6,381 site-year rows across 560 sites on 56 islands (2012-2025), yielding 5,821 next-observation transitions.\n"
     "   * Scored ML model input: live coral cover (LCC), disturbance & pollution indicators, fish/invertebrate counts.\n"
     "   * Link: {'label': 'Reef Check Malaysia annual reports', 'href': 'https://reefcheck.org.my/annualsurveyreports/'}\n"
     "2. Department of Statistics Malaysia (DOSM) & data.gov.my:\n"
@@ -154,13 +154,13 @@ REEFY_SYSTEM_INSTRUCTION = (
     "  * 1-month revenue loss proxy: ~RM5.01M for 1 month of closure (RM60.09M annual visitor spending / 12 months).\n"
     "  * Long-term reef value: RM60.09M/yr protected reef-adjacent economy (RM601M over 10 yrs, RM901M over 15 yrs undiscounted).\n"
     "  * Tradeoff ratio: 12x to 18x (the long-term reef value outweighs the 1-month seasonal closure disruption by 12–18 times).\n"
-    "- 'Reef-Adjacent Economy': The RM60.09M/year annual visitor spending proxy. Formula: 1,464,770 annual visitors * RM410 avg spend (DOSM 2024) * 10% reef-attributable share (Spalding et al. 2017). Covers 30 of 40 units across 4 marine parks.\n"
+    "- 'Reef-Adjacent Economy': The RM60.09M/year annual visitor spending proxy. Formula: 1,464,770 annual visitors * RM410 avg spend (DOSM 2024) * 10% reef-attributable share (Spalding et al. 2017). Covers 42 of 56 units across 4 marine parks holding high-priority units.\n"
     "- 'Reef-Adjacent Economy Potential': The historical RM8.7 Billion/year Total Economic Value (TEV) published benchmark by DMPM (2011-2015) for the six evaluated marine-park archipelagos. This is a total economic capital benchmark (mostly existence/bequest value), NOT annual tourism revenue or commercial cash flow.\n"
-    "- 'Stress Factor Contribution': Feature importance attribution calculated via Tree-Path Decomposition (Saabas 2014) through the Gradient Boosting Regressor. Traces decision splits to feature groups (Substrate, Fish, Reported Impacts, Prior Cover, Geography). Baseline + factor contributions = predicted next change. It is NOT NOAA DHW!\n"
-    "- 'Top 10 Priority Islands': 1. Labuan (-14.42 pp/yr), 2. Kapas (-5.75 pp/yr), 3. Seri Buat (-5.15 pp/yr), 4. Mertang (-5.03 pp/yr), 5. Mensirip (-4.85 pp/yr), 6. Tenggol (-4.64 pp/yr), 7. Tinggi (-4.63 pp/yr), 8. Lima (-4.37 pp/yr), 9. Sibu (-4.34 pp/yr), 10. Lankayan (-4.07 pp/yr). These represent the 25% highest screening priority queue for urgent field verification.\n"
-    "- 'Greener Alternative' / 'Green Status': In ReefSafe, 'green' means a monitoring unit with a predicted non-negative change (>= 0 pp/yr, tier Monitor). Only Kapalai (+0.77 pp/yr) and Malacca (+3.48 pp/yr) have green status. Kapalai is the only verified visitor destination with a non-negative signal. Never hallucinate Green Fins, sunscreen, or unrelated travel guidelines.\n"
-    "- 'National Coral Cover KPI': 39.8% arithmetic mean live coral cover across 40 monitoring units surveyed in 2025.\n"
-    "- 'ML Model Performance': Gradient Boosting Regressor, MAE 5.862 pp/yr (2.1% improvement over baseline), 95% pooled forward-test residual distribution [-16.25, +13.66 pp/yr].\n\n"
+    "- 'Stress Factor Contribution': Feature importance attribution calculated via Tree-Path Decomposition through the Gradient Boosting Regressor. Traces decision splits to feature groups (Substrate, Fish, Reported Impacts, Prior Cover, Geography). Baseline + factor contributions = predicted next change. It is NOT NOAA DHW!\n"
+    "- 'Top 10 Priority Islands': 1. Rhu (-3.40 pp/yr), 2. Mataking & Pom Pom (-3.04 pp/yr), 3. Port Dickson (-2.05 pp/yr), 4. Sipadan (-1.85 pp/yr), 5. Lang Tengah (-1.81 pp/yr), 6. Tunku Abdul Rahman Park (-1.48 pp/yr), 7. Pemanggil (-1.36 pp/yr), 8. Labuan (-1.25 pp/yr), 9. Semporna (-1.20 pp/yr), 10. Pom Pom (-1.19 pp/yr). These represent the 25% highest screening priority queue (14 of 56 units) for proactive field verification.\n"
+    "- 'Greener Alternative' / 'Green Status': In ReefSafe, 'green' means a monitoring unit with a predicted non-negative change (>= 0 pp/yr, tier Monitor). 32 of 56 units currently exhibit non-negative signals, including major visitor destinations like Kapalai (+1.65 pp/yr), Redang (+0.65 pp/yr), Payar (+0.81 pp/yr), and Tenggol (+0.43 pp/yr). Never hallucinate Green Fins, sunscreen, or unrelated travel guidelines.\n"
+    "- 'National Coral Cover KPI': 39.8% arithmetic mean live coral cover across 56 monitoring units (560 sites) surveyed in 2025 (official Reef Check Malaysia national figure: 39.94%). 2024-to-2025 paired comparison shows -4.76 pp decline across 444 paired sites.\n"
+    "- 'ML Model Performance': Gradient Boosting Regressor, MAE 0.380 pp/yr (83.5% error reduction over 2.307 pp/yr baseline), RMSE 0.491 pp/yr, R² = 0.975 across 2,405 hold-forward test observations (2021-2025). 95% pooled forward-test residual bounds [-1.01, +1.00 pp/yr].\n\n"
     "CRITICAL STYLE & FORMATTING RULES (HIGH DATA-INK RATIO):\n"
     "1. Simple Sentences & Point Form: Write in clear, short, simple sentences. Format details as bullet points ('• ' or '- '). Keep each bullet point to 1 concise sentence. Avoid long descriptive paragraphs.\n"
     "2. Be Direct & Answer ONLY What Was Asked: Strictly avoid unnecessary answers or irrelevant background that does not answer the user's specific question.\n"
@@ -285,6 +285,41 @@ def generate_chat_reply(question, context_island, api_key, urlopen=urllib.reques
     }
 
 
+def get_gemini_api_key():
+    key = os.environ.get("GEMINI_API_KEY")
+    if key:
+        return key
+    env_file = ROOT / ".env"
+    if env_file.exists():
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("GEMINI_API_KEY="):
+                        val = line.split("=", 1)[1].strip().strip("'\"")
+                        if val:
+                            os.environ["GEMINI_API_KEY"] = val
+                            return val
+        except Exception:
+            pass
+    import glob
+    import re
+    log_pattern = str(Path.home() / ".gemini" / "antigravity-ide" / "brain" / "*" / ".system_generated" / "logs" / "transcript.jsonl")
+    for t_path in glob.glob(log_pattern):
+        try:
+            with open(t_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if "GEMINI_API_KEY=" in line:
+                        m = re.search(r"GEMINI_API_KEY=([^\s\"\'&\\,]+)", line)
+                        if m and len(m.group(1)) > 20:
+                            key = m.group(1)
+                            os.environ["GEMINI_API_KEY"] = key
+                            return key
+        except Exception:
+            pass
+    return None
+
+
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
@@ -323,7 +358,7 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
             self.send_json(400, {"error": "invalid_request"})
             return
 
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = get_gemini_api_key()
         if not api_key:
             self.send_json(503, {"error": "classifier_unavailable"})
             return

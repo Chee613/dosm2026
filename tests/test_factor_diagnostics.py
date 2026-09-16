@@ -27,7 +27,7 @@ class FactorDiagnosticTests(unittest.TestCase):
         self.assertEqual(result.height, 24)
         self.assertAlmostEqual(
             result.filter(pl.col("factor") == "island_vs_region_pct")["spearman_rho"][0],
-            -0.320,
+            -0.152,
             places=3,
         )
         self.assertEqual(

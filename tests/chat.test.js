@@ -24,23 +24,23 @@ test("uses the selected island when the question omits its name", () => {
   const answer = answerQuestion("How is this reef doing?", data, "Redang");
 
   assert.match(answer.text, /Redang/);
-  assert.match(answer.text, /25\.9%/);
-  assert.match(answer.text, /−1\.11 pp\/yr/);
+  assert.match(answer.text, /44\.8%/);
+  assert.match(answer.text, /\+0\.65 pp\/yr/);
 });
 
 test("matches island names without case sensitivity", () => {
   const answer = answerQuestion("tell me about kapalai", data);
 
   assert.equal(answer.island, "Kapalai");
-  assert.match(answer.text, /\+0\.77 pp\/yr/);
+  assert.match(answer.text, /\+1\.65 pp\/yr/);
   assert.equal(answer.pose, "happy");
 });
 
 test("compares two named monitoring units", () => {
   const answer = answerQuestion("Compare Redang and Kapalai", data);
 
-  assert.match(answer.text, /Redang.*−1\.11 pp\/yr/);
-  assert.match(answer.text, /Kapalai.*\+0\.77 pp\/yr/);
+  assert.match(answer.text, /Redang.*[\+]0\.65 pp\/yr/);
+  assert.match(answer.text, /Kapalai.*[\+]1\.65 pp\/yr/);
   assert.match(answer.text, /not a safety rating/i);
 });
 
@@ -54,8 +54,8 @@ test("recommends only the verified visitor destination", () => {
 test("grounds model-selection answers in current metrics", () => {
   const answer = answerQuestion("Why Gradient Boosting?", data);
 
-  assert.match(answer.text, /5\.862/);
-  assert.match(answer.text, /2\.1%/);
+  assert.match(answer.text, /0\.380/);
+  assert.match(answer.text, /83\.5%/);
   assert.match(answer.text, /screening/i);
 });
 
@@ -63,7 +63,7 @@ test("technical questions outrank remembered island context", () => {
   const answer = answerQuestion("Why Gradient Boosting?", data, "Redang");
 
   assert.equal(answer.title, "Why Gradient Boosting?");
-  assert.match(answer.text, /5\.862/);
+  assert.match(answer.text, /0\.380/);
   assert.doesNotMatch(answer.text, /Redang is in/);
 });
 
@@ -106,8 +106,8 @@ test("uses an LLM classification to answer a misspelled priority question", asyn
   );
 
   assert.equal(answer.title, "Highest screening priority");
-  assert.match(answer.text, /Labuan/);
-  assert.match(answer.text, /−14\.42 pp\/yr/);
+  assert.match(answer.text, /Rhu/);
+  assert.match(answer.text, /−3\.40 pp\/yr/);
   assert.match(answer.text, /not.*visitor-safety/i);
 });
 
@@ -147,7 +147,7 @@ test("falls back to local routing when the LLM is unavailable", async () => {
   );
 
   assert.equal(answer.title, "Why Gradient Boosting?");
-  assert.match(answer.text, /5\.862/);
+  assert.match(answer.text, /0\.380/);
 });
 
 test("island answers expose simple labelled sections", () => {
@@ -180,7 +180,7 @@ test("dashboard ships the accessible copilot interface and avatar set", () => {
   assert.match(html, /id="reef-chat-panel"[^>]*role="dialog"/);
   assert.match(html, /id="reef-chat-messages"[^>]*role="log"/);
   assert.match(html, /<label[^>]*for="reef-chat-input"/);
-  assert.match(html, /<script src="chat\.js"><\/script>/);
+  assert.match(html, /<script src="chat\.js(?:\?v=[^"]*)?"><\/script>/);
   assert.equal(typeof chat.initChat, "function");
 
   for (const pose of ["idle", "wave", "think", "answer", "happy", "warn"]) {

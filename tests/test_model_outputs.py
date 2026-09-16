@@ -40,10 +40,10 @@ class ModelOutputTests(unittest.TestCase):
             for row in read_rows(annual_path)
         }
         paired = read_rows(paired_path)[0]
-        self.assertEqual(int(annual[2012]["surveyed_units"]), 2)
-        self.assertEqual(int(annual[2025]["surveyed_units"]), 40)
-        self.assertEqual(int(paired["paired_units"]), 39)
-        self.assertAlmostEqual(float(paired["change_pp"]), -4.7587179487, places=6)
+        self.assertEqual(int(annual[2012]["surveyed_units"]), 388)
+        self.assertEqual(int(annual[2025]["surveyed_units"]), 487)
+        self.assertEqual(int(paired["paired_units"]), 444)
+        self.assertAlmostEqual(float(paired["change_pp"]), -0.4688027, places=4)
 
     def test_pipeline_exports_validation_by_year(self):
         path = PROCESSED / "model_validation_by_year.csv"
@@ -53,7 +53,7 @@ class ModelOutputTests(unittest.TestCase):
 
         rows = read_rows(path)
         self.assertEqual([int(row["target_year"]) for row in rows], [2021, 2022, 2023, 2024, 2025])
-        self.assertEqual(sum(int(row["n"]) for row in rows), 183)
+        self.assertEqual(sum(int(row["n"]) for row in rows), 2405)
 
     def test_prediction_bounds_use_forward_residual_quantiles(self):
         validation = read_rows(PROCESSED / "model_validation_predictions.csv")

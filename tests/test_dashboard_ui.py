@@ -80,11 +80,11 @@ class TestDashboardUI(unittest.TestCase):
         start = html.index('id="tab-science"')
         evidence = html[start:html.index("</section>", start)]
         sources = re.findall(r'<img src="(figures/[^"]+)"', evidence)
-        self.assertEqual(len(sources), 10)
+        self.assertEqual(len(sources), 11)
         for src in sources:
             self.assertTrue((ROOT / "dashboard" / src).exists(), src)
-        self.assertEqual(evidence.count('class="figure-desc"'), 10)
-        self.assertEqual(evidence.count('class="evidence-section-title'), 4)
+        self.assertEqual(evidence.count('class="figure-desc"'), 11)
+        self.assertEqual(evidence.count('class="evidence-section-title'), 5)
 
 
 if __name__ == "__main__":

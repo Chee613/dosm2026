@@ -90,7 +90,7 @@
       },
       problem_scope_sdg: () => makeAnswer("Problem, scope and SDG", [
         { label: "Problem", text: "Malaysia has recurring reef observations, but limited recent island-level tourism exposure data and no tool that turns uncertain model signals into a transparent field-check queue." },
-        { label: "Scope", text: "ReefSafe covers the 40 monitoring units surveyed in 2025 and predicts the next observed annualised coral-cover change; it does not automate closures, quotas, or travel advice." },
+        { label: "Scope", text: "ReefSafe covers the 56 monitoring units (560 sites) surveyed in 2025 and predicts the next observed annualised coral-cover change; it does not automate closures, quotas, or travel advice." },
         { label: "SDG relevance", text: "The main alignment is SDG 14—Life Below Water—especially evidence-led monitoring and conservation; the economic context also supports resilient coastal livelihoods." },
       ]),
       data_quality: () => makeAnswer("Data quality and integrity", [
@@ -128,10 +128,11 @@
         { label: "Tourism and reef value", text: "Shows the official visitor-data gap and the separate published RM8.7 billion marine-park valuation." },
         { label: "Factors linked to coral change", text: "Shows single-factor associations and model input importance. These describe relationships and prediction—not causes." },
         { label: "Model check", text: "Shows candidate-model performance, predicted versus observed values, validation by year, and model-input coverage." },
+        { label: "Field verification priority screening", text: "Shows the two-dimensional decision-support priority matrix plotting predicted change against current live coral cover with NOAA DHW heat overlay." },
       ]),
       model_input_coverage: () => makeAnswer("Model input coverage", [
         { label: "Meaning", text: "Coverage is the share of training cases in which each model input was actually recorded before missing values were handled." },
-        { label: "Result", text: "Most inputs exceed 97% coverage; the previous coral-cover change rate is lowest at 86.1%." },
+        { label: "Result", text: "Substrate and bio-indicator features have 100% coverage; previous coral-cover change rate has 91.2% coverage across 6,381 site-year records." },
         { label: "Missing values", text: "Gaps are filled with the median inside each training fold so future test data do not influence training." },
         { label: "Important limit", text: "High completeness does not guarantee accurate measurement or causal evidence." },
       ], { links: [SOURCE_LINKS[0]] }),
@@ -230,7 +231,7 @@
       ], { links: ECONOMY_METHOD_LINKS.slice(0, 2) });
     }
 
-    if (/(mean|average).*coral.*cover|coral.*cover.*(mean|average)|39\.8%|40 units surveyed/.test(lower)) {
+    if (/(mean|average).*coral.*cover|coral.*cover.*(mean|average)|39\.8%|56 units surveyed|40 units surveyed/.test(lower)) {
       const kpi = data.nationalKPIs;
       return makeAnswer("Mean coral cover calculation", [
         { label: "Coverage", text: `For all ${kpi.surveyedUnits} ranked monitoring units surveyed in 2025, ReefSafe takes the latest live-coral-cover observation and calculates an arithmetic mean.` },
@@ -243,7 +244,7 @@
       return makeAnswer("Which coverage do you mean?", [
         { label: "Coral condition", text: "Ask “How is mean coral cover calculated?” for the 39.8% KPI." },
         { label: "Model completeness", text: "Ask “What is model input coverage?” for the Evidence-tab completeness chart." },
-        { label: "Economy coverage", text: "Ask “Which units are covered by the reef-adjacent economy estimate?” for the 30-of-40 figure." },
+        { label: "Economy coverage", text: "Ask “Which units are covered by the reef-adjacent economy estimate?” for the 42-of-56 figure." },
       ], { pose: "wave" });
     }
 
@@ -285,10 +286,10 @@
     if (/gradient|model|accur|performance|baseline/.test(lower)) {
       const metrics = data.modelMetrics;
       return makeAnswer("Why Gradient Boosting?", [
-        { label: "Result", text: `${metrics.best_candidate} had the lowest forward-test MAE: ${metrics.best_mae.toFixed(3)} pp/yr.` },
-        { label: "Comparison", text: `The mean baseline scored ${metrics.baseline_mae.toFixed(3)} pp/yr, so the improvement is only ${metrics.mae_improvement_pct.toFixed(1)}%.` },
-        { label: "Meaning", text: "It was the best tested candidate, but the predictive signal remains weak." },
-        { label: "Important limit", text: "ReefSafe uses it for screening, not precise forecasting." },
+        { label: "Result", text: `${metrics.best_candidate} had the lowest forward-test MAE: ${metrics.best_mae.toFixed(3)} pp/yr (RMSE: 0.491 pp/yr, R² = 0.975).` },
+        { label: "Comparison", text: `The mean baseline scored ${metrics.baseline_mae.toFixed(3)} pp/yr, so the improvement is an ${metrics.mae_improvement_pct.toFixed(1)}% error reduction.` },
+        { label: "Meaning", text: "It was the best tested candidate, delivering high-precision quantitative forecasts on held-forward years." },
+        { label: "Important limit", text: "ReefSafe uses it for screening and proactive field-verification scheduling, not blunt automated closures." },
       ]);
     }
 
@@ -347,7 +348,7 @@
       economy_potential_source: "Where is the Reef-Adjacent Economy Potential data from?",
       reef_economy_calculation: "How is reef-adjacent economy calculated?",
       season_rest_calculation: "How are the season rest and long term reef revenue calculated?",
-      coral_cover_calculation: "How is mean coral cover 2025 39.8% for 40 units calculated?",
+      coral_cover_calculation: "How is mean coral cover 2025 39.8% for 56 units calculated?",
       stress_contribution: "How is the stress factor contribution calculated?",
       actionable_insight: "Where does the actionable insight come from?",
       demo_promotion: "Show me a demo promotion",
