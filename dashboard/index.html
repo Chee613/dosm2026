@@ -8,23 +8,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="app-header">
-    <div class="header-inner">
-      <div class="brand-section">
-        <div>
-          <div class="brand-title">ReefSafe <span class="brand-badge">DOSM Datathon 2026</span></div>
-          <div class="brand-subtitle">Evidence-bounded reef screening for field verification</div>
-        </div>
-      </div>
-      <nav class="nav-tabs" aria-label="Dashboard sections">
-        <button class="nav-tab active" data-tab="overview">1. Overview</button>
-        <button class="nav-tab" data-tab="diagnostics">2. Monitoring Unit</button>
-        <button class="nav-tab" data-tab="science">3. Evidence</button>
-      </nav>
+  <aside class="brand-rail">
+    <div class="brand-lockup">
+      <img class="brand-mark" src="assets/brand/reefsafe-shield.png" alt="">
+      <div class="brand-title">REEFSAFE</div>
+      <div class="brand-tagline">EVIDENCE • ACTION</div>
+      <p class="sr-only">Evidence-bounded reef screening for field verification</p>
+      <div class="brand-badge">DOSM Datathon 2026</div>
     </div>
-  </header>
+    <nav class="nav-tabs" aria-label="Dashboard sections">
+      <button class="nav-tab active" data-tab="overview">1. Overview</button>
+      <button class="nav-tab" data-tab="diagnostics">2. Monitoring Unit</button>
+      <button class="nav-tab" data-tab="science">3. Evidence</button>
+    </nav>
+  </aside>
 
-  <main class="main-container">
+  <div class="dashboard-shell">
+    <main class="main-container">
 
     <section id="tab-overview" class="tab-panel active">
       <section class="kpi-grid" aria-label="Summary indicators">
@@ -32,19 +32,19 @@
           <div class="kpi-label">Mean coral cover, 2025</div>
           <div class="kpi-value" id="kpi-cover">—</div>
           <div class="kpi-subtext" id="kpi-cover-note"></div>
-          <div class="kpi-source">Source: Reef Check Malaysia (their national figure: 39.94%)</div>
+          <div class="kpi-source">Source: <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a> (their national figure: 39.94%)</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">Change, 2024 to 2025</div>
           <div class="kpi-value" id="kpi-paired">—</div>
           <div class="kpi-subtext" id="kpi-paired-note"></div>
-          <div class="kpi-source">Source: Reef Check Malaysia</div>
+          <div class="kpi-source">Source: <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a></div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">2024 bleaching: coral mortality</div>
           <div class="kpi-value" id="kpi-bleach">—</div>
           <div class="kpi-subtext" id="kpi-bleach-note"></div>
-          <div class="kpi-source">Source: Szereday et al. 2025 (Coralku, Reef Check Malaysia), p.4</div>
+          <div class="kpi-source">Source: <a href="https://reefcheck.org.my/wp-content/uploads/2025/07/2024CoralBleachingImpactReportMalaysia.pdf" target="_blank" rel="noopener">Szereday et al. 2025 (Coralku, Reef Check Malaysia), p.4</a></div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">High-priority units</div>
@@ -57,14 +57,12 @@
       <div class="dashboard-grid">
         <div class="card" id="map-card">
           <div class="card-title">Monitoring-unit map</div>
-          <div class="card-subtitle">Colour shows tier and predicted trend; click a point for details</div>
           <div class="map-container"><div id="map"></div></div>
           <div class="map-key" id="map-legend"></div>
         </div>
         <div class="overview-side">
           <div class="card" id="top5-card">
             <div class="card-title">Top 5 field-verification queue</div>
-            <div class="card-subtitle">Ranks 1–5 by predicted coral-cover change</div>
             <div class="table-scroll">
               <table class="queue-table">
                 <thead><tr><th>Rank</th><th>Island</th><th>State</th><th>Cover</th><th>Predicted</th><th>Tier</th></tr></thead>
@@ -75,10 +73,9 @@
           </div>
           <div class="card" id="reef-potential-card">
             <div class="card-title">Reef-Adjacent Economy Potential</div>
-            <div class="card-subtitle">Published annual value of six marine-park archipelagos (DMPM, 2011–2015)</div>
             <div class="potential-block" id="reef-potential-donut"></div>
             <p class="potential-note">The value placed on reef scenery (RM8.0B) far exceeds recorded tourism income (RM4.6M): reef tourism has wide potential still to be realised and preserved.</p>
-            <p class="method-note">Small slices enlarged to stay visible; % are true shares of the RM8.69B component sum (published total RM8.7B). 2011–2015 study, largely willingness-to-pay; not current revenue.<br><strong>Source:</strong> Dept of Marine Park, <a href="https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf" target="_blank" rel="noopener">Total Economic Value of Marine Biodiversity</a>.</p>
+            <p class="method-note"><strong>Source:</strong> <a href="https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf" target="_blank" rel="noopener">Department of Marine Park Malaysia, Total Economic Value of Marine Biodiversity</a>.</p>
           </div>
         </div>
       </div>
@@ -88,7 +85,6 @@
           <div class="card-title-row">
             <div>
               <div class="card-title">Reef-adjacent economy</div>
-              <div class="card-subtitle">Tourist spending attributable to reefs, by marine park</div>
             </div>
             <span class="kpi-pill pill-slate" id="economy-coverage"></span>
           </div>
@@ -106,31 +102,35 @@
             </table>
           </div>
           <p class="table-caption" id="economy-caption"></p>
-          <p class="method-note"><strong>Method:</strong> park visitors × RM410 × 10%; peninsular parks use the 2013–2017 average of recorded years.<br><strong>Source:</strong> Dept of Marine Park (data.gov.my); Sabah Parks 2024; DOSM DTS 2024; Spalding et al. 2017.</p>
+          <p class="method-note"><strong>Method:</strong> park visitors × RM410 × 10%; peninsular parks use the 2013–2017 average of recorded years.<br><strong>Source:</strong> <a href="https://archive.data.gov.my/data/ms_MY/dataset/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017" target="_blank" rel="noopener">Dept of Marine Park (data.gov.my)</a>; <a href="https://dashboard.sabahparks.org.my" target="_blank" rel="noopener">Sabah Parks 2024</a>; <a href="https://www.dosm.gov.my/portal-main/release-content/domestic-tourism-survey-2024" target="_blank" rel="noopener">DOSM DTS 2024</a>; <a href="https://www.nature.org/content/dam/tnc/nature/en/documents/paper_coralreeftourism_spalding_2017.pdf" target="_blank" rel="noopener">Spalding et al. 2017</a>.</p>
         </div>
 
         <div class="card" id="season-rest-card">
           <div class="card-title">Season rest vs long-term reef revenue</div>
-          <div class="card-subtitle" id="rest-scenario"></div>
+          <div class="card-subtitle" id="rest-scenario" style="display: none;"></div>
           <div class="rest-stats">
             <div class="rest-stat"><span class="rest-stat-label">One month of rest</span><strong class="rest-stat-value rest-stat-loss" id="rest-short">—</strong></div>
             <div class="rest-stat"><span class="rest-stat-label">Reef revenue, 10 yrs</span><strong class="rest-stat-value rest-stat-gain" id="rest-long-low">—</strong></div>
             <div class="rest-stat"><span class="rest-stat-label">Reef revenue, 15 yrs</span><strong class="rest-stat-value rest-stat-gain" id="rest-long-high">—</strong></div>
           </div>
           <div class="hbar-chart" id="rest-bars" role="img"></div>
-          <p class="method-note"><strong>Method:</strong> rest = 1 month of park tourism spending; reef revenue = reef-adjacent value (10% of spending) × 10 or 15 recovery years, undiscounted.<br><strong>Source:</strong> Dept of Marine Park; DOSM DTS 2024; Spalding et al. 2017; James Cook University 2019.<br>The 12–18× gap follows from these assumptions; not a prediction.</p>
+          <p class="method-note"><strong>Method:</strong> rest = 1 month of park tourism spending; reef revenue = reef-adjacent value (10% of spending) × 10 or 15 recovery years, undiscounted.<br><strong>Source:</strong> <a href="https://archive.data.gov.my/data/ms_MY/dataset/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017" target="_blank" rel="noopener">Dept of Marine Park</a>; <a href="https://www.dosm.gov.my/portal-main/release-content/domestic-tourism-survey-2024" target="_blank" rel="noopener">DOSM DTS 2024</a>; <a href="https://www.nature.org/content/dam/tnc/nature/en/documents/paper_coralreeftourism_spalding_2017.pdf" target="_blank" rel="noopener">Spalding et al. 2017</a>; <a href="https://www.jcu.edu.au/news/releases/2019/february/how-long-does-it-take-coral-reefs-to-recover-from-bleaching" target="_blank" rel="noopener">James Cook University 2019</a>.<br>The 12–18× gap follows from these assumptions; not a prediction.</p>
         </div>
       </div>
     </section>
 
     <section id="tab-diagnostics" class="tab-panel">
-      <div class="card">
-        <label for="island-select"><strong>Select monitoring unit</strong></label>
-        <select id="island-select"></select>
-      </div>
-      <div class="card" id="next-observation-card" style="margin-top:16px">
-        <div class="card-title" id="unit-title">Monitoring-unit screening</div>
-        <div class="history-legend"><span class="legend-line legend-observed"></span>Observed survey <span class="legend-line legend-predicted" id="legend-predicted"></span>Predicted next year <span class="legend-line legend-band"></span>Reef Check band boundary</div>
+      <div class="card" id="next-observation-card">
+        <div class="card-title-row unit-title-row">
+          <div>
+            <div class="card-title" id="unit-title">Monitoring-unit screening</div>
+            <div class="history-legend"><span class="legend-line legend-observed"></span>Observed survey <span class="legend-line legend-predicted" id="legend-predicted"></span>Predicted next year <span class="legend-line legend-band"></span>Reef Check band boundary</div>
+          </div>
+          <div class="unit-selector-inline">
+            <label for="island-select"><strong>Select monitoring unit</strong></label>
+            <select id="island-select"></select>
+          </div>
+        </div>
         <div id="island-history-chart"></div>
         <div class="unit-body">
           <div class="unit-col">
@@ -155,6 +155,10 @@
     </section>
 
     <section id="tab-science" class="tab-panel">
+      <div class="provenance-registry-banner">
+        <strong>Official Data Provenance & Boundary Registry:</strong> All underlying datasets, official government portals, and methodology limits are documented in the
+        <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe Data Provenance Directory (PDF)</a>.
+      </div>
       <h2 class="evidence-section-title first">Coral condition and heat</h2>
       <div class="dashboard-grid even">
           <div class="card evidence-figure">
@@ -164,7 +168,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Mean live coral cover of the units surveyed each year. The <span id="ev-paired-units">39</span> units surveyed in both 2024 and 2025 changed by <span id="ev-paired-change">−4.76</span> pp on average; the 2025 mean is <span id="ev-latest-mean">39.8</span>%.</p>
-            <p class="method-note"><strong>Limit:</strong> Different units are surveyed each year (only 2 in 2012), so this is not a fixed national panel. <strong>Source:</strong> Reef Check Malaysia annual survey reports, 2012–2025.</p>
+            <p class="method-note"><strong>Limit:</strong> Different units are surveyed each year (only 2 in 2012), so this is not a fixed national panel.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia annual survey reports, 2012–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Regional heat stress (NOAA)</div>
@@ -173,7 +177,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Mean regional maximum Degree Heating Weeks (DHW) in each survey year. Heat passed the bleaching alert level (DHW 4) in 2016, 2019, 2020, 2023 and 2024, peaking at 11.8 in 2024.</p>
-            <p class="method-note"><strong>Limit:</strong> Regional satellite context, not in-water readings at each island; not used in the model. <strong>Source:</strong> NOAA Coral Reef Watch 5 km regional virtual stations.</p>
+            <p class="method-note"><strong>Limit:</strong> Regional satellite context, not in-water readings at each island; not used in the model.<br><strong>Source:</strong> <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch 5 km regional virtual stations</a>.</p>
           </div>
       </div>
       <h2 class="evidence-section-title">Tourism and reef value</h2>
@@ -185,7 +189,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Recorded domestic and foreign visitors to marine parks in Johor, Kedah, Labuan, Pahang and Terengganu, rising from 423,000 in 2000 to a peak of 863,000 in 2016 (737,000 in 2017). No official series continues after 2017; island arrivals are published for only 11 units in 2024.</p>
-            <p class="method-note"><strong>Limit:</strong> State totals; they cannot be assigned to individual reefs or linked to reef change over time. <strong>Source:</strong> Department of Marine Park Malaysia via data.gov.my (five state datasets).</p>
+            <p class="method-note"><strong>Limit:</strong> State totals; they cannot be assigned to individual reefs or linked to reef change over time.<br><strong>Source:</strong> <a href="https://archive.data.gov.my/data/ms_MY/dataset/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017" target="_blank" rel="noopener">Department of Marine Park Malaysia via data.gov.my (five state datasets)</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Published value of marine-park reefs</div>
@@ -194,7 +198,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Seven annual value components for six marine-park archipelagos, published at RM8.7 billion a year. The value placed on reef scenery (aesthetic, RM8.0 billion) far exceeds recorded tourism income (RM4.6 million): reef tourism has wide potential still to be realised and preserved.</p>
-            <p class="method-note"><strong>Limit:</strong> 2011–2015 study, largely willingness-to-pay; not current revenue or visitor spending. <strong>Source:</strong> Department of Marine Park Malaysia, <a href="https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf" target="_blank" rel="noopener">Total Economic Value of Marine Biodiversity</a> (pp. 6–13).</p>
+            <p class="method-note"><strong>Limit:</strong> 2011–2015 study, largely willingness-to-pay; not current revenue or visitor spending.<br><strong>Source:</strong> <a href="https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf" target="_blank" rel="noopener">Department of Marine Park Malaysia, Total Economic Value of Marine Biodiversity</a> (pp. 6–13).</p>
           </div>
       </div>
       <h2 class="evidence-section-title">Factors linked to coral change</h2>
@@ -205,7 +209,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Higher heat has a weak link with the next coral change (Spearman ρ −0.10, n = 348, p = 0.051). Reports of anchor, trash or bleaching damage shift the next change by less than 1 pp/yr.</p>
-            <p class="method-note"><strong>Limit:</strong> Descriptive associations, not causal effects. <strong>Source:</strong> Reef Check Malaysia; NOAA Coral Reef Watch.</p>
+            <p class="method-note"><strong>Limit:</strong> Descriptive associations, not causal effects.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
       <div class="dashboard-grid even">
           <div class="card evidence-figure">
@@ -215,7 +219,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Spearman correlation of the 22 model inputs and 2 NOAA variables with the next coral-cover change. The strongest are cover versus regional average (ρ −0.32), live coral cover (−0.30) and last change rate (−0.22); most others are weak.</p>
-            <p class="method-note"><strong>Limit:</strong> Unadjusted single-factor links; not a ranking of causes. <strong>Source:</strong> Reef Check Malaysia; NOAA Coral Reef Watch.</p>
+            <p class="method-note"><strong>Limit:</strong> Unadjusted single-factor links; not a ranking of causes.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">What the model relies on</div>
@@ -224,7 +228,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">How much forward-test error rises when each input is shuffled. Cover versus regional average and the last change rate matter most.</p>
-            <p class="method-note"><strong>Limit:</strong> Predictive importance, not cause. <strong>Source:</strong> ReefSafe model, past-only validation 2021–2025.</p>
+            <p class="method-note"><strong>Limit:</strong> Predictive importance, not cause.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
       </div>
       <h2 class="evidence-section-title">Model check</h2>
@@ -236,7 +240,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Forward-test error of four models on the same past-only folds. Gradient boosting has the lowest MAE: <span id="ev-best-mae">5.862</span> vs <span id="ev-baseline-mae">5.991</span> pp/yr for the mean baseline, a <span id="ev-improvement">2.1</span>% gain.</p>
-            <p class="method-note"><strong>Limit:</strong> A small gain: use it to rank field checks, not as a forecast. <strong>Source:</strong> ReefSafe model, past-only validation 2021–2025.</p>
+            <p class="method-note"><strong>Limit:</strong> A small gain: use it to rank field checks, not as a forecast.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Predicted vs observed change</div>
@@ -245,7 +249,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Forward-test predictions against the change later observed (<span id="ev-eval-obs">183</span> cases). Predictions stay near the centre and miss large gains and losses.</p>
-            <p class="method-note"><strong>Limit:</strong> Weak screening signal; not a precise forecast. <strong>Source:</strong> ReefSafe model, past-only validation 2021–2025.</p>
+            <p class="method-note"><strong>Limit:</strong> Weak screening signal; not a precise forecast.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
       </div>
       <div class="dashboard-grid even">
@@ -255,6 +259,7 @@
               <table><thead><tr><th>Year</th><th>n</th><th>MAE</th><th>R²</th><th>Bias</th></tr></thead><tbody id="model-benchmark-table"></tbody></table>
             </div>
             <p class="method-note" id="model-note"></p>
+            <p class="method-note" style="margin-top: 4px;"><strong>Limit:</strong> Past-only temporal folds (train past, test future year).<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Model input coverage</div>
@@ -263,11 +268,38 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Share of training cases with each model input recorded. Most inputs exceed 97%; the last change rate is lowest at 86.1%.</p>
-            <p class="method-note"><strong>Limit:</strong> Gaps are filled with the median inside each training fold. <strong>Source:</strong> Reef Check Malaysia survey panel.</p>
+            <p class="method-note"><strong>Limit:</strong> Gaps are filled with the median inside each training fold.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia survey panel</a>.</p>
           </div>
       </div>
     </section>
   </main>
+</div>
+
+  <button class="copilot-launcher" id="reef-chat-launcher" type="button" aria-controls="reef-chat-panel" aria-expanded="false">
+    <img class="copilot-launcher-avatar" src="assets/avatar/avatar_idle.png" alt="">
+    <span>Ask Reefy</span>
+  </button>
+
+  <section class="copilot-window" id="reef-chat-panel" role="dialog" aria-label="Ask Reefy about ReefSafe" aria-modal="false">
+    <header class="copilot-header">
+      <div class="copilot-header-title">
+        <img class="copilot-avatar" id="reef-chat-avatar" src="assets/avatar/avatar_wave.png" alt="Reefy the diver waving">
+        <span><strong>Reefy</strong><small id="reef-chat-status">ReefSafe dashboard guide</small></span>
+      </div>
+      <button class="copilot-close" id="reef-chat-close" type="button" aria-label="Close Reefy chat">&times;</button>
+    </header>
+    <div class="copilot-messages" id="reef-chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    <div class="copilot-chips" aria-label="Suggested questions">
+      <button class="copilot-chip" type="button" data-question="How is Redang doing?">Explain Redang</button>
+      <button class="copilot-chip" type="button" data-question="Suggest a greener alternative">Greener alternative</button>
+      <button class="copilot-chip" type="button" data-question="Why Gradient Boosting?">Why this model?</button>
+    </div>
+    <form class="copilot-input-area" id="reef-chat-form">
+      <label class="sr-only" for="reef-chat-input">Ask Reefy about ReefSafe</label>
+      <input class="copilot-input" id="reef-chat-input" type="text" maxlength="240" autocomplete="off" placeholder="Ask about a reef or the model…">
+      <button class="copilot-send-btn" id="reef-chat-send" type="submit">Send</button>
+    </form>
+  </section>
 
   <div class="lightbox-modal" id="figure-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
     <div class="lightbox-content">
@@ -279,5 +311,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>

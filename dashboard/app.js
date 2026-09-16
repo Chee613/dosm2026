@@ -14,9 +14,16 @@
     button.addEventListener("click", () => {
       document.querySelectorAll(".nav-tab").forEach((item) => item.classList.toggle("active", item === button));
       document.querySelectorAll(".tab-panel").forEach((panel) => panel.classList.toggle("active", panel.id === `tab-${button.dataset.tab}`));
+      if (history.replaceState) history.replaceState(null, "", `#${button.dataset.tab}`);
       if (button.dataset.tab === "overview" && window.reefMap) setTimeout(() => window.reefMap.invalidateSize(), 0);
     });
   });
+
+  const initHash = (location.hash || "").replace("#", "");
+  if (initHash) {
+    const targetTab = document.querySelector(`.nav-tab[data-tab="${initHash}"]`);
+    if (targetTab) targetTab.click();
+  }
 
   const kpi = data.nationalKPIs;
   document.getElementById("kpi-cover").textContent = `${fmt(kpi.latestMeanCoralCover)}%`;
@@ -203,7 +210,7 @@
     const colour = unit.predictedNextChange < 0 ? "#DC2626" : "#059669";
     // Narrow screens get a narrower drawing so the SVG text stays readable.
     const narrow = window.innerWidth < 640;
-    const width = narrow ? 420 : 1000, height = narrow ? 280 : 250, left = 44, top = 16, right = narrow ? 96 : 150, bottom = 34;
+    const width = narrow ? 420 : 1000, height = narrow ? 240 : 175, left = 44, top = 14, right = narrow ? 96 : 140, bottom = 28;
     const x = (year) => left + (year - rows[0].year) / Math.max(1, next.year - rows[0].year) * (width - left - right);
     const y = (value) => top + (100 - value) / 100 * (height - top - bottom);
     const grid = [0, 25, 50, 75, 100].map((value) => `
