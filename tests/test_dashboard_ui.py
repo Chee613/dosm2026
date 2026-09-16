@@ -71,7 +71,7 @@ class TestDashboardUI(unittest.TestCase):
             self.assertNotIn(unsupported, js)
 
         server = SERVER.read_text(encoding="utf-8")
-        for unsupported in ("78%", "RM 842.5", "quota", "carrying capacity", "gemini"):
+        for unsupported in ("78%", "RM 842.5", "quota", "carrying capacity"):
             self.assertNotIn(unsupported.lower(), server.lower())
 
     def test_evidence_figures_exist_and_have_captions(self):

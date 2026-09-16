@@ -1,0 +1,1214 @@
+
+=== [Iter 0001] 2026-09-16 12:59:01 | Category: Casual ===
+Question: "hello Reefy, who are you?" (Context: Tioman, Tab: evidence)
+Response (2.77s) | Title: ReefSafe Institutional Copilot | Pose: wave | Links: 2
+  [MANDATE]: I am Reefy, the institutional AI copilot for the ReefSafe dashboard. My mandate is to provide analytical insights into Malaysia's marine park conservation, bridging ecological monitoring data from Reef Check Malaysia with economic valuation benchmarks from DOSM and the Department of Marine Park Malaysia.
+  [CORE CAPABILITIES]: 1. Ecological Screening: Utilizing a Gradient Boosting Regressor to monitor live coral cover trends across 40 units.
+2. Economic Attribution: Calculating reef-adjacent economy proxies and total economic value benchmarks.
+3. Diagnostic Analytics: Applying Tree-Path Decomposition to identify stress factor contributions for priority islands.
+  [DATA INTEGRITY]: I operate strictly on official datasets including Reef Check Malaysia survey reports, OpenDOSM economic data, and DOFM regulatory registers. I do not provide commercial travel advice or non-scientific recommendations.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0002] 2026-09-16 12:59:08 | Category: Casual ===
+Question: "what is the weather like today?" (Context: Tinggi, Tab: diagnostics)
+Response (1.75s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 0
+  [SCOPE OF SERVICE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. My mandate is to provide insights on ecological monitoring, stress factor attribution, and economic valuation based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [DATA AVAILABILITY]: I do not provide real-time meteorological or weather forecasts. My diagnostic capabilities are focused on long-term ecological trends, such as live coral cover (LCC) and reef-adjacent economic indicators. For environmental context, you may refer to the NOAA Coral Reef Watch satellite virtual stations for sea surface temperature and degree heating week data.
+
+=== [Iter 0003] 2026-09-16 12:59:13 | Category: Technical ===
+Question: "explain the gradient boosting regressor hyperparameters and validation MAE" (Context: Tenggol, Tab: overview)
+Response (2.58s) | Title: ReefSafe Diagnostic Model: Performance & Methodology | Pose: answer | Links: 2
+  [MODEL PERFORMANCE]: The Gradient Boosting Regressor achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the historical baseline. The model's 95% pooled forward-test residual distribution ranges from -16.25 to +13.66 pp/yr.
+  [HYPERPARAMETER OPTIMIZATION]: The model utilizes a tree-based ensemble approach optimized for ecological time-series data:
+1. Learning Rate: 0.05 to ensure stable convergence across 404 monitoring units.
+2. N-Estimators: 500 trees to capture non-linear interactions between substrate, fish counts, and pollution indicators.
+3. Max Depth: 4 to prevent overfitting on localized survey noise.
+4. Subsample: 0.8 to introduce stochastic variance, improving generalization across diverse marine park conditions.
+  [VALIDATION FRAMEWORK]: Validation is conducted via a temporal split, training on historical Reef Check Malaysia survey reports (2007-2025) and testing against unseen annual monitoring cycles. Stress factor contributions are derived via Tree-Path Decomposition (Saabas 2014), attributing predicted changes to specific feature groups.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0004] 2026-09-16 12:59:19 | Category: Provenance ===
+Question: "show me all the dataset" (Context: Penyu, Tab: diagnostics)
+Response (5.01s) | Title: ReefSafe Institutional Data Inventory | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: 1. Reef Check Malaysia (RCM) Annual Survey Reports (2007-2025): 404 standardized 100m transects monitoring live coral cover, disturbance, and pollution indicators.
+  [SOCIO-ECONOMIC DATA]: 1. DOSM Domestic Tourism Survey 2024: RM410 average expenditure per visitor.
+2. State Real GDP Supply (Accommodation, F&B, Transport): OpenDOSM data catalogue.
+3. Marine Fish Landings (DOFM): Resource pressure proxy.
+4. Marine Park Visitors (2000-2017): Official archive series.
+5. Total Economic Value (TEV) Benchmark: RM8.7 Billion/year (DMPM 2011-2015 study).
+  [ENVIRONMENTAL & GEOSPATIAL]: 1. NOAA Coral Reef Watch: 5km Satellite Virtual Stations (SST and Degree Heating Weeks).
+2. JUPEM Geodetic Portal: Official island coordinates and territorial boundaries.
+3. DOFM Marine Parks: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+4. Dept of Environment: River basin water quality (BOD, ammoniacal nitrogen, suspended solids).
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0005] 2026-09-16 12:59:28 | Category: Out-of-Domain ===
+Question: "can I eat coral reef with sambal?" (Context: Mensirip, Tab: overview)
+Response (2.20s) | Title: ReefSafe Institutional Mandate | Pose: warn | Links: 0
+  [SCOPE OF SERVICE]: ReefSafe is an institutional platform dedicated to the scientific monitoring and economic valuation of Malaysia's marine ecosystems. Our mandate is limited to ecological screening, diagnostic modeling of coral health, and the attribution of reef-adjacent economic metrics.
+  [DATA INTEGRITY]: We do not provide culinary, commercial, or travel-related advice. Our data is strictly sourced from official bodies including Reef Check Malaysia, DOSM, and the Department of Fisheries. We focus on the conservation of marine biodiversity and the analysis of environmental stressors affecting our gazetted Marine Parks.
+  [AVAILABLE ANALYTICS]: For the selected unit, Mensirip, you may query the following:
+1. Current live coral cover (LCC) trends.
+2. Stress factor contributions via Tree-Path Decomposition.
+3. Reef-adjacent economic valuation benchmarks.
+
+=== [Iter 0006] 2026-09-16 12:59:33 | Category: Travel & Safety ===
+Question: "is Labuan safe for tourists" (Context: Tioman, Tab: evidence)
+Response (2.60s) | Title: ReefSafe Conservation Screening: Labuan | Pose: warn | Links: 2
+  [SCREENING PRIORITY]: Labuan is currently ranked 1st in our priority queue for urgent field verification, with a predicted coral cover decline of -14.42 pp/yr. This ranking reflects biological monitoring urgency based on ecological data, not human safety or tourism suitability.
+  [INSTITUTIONAL MANDATE]: ReefSafe is an open scientific research platform dedicated to marine park conservation analytics. We do not provide travel safety ratings, tourism recommendations, or commercial travel advice. Our focus is strictly on ecological health indicators derived from Reef Check Malaysia surveys and DOSM economic data.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0007] 2026-09-16 12:59:39 | Category: Provenance ===
+Question: "show me all the dataset" (Context: Payar, Tab: overview)
+Response (3.28s) | Title: ReefSafe Official Data Provenance | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: 1. Reef Check Malaysia (RCM): 19 years of annual survey reports (2007-2025) covering 404 standardized 100m transects, providing live coral cover and disturbance metrics.
+  [SOCIO-ECONOMIC DATA]: 1. DOSM & data.gov.my: State Real GDP Supply, Marine Fish Landings, and Domestic Tourism Survey 2024 (RM410 avg spend).
+2. DMPM (2011-2015): Total Economic Value (TEV) benchmark of RM8.7 Billion/year for marine biodiversity.
+  [ENVIRONMENTAL & GEOSPATIAL]: 1. NOAA Coral Reef Watch: 5km satellite virtual stations for sea surface temperature and Degree Heating Weeks.
+2. JUPEM: Official geodetic authority for island coordinates.
+3. DOFM: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0008] 2026-09-16 12:59:46 | Category: List / Ranking ===
+Question: "which are the top 5 most urgent reefs for field verification" (Context: Tinggi, Tab: overview)
+Response (2.18s) | Title: Urgent Field Verification Priority Queue | Pose: warn | Links: 1
+  [TOP 5 PRIORITY ISLANDS]: 1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+  [METHODOLOGY]: Priority is determined by the 25% highest screening priority queue based on predicted annual live coral cover (LCC) decline rates. This ranking reflects biological monitoring urgency, not human safety risks.
+  [DATA SOURCE]: Calculated using the Reef Check Malaysia (RCM) 2007-2025 survey dataset and the ReefSafe Gradient Boosting Regressor model.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0009] 2026-09-16 12:59:52 | Category: Out-of-Domain ===
+Question: "what is the current price of Bitcoin?" (Context: Lima, Tab: overview)
+Response (1.92s) | Title: ReefSafe Conservation Analytics | Pose: warn | Links: 0
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, reef-adjacent economic attribution, and predictive modeling of coral health.
+  [AVAILABLE DATA]: We provide data-driven insights based on Reef Check Malaysia surveys, DOSM economic indicators, and Department of Fisheries marine park records. We do not track or provide information on cryptocurrency, financial markets, or non-conservation assets.
+  [RESEARCH DIRECTION]: For inquiries regarding the current status of Lima or other monitored reefs, please consult our diagnostic models or ecological evidence tabs.
+
+=== [Iter 0010] 2026-09-16 12:59:57 | Category: Policy & Econ ===
+Question: "what is Reef-Adjacent Economy Potential" (Context: Lima, Tab: evidence)
+Response (2.28s) | Title: Reef-Adjacent Economy Potential: Economic Valuation | Pose: answer | Links: 2
+  [CONCEPT DEFINITION]: The Reef-Adjacent Economy Potential refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark established by the Department of Marine Park Malaysia (DMPM) study (2011-2015). This figure represents the total economic capital of six major archipelagos (Payar, Perhentian, Redang, Tioman, Tinggi, and Labuan) based on seven ecosystem components, primarily capturing non-market existence and bequest values.
+  [ECONOMIC DISTINCTION]: It is critical to distinguish this TEV benchmark from the 'Reef-Adjacent Economy' annual visitor spending proxy:
+1. Reef-Adjacent Economy Potential (RM8.7B/year): A comprehensive valuation of ecosystem services and existence value.
+2. Reef-Adjacent Economy (RM60.09M/year): A specific annual visitor spending proxy calculated from 1,464,770 annual visitors, an average expenditure of RM410, and a 10% reef-attributable share.
+  [LINKS]: Marine biodiversity economic valuation, DOSM Domestic Tourism Survey 2024
+
+=== [Iter 0011] 2026-09-16 13:00:03 | Category: Nonsense ===
+Question: "undefined null NaN" (Context: Lang Tengah, Tab: evidence)
+Response (3.37s) | Title: ReefSafe Institutional Overview | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights through ML ecological screening and economic attribution based on official datasets from OpenDOSM, Reef Check Malaysia, and the Department of Fisheries.
+  [AVAILABLE ANALYTICS]: Our platform supports inquiries regarding: 
+1. National Coral Cover KPI (39.8% mean LCC) 
+2. Stress Factor Contributions via Tree-Path Decomposition 
+3. Reef-Adjacent Economy metrics (RM60.09M annual spending proxy vs RM8.7B TEV benchmark) 
+4. Priority screening for 40 monitoring units
+  [GUIDANCE]: Please specify your query regarding Lang Tengah or our diagnostic methodologies. We do not provide commercial travel advice or non-scientific content.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0012] 2026-09-16 13:00:10 | Category: Casual ===
+Question: "can you tell me an interesting fact about corals?" (Context: Kapalai, Tab: diagnostics)
+Response (2.32s) | Title: ReefSafe Institutional Insight: Kapalai | Pose: answer | Links: 2
+  [ECOLOGICAL STATUS]: Kapalai is currently the only verified visitor destination within the ReefSafe monitoring network exhibiting a non-negative signal, with a predicted change of +0.77 pp/yr. This indicates a stable or improving trend in live coral cover compared to the national average.
+  [CORAL BIOLOGY FACT]: Corals are colonial organisms composed of individual polyps. These polyps maintain a symbiotic relationship with zooxanthellae, microscopic algae that provide the coral with essential nutrients through photosynthesis, which is the primary driver of reef-building capacity in Malaysian waters.
+  [MODEL DIAGNOSTICS]: The ReefSafe Gradient Boosting Regressor utilizes Tree-Path Decomposition (Saabas 2014) to attribute stress factors. For Kapalai, the model integrates standardized transect data from Reef Check Malaysia (2007-2025) to assess substrate health and disturbance indicators.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0013] 2026-09-16 13:00:16 | Category: Travel & Safety ===
+Question: "which island is good to visit for a holiday" (Context: Malacca, Tab: diagnostics)
+Response (2.42s) | Title: ReefSafe Conservation Analytics: Malacca | Pose: answer | Links: 0
+  [CONSERVATION STATUS]: Malacca is currently identified as a 'Green Status' monitoring unit with a predicted non-negative coral cover change of +3.48 pp/yr. This indicates a stable ecological trend within our current diagnostic model.
+  [INSTITUTIONAL MANDATE]: ReefSafe is an open scientific research platform for marine park conservation analytics. We do not provide commercial travel recommendations, holiday packages, or safety ratings for tourism. Our data focuses on ecological monitoring and economic valuation benchmarks.
+  [VISITOR DESTINATION NOTE]: For verified visitor destinations with non-negative ecological signals, Kapalai (+0.77 pp/yr) is the only other site currently meeting the 'Green Status' criteria in our dataset.
+
+=== [Iter 0014] 2026-09-16 13:00:22 | Category: Policy & Econ ===
+Question: "why is the 10 percent attribution coefficient from Spalding et al. 2017 used" (Context: Labuan, Tab: diagnostics)
+Response (2.19s) | Title: Economic Attribution Methodology | Pose: answer | Links: 2
+  [CONCEPTUAL BASIS]: The 10 percent attribution coefficient is derived from Spalding et al. (2017) to isolate the specific portion of visitor expenditure directly dependent on the presence and health of coral reef ecosystems. This prevents the overestimation of tourism revenue by excluding non-reef-related spending such as general accommodation, transit, or non-marine leisure activities.
+  [APPLICATION IN REEFSAFE]: This coefficient is applied to the RM410 average domestic visitor expenditure (DOSM 2024) to calculate the Reef-Adjacent Economy. For Labuan, this provides a standardized proxy for the annual economic value generated by reef-dependent tourism, distinct from the broader RM8.7 Billion Total Economic Value (TEV) benchmark established by the DMPM (2011-2015) study.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0015] 2026-09-16 13:00:27 | Category: Technical ===
+Question: "how does fold-local median imputation prevent future data leakage" (Context: Bidong, Tab: overview)
+Response (2.35s) | Title: Data Integrity: Fold-Local Median Imputation | Pose: answer | Links: 2
+  [MECHANISM]: Fold-local median imputation ensures that missing values in the Reef Check Malaysia dataset are filled using only the statistics derived from the training fold. By calculating the median exclusively within the temporal or spatial subset defined by the cross-validation split, the model prevents information from the validation or test sets from influencing the training process.
+  [LEAKAGE PREVENTION]: 1. Temporal Isolation: Prevents future-dated observations from biasing current-year predictions.
+2. Spatial Independence: Ensures monitoring units with missing data do not inherit global trends that would artificially inflate performance metrics.
+3. Statistical Integrity: Maintains the independence of the 95% pooled forward-test residual distribution [-16.25, +13.66 pp/yr].
+  [MODEL CONTEXT]: This imputation strategy supports the Gradient Boosting Regressor, which achieves a MAE of 5.862 pp/yr. It is a critical component of the ReefSafe pipeline to ensure that the 404 monitoring-unit rows remain robust for ecological screening.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0016] 2026-09-16 13:00:33 | Category: List / Ranking ===
+Question: "top 10 island" (Context: Lankayan, Tab: diagnostics)
+Response (1.70s) | Title: Top 10 Priority Islands for Urgent Monitoring | Pose: warn | Links: 0
+  [SCREENING PRIORITY QUEUE]: 1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+6. Tenggol (-4.64 pp/yr)
+7. Tinggi (-4.63 pp/yr)
+8. Lima (-4.37 pp/yr)
+9. Sibu (-4.34 pp/yr)
+10. Lankayan (-4.07 pp/yr)
+  [METHODOLOGY NOTE]: These rankings represent the 25% highest screening priority queue for urgent field verification based on the Gradient Boosting Regressor model. Priority is determined by the predicted annual rate of change in live coral cover, not human safety risks.
+
+=== [Iter 0017] 2026-09-16 13:00:38 | Category: Nonsense ===
+Question: "..........................." (Context: Lankayan, Tab: evidence)
+Response (1.94s) | Title: ReefSafe Institutional Overview: Lankayan | Pose: warn | Links: 2
+  [ECOLOGICAL STATUS]: Lankayan is currently ranked 10th in the national screening priority queue with a predicted coral cover decline of -4.07 pp/yr. This status indicates a high urgency for field verification based on the 2025 Reef Check Malaysia monitoring data.
+  [MODEL SIGNAL]: The Gradient Boosting Regressor model identifies significant stress factors contributing to this decline. The analysis utilizes Tree-Path Decomposition (Saabas 2014) to attribute changes across substrate, fish counts, and pollution indicators, excluding environmental context like NOAA DHW.
+  [DATA SOURCES]: 1. Reef Check Malaysia annual survey reports (2007-2025)
+2. OpenDOSM Data Catalogue
+3. Department of Fisheries Malaysia (DOFM) Marine Parks
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0018] 2026-09-16 13:00:44 | Category: Technical ===
+Question: "how does fold-local median imputation prevent future data leakage" (Context: Kapas, Tab: evidence)
+Response (2.40s) | Title: Data Integrity: Fold-Local Median Imputation | Pose: answer | Links: 2
+  [METHODOLOGY]: To prevent data leakage during the training of the Gradient Boosting Regressor, ReefSafe employs fold-local median imputation. This ensures that missing values in the 404 monitoring-unit dataset are filled using only the statistics derived from the training fold, rather than the global dataset mean or median.
+  [LEAKAGE PREVENTION]: 1. Temporal Isolation: By calculating medians strictly within the training split, we prevent information from future monitoring years (2007-2025) from influencing the imputation of past observations.
+2. Spatial Integrity: Imputation is performed per monitoring unit to maintain the specific ecological variance of each site, preventing cross-site contamination of baseline metrics.
+3. Model Robustness: This approach ensures the MAE of 5.862 pp/yr reflects true predictive performance on unseen data, rather than artifacts of global distribution.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0019] 2026-09-16 13:00:50 | Category: Travel & Safety ===
+Question: "is Labuan safe for tourists" (Context: Payar, Tab: diagnostics)
+Response (2.03s) | Title: ReefSafe Conservation Screening: Labuan | Pose: warn | Links: 2
+  [SCREENING PRIORITY]: Labuan is currently ranked 1st in the national priority queue for urgent field verification, with a predicted decline of -14.42 pp/yr in live coral cover. ReefSafe screening priority measures biological monitoring urgency and ecological stress, not human safety or tourism suitability.
+  [INSTITUTIONAL MANDATE]: ReefSafe is an open scientific conservation research platform. We do not provide travel safety ratings, commercial tourism advice, or booking services. Our mandate is to provide data-driven ecological diagnostics for Malaysia's marine parks.
+  [DATA SOURCES]: Ecological status is derived from Reef Check Malaysia annual survey reports (2007-2025) and processed via our Gradient Boosting Regressor model. For official marine park regulations and status, please consult the Department of Fisheries Malaysia (DOFM).
+  [LINKS]: Reef Check Malaysia annual reports, DOFM Marine Parks
+
+=== [Iter 0020] 2026-09-16 13:00:55 | Category: Nonsense ===
+Question: "!@#$%^&*()_+" (Context: Bidong, Tab: diagnostics)
+Response (1.83s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological stress factors, and economic valuation benchmarks.
+  [AVAILABLE DATA]: Our platform integrates official datasets including Reef Check Malaysia annual surveys, DOSM economic indicators, Department of Fisheries marine park registers, and DMPM economic valuation studies. We do not process out-of-domain queries.
+  [DIAGNOSTIC DIRECTION]: You are currently viewing diagnostics for Bidong. Please ask specific questions regarding ecological monitoring, stress factor contributions, or economic attribution for this site.
+
+=== [Iter 0021] 2026-09-16 13:01:01 | Category: Casual ===
+Question: "what is the weather like today?" (Context: Malacca, Tab: overview)
+Response (3.90s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [DOMAIN LIMITATION]: ReefSafe is a specialized platform for marine ecological monitoring and economic attribution. Our mandate is limited to the analysis of coral reef health, stress factor diagnostics, and marine park economic valuation based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [AVAILABLE ANALYTICS]: We do not provide meteorological or real-time weather data. You may query our dashboard for: 
+1. National Coral Cover KPI (39.8% mean) 
+2. Stress factor contributions via Tree-Path Decomposition 
+3. Economic valuation benchmarks (RM8.7B TEV) 
+4. Priority screening for the 40 monitored units
+
+=== [Iter 0022] 2026-09-16 13:01:08 | Category: List / Ranking ===
+Question: "what are the 5 feature groups used in factor attribution" (Context: Mensirip, Tab: overview)
+Response (4.55s) | Title: Stress Factor Contribution Methodology | Pose: answer | Links: 0
+  [TREE-PATH DECOMPOSITION]: ReefSafe utilizes Tree-Path Decomposition (Saabas 2014) applied to a Gradient Boosting Regressor to attribute ecological change. This method traces decision paths through the ensemble to quantify the impact of specific feature groups on predicted live coral cover trends.
+  [FEATURE GROUPS]: The model evaluates the following five categories to determine stress factor contributions:
+1. Substrate: Composition of benthic cover including hard coral, soft coral, and algae.
+2. Fish: Abundance and diversity counts of indicator species.
+3. Reported Impacts: Qualitative disturbance indicators from Reef Check Malaysia monitoring units.
+4. Prior Cover: Historical live coral cover baseline data.
+5. Geography: Spatial and environmental context of the monitoring unit.
+
+=== [Iter 0023] 2026-09-16 13:01:16 | Category: Policy & Econ ===
+Question: "what is reef adjacent economy" (Context: Seri Buat, Tab: overview)
+Response (2.07s) | Title: Reef-Adjacent Economy Definitions | Pose: answer | Links: 2
+  [ANNUAL VISITOR SPENDING PROXY]: The Reef-Adjacent Economy is calculated as RM60.09M/year. This is derived from 1,464,770 annual visitors multiplied by the RM410 average domestic expenditure (DOSM 2024), adjusted by a 10% reef-attributable share (Spalding et al. 2017) across 30 monitoring units.
+  [TOTAL ECONOMIC VALUE (TEV) BENCHMARK]: The Reef-Adjacent Economy Potential refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark established by the DMPM (2011-2015). This represents the broader economic capital of six archipelagos, including non-market existence and bequest values, rather than annual commercial cash flow.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0024] 2026-09-16 13:01:22 | Category: Travel & Safety ===
+Question: "which island is green" (Context: Lang Tengah, Tab: evidence)
+Response (2.47s) | Title: ReefSafe Green Status Analysis | Pose: answer | Links: 2
+  [DEFINITION OF GREEN STATUS]: In the ReefSafe diagnostic framework, 'green' status identifies monitoring units with a predicted non-negative annual change in live coral cover (>= 0 pp/yr). This indicates a stable or recovering ecological trajectory based on our Gradient Boosting Regressor model.
+  [VERIFIED GREEN DESTINATIONS]: Only two monitoring units currently exhibit green status:
+1. Malacca (+3.48 pp/yr)
+2. Kapalai (+0.77 pp/yr)
+Kapalai is the only verified visitor destination among these with a non-negative signal.
+  [MODEL PERFORMANCE CONTEXT]: These projections are derived from the Gradient Boosting Regressor, which maintains a Mean Absolute Error (MAE) of 5.862 pp/yr. The model utilizes 19 years of Reef Check Malaysia survey data to assess ecological health across 40 monitoring units.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0025] 2026-09-16 13:01:28 | Category: Technical ===
+Question: "is this model causal or exploratory screening" (Context: Redang, Tab: evidence)
+Response (2.48s) | Title: ReefSafe Model Methodology: Exploratory Screening | Pose: answer | Links: 2
+  [MODEL NATURE]: ReefSafe functions as an exploratory screening tool, not a causal inference engine. It utilizes a Gradient Boosting Regressor to identify statistical associations between environmental variables and coral cover trends across 40 monitoring units.
+  [CALCULATION METHOD]: The model employs Tree-Path Decomposition (Saabas 2014) to attribute feature importance. This traces decision paths through the ensemble to quantify how specific factors—such as substrate composition, fish counts, and reported impacts—contribute to the predicted change in live coral cover (LCC) for Redang and other units.
+  [LIMITATIONS]: 1. The model identifies correlations within historical Reef Check Malaysia survey data (2007-2025).
+2. It does not establish direct cause-and-effect relationships between specific human activities and coral health.
+3. The 95% pooled forward-test residual distribution ranges from -16.25 to +13.66 pp/yr, indicating the inherent uncertainty in ecological forecasting.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0026] 2026-09-16 13:01:34 | Category: Policy & Econ ===
+Question: "what is reef adjacent economy" (Context: Redang, Tab: diagnostics)
+Response (4.24s) | Title: Reef-Adjacent Economy Definitions | Pose: answer | Links: 2
+  [ANNUAL VISITOR SPENDING PROXY]: The Reef-Adjacent Economy is calculated as RM60.09M/year. This represents the annual visitor spending proxy derived from 1,464,770 annual visitors, an average expenditure of RM410 per visitor (DOSM Domestic Tourism Survey 2024), and a 10% reef-attributable share (Spalding et al. 2017) covering 30 of 40 monitoring units.
+  [TOTAL ECONOMIC VALUE (TEV) BENCHMARK]: The Reef-Adjacent Economy Potential refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark established by the DMPM (2011-2015) study. This figure represents the total economic capital of six archipelagos (Payar, Perhentian, Redang, Tioman, Tinggi, Labuan) based on seven ecosystem components, primarily non-market existence and bequest values, rather than annual commercial cash flow.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0027] 2026-09-16 13:01:41 | Category: Out-of-Domain ===
+Question: "who won the FIFA World Cup in 2022?" (Context: Sipadan, Tab: evidence)
+Response (3.10s) | Title: ReefSafe Conservation Analytics | Pose: warn | Links: 0
+  [SCOPE OF SERVICE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, ML-driven reef health diagnostics, and economic valuation of marine biodiversity based on official datasets from OpenDOSM, Reef Check Malaysia, and the Department of Fisheries.
+  [DATA AVAILABILITY]: We provide insights on coral cover trends, stress factor contributions, and economic benchmarks such as the RM8.7 Billion TEV study. We do not track or provide information on international sports events, commercial travel, or non-marine topics.
+
+=== [Iter 0028] 2026-09-16 13:01:48 | Category: Technical ===
+Question: "explain the gradient boosting regressor hyperparameters and validation MAE" (Context: Sibu, Tab: overview)
+Response (2.65s) | Title: Model Methodology: Gradient Boosting Regressor | Pose: answer | Links: 1
+  [MODEL PERFORMANCE]: The Gradient Boosting Regressor achieves a Mean Absolute Error (MAE) of 5.862 percentage points (pp) per year. This represents a 2.1% improvement over the baseline model. The 95% pooled forward-test residual distribution ranges from -16.25 to +13.66 pp/yr.
+  [HYPERPARAMETER OPTIMIZATION]: The model utilizes a tree-based ensemble approach optimized for ecological time-series data:
+1. Learning Rate: 0.05 to ensure stable convergence across heterogeneous monitoring units.
+2. N-Estimators: 500 trees to capture non-linear interactions between substrate, fish counts, and pollution indicators.
+3. Max Depth: 4 to prevent overfitting on the 404 standardized monitoring-unit rows provided by Reef Check Malaysia.
+4. Subsample: 0.8 to introduce stochasticity and improve generalization across diverse geographical sites.
+  [VALIDATION FRAMEWORK]: Validation is conducted via a temporal split, training on historical RCM survey reports (2007-2024) and testing against the 2025 annual survey data. This ensures the model captures the predictive signal of coral cover change rather than historical noise.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0029] 2026-09-16 13:01:54 | Category: Casual ===
+Question: "do fishes sleep at night in coral reefs?" (Context: Perhentian, Tab: overview)
+Response (2.22s) | Title: ReefSafe Conservation Analytics: Scope and Mandate | Pose: answer | Links: 2
+  [SCOPE OF RESEARCH]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, economic valuation, and stress factor attribution for coral reef health.
+  [DATA AVAILABILITY]: Our platform provides data-driven insights based on Reef Check Malaysia surveys, DOSM economic indicators, and Department of Fisheries marine park records. We do not provide biological or behavioral information on marine species such as fish sleep patterns, as this falls outside our institutional mandate for reef health monitoring and economic impact assessment.
+  [AVAILABLE ANALYTICS]: For the Perhentian archipelago, you may query: 
+1. Annual live coral cover trends 
+2. Reef-adjacent economy spending proxies 
+3. Stress factor contributions via Tree-Path Decomposition 
+4. Priority screening status for field verification
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0030] 2026-09-16 13:02:00 | Category: Policy & Econ ===
+Question: "what should a marine park ranger do when an island is in high screening priority" (Context: Payar, Tab: diagnostics)
+Response (2.58s) | Title: Ranger Protocol: High Screening Priority | Pose: warn | Links: 2
+  [OPERATIONAL MANDATE]: High screening priority indicates a monitoring unit with a significant negative predicted change in live coral cover. Rangers should prioritize these sites for urgent field verification to validate the ML model's signal against ground-truth conditions.
+  [DIAGNOSTIC STEPS]: 1. Conduct immediate 100m transect surveys following Reef Check Malaysia standardized protocols.
+2. Document specific disturbance indicators including physical damage, sedimentation, or pollution evidence.
+3. Cross-reference findings with local fish landing data from the Department of Fisheries to assess resource pressure.
+4. Update the ReefSafe dashboard with field observations to refine the Gradient Boosting Regressor inputs.
+  [DATA CONTEXT]: Priority rankings are derived from the Tree-Path Decomposition (Saabas 2014) of the Gradient Boosting ensemble, which attributes stress factors to substrate, fish counts, and reported impacts. This is a scientific monitoring tool, not a safety assessment.
+  [LINKS]: Reef Check Malaysia annual reports, DOFM Marine Parks
+
+=== [Iter 0031] 2026-09-16 13:02:06 | Category: List / Ranking ===
+Question: "give me the top 10 priority islands with predicted decline" (Context: Lankayan, Tab: overview)
+Response (3.30s) | Title: Top 10 Priority Islands for Urgent Field Verification | Pose: warn | Links: 1
+  [SCREENING PRIORITY]: The following list represents the 25% highest screening priority queue for urgent field verification based on predicted annual live coral cover (LCC) decline rates:
+1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+6. Tenggol (-4.64 pp/yr)
+7. Tinggi (-4.63 pp/yr)
+8. Lima (-4.37 pp/yr)
+9. Sibu (-4.34 pp/yr)
+10. Lankayan (-4.07 pp/yr)
+  [METHODOLOGY NOTE]: Priority is determined by the Gradient Boosting Regressor model, which identifies units with the most significant negative predicted change in LCC. This ranking reflects biological monitoring urgency, not human safety risks.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0032] 2026-09-16 13:02:13 | Category: List / Ranking ===
+Question: "which are the top 5 most urgent reefs for field verification" (Context: Tioman, Tab: evidence)
+Response (2.26s) | Title: Urgent Field Verification Priority Queue | Pose: warn | Links: 1
+  [TOP 5 PRIORITY MONITORING UNITS]: 1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+  [METHODOLOGY]: Priority is determined by the Gradient Boosting Regressor model, identifying units with the highest predicted annual decline in live coral cover. These rankings represent the 25% highest screening priority queue for urgent field verification based on Reef Check Malaysia survey data.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0033] 2026-09-16 13:02:18 | Category: Technical ===
+Question: "is this model causal or exploratory screening" (Context: Sipadan, Tab: diagnostics)
+Response (2.18s) | Title: ReefSafe Diagnostic Model Methodology | Pose: answer | Links: 1
+  [MODEL NATURE]: ReefSafe utilizes an exploratory screening approach via a Gradient Boosting Regressor. It is designed to identify high-priority monitoring units for urgent field verification rather than establishing direct causal mechanisms.
+  [STRESS FACTOR CONTRIBUTION]: Feature importance is derived from Tree-Path Decomposition (Saabas 2014). This method traces decision paths through the ensemble to credit splits to specific feature groups, including substrate, fish counts, reported impacts, and geography, providing a diagnostic signal for ecological change.
+  [MODEL PERFORMANCE]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over baseline. The 95% pooled forward-test residual distribution is [-16.25, +13.66 pp/yr].
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0034] 2026-09-16 13:02:24 | Category: List / Ranking ===
+Question: "top 10 island" (Context: Lang Tengah, Tab: evidence)
+Response (4.49s) | Title: Top 10 Priority Islands for Urgent Monitoring | Pose: warn | Links: 1
+  [SCREENING PRIORITY]: The following list represents the 25% highest screening priority queue for urgent field verification based on the Gradient Boosting Regressor model, ranked by predicted annual decline in live coral cover:
+1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+6. Tenggol (-4.64 pp/yr)
+7. Tinggi (-4.63 pp/yr)
+8. Lima (-4.37 pp/yr)
+9. Sibu (-4.34 pp/yr)
+10. Lankayan (-4.07 pp/yr)
+  [METHODOLOGY NOTE]: Priority is determined by the Tree-Path Decomposition (Saabas 2014) of the ReefSafe ML model, which attributes stress factors to specific monitoring units. This ranking identifies sites requiring immediate ecological assessment rather than human safety risk.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0035] 2026-09-16 13:02:32 | Category: Technical ===
+Question: "what is the 95% pooled forward test residual distribution and uncertainty range" (Context: Lima, Tab: diagnostics)
+Response (1.83s) | Title: Model Uncertainty and Residual Analysis | Pose: answer | Links: 1
+  [RESIDUAL DISTRIBUTION]: The ReefSafe Gradient Boosting Regressor exhibits a 95% pooled forward-test residual distribution range of [-16.25, +13.66] percentage points (pp) per year.
+  [PERFORMANCE METRICS]: The model maintains a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the baseline historical trend projection.
+  [METHODOLOGICAL CONTEXT]: These residuals are derived from the validation of 404 monitoring-unit rows of standardized 100m transects sourced from Reef Check Malaysia annual survey reports (2007-2025).
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0036] 2026-09-16 13:02:37 | Category: Casual ===
+Question: "what is the weather like today?" (Context: Kapas, Tab: evidence)
+Response (1.92s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 0
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, reef health diagnostics, and economic valuation of marine biodiversity.
+  [DATA AVAILABILITY]: We provide data on live coral cover, stress factor contributions, and economic benchmarks derived from Reef Check Malaysia, DOSM, and DMPM. We do not provide real-time meteorological or weather forecasting services.
+  [RESEARCH DIRECTION]: For insights on Kapas, you may query our diagnostic model regarding its screening priority or review historical survey data available in the evidence tab.
+
+=== [Iter 0037] 2026-09-16 13:02:43 | Category: Policy & Econ ===
+Question: "why is the 10 percent attribution coefficient from Spalding et al. 2017 used" (Context: Lima, Tab: diagnostics)
+Response (2.28s) | Title: Economic Attribution Methodology | Pose: answer | Links: 2
+  [CONCEPT]: The 10 percent attribution coefficient from Spalding et al. (2017) is utilized to isolate the portion of visitor expenditure directly attributable to the presence of healthy coral reefs. This conservative proxy prevents the overestimation of reef-dependent tourism revenue by filtering out general travel spending (e.g., transport, accommodation) that would occur regardless of the reef's ecological condition.
+  [FORMULA]: The Reef-Adjacent Economy is calculated as: 1,464,770 annual visitors * RM410 average expenditure * 0.10 attribution factor = RM60.09M/year. This provides a standardized, defensible baseline for assessing the economic impact of reef health across 30 monitoring units.
+  [DATA SOURCE]: This methodology integrates the DOSM Domestic Tourism Survey 2024 (RM410 average spend) with the global reef-dependency framework established by Spalding et al. (2017) to ensure institutional consistency with OpenDOSM data standards.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, OpenDOSM Data Catalogue
+
+=== [Iter 0038] 2026-09-16 13:02:49 | Category: Nonsense ===
+Question: "asdkjfh192837 zxcvbnm ???" (Context: Penyu, Tab: overview)
+Response (1.69s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 0
+  [DOMAIN SCOPE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological screening of 40 monitoring units and economic attribution of reef-adjacent values.
+  [AVAILABLE DATA]: We provide insights based on official datasets including Reef Check Malaysia annual surveys, DOSM economic indicators, and Department of Fisheries marine park registers. Please direct inquiries toward monitored reef health, diagnostic model performance, or economic valuation benchmarks.
+
+=== [Iter 0039] 2026-09-16 13:02:54 | Category: Casual ===
+Question: "can you tell me an interesting fact about corals?" (Context: Labuan, Tab: evidence)
+Response (2.05s) | Title: ReefSafe Institutional Overview: Coral Monitoring | Pose: answer | Links: 2
+  [ECOLOGICAL CONTEXT]: Corals are colonial organisms that form the structural foundation of marine ecosystems. In Malaysia, the 2025 National Coral Cover KPI is 39.8%, derived from 404 standardized 100m transects monitored by Reef Check Malaysia.
+  [MONITORING PRIORITY]: Labuan is currently identified as the highest priority for urgent field verification, with a predicted decline of -14.42 pp/yr. This screening priority is based on biological monitoring urgency, not human safety risks.
+  [DATA SOURCES]: Our analytics integrate standardized survey reports from Reef Check Malaysia, geospatial data from JUPEM, and regulatory registers from the Department of Fisheries Malaysia (DOFM).
+  [LINKS]: Reef Check Malaysia annual reports, DOFM Marine Parks
+
+=== [Iter 0040] 2026-09-16 13:02:59 | Category: Casual ===
+Question: "what is the weather like today?" (Context: Payar, Tab: overview)
+Response (2.04s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 2
+  [SCOPE OF SERVICE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, ML-driven stress factor diagnostics, and economic valuation of marine biodiversity.
+  [DATA AVAILABILITY]: We provide data on live coral cover, reef-adjacent economic indicators, and environmental stress factors derived from Reef Check Malaysia, DOSM, and DMPM datasets. We do not provide real-time meteorological or weather forecasting services.
+  [RECOMMENDED ACTIONS]: For current marine park conditions, please consult the Department of Fisheries Malaysia (DOFM) or the Malaysian Meteorological Department (METMalaysia). You may continue to explore our diagnostic models for Payar's ecological status via the diagnostics tab.
+  [LINKS]: DOFM Marine Parks, OpenDOSM Data Catalogue
+
+=== [Iter 0041] 2026-09-16 13:03:05 | Category: Out-of-Domain ===
+Question: "who is the current Prime Minister of Malaysia?" (Context: Penyu, Tab: diagnostics)
+Response (2.10s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. My mandate is to provide data-driven insights on coral reef health, ecological screening, and economic valuation based on official datasets from OpenDOSM, Reef Check Malaysia, and the Department of Fisheries.
+  [SCOPE LIMITATION]: I do not provide information on political figures, government leadership, or general news. My expertise is strictly limited to marine ecological monitoring, stress factor attribution, and economic benchmarks for Malaysia's gazetted marine parks.
+  [AVAILABLE ANALYTICS]: You may query me regarding: 
+1. Live coral cover trends and monitoring unit status 
+2. Stress factor contributions via Tree-Path Decomposition 
+3. Economic valuation benchmarks (TEV vs. reef-adjacent spending) 
+4. Priority screening lists for field verification
+
+=== [Iter 0042] 2026-09-16 13:03:10 | Category: Nonsense ===
+Question: "undefined null NaN" (Context: Labuan, Tab: diagnostics)
+Response (2.24s) | Title: ReefSafe Institutional Analytics: Labuan | Pose: answer | Links: 2
+  [SYSTEM STATUS]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. Our mandate integrates ecological monitoring data from Reef Check Malaysia with economic indicators from OpenDOSM to provide evidence-based insights.
+  [AVAILABLE DATASETS]: 1. Reef Check Malaysia (2007-2025) annual survey reports.
+2. DOSM & data.gov.my economic and environmental indicators.
+3. NOAA Coral Reef Watch satellite time-series.
+4. JUPEM geospatial and DOFM marine park regulatory data.
+5. DMPM Total Economic Value (TEV) benchmarks.
+  [DIAGNOSTIC GUIDANCE]: You are currently viewing the diagnostics tab for Labuan. Please provide a specific query regarding ecological stress factors, economic valuation, or monitoring methodology to receive a structured analysis.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0043] 2026-09-16 13:03:16 | Category: Policy & Econ ===
+Question: "what is the difference between Reef-Adjacent Economy and Reef-Adjacent Economy Potential" (Context: Perhentian, Tab: evidence)
+Response (2.43s) | Title: Economic Valuation Framework: ReefSafe Metrics | Pose: answer | Links: 2
+  [REEF-ADJACENT ECONOMY]: This represents the annual visitor spending proxy, estimated at RM60.09M/year. It is calculated using 1,464,770 annual visitors, an average expenditure of RM410 per visitor (DOSM Domestic Tourism Survey 2024), and a 10% reef-attributable share based on Spalding et al. (2017). It covers 30 of 40 monitoring units across 4 marine parks.
+  [REEF-ADJACENT ECONOMY POTENTIAL]: This refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark established by the Department of Marine Park Malaysia (DMPM 2011-2015). It is a measure of total economic capital, including non-market values such as existence and bequest value across six archipelagos, rather than annual tourism revenue or commercial cash flow.
+  [DATA SOURCES]: 1. DOSM Domestic Tourism Survey 2024
+2. DMPM Marine Biodiversity Economic Valuation (2011-2015)
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0044] 2026-09-16 13:03:22 | Category: Nonsense ===
+Question: "blablabla wubba lubba dub dub" (Context: Lima, Tab: diagnostics)
+Response (2.59s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 0
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological screening, and economic attribution based on official datasets from RCM, DOSM, and DMPM.
+  [AVAILABLE DATA]: Our platform integrates 19 years of Reef Check Malaysia survey data, DOSM economic indicators, and DOFM marine park registries. We focus on monitoring unit health, stress factor contributions, and economic valuation benchmarks.
+  [GUIDANCE]: Please direct your inquiries toward specific monitoring units, diagnostic model methodologies, or economic valuation metrics. For current diagnostics on Lima, you may explore the 'diagnostics' tab for detailed stress factor contributions.
+
+=== [Iter 0045] 2026-09-16 13:03:28 | Category: Casual ===
+Question: "thank you Reefy, that was super helpful!" (Context: Perhentian, Tab: diagnostics)
+Response (2.80s) | Title: ReefSafe Diagnostic Overview: Perhentian | Pose: happy | Links: 2
+  [DIAGNOSTIC STATUS]: Perhentian is currently undergoing ecological screening. The diagnostic model evaluates local substrate, fish counts, and pollution indicators to determine the annual rate of change in live coral cover.
+  [MODEL METHODOLOGY]: The analysis utilizes a Gradient Boosting Regressor with Tree-Path Decomposition (Saabas 2014) to attribute stress factors. This methodology isolates specific drivers of change, distinct from regional environmental context like NOAA Coral Reef Watch data.
+  [NEXT STEPS]: You may continue exploring the diagnostic indicators for Perhentian or review the national coral cover KPI of 39.8% to contextualize local findings against the broader Malaysian marine park network.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0046] 2026-09-16 13:03:35 | Category: Nonsense ===
+Question: "why is the sky blue and fish green" (Context: Redang, Tab: evidence)
+Response (3.30s) | Title: ReefSafe Domain Scope | Pose: warn | Links: 2
+  [INSTITUTIONAL MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. Our mandate covers ecological monitoring, economic valuation of marine biodiversity, and predictive modeling of coral reef health.
+  [AVAILABLE ANALYTICS]: We provide data-driven insights based on official sources including:
+1. Reef Check Malaysia (RCM) annual survey reports (2007-2025).
+2. DOSM and data.gov.my economic and environmental datasets.
+3. DMPM (2011-2015) Total Economic Value (TEV) benchmarks.
+4. Gradient Boosting Regressor model signals for reef health.
+  [RESEARCH FOCUS]: Our platform does not provide information on atmospheric physics or biological pigmentation outside of marine conservation metrics. Please direct inquiries toward our monitored reef units, diagnostic stress factor contributions, or economic attribution models.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0047] 2026-09-16 13:03:41 | Category: Policy & Econ ===
+Question: "what is Reef-Adjacent Economy Potential" (Context: Malacca, Tab: evidence)
+Response (2.34s) | Title: Economic Valuation Benchmarks | Pose: answer | Links: 2
+  [REEF-ADJACENT ECONOMY POTENTIAL]: This refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark established by the Department of Marine Park Malaysia (DMPM 2011-2015). It represents the total economic capital of six major archipelagos (Payar, Perhentian, Redang, Tioman, Tinggi, Labuan), encompassing non-market values such as existence and bequest value.
+  [ANNUAL VISITOR SPENDING PROXY]: In contrast to the TEV, the 'Reef-Adjacent Economy' is a realized annual cash flow proxy estimated at RM60.09M/year. This is calculated using: 
+1. 1,464,770 annual visitors 
+2. RM410 average expenditure per visitor (DOSM 2024) 
+3. 10% reef-attributable share (Spalding et al. 2017)
+  [LINKS]: Marine biodiversity economic valuation, DOSM Domestic Tourism Survey 2024
+
+=== [Iter 0048] 2026-09-16 13:03:47 | Category: Out-of-Domain ===
+Question: "what is the recipe for chocolate brownies?" (Context: Malacca, Tab: overview)
+Response (1.88s) | Title: ReefSafe Institutional Scope | Pose: warn | Links: 0
+  [DOMAIN LIMITATION]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated exclusively to Malaysia's marine park conservation analytics. My mandate covers ecological monitoring, ML-based reef health diagnostics, and economic valuation of marine biodiversity.
+  [AVAILABLE ANALYTICS]: I am unable to provide culinary recipes. I can, however, assist with inquiries regarding:
+1. National Coral Cover KPI (39.8% in 2025)
+2. Top 10 Priority Islands for urgent field verification
+3. Stress factor contributions via Tree-Path Decomposition
+4. Economic valuation benchmarks (DMPM 2011-2015 TEV study)
+
+=== [Iter 0049] 2026-09-16 13:03:53 | Category: Travel & Safety ===
+Question: "Suggest a greener alternative" (Context: Seri Buat, Tab: diagnostics)
+Response (2.02s) | Title: Greener Alternative Selection | Pose: answer | Links: 1
+  [VERIFIED GREEN STATUS]: In ReefSafe's predictive model, 'green' status is defined as a monitoring unit with a non-negative predicted annual change (>= 0 pp/yr). Kapalai is the only verified visitor destination currently exhibiting a positive signal (+0.77 pp/yr).
+  [COMPARATIVE CONTEXT]: While Seri Buat is currently ranked 3rd in our priority screening list with a predicted decline of -5.15 pp/yr, Kapalai demonstrates resilience. This classification is based on Reef Check Malaysia survey data and our Gradient Boosting Regressor model, not tourism or travel safety metrics.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0050] 2026-09-16 13:03:58 | Category: Nonsense ===
+Question: "blablabla wubba lubba dub dub" (Context: Seri Buat, Tab: overview)
+Response (2.30s) | Title: ReefSafe Institutional Overview | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights through ecological screening and economic attribution based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [AVAILABLE ANALYTICS]: Our platform provides access to: 
+1. Ecological monitoring data across 40 standardized units. 
+2. Stress factor contributions via Tree-Path Decomposition. 
+3. Economic valuation benchmarks including the RM8.7B TEV study. 
+4. Priority screening queues for urgent field verification.
+  [GUIDANCE]: Please direct inquiries toward specific monitoring units, diagnostic model methodologies, or economic indicators. For the currently selected Seri Buat, you may query its specific stress factor contributions or historical live coral cover trends.
+
+=== [Iter 0051] 2026-09-16 13:04:04 | Category: Policy & Econ ===
+Question: "what is reef adjacent economy" (Context: Sipadan, Tab: evidence)
+Response (3.47s) | Title: Reef-Adjacent Economy Definitions | Pose: answer | Links: 2
+  [ANNUAL VISITOR SPENDING PROXY]: The Reef-Adjacent Economy is calculated as RM60.09M/year. This represents the annual visitor spending proxy derived from 1,464,770 annual visitors, an average expenditure of RM410 per visitor (DOSM Domestic Tourism Survey 2024), and a 10% reef-attributable share based on established ecological-economic frameworks (Spalding et al. 2017). This covers 30 of 40 monitoring units across 4 marine parks.
+  [TOTAL ECONOMIC VALUE (TEV) BENCHMARK]: The Reef-Adjacent Economy Potential refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark published by the Department of Marine Park Malaysia (DMPM 2011-2015). This is a comprehensive valuation of ecosystem services across six archipelagos (Payar, Perhentian, Redang, Tioman, Tinggi, Labuan), capturing non-market existence and bequest values rather than annual commercial cash flow.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0052] 2026-09-16 13:04:11 | Category: Provenance ===
+Question: "any other dataset used?" (Context: Sipadan, Tab: evidence)
+Response (3.42s) | Title: ReefSafe Data Provenance & Integration | Pose: answer | Links: 3
+  [ECOLOGICAL MONITORING]: 1. Reef Check Malaysia (RCM): 19 years of standardized 100m transect surveys (2007-2025) across 404 monitoring units.
+2. NOAA Coral Reef Watch: 5km satellite virtual stations providing sea surface temperature and Degree Heating Weeks (DHW) for regional environmental context.
+  [SOCIO-ECONOMIC & GEOSPATIAL]: 1. DOSM & data.gov.my: State-level Real GDP (Accommodation, F&B, Transport), Marine Fish Landings (DOFM), and River Basin Water Quality (DOE).
+2. DMPM (2011-2015): Total Economic Value (TEV) benchmark of RM8.7 Billion/year for marine biodiversity.
+3. JUPEM: Official geodetic authority for island coordinates and territorial boundaries.
+4. DOFM Marine Parks: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+  [DATA SOURCES]: All datasets are sourced from official Malaysian government portals and established scientific monitoring programs to ensure institutional integrity.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports, NOAA Coral Reef Watch
+
+=== [Iter 0053] 2026-09-16 13:04:18 | Category: Policy & Econ ===
+Question: "how does ReefSafe align with SDG 14 Life Below Water" (Context: Penyu, Tab: overview)
+Response (3.08s) | Title: ReefSafe: SDG 14 Alignment Framework | Pose: answer | Links: 3
+  [SDG 14.2: ECOSYSTEM PROTECTION]: ReefSafe supports the sustainable management and protection of marine ecosystems by providing high-resolution ecological screening for 40 monitoring units. Our ML-driven diagnostics identify priority areas for conservation intervention, directly assisting the Department of Fisheries Malaysia (DOFM) in monitoring gazetted Marine Parks.
+  [SDG 14.A: SCIENTIFIC KNOWLEDGE]: We integrate 19 years of Reef Check Malaysia (RCM) survey data with DOSM economic indicators to increase scientific knowledge and research capacity. By utilizing Tree-Path Decomposition (Saabas 2014), we provide transparent, evidence-based insights into stress factor contributions, enabling data-driven policy decisions for marine biodiversity.
+  [SDG 14.7: ECONOMIC BENEFITS]: ReefSafe quantifies the 'Reef-Adjacent Economy' (RM60.09M/year) and benchmarks the 'Total Economic Value' (RM8.7B/year) of Malaysia's marine parks. This valuation highlights the critical link between healthy coral reefs and the sustainable economic development of coastal communities, as defined by the DMPM 2011-2015 study.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, Marine biodiversity economic valuation
+
+=== [Iter 0054] 2026-09-16 13:04:24 | Category: Out-of-Domain ===
+Question: "who is the current Prime Minister of Malaysia?" (Context: Tenggol, Tab: overview)
+Response (2.32s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. My mandate covers ecological screening of coral reef monitoring units and economic attribution of reef-adjacent sectors.
+  [AVAILABLE ANALYTICS]: I provide data-driven insights based on official sources including Reef Check Malaysia, OpenDOSM, and the Department of Fisheries. I can assist with queries regarding:
+1. Coral cover trends and priority screening levels
+2. Reef-adjacent economic valuation benchmarks
+3. Stress factor contributions via Tree-Path Decomposition
+4. Official marine park monitoring datasets
+
+=== [Iter 0055] 2026-09-16 13:04:30 | Category: Technical ===
+Question: "is this model causal or exploratory screening" (Context: Lang Tengah, Tab: diagnostics)
+Response (2.95s) | Title: ReefSafe Diagnostic Methodology | Pose: answer | Links: 1
+  [MODEL NATURE]: ReefSafe utilizes an exploratory screening approach based on a Gradient Boosting Regressor. It is designed to identify ecological trends and prioritize monitoring units for urgent field verification rather than establishing direct causal mechanisms.
+  [STRESS FACTOR CONTRIBUTION]: The model employs Tree-Path Decomposition (Saabas 2014) to attribute feature importance. By tracing decision paths through the ensemble, it credits splits to specific groups: 
+1. Substrate composition 
+2. Fish and invertebrate counts 
+3. Reported impact indicators 
+4. Prior coral cover 
+5. Geographic context
+  [PERFORMANCE METRICS]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over baseline projections. The 95% pooled forward-test residual distribution is [-16.25, +13.66 pp/yr].
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0056] 2026-09-16 13:04:37 | Category: Nonsense ===
+Question: "asdkjfh192837 zxcvbnm ???" (Context: Kapas, Tab: diagnostics)
+Response (2.41s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological screening, and economic attribution based on official datasets from Reef Check Malaysia, DOSM, and the Department of Marine Park Malaysia.
+  [AVAILABLE DATA DOMAINS]: 1. Ecological Monitoring: 19 years of standardized transect data (2007-2025) from Reef Check Malaysia.
+2. Economic Valuation: Total Economic Value (TEV) benchmarks and reef-adjacent tourism spending proxies.
+3. Diagnostic Modeling: Gradient Boosting Regressor outputs for coral cover change and stress factor attribution.
+4. Environmental Context: NOAA Coral Reef Watch satellite time-series and river basin water quality data.
+  [GUIDANCE]: Please provide specific queries regarding monitored reef units, diagnostic model methodologies, or economic valuation benchmarks. For the currently selected island, Kapas, you may inquire about its specific stress factor contributions or historical monitoring trends.
+
+=== [Iter 0057] 2026-09-16 13:04:43 | Category: Out-of-Domain ===
+Question: "who won the FIFA World Cup in 2022?" (Context: Tioman, Tab: evidence)
+Response (2.52s) | Title: ReefSafe Institutional Scope | Pose: warn | Links: 0
+  [DOMAIN RESTRICTION]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated exclusively to Malaysia's marine park conservation analytics, ecological monitoring, and economic valuation of reef-adjacent ecosystems.
+  [AVAILABLE ANALYTICS]: I provide data-driven insights based on official datasets including:
+1. Reef Check Malaysia annual survey reports (2007-2025)
+2. DOSM and data.gov.my economic and environmental indicators
+3. DMPM marine biodiversity economic valuation benchmarks
+4. Gradient Boosting Regressor model diagnostics for coral cover trends
+  [INQUIRY GUIDANCE]: Please direct your questions toward marine conservation, reef health monitoring, or the economic valuation of Malaysia's marine parks. I am unable to provide information regarding sports, international events, or topics outside of our conservation mandate.
+
+=== [Iter 0058] 2026-09-16 13:04:49 | Category: Provenance ===
+Question: "show me all the dataset" (Context: Perhentian, Tab: evidence)
+Response (3.09s) | Title: ReefSafe Data Provenance & Official Sources | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: 1. Reef Check Malaysia (RCM): 19 Annual Survey Reports (2007-2025) covering 404 standardized 100m transects, providing live coral cover and disturbance metrics.
+  [SOCIO-ECONOMIC & ENVIRONMENTAL]: 1. DOSM & OpenDOSM: State Real GDP Supply, Marine Fish Landings, and Domestic Tourism Survey 2024 (RM410 avg spend).
+2. Dept of Environment: River Basin Water Quality (BOD, ammoniacal nitrogen, suspended solids).
+3. DMPM (2011-2015): Total Economic Value (TEV) benchmark of RM8.7 Billion/year for marine biodiversity.
+  [GEOSPATIAL & REGULATORY]: 1. JUPEM: Official geodetic authority for island coordinates and territorial boundaries.
+2. DOFM: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+  [CLIMATE CONTEXT]: 1. NOAA Coral Reef Watch: 5km Satellite Virtual Stations providing daily sea surface temperature and Degree Heating Weeks (DHW) for regional environmental context.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0059] 2026-09-16 13:04:55 | Category: Technical ===
+Question: "is this model causal or exploratory screening" (Context: Penyu, Tab: overview)
+Response (2.85s) | Title: ReefSafe Model Methodology | Pose: answer | Links: 2
+  [MODEL NATURE]: ReefSafe utilizes an exploratory screening approach based on a Gradient Boosting Regressor. It is designed to identify ecological trends and prioritize monitoring units for urgent field verification rather than establishing direct causal mechanisms.
+  [METHODOLOGY]: The model employs Tree-Path Decomposition (Saabas 2014) to attribute stress factor contributions across five feature groups: 
+1. Substrate composition 
+2. Fish and invertebrate counts 
+3. Reported pollution and disturbance indicators 
+4. Prior coral cover trends 
+5. Geographic context
+  [PERFORMANCE & UNCERTAINTY]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr. The 95% pooled forward-test residual distribution ranges from -16.25 to +13.66 pp/yr, reflecting the inherent variability in marine ecosystem monitoring data.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0060] 2026-09-16 13:05:02 | Category: Nonsense ===
+Question: "asdkjfh192837 zxcvbnm ???" (Context: Sibu, Tab: evidence)
+Response (2.02s) | Title: ReefSafe Institutional Inquiry | Pose: answer | Links: 0
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological screening, and economic valuation based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [AVAILABLE ANALYTICS]: Our platform currently supports inquiries regarding: 
+1. Ecological monitoring trends (404 monitoring units) 
+2. Stress factor attribution via Tree-Path Decomposition 
+3. Economic valuation benchmarks (RM8.7B TEV vs. RM60.09M annual visitor spending) 
+4. Priority screening for urgent field verification
+  [GUIDANCE]: Please provide a specific query related to the Sibu monitoring unit or national marine park metrics to receive a structured diagnostic report.
+
+=== [Iter 0061] 2026-09-16 13:05:07 | Category: Policy & Econ ===
+Question: "what is Reef-Adjacent Economy Potential" (Context: Lang Tengah, Tab: overview)
+Response (2.47s) | Title: Reef-Adjacent Economy Potential: Economic Valuation | Pose: answer | Links: 1
+  [CONCEPT DEFINITION]: The Reef-Adjacent Economy Potential refers to the Total Economic Value (TEV) benchmark of RM8.7 Billion/year, established by the Department of Marine Park Malaysia (DMPM 2011-2015). This figure represents the comprehensive economic capital of six major archipelagos (Payar, Perhentian, Redang, Tioman, Tinggi, and Labuan), encompassing non-market values such as existence and bequest value.
+  [ECONOMIC CONTRAST]: It is critical to distinguish this TEV benchmark from the Reef-Adjacent Economy proxy:
+1. Reef-Adjacent Economy Potential (RM8.7B/year): Total ecosystem capital value based on non-market willingness-to-pay studies.
+2. Reef-Adjacent Economy (RM60.09M/year): Annual visitor spending proxy calculated from 1,464,770 annual visitors, an average expenditure of RM410, and a 10% reef-attributable share.
+  [OFFICIAL SOURCE]: Valuation data is derived from the DMPM 2011-2015 study on the Total Economic Value of Marine Biodiversity in Malaysia Marine Parks.
+  [LINKS]: Marine biodiversity economic valuation
+
+=== [Iter 0062] 2026-09-16 13:05:13 | Category: Casual ===
+Question: "good morning, how can you help me today?" (Context: Mertang, Tab: evidence)
+Response (2.64s) | Title: ReefSafe Institutional Copilot | Pose: wave | Links: 2
+  [MANDATE]: I am Reefy, your institutional AI copilot for the ReefSafe dashboard. I provide data-driven insights into Malaysia's marine ecosystem health by integrating ecological monitoring from Reef Check Malaysia with socioeconomic indicators from OpenDOSM and the Department of Marine Park Malaysia.
+  [CAPABILITIES]: 1. Ecological Diagnostics: Analysis of coral cover trends and stress factor contributions using Tree-Path Decomposition.
+2. Economic Attribution: Reporting on the RM60.09M annual reef-adjacent economy and the RM8.7B Total Economic Value (TEV) benchmark.
+3. Priority Screening: Identification of high-risk monitoring units requiring urgent field verification.
+4. Data Provenance: Direct access to official datasets from DOSM, DOFM, and JUPEM.
+  [CURRENT CONTEXT]: You are currently viewing the evidence tab for Mertang. I can assist with interpreting the specific stress factors affecting this unit or provide comparative analysis against national KPIs.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0063] 2026-09-16 13:05:19 | Category: Provenance ===
+Question: "what geospatial authority provides island coordinates" (Context: Seri Buat, Tab: evidence)
+Response (1.84s) | Title: Geospatial Data Authority | Pose: answer | Links: 1
+  [OFFICIAL SOURCE]: The Department of Survey and Mapping Malaysia (JUPEM) serves as the official geodetic authority for all island coordinates and territorial baseline boundaries within Malaysia.
+  [DATA INTEGRATION]: ReefSafe utilizes JUPEM's geodetic data to map the 404 monitoring-unit transects across the national marine park network, ensuring spatial accuracy for ecological screening.
+  [LINKS]: JUPEM Geodetic Portal
+
+=== [Iter 0064] 2026-09-16 13:05:25 | Category: Nonsense ===
+Question: "..........................." (Context: Lankayan, Tab: evidence)
+Response (2.19s) | Title: ReefSafe Institutional Overview: Lankayan | Pose: warn | Links: 2
+  [ECOLOGICAL STATUS]: Lankayan is currently ranked 10th in the national screening priority queue with a predicted coral cover decline of -4.07 pp/yr. This status indicates a high requirement for urgent field verification based on the 2025 Reef Check Malaysia survey data.
+  [MODEL SIGNAL]: The Gradient Boosting Regressor model identifies significant stress factors contributing to this decline. These are calculated via Tree-Path Decomposition (Saabas 2014), which attributes specific impacts from substrate, fish counts, and pollution indicators to the observed trend.
+  [DATA PROVENANCE]: Monitoring data is derived from standardized 100m transects provided by Reef Check Malaysia (2007-2025). Economic context is supported by DOSM Domestic Tourism Survey 2024 and the DMPM 2011-2015 Total Economic Value benchmark.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0065] 2026-09-16 13:05:30 | Category: Travel & Safety ===
+Question: "which island is green" (Context: Mertang, Tab: diagnostics)
+Response (2.09s) | Title: ReefSafe Green Status Analysis | Pose: answer | Links: 1
+  [GREEN STATUS DEFINITION]: In ReefSafe, 'green' status identifies monitoring units with a predicted non-negative annual change in live coral cover (>= 0 pp/yr). This indicates a stable or recovering ecological trajectory based on our Gradient Boosting Regressor model.
+  [VERIFIED GREEN UNITS]: The following units currently exhibit non-negative signals:
+1. Malacca (+3.48 pp/yr)
+2. Kapalai (+0.77 pp/yr)
+  [VISITOR DESTINATION CONTEXT]: Kapalai is the only verified visitor destination currently maintaining a non-negative ecological signal. All other units, including Mertang (-5.03 pp/yr), are currently categorized under higher screening priority due to negative predicted trends.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0066] 2026-09-16 13:05:36 | Category: Nonsense ===
+Question: "why is the sky blue and fish green" (Context: Redang, Tab: evidence)
+Response (2.69s) | Title: ReefSafe Domain Scope | Pose: warn | Links: 2
+  [INSTITUTIONAL MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. Our mandate covers ecological monitoring, stress factor attribution, and economic valuation of marine biodiversity.
+  [DATA DOMAIN]: We provide insights based on official datasets from Reef Check Malaysia, DOSM, data.gov.my, and the Department of Marine Park Malaysia. We do not provide information on atmospheric physics or biological pigmentation outside of our monitored reef ecosystems.
+  [AVAILABLE ANALYTICS]: For Redang, you may query:
+1. Annual live coral cover trends (2007-2025)
+2. Stress factor contributions via Tree-Path Decomposition
+3. Reef-adjacent economic valuation benchmarks
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0067] 2026-09-16 13:05:42 | Category: Casual ===
+Question: "hello Reefy, who are you?" (Context: Perhentian, Tab: diagnostics)
+Response (2.57s) | Title: ReefSafe Institutional Copilot | Pose: wave | Links: 2
+  [MANDATE]: I am Reefy, the institutional AI copilot for the ReefSafe dashboard. My mandate is to provide analytical support for Malaysia's marine park conservation by integrating ecological monitoring data from Reef Check Malaysia with economic valuation benchmarks from DOSM and the Department of Marine Park Malaysia.
+  [CORE CAPABILITIES]: 1. Ecological Screening: Utilizing Gradient Boosting Regressors to predict coral cover trends across 40 monitoring units.
+2. Economic Attribution: Calculating reef-adjacent economy proxies and referencing the RM8.7B Total Economic Value benchmark.
+3. Diagnostic Insights: Providing evidence-based stress factor decomposition to assist in field verification and conservation planning.
+  [DATA INTEGRITY]: All insights are derived from official sources including OpenDOSM, Reef Check Malaysia annual reports, and the Department of Fisheries. I do not provide commercial travel advice, focusing strictly on scientific conservation analytics.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0068] 2026-09-16 13:05:48 | Category: Technical ===
+Question: "how does fold-local median imputation prevent future data leakage" (Context: Lang Tengah, Tab: overview)
+Response (3.02s) | Title: Data Integrity: Fold-Local Median Imputation | Pose: answer | Links: 2
+  [METHODOLOGY]: To prevent data leakage, ReefSafe employs fold-local median imputation within our cross-validation pipeline. Instead of calculating the global median across the entire 2007-2025 dataset, the model computes the median exclusively from the training fold. This ensures that information from the validation or test sets remains unseen during the training phase.
+  [LEAKAGE PREVENTION]: 1. Isolation: Training folds are treated as independent temporal subsets.
+2. Temporal Integrity: By restricting imputation to training-fold statistics, we prevent the model from 'peeking' at future trends or mean values that would otherwise bias the Gradient Boosting Regressor.
+3. Consistency: This approach maintains the statistical distribution of the 404 monitoring units while preserving the validity of our 5.862 pp/yr MAE performance metric.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0069] 2026-09-16 13:05:55 | Category: List / Ranking ===
+Question: "rank the islands by live coral cover decline" (Context: Penyu, Tab: overview)
+Response (1.93s) | Title: Top 10 Priority Islands by Screening Urgency | Pose: warn | Links: 1
+  [SCREENING PRIORITY RANKING]: 1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+6. Tenggol (-4.64 pp/yr)
+7. Tinggi (-4.63 pp/yr)
+8. Lima (-4.37 pp/yr)
+9. Sibu (-4.34 pp/yr)
+10. Lankayan (-4.07 pp/yr)
+  [METHODOLOGY NOTE]: These rankings represent the 25% highest screening priority queue for urgent field verification based on the Gradient Boosting Regressor model. Priority is determined by the predicted annual rate of decline in live coral cover (LCC) derived from Reef Check Malaysia monitoring-unit data.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0070] 2026-09-16 13:06:00 | Category: Provenance ===
+Question: "show me all the dataset" (Context: Labuan, Tab: diagnostics)
+Response (2.61s) | Title: ReefSafe Institutional Data Sources | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: 1. Reef Check Malaysia (RCM): 19 years of standardized 100m transect surveys (2007-2025) covering 404 monitoring units.
+  [SOCIO-ECONOMIC DATA]: 1. DOSM Domestic Tourism Survey 2024: RM410 average expenditure per visitor.
+2. State Real GDP Supply: Accommodation, F&B, and Transport data from OpenDOSM.
+3. Marine Fish Landings: Resource pressure proxy from Department of Fisheries.
+4. DMPM 2011-2015 Study: RM8.7 Billion/year Total Economic Value (TEV) benchmark.
+  [ENVIRONMENTAL & GEOSPATIAL]: 1. NOAA Coral Reef Watch: 5km satellite virtual stations for sea surface temperature and Degree Heating Weeks.
+2. JUPEM Geodetic Portal: Official island coordinates and territorial boundaries.
+3. DOFM Marine Parks: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+4. Dept of Environment: River basin water quality indicators (BOD, ammoniacal nitrogen, suspended solids).
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0071] 2026-09-16 13:06:06 | Category: Technical ===
+Question: "what is the 95% pooled forward test residual distribution and uncertainty range" (Context: Penyu, Tab: overview)
+Response (2.44s) | Title: Model Performance and Uncertainty Metrics | Pose: answer | Links: 1
+  [RESIDUAL DISTRIBUTION]: The Gradient Boosting Regressor model exhibits a 95% pooled forward-test residual distribution range of [-16.25, +13.66] percentage points per year (pp/yr).
+  [UNCERTAINTY ANALYSIS]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the baseline persistence model. This range quantifies the variance between predicted coral cover trends and observed annual survey data from Reef Check Malaysia.
+  [DATA PROVENANCE]: Performance metrics are derived from the standardized 100m transect monitoring-unit rows (2007-2025) provided by Reef Check Malaysia.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0072] 2026-09-16 13:06:12 | Category: Travel & Safety ===
+Question: "is it safe to dive and swim in this reef right now" (Context: Redang, Tab: diagnostics)
+Response (2.68s) | Title: ReefSafe Diagnostic Assessment: Redang | Pose: warn | Links: 2
+  [SAFETY AND MONITORING SCOPE]: ReefSafe is an institutional platform for ecological monitoring and conservation analytics. Our screening priority measures biological monitoring urgency based on live coral cover trends and environmental stressors, not human safety or recreational suitability. We do not provide assessments on diving or swimming safety.
+  [ECOLOGICAL STATUS]: Redang is currently monitored as part of the 40-unit national network. The site is evaluated using standardized 100m transects from Reef Check Malaysia. For current site-specific ecological health, please refer to the 'evidence' tab for the latest annual survey data.
+  [DATA SOURCES]: 1. Reef Check Malaysia annual reports
+2. Department of Fisheries Malaysia (DOFM) Marine Parks
+  [LINKS]: Reef Check Malaysia annual reports, DOFM Marine Parks
+
+=== [Iter 0073] 2026-09-16 13:06:18 | Category: Policy & Econ ===
+Question: "what should a marine park ranger do when an island is in high screening priority" (Context: Payar, Tab: evidence)
+Response (3.48s) | Title: Operational Protocol for High Screening Priority Units | Pose: warn | Links: 2
+  [PRIORITY DEFINITION]: High screening priority indicates a monitoring unit identified by the ReefSafe Gradient Boosting Regressor as requiring urgent field verification due to a significant negative predicted change in live coral cover. This is a biological monitoring metric, not a human safety risk assessment.
+  [RANGER ACTION PLAN]: 1. Conduct immediate in-situ visual transect surveys following Reef Check Malaysia standardized protocols.
+2. Validate current substrate composition against the 2025 baseline of 39.8% national mean live coral cover.
+3. Document specific disturbance indicators such as coral bleaching, crown-of-thorns starfish outbreaks, or physical damage.
+4. Cross-reference findings with local river basin water quality data from the Department of Environment to identify potential runoff impacts.
+  [DATA INTEGRATION]: Rangers should utilize the OpenDOSM data catalogue to correlate field observations with historical marine fish landings and visitor pressure metrics to refine the local stress factor contribution analysis.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0074] 2026-09-16 13:06:25 | Category: Nonsense ===
+Question: "!@#$%^&*()_+" (Context: Lima, Tab: diagnostics)
+Response (1.84s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 0
+  [SYSTEM MANDATE]: ReefSafe is the official institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological screening through ML-driven monitoring and economic attribution of reef-adjacent assets.
+  [AVAILABLE DATASETS]: We provide insights based on official sources including Reef Check Malaysia annual surveys, DOSM OpenDOSM portal, Department of Fisheries marine park registers, and the DMPM Total Economic Value benchmark. Please direct inquiries toward monitored reef health, diagnostic model performance, or economic valuation metrics.
+
+=== [Iter 0075] 2026-09-16 13:06:31 | Category: Out-of-Domain ===
+Question: "what is the recipe for chocolate brownies?" (Context: Redang, Tab: evidence)
+Response (2.10s) | Title: ReefSafe Conservation Analytics | Pose: warn | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. My mandate is to provide data-driven insights on coral reef health, ecological screening, and economic valuation based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [SCOPE OF SERVICE]: I do not provide culinary recipes or non-marine content. I am available to assist with inquiries regarding: 
+1. Ecological monitoring data for Redang and other monitored units. 
+2. Stress factor contributions derived from Tree-Path Decomposition. 
+3. Economic valuation benchmarks (TEV) and reef-adjacent economy proxies. 
+4. Methodology and provenance of our official datasets.
+
+=== [Iter 0076] 2026-09-16 13:06:36 | Category: Travel & Safety ===
+Question: "Suggest a greener alternative" (Context: Lang Tengah, Tab: overview)
+Response (2.01s) | Title: Greener Alternative Selection | Pose: answer | Links: 1
+  [STATUS]: In ReefSafe, 'green' status is defined as a monitoring unit with a predicted non-negative annual change in live coral cover (>= 0 pp/yr). While Lang Tengah is currently under monitoring, Kapalai (+0.77 pp/yr) is the only verified visitor destination with a non-negative signal.
+  [METHODOLOGY]: Status is determined by the Gradient Boosting Regressor model, which evaluates 404 monitoring-unit rows from Reef Check Malaysia annual surveys (2007-2025). This model identifies units with stable or improving ecological trajectories based on substrate, fish counts, and pollution indicators.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0077] 2026-09-16 13:06:42 | Category: Nonsense ===
+Question: "blablabla wubba lubba dub dub" (Context: Lima, Tab: evidence)
+Response (2.08s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 2
+  [PLATFORM MANDATE]: ReefSafe is the official institutional copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological screening, and economic attribution based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [AVAILABLE DATA]: Our platform integrates: 1. Annual monitoring surveys (2007-2025) for 404 units. 2. Economic valuation benchmarks (RM8.7B TEV). 3. Domestic tourism expenditure proxies (RM60.09M/year). 4. Official geospatial and regulatory registers from JUPEM and DOFM.
+  [GUIDANCE]: Please direct inquiries toward specific monitoring units, diagnostic model methodologies, or economic indicators. We are unable to process non-domain queries.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0078] 2026-09-16 13:06:47 | Category: Travel & Safety ===
+Question: "which island is green" (Context: Labuan, Tab: overview)
+Response (2.22s) | Title: ReefSafe Green Status Monitoring | Pose: answer | Links: 1
+  [GREEN STATUS DEFINITION]: In ReefSafe, 'green' status identifies monitoring units with a predicted non-negative annual change in live coral cover (>= 0 pp/yr). This indicates ecological stability within the current model projections.
+  [VERIFIED GREEN DESTINATIONS]: 1. Kapalai (+0.77 pp/yr)
+2. Malacca (+3.48 pp/yr)
+
+Kapalai is the only verified visitor destination currently exhibiting a non-negative signal.
+  [MODEL CONTEXT]: The Gradient Boosting Regressor model identifies these trends based on 19 years of Reef Check Malaysia survey data. The model maintains a 95% pooled forward-test residual distribution of [-16.25, +13.66 pp/yr].
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0079] 2026-09-16 13:06:53 | Category: List / Ranking ===
+Question: "list the 4 marine parks covered in the economic valuation" (Context: Sibu, Tab: evidence)
+Response (2.17s) | Title: Marine Biodiversity Economic Valuation Coverage | Pose: answer | Links: 1
+  [ECONOMIC VALUATION SCOPE]: The RM8.7 Billion/year Total Economic Value (TEV) benchmark, established by the Department of Marine Park Malaysia (DMPM 2011-2015), covers six archipelagos. The four marine parks specifically evaluated within this economic framework are:
+1. Payar
+2. Perhentian
+3. Redang
+4. Tioman
+  [ECONOMIC CONTEXT]: This TEV benchmark represents total economic capital, including non-market existence and bequest values. It is distinct from the 'Reef-Adjacent Economy' proxy, which estimates RM60.09M/year in annual visitor spending across 30 monitoring units.
+  [LINKS]: Marine biodiversity economic valuation
+
+=== [Iter 0080] 2026-09-16 13:06:59 | Category: Out-of-Domain ===
+Question: "can I eat coral reef with sambal?" (Context: Sipadan, Tab: evidence)
+Response (2.27s) | Title: ReefSafe Conservation Mandate | Pose: warn | Links: 2
+  [SCOPE OF SERVICE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, stress factor attribution, and economic valuation of marine biodiversity based on official datasets from Reef Check Malaysia, DOSM, and the Department of Fisheries.
+  [DATA DOMAIN]: We provide scientific insights into coral health, monitoring unit screening priorities, and economic benchmarks. We do not provide culinary advice, recipes, or information outside of marine conservation and environmental policy.
+  [AVAILABLE ANALYTICS]: You may query ReefSafe regarding: 
+1. National Coral Cover KPI (39.8% in 2025) 
+2. Stress factor contributions via Tree-Path Decomposition 
+3. Economic valuation benchmarks (RM8.7B TEV) 
+4. Priority screening for specific monitoring units
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0081] 2026-09-16 13:07:04 | Category: Nonsense ===
+Question: "!@#$%^&*()_+" (Context: Lima, Tab: overview)
+Response (2.25s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 2
+  [SCOPE OF SERVICE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. Our mandate covers ecological screening of 40 monitoring units and economic attribution of reef-adjacent activities.
+  [AVAILABLE DATASETS]: We provide insights based on official sources including:
+1. Reef Check Malaysia annual survey reports (2007-2025)
+2. OpenDOSM and data.gov.my economic and environmental indicators
+3. Department of Marine Park Malaysia (DMPM) economic valuation benchmarks
+4. JUPEM geodetic data and DOFM marine park registers
+  [GUIDANCE]: Please submit queries related to coral cover trends, stress factor contributions, economic valuation, or monitoring priority rankings for specific islands. We are unable to process out-of-domain requests.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0082] 2026-09-16 13:07:10 | Category: Nonsense ===
+Question: "..........................." (Context: Tenggol, Tab: diagnostics)
+Response (2.01s) | Title: Tenggol Island: Diagnostic Screening | Pose: warn | Links: 2
+  [ECOLOGICAL STATUS]: Tenggol is currently ranked 6th in the national priority queue for urgent field verification, with a predicted decline of -4.64 pp/yr in live coral cover.
+  [STRESS FACTOR CONTRIBUTION]: The model utilizes Tree-Path Decomposition (Saabas 2014) to attribute decline to specific feature groups:
+1. Substrate composition
+2. Fish and invertebrate population counts
+3. Reported pollution and disturbance indicators
+4. Prior coral cover trends
+5. Geographic and environmental context
+  [MODEL PERFORMANCE]: The Gradient Boosting Regressor maintains a Mean Absolute Error (MAE) of 5.862 pp/yr. The 95% pooled forward-test residual distribution ranges from -16.25 to +13.66 pp/yr.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0083] 2026-09-16 13:07:16 | Category: Technical ===
+Question: "how does fold-local median imputation prevent future data leakage" (Context: Lima, Tab: overview)
+Response (2.36s) | Title: Data Integrity: Fold-Local Median Imputation | Pose: answer | Links: 0
+  [METHODOLOGY]: To prevent data leakage in the ReefSafe Gradient Boosting Regressor, we employ fold-local median imputation. This ensures that missing values in a specific cross-validation fold are filled using only the median statistics calculated from the training subset of that same fold. By excluding the validation set from the imputation calculation, we prevent information from the future (or unseen data) from influencing the training process.
+  [LEAKAGE PREVENTION]: 1. Isolation: Imputation parameters are derived strictly from training-fold observations.
+2. Temporal Integrity: Prevents the model from 'seeing' the global distribution of the target variable across the entire time-series.
+3. Bias Mitigation: Ensures that the MAE of 5.862 pp/yr reflects true predictive performance on unseen monitoring units.
+
+=== [Iter 0084] 2026-09-16 13:07:22 | Category: Provenance ===
+Question: "what are the sources of data in ReefSafe" (Context: Tinggi, Tab: overview)
+Response (3.31s) | Title: ReefSafe Data Provenance and Institutional Sources | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: Reef Check Malaysia (RCM) provides 19 years of annual survey reports (2007-2025) covering 404 standardized 100m transects, including live coral cover, disturbance, and pollution indicators.
+  [SOCIO-ECONOMIC & ENVIRONMENTAL DATA]: 1. DOSM & data.gov.my: State Real GDP, marine fish landings, river basin water quality, and the 2024 Domestic Tourism Survey (RM410 avg spend).
+2. DMPM (2011-2015): Total Economic Value (TEV) benchmark of RM8.7 Billion/year for marine biodiversity.
+3. NOAA Coral Reef Watch: 5km satellite virtual stations for sea surface temperature and Degree Heating Weeks (DHW) context.
+4. JUPEM & DOFM: Official geodetic island coordinates and gazetted Marine Park regulatory boundaries.
+  [MODELING FRAMEWORK]: The ReefSafe dashboard utilizes a Gradient Boosting Regressor (MAE 5.862 pp/yr) to process these datasets, providing ecological screening and economic attribution for Malaysian marine parks.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0085] 2026-09-16 13:07:28 | Category: List / Ranking ===
+Question: "which are the top 5 most urgent reefs for field verification" (Context: Payar, Tab: evidence)
+Response (2.43s) | Title: Top 5 Priority Islands for Urgent Field Verification | Pose: warn | Links: 1
+  [SCREENING PRIORITY]: Based on the ReefSafe Gradient Boosting Regressor, these units exhibit the highest predicted annual decline in live coral cover (LCC), necessitating immediate field validation:
+1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+  [METHODOLOGY]: Priority is determined by the ML model's predicted annual change in live coral cover. These rankings represent the 25% highest screening priority queue for urgent field verification, derived from 19 years of Reef Check Malaysia survey data.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0086] 2026-09-16 13:07:34 | Category: Technical ===
+Question: "what is the national arithmetic mean live coral cover in 2025" (Context: Malacca, Tab: evidence)
+Response (1.64s) | Title: National Coral Cover KPI (2025) | Pose: answer | Links: 1
+  [NATIONAL ESTIMATE]: The national arithmetic mean live coral cover (LCC) across all 40 standardized monitoring units surveyed in 2025 is 39.8%.
+  [DATA SOURCE]: This metric is derived from the Reef Check Malaysia (RCM) annual survey reports, which utilize standardized 100m transects to assess benthic composition across Malaysian marine parks.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0087] 2026-09-16 13:07:39 | Category: Travel & Safety ===
+Question: "which island is good to visit for a holiday" (Context: Seri Buat, Tab: evidence)
+Response (3.14s) | Title: ReefSafe Conservation Analytics: Seri Buat | Pose: warn | Links: 1
+  [CONSERVATION STATUS]: Seri Buat is currently identified as a high-priority monitoring site with a predicted coral cover change of -5.15 pp/yr. ReefSafe is a scientific research platform focused on ecological monitoring and economic attribution; we do not provide commercial travel recommendations or safety ratings for tourism.
+  [GREENER ALTERNATIVE]: For visitors seeking destinations with non-negative ecological signals, Kapalai (+0.77 pp/yr) is the only verified visitor destination currently exhibiting a stable or positive predicted change in live coral cover.
+  [DATA SOURCES]: Ecological trends are derived from 19 years of Reef Check Malaysia survey data (2007-2025) and analyzed via our Gradient Boosting Regressor model.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0088] 2026-09-16 13:07:46 | Category: Casual ===
+Question: "do fishes sleep at night in coral reefs?" (Context: Lang Tengah, Tab: evidence)
+Response (2.15s) | Title: ReefSafe Conservation Analytics: Scope and Mandate | Pose: answer | Links: 2
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, ML-driven screening of coral health, and economic attribution of reef-adjacent ecosystems.
+  [AVAILABLE DATA]: Our evidence base is derived from standardized 100m transects (Reef Check Malaysia), official DOSM economic datasets, and Department of Fisheries marine park registers. We do not provide biological or behavioral information on marine species such as fish sleep patterns.
+  [RESEARCH DIRECTION]: For inquiries regarding Lang Tengah, we can provide data on live coral cover trends, stress factor contributions via Tree-Path Decomposition, or economic valuation benchmarks. Please direct your questions toward these conservation metrics.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0089] 2026-09-16 13:07:52 | Category: List / Ranking ===
+Question: "which are the top 5 most urgent reefs for field verification" (Context: Seri Buat, Tab: evidence)
+Response (2.66s) | Title: Top 5 Priority Islands for Urgent Field Verification | Pose: warn | Links: 1
+  [SCREENING PRIORITY]: The following islands represent the highest screening priority queue based on the Gradient Boosting Regressor model, indicating the most urgent need for field verification due to predicted declines in live coral cover:
+1. Labuan (-14.42 pp/yr)
+2. Kapas (-5.75 pp/yr)
+3. Seri Buat (-5.15 pp/yr)
+4. Mertang (-5.03 pp/yr)
+5. Mensirip (-4.85 pp/yr)
+  [METHODOLOGY]: Priority is determined by the predicted annual change in live coral cover (pp/yr) derived from Reef Check Malaysia survey data (2007-2025). This ranking reflects biological monitoring urgency, not human safety risks.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0090] 2026-09-16 13:07:58 | Category: Out-of-Domain ===
+Question: "who is the current Prime Minister of Malaysia?" (Context: Tinggi, Tab: diagnostics)
+Response (1.65s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [DOMAIN LIMITATION]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated exclusively to Malaysia's marine park conservation analytics, ecological monitoring, and economic valuation of marine biodiversity.
+  [AVAILABLE ANALYTICS]: I provide data-driven insights on: 
+1. Live coral cover trends from Reef Check Malaysia surveys. 
+2. Economic valuation benchmarks from the Department of Marine Park Malaysia. 
+3. Stress factor contributions via Tree-Path Decomposition. 
+4. Marine park visitor statistics and DOSM economic indicators.
+
+=== [Iter 0091] 2026-09-16 13:08:03 | Category: Provenance ===
+Question: "where can I download the raw Reef Check Malaysia reports" (Context: Perhentian, Tab: overview)
+Response (2.05s) | Title: Reef Check Malaysia Data Access | Pose: answer | Links: 1
+  [OFFICIAL DATA SOURCE]: The raw annual survey reports from Reef Check Malaysia (RCM) are publicly available for download via their official portal. These reports cover 19 years of standardized monitoring data (2007-2025) across 404 monitoring units.
+  [ACCESS LINK]: Please visit the official RCM Annual Survey Reports page to access the full dataset: https://reefcheck.org.my/annualsurveyreports/
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0092] 2026-09-16 13:08:09 | Category: Nonsense ===
+Question: "1111111111111111111111" (Context: Sibu, Tab: evidence)
+Response (2.42s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights through ecological screening and economic attribution based on official datasets from Reef Check Malaysia, DOSM, and other government agencies.
+  [AVAILABLE DATA]: Our platform integrates standardized monitoring data, economic valuation benchmarks, and environmental indicators to support evidence-based decision-making. We do not provide information outside of marine conservation, ecological monitoring, or official economic metrics.
+  [GUIDANCE]: Please direct your inquiries toward specific monitoring units, diagnostic model methodologies, or economic attribution frameworks. For information on Sibu, you may explore the evidence tab for historical survey data and stress factor contributions.
+
+=== [Iter 0093] 2026-09-16 13:08:15 | Category: Casual ===
+Question: "do fishes sleep at night in coral reefs?" (Context: Sipadan, Tab: diagnostics)
+Response (2.43s) | Title: ReefSafe Conservation Analytics: Scope and Mandate | Pose: answer | Links: 0
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological screening via Reef Check Malaysia monitoring data and economic attribution using DOSM and DMPM datasets. We do not provide biological or behavioral information on marine species.
+  [AVAILABLE ANALYTICS]: We provide data-driven insights on: 
+1. Live coral cover trends and disturbance indicators 
+2. Reef-adjacent economic valuation (RM8.7B TEV benchmark) 
+3. Gradient Boosting Regressor diagnostics for monitoring units 
+4. Priority screening for field verification
+
+=== [Iter 0094] 2026-09-16 13:08:20 | Category: Technical ===
+Question: "is this model causal or exploratory screening" (Context: Sibu, Tab: overview)
+Response (4.33s) | Title: ReefSafe Analytical Framework: Methodology | Pose: answer | Links: 1
+  [MODEL NATURE]: ReefSafe functions as an exploratory screening tool. It utilizes a Gradient Boosting Regressor to identify ecological trends and priority monitoring needs across 40 units. It is not a causal inference model; it does not establish direct cause-and-effect relationships between specific stressors and coral decline.
+  [STRESS FACTOR CONTRIBUTION]: The model employs Tree-Path Decomposition (Saabas 2014) to attribute feature importance. By tracing decision paths through the ensemble, it credits splits to specific groups: 
+1. Substrate composition 
+2. Fish and invertebrate counts 
+3. Reported impact indicators 
+4. Prior coral cover 
+5. Geographic context
+  [MODEL PERFORMANCE]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the baseline. The 95% pooled forward-test residual distribution is [-16.25, +13.66 pp/yr], indicating the range of uncertainty for predicted annual changes.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0095] 2026-09-16 13:08:28 | Category: Travel & Safety ===
+Question: "which island is green" (Context: Malacca, Tab: evidence)
+Response (2.15s) | Title: ReefSafe Green Status Analysis | Pose: answer | Links: 1
+  [GREEN STATUS DEFINITION]: In ReefSafe, 'green' status indicates a monitoring unit with a predicted non-negative annual change in live coral cover (>= 0 pp/yr). This classification is derived from the Gradient Boosting Regressor model.
+  [VERIFIED GREEN UNITS]: 1. Malacca (+3.48 pp/yr)
+2. Kapalai (+0.77 pp/yr)
+  [CONTEXTUAL NOTE]: Kapalai is the only verified visitor destination currently exhibiting a non-negative ecological signal. Malacca is also identified as a green unit within the current monitoring dataset.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0096] 2026-09-16 13:08:34 | Category: Nonsense ===
+Question: "undefined null NaN" (Context: Lima, Tab: diagnostics)
+Response (2.21s) | Title: ReefSafe Institutional Overview | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, providing ecological screening and economic attribution for Malaysia's marine parks. We utilize standardized monitoring data from Reef Check Malaysia and official economic datasets from OpenDOSM to support evidence-based conservation.
+  [AVAILABLE ANALYTICS]: 1. Ecological Screening: ML-driven monitoring of 40 units using Gradient Boosting Regressor.
+2. Economic Attribution: Analysis of reef-adjacent economy (RM60.09M/year) and TEV benchmarks (RM8.7B/year).
+3. Diagnostic Insights: Tree-path decomposition of stress factors for specific monitoring units.
+  [CURRENT CONTEXT]: You are currently viewing diagnostics for Lima. Please specify if you require details on stress factor contributions, historical survey trends, or methodological documentation.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0097] 2026-09-16 13:08:40 | Category: Policy & Econ ===
+Question: "explain the RM8.7B Total Economic Value study by DMPM 2011-2015" (Context: Tinggi, Tab: overview)
+Response (2.46s) | Title: Economic Valuation: Marine Biodiversity (DMPM 2011-2015) | Pose: answer | Links: 1
+  [CONCEPT]: The RM8.7 Billion/year figure represents the Total Economic Value (TEV) of Malaysia's marine biodiversity across six key archipelagos: Payar, Perhentian, Redang, Tioman, Tinggi, and Labuan. This benchmark measures the comprehensive economic capital of these ecosystems, including non-market values such as existence and bequest value.
+  [ECONOMIC DISTINCTION]: It is critical to distinguish this TEV benchmark from the 'Reef-Adjacent Economy' proxy. While the TEV reflects the total ecosystem capital (RM8.7B/year), the Reef-Adjacent Economy is a specific annual visitor spending proxy estimated at RM60.09M/year, calculated using 1,464,770 annual visitors, an average expenditure of RM410, and a 10% reef-attributable share.
+  [SOURCE]: This valuation is derived from the Department of Marine Park Malaysia (DMPM) study (2011-2015) on the Total Economic Value of Marine Biodiversity in Malaysia Marine Parks.
+  [LINKS]: Marine biodiversity economic valuation
+
+=== [Iter 0098] 2026-09-16 13:08:46 | Category: List / Ranking ===
+Question: "list the 4 marine parks covered in the economic valuation" (Context: Bidong, Tab: overview)
+Response (2.13s) | Title: Marine Biodiversity Economic Valuation Coverage | Pose: answer | Links: 1
+  [ECONOMIC VALUATION SCOPE]: The RM8.7 Billion/year Total Economic Value (TEV) benchmark, established by the Department of Marine Park Malaysia (DMPM 2011-2015), covers six archipelagos. The four marine parks specifically referenced in the context of this valuation are:
+1. Payar
+2. Perhentian
+3. Redang
+4. Tioman
+  [ECONOMIC CONTEXT]: This TEV benchmark represents total economic capital, including non-market existence and bequest values. It is distinct from the 'Reef-Adjacent Economy' proxy, which estimates RM60.09M/year in annual visitor spending across 30 monitoring units.
+  [LINKS]: Marine biodiversity economic valuation
+
+=== [Iter 0099] 2026-09-16 13:08:51 | Category: Technical ===
+Question: "what is the 95% pooled forward test residual distribution and uncertainty range" (Context: Penyu, Tab: overview)
+Response (2.75s) | Title: Model Performance and Uncertainty Metrics | Pose: answer | Links: 1
+  [RESIDUAL DISTRIBUTION]: The Gradient Boosting Regressor model exhibits a 95% pooled forward-test residual distribution range of [-16.25, +13.66] percentage points per year (pp/yr).
+  [UNCERTAINTY ANALYSIS]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the baseline persistence model. This range quantifies the variance between predicted coral cover trends and observed annual survey data from Reef Check Malaysia.
+  [DATA PROVENANCE]: Performance metrics are derived from the standardized 100m transect monitoring-unit rows (2007-2025) provided by Reef Check Malaysia.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0100] 2026-09-16 13:08:58 | Category: Out-of-Domain ===
+Question: "what is the current price of Bitcoin?" (Context: Labuan, Tab: evidence)
+Response (4.50s) | Title: ReefSafe Conservation Analytics | Pose: warn | Links: 0
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, reef health diagnostics, and economic attribution of marine biodiversity.
+  [AVAILABLE DATA]: We provide data-driven insights based on official sources including Reef Check Malaysia, DOSM, Department of Fisheries, and the Department of Marine Park Malaysia. We do not track or provide information on financial assets, cryptocurrencies, or commercial markets.
+  [RESEARCH DIRECTION]: For insights regarding Labuan, we can discuss the current screening priority, ecological stress factors, or the economic valuation of its marine ecosystem. Please let us know if you would like to review the diagnostic model outputs or historical survey data for this site.
+
+=== [Iter 0101] 2026-09-16 13:09:06 | Category: Casual ===
+Question: "thank you Reefy, that was super helpful!" (Context: Lang Tengah, Tab: evidence)
+Response (2.58s) | Title: ReefSafe Institutional Support | Pose: happy | Links: 2
+  [MANDATE]: ReefSafe provides data-driven ecological screening and economic attribution for Malaysia's marine parks. Our platform integrates Reef Check Malaysia survey data with DOSM economic indicators to support evidence-based conservation management.
+  [CURRENT FOCUS]: You are currently viewing evidence for Lang Tengah. You may query specific stress factor contributions, historical survey trends, or the economic valuation benchmarks for this site.
+  [AVAILABLE ANALYTICS]: 1. Ecological Screening: Gradient Boosting Regressor outputs for coral cover change.
+2. Economic Attribution: Reef-adjacent economy spending proxies.
+3. Methodology: Tree-Path Decomposition (Saabas 2014) for stress factor attribution.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0102] 2026-09-16 13:09:12 | Category: Technical ===
+Question: "how is Tree-Path Decomposition (Saabas 2014) calculated for factor attribution" (Context: Mensirip, Tab: evidence)
+Response (4.26s) | Title: Methodology: Tree-Path Decomposition (Saabas 2014) | Pose: answer | Links: 2
+  [CONCEPT]: The ReefSafe diagnostic model utilizes a Gradient Boosting Regressor to predict annual coral cover change. To interpret these predictions, we apply Tree-Path Decomposition to attribute the 'Stress Factor Contribution' of specific variables (e.g., substrate, fish counts, pollution indicators) to the final output.
+  [CALCULATION STEPS]: 1. Path Traversal: For each monitoring unit, the model traces the decision path taken through every individual tree in the ensemble.
+2. Split Attribution: At each node, the difference in predicted value between the current node and the parent node is calculated.
+3. Feature Assignment: This difference is assigned to the feature used for the split at that node.
+4. Aggregation: Contributions are summed across all trees in the ensemble to determine the total impact of each feature group on the predicted change (pp/yr).
+  [MODEL SIGNAL]: This method allows us to isolate the influence of local stressors from baseline trends. For Mensirip, this decomposition identifies the specific drivers contributing to its -4.85 pp/yr predicted change, distinguishing between biological substrate factors and external environmental pressures.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0103] 2026-09-16 13:09:19 | Category: Nonsense ===
+Question: "undefined null NaN" (Context: Tinggi, Tab: evidence)
+Response (3.78s) | Title: ReefSafe Institutional Overview: Tinggi Island | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, providing ecological screening and economic attribution for Malaysia's marine parks. We utilize standardized monitoring data from Reef Check Malaysia and economic benchmarks from the Department of Marine Park Malaysia to support conservation analytics.
+  [EVIDENCE SUMMARY]: Tinggi Island is currently identified as a high-priority monitoring unit with a predicted coral cover change of -4.63 pp/yr. This ranking is based on the Gradient Boosting Regressor model, which evaluates substrate, fish counts, and reported disturbance indicators.
+  [DATA SOURCES]: Our analytics are derived from official datasets including Reef Check Malaysia annual surveys, DOSM Domestic Tourism Survey 2024, and the DMPM 2011-2015 Total Economic Value study.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0104] 2026-09-16 13:09:27 | Category: Nonsense ===
+Question: "why is the sky blue and fish green" (Context: Tioman, Tab: evidence)
+Response (3.35s) | Title: ReefSafe Domain Scope | Pose: warn | Links: 2
+  [INSTITUTIONAL MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. Our mandate covers ecological screening of coral reef monitoring units and economic attribution of reef-adjacent sectors.
+  [AVAILABLE ANALYTICS]: We provide data-driven insights based on: 
+1. Reef Check Malaysia annual survey reports (2007-2025) 
+2. DOSM and data.gov.my economic and environmental datasets 
+3. Gradient Boosting Regressor models for coral cover change 
+4. DMPM economic valuation benchmarks
+  [GUIDANCE]: Questions regarding atmospheric physics or biological pigmentation fall outside our conservation research scope. Please direct inquiries toward monitoring unit diagnostics, stress factor contributions, or economic valuation metrics for Tioman or other gazetted marine parks.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0105] 2026-09-16 13:09:33 | Category: Technical ===
+Question: "how is Tree-Path Decomposition (Saabas 2014) calculated for factor attribution" (Context: Perhentian, Tab: evidence)
+Response (3.19s) | Title: Methodology: Stress Factor Contribution | Pose: answer | Links: 1
+  [CONCEPT]: The Stress Factor Contribution uses Tree-Path Decomposition (Saabas 2014) applied to our Gradient Boosting Regressor. It quantifies the impact of specific variables—such as substrate composition, fish counts, and pollution indicators—on the predicted annual change in live coral cover.
+  [CALCULATION PROCESS]: 1. The model traces every decision path taken by a monitoring unit through the ensemble of trees.
+2. For each split node, the algorithm calculates the difference in the predicted value before and after the split.
+3. This difference is attributed to the specific feature used for the split.
+4. The total contribution of a factor is the sum of these differences across all trees in the model, providing a clear breakdown of which variables drive the predicted ecological trend.
+  [MODEL CONTEXT]: This attribution method is strictly internal to the ReefSafe ML model and is distinct from external environmental data like NOAA Degree Heating Weeks. It allows us to isolate the influence of local stressors on reef health.
+  [LINKS]: Reef Check Malaysia annual reports
+
+=== [Iter 0106] 2026-09-16 13:09:40 | Category: Technical ===
+Question: "explain the difference between RCM transect surveys and satellite observations" (Context: Perhentian, Tab: evidence)
+Response (3.08s) | Title: Monitoring Methodology: RCM Transects vs. Satellite Observations | Pose: answer | Links: 2
+  [RCM TRANSECT SURVEYS]: 1. Methodology: Standardized 100m underwater transects conducted by Reef Check Malaysia (RCM) divers.
+2. Data Type: Direct biological observation of live coral cover (LCC), fish populations, and invertebrate counts.
+3. Purpose: Provides ground-truth ecological health metrics and local disturbance indicators for the ML model.
+4. Source: Reef Check Malaysia annual reports (2007-2025).
+  [SATELLITE OBSERVATIONS]: 1. Methodology: 5km satellite-based remote sensing via NOAA Coral Reef Watch.
+2. Data Type: Environmental context including sea surface temperature and Degree Heating Weeks (DHW).
+3. Purpose: Monitors large-scale thermal stress and bleaching risk; kept outside the scored ML model to serve as regional environmental context.
+4. Source: NOAA Coral Reef Watch (U.S. NESDIS).
+  [KEY DISTINCTION]: RCM surveys provide high-resolution, site-specific biological data essential for calculating stress factor contributions via Tree-Path Decomposition, whereas satellite observations provide broad-scale thermal context for regional climate monitoring.
+  [LINKS]: Reef Check Malaysia annual reports, NOAA Coral Reef Watch
+
+=== [Iter 0107] 2026-09-16 13:09:47 | Category: Provenance ===
+Question: "what are the sources of data in ReefSafe" (Context: Malacca, Tab: overview)
+Response (2.51s) | Title: ReefSafe Data Provenance and Institutional Sources | Pose: answer | Links: 4
+  [ECOLOGICAL MONITORING]: Reef Check Malaysia (RCM) provides 19 years of annual survey data (2007-2025) covering 404 standardized 100m transects, including live coral cover, disturbance indicators, and biological counts.
+  [SOCIO-ECONOMIC & ENVIRONMENTAL]: 1. DOSM & data.gov.my: State GDP, marine fish landings, river basin water quality, and domestic tourism expenditure (RM410/visitor).
+2. NOAA Coral Reef Watch: 5km satellite virtual stations for sea surface temperature and Degree Heating Weeks.
+3. DMPM (2011-2015): Total Economic Value (TEV) benchmark of RM8.7 Billion/year for marine biodiversity.
+  [GEOSPATIAL & REGULATORY]: 1. JUPEM: Official geodetic authority for island coordinates and territorial boundaries.
+2. DOFM: Regulatory register of gazetted Marine Parks and Fishery Prohibited Areas.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, NOAA Coral Reef Watch, Marine biodiversity economic valuation
+
+=== [Iter 0108] 2026-09-16 13:09:53 | Category: Nonsense ===
+Question: "!@#$%^&*()_+" (Context: Lankayan, Tab: evidence)
+Response (2.18s) | Title: ReefSafe Institutional Analytics | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on ecological monitoring and economic attribution for reef-adjacent economies.
+  [AVAILABLE DATASETS]: Our platform integrates official data from Reef Check Malaysia, OpenDOSM, Department of Fisheries, and the Department of Marine Park Malaysia. We focus on standardized transect surveys, economic valuation benchmarks, and environmental stress indicators.
+  [GUIDANCE]: Please submit queries related to our monitored reef units, diagnostic ML model performance, or economic valuation frameworks. For Lankayan, you may inquire about its specific screening priority or historical survey trends.
+
+=== [Iter 0109] 2026-09-16 13:09:58 | Category: Policy & Econ ===
+Question: "what is reef adjacent economy" (Context: Sipadan, Tab: diagnostics)
+Response (2.34s) | Title: Reef-Adjacent Economy Framework | Pose: answer | Links: 2
+  [DEFINITION]: The Reef-Adjacent Economy represents the annual visitor spending proxy attributed to marine park tourism. It is calculated as 1,464,770 annual visitors multiplied by the RM410 average expenditure per visitor (DOSM Domestic Tourism Survey 2024), with a 10% reef-attributable share applied based on established ecological-economic benchmarks (Spalding et al. 2017). This covers 30 of 40 monitoring units across 4 marine parks.
+  [ECONOMIC BENCHMARK CONTRAST]: It is critical to distinguish this annual spending proxy from the 'Reef-Adjacent Economy Potential', which refers to the RM8.7 Billion/year Total Economic Value (TEV) benchmark published by the Department of Marine Park Malaysia (DMPM 2011-2015). The TEV is a measure of total economic capital, including non-market existence and bequest values across six archipelagos, rather than annual commercial cash flow.
+  [LINKS]: DOSM Domestic Tourism Survey 2024, Marine biodiversity economic valuation
+
+=== [Iter 0110] 2026-09-16 13:10:04 | Category: Technical ===
+Question: "how is Tree-Path Decomposition (Saabas 2014) calculated for factor attribution" (Context: Lang Tengah, Tab: diagnostics)
+Response (2.09s) | Title: Methodology: Stress Factor Contribution | Pose: answer | Links: 0
+  [CONCEPT]: The Stress Factor Contribution is calculated using Tree-Path Decomposition (Saabas 2014) applied to our Gradient Boosting Regressor. This method attributes the predicted change in live coral cover (LCC) to specific input features by tracing the decision paths within the ensemble of trees.
+  [CALCULATION STEPS]: 1. For each monitoring unit, the model traverses every decision tree in the ensemble.
+2. At each node, the difference in the predicted value between the parent and child node is calculated.
+3. This difference is assigned to the feature used for the split at that node.
+4. The contributions are aggregated across all trees to determine the total impact of each feature group (Substrate, Fish, Reported Impacts, Prior Cover, Geography).
+5. The sum of these contributions, plus the model baseline, equals the predicted annual change in percentage points (pp/yr).
+  [IMPORTANT LIMIT]: This attribution is strictly based on the Gradient Boosting ensemble and is distinct from environmental context variables like NOAA Coral Reef Watch satellite data, which are excluded from the scored ML model to prevent multicollinearity.
+
+=== [Iter 0111] 2026-09-16 13:10:10 | Category: Technical ===
+Question: "what is the 95% pooled forward test residual distribution and uncertainty range" (Context: Malacca, Tab: overview)
+Response (1.92s) | Title: Model Performance and Uncertainty Metrics | Pose: answer | Links: 2
+  [RESIDUAL DISTRIBUTION]: The Gradient Boosting Regressor model exhibits a 95% pooled forward-test residual distribution range of [-16.25, +13.66] percentage points (pp) per year.
+  [MODEL ACCURACY]: The model achieves a Mean Absolute Error (MAE) of 5.862 pp/yr, representing a 2.1% improvement over the baseline historical trend projection.
+  [METHODOLOGICAL CONTEXT]: These metrics are derived from the validation of 404 monitoring-unit rows of standardized 100m transects provided by Reef Check Malaysia (2007-2025).
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0112] 2026-09-16 13:10:15 | Category: Nonsense ===
+Question: "blablabla wubba lubba dub dub" (Context: Tenggol, Tab: evidence)
+Response (2.19s) | Title: ReefSafe Conservation Analytics | Pose: answer | Links: 2
+  [PLATFORM MANDATE]: ReefSafe is an institutional AI copilot dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights on coral reef health, ecological screening priorities, and economic valuation benchmarks based on official datasets from OpenDOSM, Reef Check Malaysia, and the Department of Marine Park Malaysia.
+  [AVAILABLE ANALYTICS]: Our platform currently supports inquiries regarding: 
+1. Ecological monitoring trends and live coral cover (LCC) metrics. 
+2. Stress factor contributions via Tree-Path Decomposition. 
+3. Economic valuation benchmarks (TEV) and reef-adjacent economy proxies. 
+4. Priority screening for urgent field verification.
+  [CURRENT CONTEXT]: You are currently viewing data for Tenggol. Please specify if you would like to examine the ecological diagnostic model for this unit or review the supporting evidence from our official data sources.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0113] 2026-09-16 13:10:21 | Category: Out-of-Domain ===
+Question: "who is the current Prime Minister of Malaysia?" (Context: Perhentian, Tab: diagnostics)
+Response (2.33s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the ReefSafe dashboard, dedicated to Malaysia's marine park conservation analytics. My mandate is to provide data-driven insights on coral reef health, ecological screening, and economic attribution based on official datasets from Reef Check Malaysia, DOSM, and other government agencies.
+  [DOMAIN LIMITATION]: I do not provide information on political figures or government leadership. My expertise is strictly limited to marine biodiversity monitoring, ecological stress factor analysis, and the economic valuation of Malaysia's marine parks. Please refer to official government portals for political inquiries.
+  [AVAILABLE DATA]: I can assist with queries regarding:
+1. Coral cover trends and monitoring unit status
+2. Stress factor contributions via Tree-Path Decomposition
+3. Economic valuation benchmarks (TEV vs. Reef-Adjacent Economy)
+4. Priority screening queues for field verification
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0114] 2026-09-16 13:10:27 | Category: Out-of-Domain ===
+Question: "how do I fix a leaking water pipe?" (Context: Labuan, Tab: overview)
+Response (2.29s) | Title: ReefSafe Conservation Analytics | Pose: warn | Links: 2
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to the ecological monitoring and economic valuation of Malaysia's marine parks. Our mandate is limited to coral reef health diagnostics, stress factor attribution, and marine-adjacent economic analysis.
+  [AVAILABLE DATA]: We provide analytical insights based on Reef Check Malaysia survey reports, DOSM economic datasets, and DOFM marine park records. We do not provide technical guidance on infrastructure maintenance, plumbing, or residential repairs.
+  [RESEARCH DIRECTION]: If you require information regarding the ecological status of Labuan or the methodology behind our priority screening, please submit a query related to our marine conservation datasets.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0115] 2026-09-16 13:10:33 | Category: Nonsense ===
+Question: "undefined null NaN" (Context: Malacca, Tab: evidence)
+Response (2.75s) | Title: ReefSafe Institutional Overview | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. We integrate ecological monitoring data from Reef Check Malaysia with economic indicators from DOSM and OpenDOSM to provide evidence-based insights for marine resource management.
+  [AVAILABLE ANALYTICS]: 1. Ecological Screening: ML-driven monitoring of 40 units using standardized transects.
+2. Economic Attribution: Analysis of reef-adjacent economy (RM60.09M/year) and TEV benchmarks (RM8.7B/year).
+3. Diagnostic Modeling: Tree-Path Decomposition (Saabas 2014) to identify stress factor contributions.
+4. Priority Mapping: Identification of high-risk monitoring units requiring urgent field verification.
+  [CURRENT STATUS]: You are currently viewing evidence for Malacca, which maintains a green status with a predicted non-negative change of +3.48 pp/yr. Please specify if you require details on our methodology, economic valuation benchmarks, or specific monitoring unit diagnostics.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0116] 2026-09-16 13:10:39 | Category: Out-of-Domain ===
+Question: "who is the current Prime Minister of Malaysia?" (Context: Lang Tengah, Tab: overview)
+Response (1.81s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. My mandate covers ecological screening of coral reef monitoring units and economic attribution of reef-adjacent sectors.
+  [AVAILABLE ANALYTICS]: I provide data-driven insights based on official sources including Reef Check Malaysia, DOSM, OpenDOSM, NOAA, JUPEM, DOFM, and DMPM. I can assist with queries regarding: 
+1. National Coral Cover KPI (39.8%) 
+2. Top 10 Priority Islands for urgent field verification 
+3. Stress factor contributions via Tree-Path Decomposition 
+4. Economic valuation benchmarks (RM8.7B TEV vs RM60.09M annual spending proxy)
+
+=== [Iter 0117] 2026-09-16 13:10:44 | Category: Casual ===
+Question: "do fishes sleep at night in coral reefs?" (Context: Mensirip, Tab: evidence)
+Response (2.13s) | Title: ReefSafe Conservation Analytics: Scope and Mandate | Pose: answer | Links: 2
+  [DOMAIN SCOPE]: ReefSafe is an institutional platform dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on ecological monitoring, economic valuation, and predictive modeling of coral reef health based on standardized transect data.
+  [AVAILABLE DATA]: Our evidence base is derived from official datasets including Reef Check Malaysia annual surveys, DOSM economic indicators, and Department of Fisheries marine park registers. We do not provide biological or behavioral information on marine species such as fish sleep patterns.
+  [RESEARCH DIRECTION]: For inquiries regarding Mensirip or other monitored units, we can provide data on: 
+1. Live coral cover trends 
+2. Stress factor contributions via Tree-Path Decomposition 
+3. Reef-adjacent economic valuation benchmarks
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0118] 2026-09-16 13:10:50 | Category: Nonsense ===
+Question: "..........................." (Context: Sipadan, Tab: diagnostics)
+Response (2.23s) | Title: ReefSafe Institutional Overview | Pose: answer | Links: 2
+  [MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, providing ecological screening and economic attribution for Malaysia's marine parks. We integrate Reef Check Malaysia survey data with DOSM economic indicators to support evidence-based conservation.
+  [AVAILABLE ANALYTICS]: 1. Ecological Monitoring: 404 standardized transects from Reef Check Malaysia (2007-2025).
+2. Economic Valuation: RM8.7B TEV benchmark (DMPM) vs RM60.09M annual reef-adjacent spending proxy.
+3. Diagnostic Modeling: Gradient Boosting Regressor for coral cover change prediction.
+4. Priority Screening: Top 10 priority islands for urgent field verification.
+  [GUIDANCE]: Please specify your query regarding Sipadan or our diagnostic methodology. I can provide insights on stress factor contributions, economic benchmarks, or national coral cover KPIs.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0119] 2026-09-16 13:10:56 | Category: Out-of-Domain ===
+Question: "how do I fix a leaking water pipe?" (Context: Lankayan, Tab: overview)
+Response (2.09s) | Title: ReefSafe Institutional Scope | Pose: answer | Links: 0
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated exclusively to Malaysia's marine park conservation analytics. Our mandate covers ecological monitoring of coral reefs, economic attribution of reef-adjacent sectors, and diagnostic modeling of reef health.
+  [AVAILABLE DATA]: We provide analytical insights based on official datasets from Reef Check Malaysia, DOSM, Department of Fisheries, and the Department of Marine Park Malaysia. We do not provide guidance on residential plumbing, infrastructure repair, or non-marine technical maintenance.
+  [RESEARCH DIRECTION]: If you require information regarding the ecological status of Lankayan or the methodology behind our coral cover projections, please submit a query related to our monitoring units or economic valuation benchmarks.
+
+=== [Iter 0120] 2026-09-16 13:11:01 | Category: Casual ===
+Question: "can you tell me an interesting fact about corals?" (Context: Sipadan, Tab: diagnostics)
+Response (2.00s) | Title: ReefSafe Institutional Overview: Coral Ecology | Pose: answer | Links: 2
+  [NATIONAL CORAL COVER KPI]: The 2025 arithmetic mean live coral cover across 40 standardized monitoring units is 39.8%. This metric serves as the primary baseline for assessing the health of Malaysia's marine ecosystems.
+  [ECOLOGICAL MONITORING]: ReefSafe utilizes 19 years of standardized transect data from Reef Check Malaysia to track coral health. Monitoring focuses on live coral cover, disturbance indicators, and fish/invertebrate counts to inform conservation priority.
+  [RESEARCH MANDATE]: ReefSafe is dedicated to Malaysia's marine park conservation analytics. We provide data-driven insights into ecological screening and economic attribution, rather than general biological trivia. For specific diagnostic insights on Sipadan, please refer to the diagnostics tab.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0121] 2026-09-16 13:11:07 | Category: Casual ===
+Question: "thank you Reefy, that was super helpful!" (Context: Sipadan, Tab: overview)
+Response (2.08s) | Title: ReefSafe Institutional Overview: Sipadan | Pose: happy | Links: 2
+  [STATUS]: Sipadan is currently monitored within the ReefSafe framework. As an institutional copilot, I provide data-driven insights based on Reef Check Malaysia survey reports and DOSM economic indicators to support conservation management.
+  [NEXT STEPS]: You may explore the following analytical pathways:
+1. Diagnostics: Review the Tree-Path Decomposition (Saabas 2014) for stress factor contributions.
+2. Evidence: Access the raw monitoring-unit transect data and official DOSM economic benchmarks.
+3. National Context: Compare Sipadan's performance against the 39.8% National Coral Cover KPI.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue
+
+=== [Iter 0122] 2026-09-16 13:11:12 | Category: Nonsense ===
+Question: "asdkjfh192837 zxcvbnm ???" (Context: Lang Tengah, Tab: evidence)
+Response (2.42s) | Title: ReefSafe Institutional Inquiry | Pose: answer | Links: 2
+  [PLATFORM MANDATE]: ReefSafe is the institutional AI copilot for the DOSM Datathon 2026, dedicated to Malaysia's marine park conservation analytics. Our mandate focuses on the integration of ecological monitoring data from Reef Check Malaysia and economic indicators from OpenDOSM to support evidence-based policy.
+  [AVAILABLE ANALYTICS]: We provide data-driven insights on: 
+1. Live coral cover trends and national KPIs (39.8% mean). 
+2. Stress factor attribution via Tree-Path Decomposition. 
+3. Economic valuation benchmarks (RM8.7B TEV) and reef-adjacent tourism spending. 
+4. Priority screening for 40 monitoring units across Malaysian archipelagos.
+  [GUIDANCE]: Please direct your inquiries toward specific monitoring units, diagnostic model methodologies, or economic attribution frameworks. For technical documentation, refer to the OpenDOSM Data Catalogue or Reef Check Malaysia annual survey reports.
+  [LINKS]: OpenDOSM Data Catalogue, Reef Check Malaysia annual reports
+
+=== [Iter 0123] 2026-09-16 13:11:18 | Category: Policy & Econ ===
+Question: "what should a marine park ranger do when an island is in high screening priority" (Context: Lang Tengah, Tab: evidence)
+Response (2.68s) | Title: Operational Protocol for High Screening Priority Units | Pose: warn | Links: 3
+  [PRIORITY DEFINITION]: High screening priority indicates a monitoring unit has been flagged by the ReefSafe Gradient Boosting Regressor for urgent field verification due to a significant negative predicted change in live coral cover. This is a biological monitoring metric, not a human safety risk assessment.
+  [RANGER ACTION PLAN]: 1. Conduct immediate in-situ 100m transect surveys to validate the RCM-derived model inputs.
+2. Inspect for localized disturbance indicators such as coral bleaching, crown-of-thorns starfish outbreaks, or physical damage.
+3. Review local water quality indicators (BOD, ammoniacal nitrogen) from the nearest river basin monitoring stations.
+4. Report findings to the Department of Fisheries Malaysia (DOFM) Marine Parks Section for potential management intervention.
+  [DATA SOURCES]: Rangers should cross-reference field observations with the Reef Check Malaysia annual survey reports and the OpenDOSM water quality datasets to identify potential drivers of the observed decline.
+  [LINKS]: Reef Check Malaysia annual reports, OpenDOSM Data Catalogue, DOFM Marine Parks
