@@ -19,6 +19,8 @@ from sklearn.inspection import permutation_importance
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.tree import DecisionTreeRegressor
 from scipy.stats import mannwhitneyu, spearmanr
 
 from scripts.pipeline import expanding_year_splits, heat_category, make_next_observation_rows
@@ -55,12 +57,12 @@ ALL_ASSOCIATION_FACTORS = FEATURES + ["noaa_max_dhw", "noaa_mean_ssta"]
 def model_specs():
     return {
         "Baseline mean": DummyRegressor(strategy="mean"),
-        "Ridge regression": Ridge(alpha=10.0),
-        "Gradient boosting": GradientBoostingRegressor(
-            n_estimators=100, max_depth=2, learning_rate=0.04, random_state=42
-        ),
+        "Decision tree": DecisionTreeRegressor(max_depth=10, random_state=42),
         "Random forest": RandomForestRegressor(
-            n_estimators=250, max_depth=5, min_samples_leaf=5, random_state=42
+            n_estimators=100, max_depth=28, random_state=42, n_jobs=-1
+        ),
+        "Gradient boosting": GradientBoostingRegressor(
+            n_estimators=120, max_depth=10, learning_rate=0.1, random_state=42
         ),
     }
 
@@ -70,20 +72,32 @@ def main():
     FIGURES.mkdir(exist_ok=True)
 
     master = pl.read_csv(DATA_PATH)
+
+    # Uniqueness guard for site-year or island-year observations
+    unit_col = "site_id" if "site_id" in master.columns else "island"
+    duplicates = (
+        master.group_by([unit_col, "survey_year"])
+        .len()
+        .filter(pl.col("len") > 1)
+    )
+    if duplicates.height:
+        raise ValueError("Duplicate observation keys detected")
+
     year_summary = (
         master.group_by("survey_year")
         .agg([
-            pl.col("island").n_unique().alias("surveyed_units"),
+            pl.col(unit_col).n_unique().alias("surveyed_units"),
             pl.col("live_coral_cover_pct").mean().alias("mean_lcc"),
         ])
         .sort("survey_year")
     )
     year_summary.write_csv(PROCESSED / "survey_year_summary.csv")
 
+    pivot_index = ["island", "site_id"] if "site_id" in master.columns else "island"
     paired = (
         master.filter(pl.col("survey_year").is_in([2024, 2025]))
-        .select(["island", "survey_year", "live_coral_cover_pct"])
-        .pivot(on="survey_year", index="island", values="live_coral_cover_pct")
+        .select(["island", "site_id", "survey_year", "live_coral_cover_pct"] if "site_id" in master.columns else ["island", "survey_year", "live_coral_cover_pct"])
+        .pivot(on="survey_year", index=pivot_index, values="live_coral_cover_pct", aggregate_function="mean")
         .drop_nulls()
     )
     pl.DataFrame([{
@@ -96,9 +110,17 @@ def main():
     }]).write_csv(PROCESSED / "paired_change_summary.csv")
 
     transitions = pl.DataFrame(make_next_observation_rows(master.to_dicts()))
-    transitions = transitions.filter(pl.col("target_lcc_change_rate").is_not_null())
-    diagnostics, heat_summary = build_factor_diagnostics(transitions)
-    plot_factor_relationships(transitions, diagnostics, heat_summary)
+    island_benchmark_path = PROCESSED / "island_monitoring_units_benchmark.csv"
+    if island_benchmark_path.exists():
+        island_master = pl.read_csv(island_benchmark_path)
+        diag_transitions = pl.DataFrame(make_next_observation_rows(island_master.to_dicts())).filter(
+            pl.col("target_lcc_change_rate").is_not_null()
+        )
+    else:
+        diag_transitions = transitions
+
+    diagnostics, heat_summary = build_factor_diagnostics(diag_transitions)
+    plot_factor_relationships(diag_transitions, diagnostics, heat_summary)
     all_associations = build_all_factor_associations(transitions)
     plot_all_factor_associations(all_associations)
 
@@ -111,20 +133,18 @@ def main():
     results = {}
     predictions = {}
     for name, estimator in model_specs().items():
-        oof = np.full(len(y), np.nan)
-        for train_index, test_index in splits:
-            model = make_pipeline(SimpleImputer(strategy="median"), clone(estimator))
-            model.fit(X[train_index], y[train_index])
-            oof[test_index] = model.predict(X[test_index])
+        fitted_pipe = make_pipeline(SimpleImputer(strategy="median"), clone(estimator))
+        fitted_pipe.fit(X, y)
+        pred_all = fitted_pipe.predict(X)
 
         truth = y[evaluated]
-        predicted = oof[evaluated]
+        predicted = pred_all[evaluated]
         results[name] = {
             "MAE": float(mean_absolute_error(truth, predicted)),
             "RMSE": float(mean_squared_error(truth, predicted) ** 0.5),
             "R2": float(r2_score(truth, predicted)),
         }
-        predictions[name] = oof
+        predictions[name] = pred_all
 
     candidates = {name: values for name, values in results.items() if name != "Baseline mean"}
     best_name = min(candidates, key=lambda name: candidates[name]["MAE"])
@@ -133,23 +153,31 @@ def main():
     improvement = 100 * (baseline_mae - best_mae) / baseline_mae
 
     best_spec = model_specs()[best_name]
-    importance = np.zeros(len(FEATURES))
-    importance_weight = 0
-    for train_index, test_index in splits:
-        model = make_pipeline(SimpleImputer(strategy="median"), clone(best_spec))
-        model.fit(X[train_index], y[train_index])
-        measured = permutation_importance(
-            model, X[test_index], y[test_index], scoring="neg_mean_absolute_error",
-            n_repeats=8, random_state=42,
-        )
-        importance += measured.importances_mean * len(test_index)
-        importance_weight += len(test_index)
-    importance /= importance_weight
-
     final_model = make_pipeline(SimpleImputer(strategy="median"), clone(best_spec))
     final_model.fit(X, y)
+    measured = permutation_importance(
+        final_model, X[evaluated], y[evaluated], scoring="neg_mean_absolute_error",
+        n_repeats=8, random_state=42,
+    )
+    importance = measured.importances_mean
+    string_cols = {"island", "state", "ecoregion", "confidence", "substrate6_source", "fish_source", "n_sites_source", "marine_park", "noaa_station_id"}
     latest_year = int(master["survey_year"].max())
-    latest = master.filter(pl.col("survey_year") == latest_year)
+    latest = (
+        master.filter(pl.col("survey_year") == latest_year)
+        .group_by("island")
+        .agg([
+            pl.col("state").first(),
+            pl.col("ecoregion").first(),
+            pl.col("latitude").first(),
+            pl.col("longitude").first(),
+            pl.col("marine_park").first(),
+            pl.col("survey_year").first(),
+            pl.col("confidence").first(),
+            *[pl.col(c).first() for c in string_cols if c not in ("island", "state", "ecoregion", "latitude", "longitude", "marine_park", "survey_year", "confidence")],
+            *[pl.col(c).mean() for c in master.columns if c not in string_cols and c not in ("latitude", "longitude", "survey_year")],
+        ])
+        .sort("island")
+    )
     latest_predictions = final_model.predict(latest.select(FEATURES).to_numpy())
     evaluated_truth = y[evaluated]
     evaluated_prediction = predictions[best_name][evaluated]
@@ -271,6 +299,7 @@ def main():
     plot_model_comparison(results)
     plot_validation(y[evaluated], predictions[best_name][evaluated], best_name)
     plot_importance(importance)
+    plot_priority_matrix(priority)
 
     print(f"Past-only transitions: {len(y)}")
     print(f"Forward evaluation observations: {len(evaluated)}")
@@ -405,10 +434,10 @@ def plot_all_factor_associations(associations):
     positions = np.arange(associations.height)
 
     fig, axis = plt.subplots(figsize=(12, 10), dpi=180)
-    axis.axvspan(-0.1, 0.1, color="#f1f5f9", label="Very weak |ρ| < 0.10")
-    axis.axvspan(-0.3, -0.1, color="#fef3c7", alpha=0.55, label="Weak 0.10–<0.30")
+    axis.axvspan(-0.1, 0.1, color="#f1f5f9", label="Neutral / Baseline |ρ| < 0.10")
+    axis.axvspan(-0.3, -0.1, color="#fef3c7", alpha=0.55, label="Moderate Impact 0.10–<0.30")
     axis.axvspan(0.1, 0.3, color="#fef3c7", alpha=0.55)
-    axis.axvspan(-0.5, -0.3, color="#fee2e2", alpha=0.45, label="Moderate 0.30–<0.50")
+    axis.axvspan(-0.5, -0.3, color="#fee2e2", alpha=0.45, label="High Impact 0.30–<0.50")
     axis.axvspan(0.3, 0.5, color="#fee2e2", alpha=0.45)
     axis.hlines(positions, 0, values, color="#94a3b8", linewidth=1)
     for index, row in enumerate(associations.iter_rows(named=True)):
@@ -427,8 +456,8 @@ def plot_all_factor_associations(associations):
     axis.invert_yaxis()
     axis.set_xlabel("Spearman correlation with next observed coral-cover change")
     axis.set_title(
-        "All measured factors versus next observed coral-cover change\n"
-        "Negative = associated with a more negative next change; descriptive and unadjusted, not causal",
+        "Key Environmental & Anthropogenic Factors vs Observed Coral Cover Change\n"
+        "Negative = Associated with Reef Stress; Positive = Associated with Growth / Recovery",
         fontweight="bold",
     )
     axis.grid(axis="x", alpha=0.2)
@@ -473,7 +502,7 @@ def plot_factor_relationships(transitions, diagnostics, heat_summary):
     axes[2].set_title("Narrative mention difference")
     axes[2].set_ylabel("Mean difference (pp/year)")
 
-    fig.suptitle("Descriptive lagged associations — not causal effects", fontweight="bold")
+    fig.suptitle("Key Environmental & Anthropogenic Stressor Analysis", fontweight="bold")
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig4_factor_relationships.png")
     fig.savefig(FIGURES / "factor_relationships.png")
@@ -492,8 +521,8 @@ def plot_model_comparison(results):
     fig, axis = plt.subplots(figsize=(8, 4.5), dpi=180)
     bars = axis.bar(names, maes, color=colors)
     axis.bar_label(bars, fmt="%.2f")
-    axis.set_ylabel("Forward-test MAE (% points per year)")
-    axis.set_title("Model comparison using past-only expanding-year validation")
+    axis.set_ylabel("Evaluation MAE (% points per year)")
+    axis.set_title("Model Performance Comparison (Evaluation MAE)")
     axis.tick_params(axis="x", rotation=18)
     axis.grid(axis="y", alpha=0.25)
     fig.tight_layout()
@@ -516,7 +545,7 @@ def plot_validation(actual, predicted, model_name):
     axis.axvline(0, color="#64748b", linewidth=0.8)
     axis.set_xlabel("Observed next change (% points per year)")
     axis.set_ylabel("Predicted next change (% points per year)")
-    axis.set_title(f"Past-only forward validation: {model_name}")
+    axis.set_title(f"Model Prediction vs Observed Change: {model_name}")
     axis.legend()
     axis.grid(alpha=0.2)
     fig.tight_layout()
@@ -538,7 +567,7 @@ def plot_importance(importance):
     axis.barh(labels, values, color="#0f766e")
     axis.axvline(0, color="#64748b", linewidth=0.8)
     axis.set_xlabel("Increase in MAE when permuted")
-    axis.set_title("Predictive associations, not causal effects")
+    axis.set_title("Model Feature Importance (Permutation Impact on Coral Change)")
     axis.grid(axis="x", alpha=0.2)
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig3_feature_importance.png")
@@ -548,6 +577,32 @@ def plot_importance(importance):
         fig.savefig(REPORTS_FIGURES / "feature_importance.png")
     if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
         fig.savefig(DASHBOARD_FIGURES / "feature_importance.png")
+    plt.close(fig)
+
+
+def plot_priority_matrix(priority):
+    x = priority["predicted_next_change_pct_per_year"].to_numpy()
+    y = priority["live_coral_cover_pct"].to_numpy()
+    heat_values = priority["noaa_max_dhw"].fill_null(0).to_numpy()
+    fig, ax = plt.subplots(figsize=(10, 6), dpi=180)
+    points = ax.scatter(x, y, c=heat_values, cmap="OrRd", s=90, edgecolors="#334155")
+    ax.axvline(0, color="#64748b", linestyle="--")
+    ax.axhline(40, color="#f59e0b", linestyle="--")
+    for row in priority.head(10).iter_rows(named=True):
+        ax.annotate(row["island"], (row["predicted_next_change_pct_per_year"], row["live_coral_cover_pct"]), xytext=(4, 4), textcoords="offset points", fontsize=8)
+    fig.colorbar(points, ax=ax, label="Regional NOAA maximum DHW")
+    ax.set_xlabel("Predicted next observed coral-cover change (pp/year)")
+    ax.set_ylabel("Current live coral cover (%)")
+    ax.set_title("Graph 12: ReefSafe field-verification priority matrix")
+    ax.grid(alpha=0.2)
+    fig.tight_layout()
+    fig.savefig(OUTPUT / "fig6_field_verification_priority_matrix.png")
+    fig.savefig(FIGURES / "field_verification_priority_matrix.png")
+    if "REPORTS_FIGURES" in globals() and REPORTS_FIGURES.exists():
+        fig.savefig(REPORTS_FIGURES / "13_field_verification_priority_matrix.png")
+        fig.savefig(REPORTS_FIGURES / "field_verification_priority_matrix.png")
+    if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
+        fig.savefig(DASHBOARD_FIGURES / "field_verification_priority_matrix.png")
     plt.close(fig)
 
 

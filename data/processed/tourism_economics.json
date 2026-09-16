@@ -1,16 +1,30 @@
 {
   "parks": 10,
-  "units_total": 40,
-  "units_covered": 30,
+  "units_total": 56,
+  "units_covered": 32,
   "units_excluded": [
+    "Balambangan",
+    "Berungus",
     "Kapalai",
+    "Kota Belud",
+    "Kuching",
     "Lahad Datu",
     "Lankayan",
     "Mabul",
     "Malacca",
+    "Maliangin",
     "Mantanani",
     "Mataking",
+    "Mataking & Pom Pom",
+    "Miri",
+    "Northern Semporna",
+    "Pangkor Laut",
+    "Pom Pom",
     "Port Dickson",
+    "Sembilan",
+    "Semporna",
+    "Singa",
+    "Southern Semporna",
     "Tun Mustapha Park",
     "Usukan Cove"
   ],
@@ -22,37 +36,43 @@
   "tradeoff": {
     "closure_months": 1,
     "park_names": [
+      "Tunku Abdul Rahman Park",
       "Terengganu Marine Parks",
       "Mersing Marine Parks",
-      "Tioman Marine Parks",
+      "Sipadan Island Park",
+      "Turtle Islands Park",
       "Labuan Marine Park"
     ],
-    "units_total": 10,
+    "units_total": 14,
     "units_covered": 9,
     "units_covered_names": [
-      "Kapas",
       "Labuan",
-      "Lima",
+      "Lang Tengah",
       "Mensirip",
-      "Mertang",
-      "Seri Buat",
-      "Sibu",
-      "Tenggol",
-      "Tinggi"
+      "Pemanggil",
+      "Penyu",
+      "Rhu",
+      "Sipadan",
+      "Tinggi",
+      "Tunku Abdul Rahman Park"
     ],
     "units_uncovered_names": [
-      "Lankayan"
+      "Mataking",
+      "Mataking & Pom Pom",
+      "Pom Pom",
+      "Port Dickson",
+      "Semporna"
     ],
-    "short_term_loss_rm": 23721897,
-    "reef_adjacent_annual_rm": 28466276,
-    "long_term_low_rm": 284662760,
-    "long_term_high_rm": 426994140,
+    "short_term_loss_rm": 35193056,
+    "reef_adjacent_annual_rm": 42231667,
+    "long_term_low_rm": 422316670,
+    "long_term_high_rm": 633475005,
     "recovery_years": [
       10,
       15
     ],
     "recovery_mid_years": 12.5,
-    "long_term_mid_rm": 355828450,
+    "long_term_mid_rm": 527895838,
     "ratio_note": "The ratio between the two figures is 12-18x by construction (10% share x 12 months x 10-15 years); published visitors set only the scale."
   },
   "sources": {

@@ -22,7 +22,7 @@ print("================================================================")
 import openpyxl
 
 rc_path = os.path.join(raw_dir, "structured", "reef_check", "ReefCheck_Malaysia_FINAL.xlsx")
-wb = openpyxl.load_workbook(rc_path, data_only=True)
+wb = openpyxl.load_workbook(rc_path, read_only=True, data_only=True)
 ws = wb["model_ready"]
 data = list(ws.iter_rows(values_only=True))
 headers = [str(h) if h is not None else f"col_{i}" for i, h in enumerate(data[0])]
@@ -45,10 +45,18 @@ for col in df_rc.columns:
     else:
         print(f"  - {col:28s}:   0 nulls (Clean)")
 
-# 2. JUPEM Geocoding Reference
-geo_path = os.path.join(raw_dir, "structured", "geocoding", "island_coordinates.csv")
-df_geo = pl.read_csv(geo_path, encoding="utf8")
-print(f"\n[2] Island Coordinates (JUPEM): {df_geo.shape[0]} rows, {df_geo.shape[1]} columns")
+# 2. Geocoding Reference (Site or Island)
+site_geo_path = os.path.join(raw_dir, "structured", "geocoding", "reef_site_coordinates.csv")
+if os.path.exists(site_geo_path) and "site_id" in df_rc.columns:
+    df_geo = pl.read_csv(site_geo_path, encoding="utf8")
+    join_key = "site_id"
+    geo_cols = ["site_id", "latitude", "longitude", "marine_park"]
+    print(f"\n[2] Reef Site Coordinates: {df_geo.shape[0]} rows, {df_geo.shape[1]} columns (key: site_id)")
+else:
+    df_geo = pl.read_csv(os.path.join(raw_dir, "structured", "geocoding", "island_coordinates.csv"), encoding="utf8")
+    join_key = "island"
+    geo_cols = ["island", "latitude", "longitude", "marine_park"]
+    print(f"\n[2] Island Coordinates (JUPEM): {df_geo.shape[0]} rows, {df_geo.shape[1]} columns (key: island)")
 print("Columns:", df_geo.columns)
 print("Null counts in Coordinates:")
 for col in df_geo.columns:
@@ -140,10 +148,9 @@ print("STEP 2: STEP-BY-STEP DATA COMBINATION & HARMONIZATION")
 print("================================================================")
 
 # Join 1: Reef Check + Geocoding Coordinates
-# Check island column name and overlap
-geo_clean = df_geo.select(["island", "latitude", "longitude", "marine_park"])
-df_merged = df_rc.join(geo_clean, on="island", how="left")
-print(f"Join 1 (RC + JUPEM Geocoding): {df_merged.shape[0]} rows, {df_merged.shape[1]} columns")
+geo_clean = df_geo.select(geo_cols)
+df_merged = df_rc.join(geo_clean, on=join_key, how="left")
+print(f"Join 1 (RC + Geocoding Coordinates): {df_merged.shape[0]} rows, {df_merged.shape[1]} columns")
 missing_coords = df_merged["latitude"].null_count()
 print(f"  - Missing Coordinates count: {missing_coords} ({'CLEAN 100%' if missing_coords==0 else 'WARNING'})")
 

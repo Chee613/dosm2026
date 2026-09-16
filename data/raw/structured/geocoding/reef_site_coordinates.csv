@@ -1,0 +1,561 @@
+﻿site_id,site_name,island,state,ecoregion,latitude,longitude,marine_park,synthetic_site
+AUR_DAYANG_S01,Aur & Dayang Reef Site 01,Aur & Dayang,Johor,Sunda Shelf,2.453843,104.51612,Mersing Marine Park,1
+AUR_DAYANG_S02,Aur & Dayang Reef Site 02,Aur & Dayang,Johor,Sunda Shelf,2.453271,104.521122,Mersing Marine Park,1
+AUR_DAYANG_S03,Aur & Dayang Reef Site 03,Aur & Dayang,Johor,Sunda Shelf,2.450849,104.524186,Mersing Marine Park,1
+AUR_DAYANG_S04,Aur & Dayang Reef Site 04,Aur & Dayang,Johor,Sunda Shelf,2.444425,104.525168,Mersing Marine Park,1
+AUR_DAYANG_S05,Aur & Dayang Reef Site 05,Aur & Dayang,Johor,Sunda Shelf,2.439544,104.522914,Mersing Marine Park,1
+AUR_DAYANG_S06,Aur & Dayang Reef Site 06,Aur & Dayang,Johor,Sunda Shelf,2.436104,104.516109,Mersing Marine Park,1
+AUR_DAYANG_S07,Aur & Dayang Reef Site 07,Aur & Dayang,Johor,Sunda Shelf,2.437963,104.50786,Mersing Marine Park,1
+AUR_DAYANG_S08,Aur & Dayang Reef Site 08,Aur & Dayang,Johor,Sunda Shelf,2.444544,104.50233,Mersing Marine Park,1
+AUR_DAYANG_S09,Aur & Dayang Reef Site 09,Aur & Dayang,Johor,Sunda Shelf,2.454477,104.501986,Mersing Marine Park,1
+AUR_DAYANG_S10,Aur & Dayang Reef Site 10,Aur & Dayang,Johor,Sunda Shelf,2.462734,104.507741,Mersing Marine Park,1
+BABI_TENGAH_S01,Babi Tengah Reef Site 01,Babi Tengah,Johor,,2.482141,103.96172,Mersing Marine Park,1
+BABI_TENGAH_S02,Babi Tengah Reef Site 02,Babi Tengah,Johor,,2.481901,103.965734,Mersing Marine Park,1
+BABI_TENGAH_S03,Babi Tengah Reef Site 03,Babi Tengah,Johor,,2.479558,103.969029,Mersing Marine Park,1
+BABI_TENGAH_S04,Babi Tengah Reef Site 04,Babi Tengah,Johor,,2.473453,103.97044,Mersing Marine Park,1
+BABI_TENGAH_S05,Babi Tengah Reef Site 05,Babi Tengah,Johor,,2.467189,103.966948,Mersing Marine Park,1
+BABI_TENGAH_S06,Babi Tengah Reef Site 06,Babi Tengah,Johor,,2.464453,103.962526,Mersing Marine Park,1
+BABI_TENGAH_S07,Babi Tengah Reef Site 07,Babi Tengah,Johor,,2.466375,103.952729,Mersing Marine Park,1
+BABI_TENGAH_S08,Babi Tengah Reef Site 08,Babi Tengah,Johor,,2.471397,103.947778,Mersing Marine Park,1
+BABI_TENGAH_S09,Babi Tengah Reef Site 09,Babi Tengah,Johor,,2.482913,103.947046,Mersing Marine Park,1
+BABI_TENGAH_S10,Babi Tengah Reef Site 10,Babi Tengah,Johor,,2.489027,103.950007,Mersing Marine Park,1
+BALAMBANGAN_S01,Balambangan Reef Site 01,Balambangan,Sabah,North Borneo,7.24042,116.924793,Tun Mustapha Park,1
+BALAMBANGAN_S02,Balambangan Reef Site 02,Balambangan,Sabah,North Borneo,7.240309,116.928421,Tun Mustapha Park,1
+BALAMBANGAN_S03,Balambangan Reef Site 03,Balambangan,Sabah,North Borneo,7.236752,116.932255,Tun Mustapha Park,1
+BALAMBANGAN_S04,Balambangan Reef Site 04,Balambangan,Sabah,North Borneo,7.232056,116.933398,Tun Mustapha Park,1
+BALAMBANGAN_S05,Balambangan Reef Site 05,Balambangan,Sabah,North Borneo,7.225339,116.929527,Tun Mustapha Park,1
+BALAMBANGAN_S06,Balambangan Reef Site 06,Balambangan,Sabah,North Borneo,7.222726,116.924988,Tun Mustapha Park,1
+BALAMBANGAN_S07,Balambangan Reef Site 07,Balambangan,Sabah,North Borneo,7.224043,116.916263,Tun Mustapha Park,1
+BALAMBANGAN_S08,Balambangan Reef Site 08,Balambangan,Sabah,North Borneo,7.23097,116.910075,Tun Mustapha Park,1
+BALAMBANGAN_S09,Balambangan Reef Site 09,Balambangan,Sabah,North Borneo,7.239263,116.909004,Tun Mustapha Park,1
+BALAMBANGAN_S10,Balambangan Reef Site 10,Balambangan,Sabah,North Borneo,7.248811,116.914644,Tun Mustapha Park,1
+BERUNGUS_S01,Berungus Reef Site 01,Berungus,Sabah,North Borneo,6.958829,117.035189,Tun Mustapha Park,1
+BERUNGUS_S02,Berungus Reef Site 02,Berungus,Sabah,North Borneo,6.958526,117.039156,Tun Mustapha Park,1
+BERUNGUS_S03,Berungus Reef Site 03,Berungus,Sabah,North Borneo,6.956087,117.042447,Tun Mustapha Park,1
+BERUNGUS_S04,Berungus Reef Site 04,Berungus,Sabah,North Borneo,6.949261,117.043454,Tun Mustapha Park,1
+BERUNGUS_S05,Berungus Reef Site 05,Berungus,Sabah,North Borneo,6.944227,117.040813,Tun Mustapha Park,1
+BERUNGUS_S06,Berungus Reef Site 06,Berungus,Sabah,North Borneo,6.941118,117.034037,Tun Mustapha Park,1
+BERUNGUS_S07,Berungus Reef Site 07,Berungus,Sabah,North Borneo,6.94303,117.026025,Tun Mustapha Park,1
+BERUNGUS_S08,Berungus Reef Site 08,Berungus,Sabah,North Borneo,6.949557,117.020535,Tun Mustapha Park,1
+BERUNGUS_S09,Berungus Reef Site 09,Berungus,Sabah,North Borneo,6.95676,117.019268,Tun Mustapha Park,1
+BERUNGUS_S10,Berungus Reef Site 10,Berungus,Sabah,North Borneo,6.96616,117.023736,Tun Mustapha Park,1
+BESAR_S01,Besar Reef Site 01,Besar,Johor,Sunda Shelf,2.439035,103.967111,Mersing Marine Park,1
+BESAR_S02,Besar Reef Site 02,Besar,Johor,Sunda Shelf,2.439286,103.970331,Mersing Marine Park,1
+BESAR_S03,Besar Reef Site 03,Besar,Johor,Sunda Shelf,2.436649,103.974246,Mersing Marine Park,1
+BESAR_S04,Besar Reef Site 04,Besar,Johor,Sunda Shelf,2.429936,103.975593,Mersing Marine Park,1
+BESAR_S05,Besar Reef Site 05,Besar,Johor,Sunda Shelf,2.424736,103.973203,Mersing Marine Park,1
+BESAR_S06,Besar Reef Site 06,Besar,Johor,Sunda Shelf,2.421312,103.966153,Mersing Marine Park,1
+BESAR_S07,Besar Reef Site 07,Besar,Johor,Sunda Shelf,2.42344,103.957841,Mersing Marine Park,1
+BESAR_S08,Besar Reef Site 08,Besar,Johor,Sunda Shelf,2.429678,103.952647,Mersing Marine Park,1
+BESAR_S09,Besar Reef Site 09,Besar,Johor,Sunda Shelf,2.437683,103.951559,Mersing Marine Park,1
+BESAR_S10,Besar Reef Site 10,Besar,Johor,Sunda Shelf,2.446834,103.956403,Mersing Marine Park,1
+BIDONG_YU_S01,Bidong & Yu Reef Site 01,Bidong & Yu,Terengganu,Sunda Shelf,5.622411,103.050671,Terengganu Marine Park,1
+BIDONG_YU_S02,Bidong & Yu Reef Site 02,Bidong & Yu,Terengganu,Sunda Shelf,5.622339,103.054168,Terengganu Marine Park,1
+BIDONG_YU_S03,Bidong & Yu Reef Site 03,Bidong & Yu,Terengganu,Sunda Shelf,5.619291,103.05787,Terengganu Marine Park,1
+BIDONG_YU_S04,Bidong & Yu Reef Site 04,Bidong & Yu,Terengganu,Sunda Shelf,5.614855,103.059364,Terengganu Marine Park,1
+BIDONG_YU_S05,Bidong & Yu Reef Site 05,Bidong & Yu,Terengganu,Sunda Shelf,5.608436,103.056909,Terengganu Marine Park,1
+BIDONG_YU_S06,Bidong & Yu Reef Site 06,Bidong & Yu,Terengganu,Sunda Shelf,5.604737,103.049054,Terengganu Marine Park,1
+BIDONG_YU_S07,Bidong & Yu Reef Site 07,Bidong & Yu,Terengganu,Sunda Shelf,5.605169,103.043442,Terengganu Marine Park,1
+BIDONG_YU_S08,Bidong & Yu Reef Site 08,Bidong & Yu,Terengganu,Sunda Shelf,5.6107,103.036736,Terengganu Marine Park,1
+BIDONG_YU_S09,Bidong & Yu Reef Site 09,Bidong & Yu,Terengganu,Sunda Shelf,5.622491,103.035283,Terengganu Marine Park,1
+BIDONG_YU_S10,Bidong & Yu Reef Site 10,Bidong & Yu,Terengganu,Sunda Shelf,5.631085,103.040897,Terengganu Marine Park,1
+GUAL_S01,Gual Reef Site 01,Gual,Johor,Sunda Shelf,2.47762,104.016109,Mersing Marine Park,1
+GUAL_S02,Gual Reef Site 02,Gual,Johor,Sunda Shelf,2.477588,104.020783,Mersing Marine Park,1
+GUAL_S03,Gual Reef Site 03,Gual,Johor,Sunda Shelf,2.474925,104.024383,Mersing Marine Park,1
+GUAL_S04,Gual Reef Site 04,Gual,Johor,Sunda Shelf,2.469085,104.025782,Mersing Marine Park,1
+GUAL_S05,Gual Reef Site 05,Gual,Johor,Sunda Shelf,2.463447,104.023348,Mersing Marine Park,1
+GUAL_S06,Gual Reef Site 06,Gual,Johor,Sunda Shelf,2.459928,104.015873,Mersing Marine Park,1
+GUAL_S07,Gual Reef Site 07,Gual,Johor,Sunda Shelf,2.461114,104.008997,Mersing Marine Park,1
+GUAL_S08,Gual Reef Site 08,Gual,Johor,Sunda Shelf,2.466072,104.00341,Mersing Marine Park,1
+GUAL_S09,Gual Reef Site 09,Gual,Johor,Sunda Shelf,2.475654,104.00139,Mersing Marine Park,1
+GUAL_S10,Gual Reef Site 10,Gual,Johor,Sunda Shelf,2.48569,104.006749,Mersing Marine Park,1
+HARIMAU_S01,Harimau Reef Site 01,Harimau,Johor,Sunda Shelf,2.51404,103.931356,Mersing Marine Park,1
+HARIMAU_S02,Harimau Reef Site 02,Harimau,Johor,Sunda Shelf,2.514257,103.93538,Mersing Marine Park,1
+HARIMAU_S03,Harimau Reef Site 03,Harimau,Johor,Sunda Shelf,2.511326,103.939382,Mersing Marine Park,1
+HARIMAU_S04,Harimau Reef Site 04,Harimau,Johor,Sunda Shelf,2.504563,103.940442,Mersing Marine Park,1
+HARIMAU_S05,Harimau Reef Site 05,Harimau,Johor,Sunda Shelf,2.499716,103.938177,Mersing Marine Park,1
+HARIMAU_S06,Harimau Reef Site 06,Harimau,Johor,Sunda Shelf,2.496375,103.930359,Mersing Marine Park,1
+HARIMAU_S07,Harimau Reef Site 07,Harimau,Johor,Sunda Shelf,2.496914,103.924916,Mersing Marine Park,1
+HARIMAU_S08,Harimau Reef Site 08,Harimau,Johor,Sunda Shelf,2.50312,103.918144,Mersing Marine Park,1
+HARIMAU_S09,Harimau Reef Site 09,Harimau,Johor,Sunda Shelf,2.514485,103.917201,Mersing Marine Park,1
+HARIMAU_S10,Harimau Reef Site 10,Harimau,Johor,Sunda Shelf,2.522591,103.922484,Mersing Marine Park,1
+HUJUNG_S01,Hujung Reef Site 01,Hujung,Johor,Sunda Shelf,2.489018,103.983902,Mersing Marine Park,1
+HUJUNG_S02,Hujung Reef Site 02,Hujung,Johor,Sunda Shelf,2.489195,103.987078,Mersing Marine Park,1
+HUJUNG_S03,Hujung Reef Site 03,Hujung,Johor,Sunda Shelf,2.484917,103.991397,Mersing Marine Park,1
+HUJUNG_S04,Hujung Reef Site 04,Hujung,Johor,Sunda Shelf,2.48056,103.992405,Mersing Marine Park,1
+HUJUNG_S05,Hujung Reef Site 05,Hujung,Johor,Sunda Shelf,2.474727,103.989792,Mersing Marine Park,1
+HUJUNG_S06,Hujung Reef Site 06,Hujung,Johor,Sunda Shelf,2.471355,103.984444,Mersing Marine Park,1
+HUJUNG_S07,Hujung Reef Site 07,Hujung,Johor,Sunda Shelf,2.472367,103.975808,Mersing Marine Park,1
+HUJUNG_S08,Hujung Reef Site 08,Hujung,Johor,Sunda Shelf,2.4799,103.969191,Mersing Marine Park,1
+HUJUNG_S09,Hujung Reef Site 09,Hujung,Johor,Sunda Shelf,2.48689,103.96795,Mersing Marine Park,1
+HUJUNG_S10,Hujung Reef Site 10,Hujung,Johor,Sunda Shelf,2.496455,103.972522,Mersing Marine Park,1
+KAPALAI_S01,Kapalai Reef Site 01,Kapalai,Sabah,North Borneo,4.230729,118.683794,Non-Park Reef (Semporna),1
+KAPALAI_S02,Kapalai Reef Site 02,Kapalai,Sabah,North Borneo,4.230232,118.687963,Non-Park Reef (Semporna),1
+KAPALAI_S03,Kapalai Reef Site 03,Kapalai,Sabah,North Borneo,4.228001,118.691006,Non-Park Reef (Semporna),1
+KAPALAI_S04,Kapalai Reef Site 04,Kapalai,Sabah,North Borneo,4.222527,118.692498,Non-Park Reef (Semporna),1
+KAPALAI_S05,Kapalai Reef Site 05,Kapalai,Sabah,North Borneo,4.21597,118.689149,Non-Park Reef (Semporna),1
+KAPALAI_S06,Kapalai Reef Site 06,Kapalai,Sabah,North Borneo,4.213081,118.684692,Non-Park Reef (Semporna),1
+KAPALAI_S07,Kapalai Reef Site 07,Kapalai,Sabah,North Borneo,4.214809,118.674809,Non-Park Reef (Semporna),1
+KAPALAI_S08,Kapalai Reef Site 08,Kapalai,Sabah,North Borneo,4.220035,118.66964,Non-Park Reef (Semporna),1
+KAPALAI_S09,Kapalai Reef Site 09,Kapalai,Sabah,North Borneo,4.23045,118.668483,Non-Park Reef (Semporna),1
+KAPALAI_S10,Kapalai Reef Site 10,Kapalai,Sabah,North Borneo,4.237829,118.672116,Non-Park Reef (Semporna),1
+KAPAS_S01,Kapas Reef Site 01,Kapas,Terengganu,Sunda Shelf,5.222412,103.266033,Terengganu Marine Park,1
+KAPAS_S02,Kapas Reef Site 02,Kapas,Terengganu,Sunda Shelf,5.222434,103.270731,Terengganu Marine Park,1
+KAPAS_S03,Kapas Reef Site 03,Kapas,Terengganu,Sunda Shelf,5.219946,103.274316,Terengganu Marine Park,1
+KAPAS_S04,Kapas Reef Site 04,Kapas,Terengganu,Sunda Shelf,5.213778,103.275777,Terengganu Marine Park,1
+KAPAS_S05,Kapas Reef Site 05,Kapas,Terengganu,Sunda Shelf,5.208031,103.273083,Terengganu Marine Park,1
+KAPAS_S06,Kapas Reef Site 06,Kapas,Terengganu,Sunda Shelf,5.204702,103.266501,Terengganu Marine Park,1
+KAPAS_S07,Kapas Reef Site 07,Kapas,Terengganu,Sunda Shelf,5.206456,103.258261,Terengganu Marine Park,1
+KAPAS_S08,Kapas Reef Site 08,Kapas,Terengganu,Sunda Shelf,5.21202,103.252919,Terengganu Marine Park,1
+KAPAS_S09,Kapas Reef Site 09,Kapas,Terengganu,Sunda Shelf,5.220295,103.251302,Terengganu Marine Park,1
+KAPAS_S10,Kapas Reef Site 10,Kapas,Terengganu,Sunda Shelf,5.231477,103.25826,Terengganu Marine Park,1
+KOTA_BELUD_S01,Kota Belud Reef Site 01,Kota Belud,Sabah,,6.355741,116.432975,West Coast Sabah Coastal,1
+KOTA_BELUD_S02,Kota Belud Reef Site 02,Kota Belud,Sabah,,6.355254,116.437954,West Coast Sabah Coastal,1
+KOTA_BELUD_S03,Kota Belud Reef Site 03,Kota Belud,Sabah,,6.352612,116.441174,West Coast Sabah Coastal,1
+KOTA_BELUD_S04,Kota Belud Reef Site 04,Kota Belud,Sabah,,6.346713,116.442268,West Coast Sabah Coastal,1
+KOTA_BELUD_S05,Kota Belud Reef Site 05,Kota Belud,Sabah,,6.341486,116.439904,West Coast Sabah Coastal,1
+KOTA_BELUD_S06,Kota Belud Reef Site 06,Kota Belud,Sabah,,6.338034,116.432394,West Coast Sabah Coastal,1
+KOTA_BELUD_S07,Kota Belud Reef Site 07,Kota Belud,Sabah,,6.339147,116.425652,West Coast Sabah Coastal,1
+KOTA_BELUD_S08,Kota Belud Reef Site 08,Kota Belud,Sabah,,6.345425,116.419456,West Coast Sabah Coastal,1
+KOTA_BELUD_S09,Kota Belud Reef Site 09,Kota Belud,Sabah,,6.353241,116.417792,West Coast Sabah Coastal,1
+KOTA_BELUD_S10,Kota Belud Reef Site 10,Kota Belud,Sabah,,6.364774,116.424838,West Coast Sabah Coastal,1
+KUCHING_S01,Kuching Reef Site 01,Kuching,Sarawak,Sunda Shelf,1.922429,110.082806,Talang-Satang National Park,1
+KUCHING_S02,Kuching Reef Site 02,Kuching,Sarawak,Sunda Shelf,1.922669,110.086959,Talang-Satang National Park,1
+KUCHING_S03,Kuching Reef Site 03,Kuching,Sarawak,Sunda Shelf,1.919323,110.091126,Talang-Satang National Park,1
+KUCHING_S04,Kuching Reef Site 04,Kuching,Sarawak,Sunda Shelf,1.913738,110.092331,Talang-Satang National Park,1
+KUCHING_S05,Kuching Reef Site 05,Kuching,Sarawak,Sunda Shelf,1.908046,110.089681,Talang-Satang National Park,1
+KUCHING_S06,Kuching Reef Site 06,Kuching,Sarawak,Sunda Shelf,1.904713,110.082746,Talang-Satang National Park,1
+KUCHING_S07,Kuching Reef Site 07,Kuching,Sarawak,Sunda Shelf,1.905784,110.075786,Talang-Satang National Park,1
+KUCHING_S08,Kuching Reef Site 08,Kuching,Sarawak,Sunda Shelf,1.910737,110.070076,Talang-Satang National Park,1
+KUCHING_S09,Kuching Reef Site 09,Kuching,Sarawak,Sunda Shelf,1.920644,110.068043,Talang-Satang National Park,1
+KUCHING_S10,Kuching Reef Site 10,Kuching,Sarawak,Sunda Shelf,1.929982,110.072683,Talang-Satang National Park,1
+LABUAN_S01,Labuan Reef Site 01,Labuan,W.P. Labuan,North Borneo,5.322448,115.216836,Labuan Marine Park,1
+LABUAN_S02,Labuan Reef Site 02,Labuan,W.P. Labuan,North Borneo,5.32273,115.22027,Labuan Marine Park,1
+LABUAN_S03,Labuan Reef Site 03,Labuan,W.P. Labuan,North Borneo,5.318805,115.224711,Labuan Marine Park,1
+LABUAN_S04,Labuan Reef Site 04,Labuan,W.P. Labuan,North Borneo,5.314697,115.226027,Labuan Marine Park,1
+LABUAN_S05,Labuan Reef Site 05,Labuan,W.P. Labuan,North Borneo,5.308522,115.223707,Labuan Marine Park,1
+LABUAN_S06,Labuan Reef Site 06,Labuan,W.P. Labuan,North Borneo,5.304703,115.216444,Labuan Marine Park,1
+LABUAN_S07,Labuan Reef Site 07,Labuan,W.P. Labuan,North Borneo,5.306977,115.20766,Labuan Marine Park,1
+LABUAN_S08,Labuan Reef Site 08,Labuan,W.P. Labuan,North Borneo,5.310809,115.203393,Labuan Marine Park,1
+LABUAN_S09,Labuan Reef Site 09,Labuan,W.P. Labuan,North Borneo,5.322071,115.20183,Labuan Marine Park,1
+LABUAN_S10,Labuan Reef Site 10,Labuan,W.P. Labuan,North Borneo,5.330521,115.206759,Labuan Marine Park,1
+LAHAD_DATU_S01,Lahad Datu Reef Site 01,Lahad Datu,Sabah,North Borneo,5.022425,118.333843,Darvel Bay Reefs,1
+LAHAD_DATU_S02,Lahad Datu Reef Site 02,Lahad Datu,Sabah,North Borneo,5.022182,118.33767,Darvel Bay Reefs,1
+LAHAD_DATU_S03,Lahad Datu Reef Site 03,Lahad Datu,Sabah,North Borneo,5.020131,118.340831,Darvel Bay Reefs,1
+LAHAD_DATU_S04,Lahad Datu Reef Site 04,Lahad Datu,Sabah,North Borneo,5.013436,118.342256,Darvel Bay Reefs,1
+LAHAD_DATU_S05,Lahad Datu Reef Site 05,Lahad Datu,Sabah,North Borneo,5.007873,118.339459,Darvel Bay Reefs,1
+LAHAD_DATU_S06,Lahad Datu Reef Site 06,Lahad Datu,Sabah,North Borneo,5.004702,118.333492,Darvel Bay Reefs,1
+LAHAD_DATU_S07,Lahad Datu Reef Site 07,Lahad Datu,Sabah,North Borneo,5.005954,118.325518,Darvel Bay Reefs,1
+LAHAD_DATU_S08,Lahad Datu Reef Site 08,Lahad Datu,Sabah,North Borneo,5.01322,118.31917,Darvel Bay Reefs,1
+LAHAD_DATU_S09,Lahad Datu Reef Site 09,Lahad Datu,Sabah,North Borneo,5.02078,118.318029,Darvel Bay Reefs,1
+LAHAD_DATU_S10,Lahad Datu Reef Site 10,Lahad Datu,Sabah,North Borneo,5.029219,118.321755,Darvel Bay Reefs,1
+LANG_TENGAH_S01,Lang Tengah Reef Site 01,Lang Tengah,Terengganu,Sunda Shelf,5.797439,102.89206,Terengganu Marine Park,1
+LANG_TENGAH_S02,Lang Tengah Reef Site 02,Lang Tengah,Terengganu,Sunda Shelf,5.797582,102.895515,Terengganu Marine Park,1
+LANG_TENGAH_S03,Lang Tengah Reef Site 03,Lang Tengah,Terengganu,Sunda Shelf,5.794071,102.899643,Terengganu Marine Park,1
+LANG_TENGAH_S04,Lang Tengah Reef Site 04,Lang Tengah,Terengganu,Sunda Shelf,5.788,102.900495,Terengganu Marine Park,1
+LANG_TENGAH_S05,Lang Tengah Reef Site 05,Lang Tengah,Terengganu,Sunda Shelf,5.78269,102.897594,Terengganu Marine Park,1
+LANG_TENGAH_S06,Lang Tengah Reef Site 06,Lang Tengah,Terengganu,Sunda Shelf,5.779702,102.891482,Terengganu Marine Park,1
+LANG_TENGAH_S07,Lang Tengah Reef Site 07,Lang Tengah,Terengganu,Sunda Shelf,5.781488,102.883214,Terengganu Marine Park,1
+LANG_TENGAH_S08,Lang Tengah Reef Site 08,Lang Tengah,Terengganu,Sunda Shelf,5.78863,102.877456,Terengganu Marine Park,1
+LANG_TENGAH_S09,Lang Tengah Reef Site 09,Lang Tengah,Terengganu,Sunda Shelf,5.796592,102.876652,Terengganu Marine Park,1
+LANG_TENGAH_S10,Lang Tengah Reef Site 10,Lang Tengah,Terengganu,Sunda Shelf,5.8051,102.881186,Terengganu Marine Park,1
+LANKAYAN_S01,Lankayan Reef Site 01,Lankayan,Sabah,North Borneo,6.508546,117.92369,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S02,Lankayan Reef Site 02,Lankayan,Sabah,North Borneo,6.50839,117.92814,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S03,Lankayan Reef Site 03,Lankayan,Sabah,North Borneo,6.505513,117.931742,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S04,Lankayan Reef Site 04,Lankayan,Sabah,North Borneo,6.500898,117.933268,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S05,Lankayan Reef Site 05,Lankayan,Sabah,North Borneo,6.494921,117.93126,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S06,Lankayan Reef Site 06,Lankayan,Sabah,North Borneo,6.490806,117.923531,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S07,Lankayan Reef Site 07,Lankayan,Sabah,North Borneo,6.492779,117.915175,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S08,Lankayan Reef Site 08,Lankayan,Sabah,North Borneo,6.497533,117.910303,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S09,Lankayan Reef Site 09,Lankayan,Sabah,North Borneo,6.506693,117.90854,Sugud Islands Marine Conservation Area (SIMCA),1
+LANKAYAN_S10,Lankayan Reef Site 10,Lankayan,Sabah,North Borneo,6.516979,117.914461,Sugud Islands Marine Conservation Area (SIMCA),1
+LARAPAN_S01,Larapan Reef Site 01,Larapan,Sabah,Sulu Sea,4.522443,118.583014,Tun Sakaran Marine Park,1
+LARAPAN_S02,Larapan Reef Site 02,Larapan,Sabah,Sulu Sea,4.522028,118.587854,Tun Sakaran Marine Park,1
+LARAPAN_S03,Larapan Reef Site 03,Larapan,Sabah,Sulu Sea,4.518624,118.591348,Tun Sakaran Marine Park,1
+LARAPAN_S04,Larapan Reef Site 04,Larapan,Sabah,Sulu Sea,4.51421,118.592496,Tun Sakaran Marine Park,1
+LARAPAN_S05,Larapan Reef Site 05,Larapan,Sabah,Sulu Sea,4.507441,118.58878,Tun Sakaran Marine Park,1
+LARAPAN_S06,Larapan Reef Site 06,Larapan,Sabah,Sulu Sea,4.504755,118.584456,Tun Sakaran Marine Park,1
+LARAPAN_S07,Larapan Reef Site 07,Larapan,Sabah,Sulu Sea,4.505387,118.57638,Tun Sakaran Marine Park,1
+LARAPAN_S08,Larapan Reef Site 08,Larapan,Sabah,Sulu Sea,4.513281,118.569165,Tun Sakaran Marine Park,1
+LARAPAN_S09,Larapan Reef Site 09,Larapan,Sabah,Sulu Sea,4.52153,118.568262,Tun Sakaran Marine Park,1
+LARAPAN_S10,Larapan Reef Site 10,Larapan,Sabah,Sulu Sea,4.529383,118.571944,Tun Sakaran Marine Park,1
+LIMA_S01,Lima Reef Site 01,Lima,Johor,Sunda Shelf,2.222435,104.167121,Mersing Marine Park,1
+LIMA_S02,Lima Reef Site 02,Lima,Johor,Sunda Shelf,2.221891,104.1714,Mersing Marine Park,1
+LIMA_S03,Lima Reef Site 03,Lima,Johor,Sunda Shelf,2.219811,104.174347,Mersing Marine Park,1
+LIMA_S04,Lima Reef Site 04,Lima,Johor,Sunda Shelf,2.214858,104.176027,Mersing Marine Park,1
+LIMA_S05,Lima Reef Site 05,Lima,Johor,Sunda Shelf,2.207499,104.172263,Mersing Marine Park,1
+LIMA_S06,Lima Reef Site 06,Lima,Johor,Sunda Shelf,2.204719,104.166031,Mersing Marine Park,1
+LIMA_S07,Lima Reef Site 07,Lima,Johor,Sunda Shelf,2.205133,104.160232,Mersing Marine Park,1
+LIMA_S08,Lima Reef Site 08,Lima,Johor,Sunda Shelf,2.210938,104.153384,Mersing Marine Park,1
+LIMA_S09,Lima Reef Site 09,Lima,Johor,Sunda Shelf,2.223085,104.152291,Mersing Marine Park,1
+LIMA_S10,Lima Reef Site 10,Lima,Johor,Sunda Shelf,2.230574,104.156869,Mersing Marine Park,1
+MABUL_S01,Mabul Reef Site 01,Mabul,Sabah,North Borneo,4.252149,118.629497,Non-Park Reef (Semporna),1
+MABUL_S02,Mabul Reef Site 02,Mabul,Sabah,North Borneo,4.251777,118.633894,Non-Park Reef (Semporna),1
+MABUL_S03,Mabul Reef Site 03,Mabul,Sabah,North Borneo,4.248409,118.637424,Non-Park Reef (Semporna),1
+MABUL_S04,Mabul Reef Site 04,Mabul,Sabah,North Borneo,4.24327,118.638394,Non-Park Reef (Semporna),1
+MABUL_S05,Mabul Reef Site 05,Mabul,Sabah,North Borneo,4.237254,118.635065,Non-Park Reef (Semporna),1
+MABUL_S06,Mabul Reef Site 06,Mabul,Sabah,North Borneo,4.234429,118.630243,Non-Park Reef (Semporna),1
+MABUL_S07,Mabul Reef Site 07,Mabul,Sabah,North Borneo,4.235122,118.622425,Non-Park Reef (Semporna),1
+MABUL_S08,Mabul Reef Site 08,Mabul,Sabah,North Borneo,4.242735,118.615332,Non-Park Reef (Semporna),1
+MABUL_S09,Mabul Reef Site 09,Mabul,Sabah,North Borneo,4.250678,118.6142,Non-Park Reef (Semporna),1
+MABUL_S10,Mabul Reef Site 10,Mabul,Sabah,North Borneo,4.261189,118.620993,Non-Park Reef (Semporna),1
+MALACCA_S01,Malacca Reef Site 01,Malacca,Malacca,Malacca Strait,2.055748,102.333446,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S02,Malacca Reef Site 02,Malacca,Malacca,Malacca Strait,2.055201,102.337988,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S03,Malacca Reef Site 03,Malacca,Malacca,Malacca Strait,2.052271,102.341236,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S04,Malacca Reef Site 04,Malacca,Malacca,Malacca Strait,2.046683,102.342208,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S05,Malacca Reef Site 05,Malacca,Malacca,Malacca Strait,2.041176,102.339445,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S06,Malacca Reef Site 06,Malacca,Malacca,Malacca Strait,2.038,102.333237,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S07,Malacca Reef Site 07,Malacca,Malacca,Malacca Strait,2.03855,102.326627,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S08,Malacca Reef Site 08,Malacca,Malacca,Malacca Strait,2.04507,102.319655,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S09,Malacca Reef Site 09,Malacca,Malacca,Malacca Strait,2.056615,102.318997,Pulau Besar / Pulau Undan Marine Park,1
+MALACCA_S10,Malacca Reef Site 10,Malacca,Malacca,Malacca Strait,2.064567,102.324531,Pulau Besar / Pulau Undan Marine Park,1
+MALIANGIN_S01,Maliangin Reef Site 01,Maliangin,Sabah,North Borneo,7.072422,117.049427,Tun Mustapha Park,1
+MALIANGIN_S02,Maliangin Reef Site 02,Maliangin,Sabah,North Borneo,7.072519,117.053921,Tun Mustapha Park,1
+MALIANGIN_S03,Maliangin Reef Site 03,Maliangin,Sabah,North Borneo,7.069074,117.057961,Tun Mustapha Park,1
+MALIANGIN_S04,Maliangin Reef Site 04,Maliangin,Sabah,North Borneo,7.063884,117.059143,Tun Mustapha Park,1
+MALIANGIN_S05,Maliangin Reef Site 05,Maliangin,Sabah,North Borneo,7.05831,117.056772,Tun Mustapha Park,1
+MALIANGIN_S06,Maliangin Reef Site 06,Maliangin,Sabah,North Borneo,7.054717,117.049355,Tun Mustapha Park,1
+MALIANGIN_S07,Maliangin Reef Site 07,Maliangin,Sabah,North Borneo,7.056954,117.040955,Tun Mustapha Park,1
+MALIANGIN_S08,Maliangin Reef Site 08,Maliangin,Sabah,North Borneo,7.060795,117.036656,Tun Mustapha Park,1
+MALIANGIN_S09,Maliangin Reef Site 09,Maliangin,Sabah,North Borneo,7.072459,117.035228,Tun Mustapha Park,1
+MALIANGIN_S10,Maliangin Reef Site 10,Maliangin,Sabah,North Borneo,7.079436,117.038653,Tun Mustapha Park,1
+MANTANANI_S01,Mantanani Reef Site 01,Mantanani,Sabah,North Borneo,6.722447,116.350182,Mantanani Islands,1
+MANTANANI_S02,Mantanani Reef Site 02,Mantanani,Sabah,North Borneo,6.722753,116.353539,Mantanani Islands,1
+MANTANANI_S03,Mantanani Reef Site 03,Mantanani,Sabah,North Borneo,6.719092,116.35795,Mantanani Islands,1
+MANTANANI_S04,Mantanani Reef Site 04,Mantanani,Sabah,North Borneo,6.714325,116.359262,Mantanani Islands,1
+MANTANANI_S05,Mantanani Reef Site 05,Mantanani,Sabah,North Borneo,6.708633,116.357155,Mantanani Islands,1
+MANTANANI_S06,Mantanani Reef Site 06,Mantanani,Sabah,North Borneo,6.704707,116.349592,Mantanani Islands,1
+MANTANANI_S07,Mantanani Reef Site 07,Mantanani,Sabah,North Borneo,6.705675,116.342599,Mantanani Islands,1
+MANTANANI_S08,Mantanani Reef Site 08,Mantanani,Sabah,North Borneo,6.713462,116.335768,Mantanani Islands,1
+MANTANANI_S09,Mantanani Reef Site 09,Mantanani,Sabah,North Borneo,6.72146,116.334883,Mantanani Islands,1
+MANTANANI_S10,Mantanani Reef Site 10,Mantanani,Sabah,North Borneo,6.730361,116.339812,Mantanani Islands,1
+MATAKING_S01,Mataking Reef Site 01,Mataking,Sabah,North Borneo,4.585742,118.950305,Non-Park Reef (Semporna),1
+MATAKING_S02,Mataking Reef Site 02,Mataking,Sabah,North Borneo,4.5854,118.954468,Non-Park Reef (Semporna),1
+MATAKING_S03,Mataking Reef Site 03,Mataking,Sabah,North Borneo,4.582366,118.957929,Non-Park Reef (Semporna),1
+MATAKING_S04,Mataking Reef Site 04,Mataking,Sabah,North Borneo,4.578101,118.959338,Non-Park Reef (Semporna),1
+MATAKING_S05,Mataking Reef Site 05,Mataking,Sabah,North Borneo,4.570942,118.955808,Non-Park Reef (Semporna),1
+MATAKING_S06,Mataking Reef Site 06,Mataking,Sabah,North Borneo,4.568053,118.948867,Non-Park Reef (Semporna),1
+MATAKING_S07,Mataking Reef Site 07,Mataking,Sabah,North Borneo,4.568606,118.943215,Non-Park Reef (Semporna),1
+MATAKING_S08,Mataking Reef Site 08,Mataking,Sabah,North Borneo,4.57497,118.936357,Non-Park Reef (Semporna),1
+MATAKING_S09,Mataking Reef Site 09,Mataking,Sabah,North Borneo,4.583917,118.934696,Non-Park Reef (Semporna),1
+MATAKING_S10,Mataking Reef Site 10,Mataking,Sabah,North Borneo,4.592667,118.938626,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S01,Mataking & Pom Pom Reef Site 01,Mataking & Pom Pom,Sabah,North Borneo,4.595748,118.880135,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S02,Mataking & Pom Pom Reef Site 02,Mataking & Pom Pom,Sabah,North Borneo,4.595474,118.884377,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S03,Mataking & Pom Pom Reef Site 03,Mataking & Pom Pom,Sabah,North Borneo,4.5924,118.887919,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S04,Mataking & Pom Pom Reef Site 04,Mataking & Pom Pom,Sabah,North Borneo,4.587494,118.889193,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S05,Mataking & Pom Pom Reef Site 05,Mataking & Pom Pom,Sabah,North Borneo,4.581843,118.887024,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S06,Mataking & Pom Pom Reef Site 06,Mataking & Pom Pom,Sabah,North Borneo,4.578014,118.879428,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S07,Mataking & Pom Pom Reef Site 07,Mataking & Pom Pom,Sabah,North Borneo,4.579219,118.872272,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S08,Mataking & Pom Pom Reef Site 08,Mataking & Pom Pom,Sabah,North Borneo,4.58641,118.865906,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S09,Mataking & Pom Pom Reef Site 09,Mataking & Pom Pom,Sabah,North Borneo,4.595517,118.865201,Non-Park Reef (Semporna),1
+MATAKING_POM_POM_S10,Mataking & Pom Pom Reef Site 10,Mataking & Pom Pom,Sabah,North Borneo,4.602856,118.868841,Non-Park Reef (Semporna),1
+MENSIRIP_S01,Mensirip Reef Site 01,Mensirip,Johor,Sunda Shelf,2.455709,103.949317,Mersing Marine Park,1
+MENSIRIP_S02,Mensirip Reef Site 02,Mensirip,Johor,Sunda Shelf,2.455862,103.953829,Mersing Marine Park,1
+MENSIRIP_S03,Mensirip Reef Site 03,Mensirip,Johor,Sunda Shelf,2.452532,103.957859,Mersing Marine Park,1
+MENSIRIP_S04,Mensirip Reef Site 04,Mensirip,Johor,Sunda Shelf,2.446882,103.958982,Mersing Marine Park,1
+MENSIRIP_S05,Mensirip Reef Site 05,Mensirip,Johor,Sunda Shelf,2.440725,103.955439,Mersing Marine Park,1
+MENSIRIP_S06,Mensirip Reef Site 06,Mensirip,Johor,Sunda Shelf,2.438,103.950099,Mersing Marine Park,1
+MENSIRIP_S07,Mensirip Reef Site 07,Mensirip,Johor,Sunda Shelf,2.439683,103.941678,Mersing Marine Park,1
+MENSIRIP_S08,Mensirip Reef Site 08,Mensirip,Johor,Sunda Shelf,2.445868,103.936089,Mersing Marine Park,1
+MENSIRIP_S09,Mensirip Reef Site 09,Mensirip,Johor,Sunda Shelf,2.454477,103.934886,Mersing Marine Park,1
+MENSIRIP_S10,Mensirip Reef Site 10,Mensirip,Johor,Sunda Shelf,2.464538,103.941181,Mersing Marine Park,1
+MERTANG_S01,Mertang Reef Site 01,Mertang,Johor,Sunda Shelf,2.465742,103.979697,Mersing Marine Park,1
+MERTANG_S02,Mertang Reef Site 02,Mertang,Johor,Sunda Shelf,2.465378,103.984485,Mersing Marine Park,1
+MERTANG_S03,Mertang Reef Site 03,Mertang,Johor,Sunda Shelf,2.463423,103.987513,Mersing Marine Park,1
+MERTANG_S04,Mertang Reef Site 04,Mertang,Johor,Sunda Shelf,2.456606,103.988881,Mersing Marine Park,1
+MERTANG_S05,Mertang Reef Site 05,Mertang,Johor,Sunda Shelf,2.450963,103.985827,Mersing Marine Park,1
+MERTANG_S06,Mertang Reef Site 06,Mertang,Johor,Sunda Shelf,2.448031,103.97914,Mersing Marine Park,1
+MERTANG_S07,Mertang Reef Site 07,Mertang,Johor,Sunda Shelf,2.449968,103.971336,Mersing Marine Park,1
+MERTANG_S08,Mertang Reef Site 08,Mertang,Johor,Sunda Shelf,2.455629,103.966162,Mersing Marine Park,1
+MERTANG_S09,Mertang Reef Site 09,Mertang,Johor,Sunda Shelf,2.463625,103.964659,Mersing Marine Park,1
+MERTANG_S10,Mertang Reef Site 10,Mertang,Johor,Sunda Shelf,2.473059,103.969106,Mersing Marine Park,1
+MIRI_S01,Miri Reef Site 01,Miri,Sarawak,Sunda Shelf,4.389034,113.966264,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S02,Miri Reef Site 02,Miri,Sarawak,Sunda Shelf,4.388471,113.971432,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S03,Miri Reef Site 03,Miri,Sarawak,Sunda Shelf,4.385058,113.974784,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S04,Miri Reef Site 04,Miri,Sarawak,Sunda Shelf,4.380963,113.975935,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S05,Miri Reef Site 05,Miri,Sarawak,Sunda Shelf,4.375228,113.97382,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S06,Miri Reef Site 06,Miri,Sarawak,Sunda Shelf,4.371317,113.967347,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S07,Miri Reef Site 07,Miri,Sarawak,Sunda Shelf,4.372397,113.959149,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S08,Miri Reef Site 08,Miri,Sarawak,Sunda Shelf,4.377417,113.953408,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S09,Miri Reef Site 09,Miri,Sarawak,Sunda Shelf,4.388455,113.951774,Miri-Sibuti Coral Reefs National Park,1
+MIRI_S10,Miri Reef Site 10,Miri,Sarawak,Sunda Shelf,4.396738,113.956257,Miri-Sibuti Coral Reefs National Park,1
+NORTHERN_SEMPORNA_S01,Northern Semporna Reef Site 01,Northern Semporna,Sabah,North Borneo,4.639046,118.750225,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S02,Northern Semporna Reef Site 02,Northern Semporna,Sabah,North Borneo,4.639066,118.753982,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S03,Northern Semporna Reef Site 03,Northern Semporna,Sabah,North Borneo,4.63596,118.757835,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S04,Northern Semporna Reef Site 04,Northern Semporna,Sabah,North Borneo,4.631383,118.759335,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S05,Northern Semporna Reef Site 05,Northern Semporna,Sabah,North Borneo,4.624355,118.755982,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S06,Northern Semporna Reef Site 06,Northern Semporna,Sabah,North Borneo,4.621358,118.751179,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S07,Northern Semporna Reef Site 07,Northern Semporna,Sabah,North Borneo,4.622313,118.74257,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S08,Northern Semporna Reef Site 08,Northern Semporna,Sabah,North Borneo,4.627939,118.736483,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S09,Northern Semporna Reef Site 09,Northern Semporna,Sabah,North Borneo,4.636506,118.734529,Semporna Archipelago,1
+NORTHERN_SEMPORNA_S10,Northern Semporna Reef Site 10,Northern Semporna,Sabah,North Borneo,4.647195,118.740174,Semporna Archipelago,1
+PANGKOR_LAUT_S01,Pangkor Laut Reef Site 01,Pangkor Laut,Perak,Malacca Strait,4.202945,100.547446,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S02,Pangkor Laut Reef Site 02,Pangkor Laut,Perak,Malacca Strait,4.202341,100.551964,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S03,Pangkor Laut Reef Site 03,Pangkor Laut,Perak,Malacca Strait,4.200133,100.554932,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S04,Pangkor Laut Reef Site 04,Pangkor Laut,Perak,Malacca Strait,4.193924,100.556141,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S05,Pangkor Laut Reef Site 05,Pangkor Laut,Perak,Malacca Strait,4.188178,100.553061,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S06,Pangkor Laut Reef Site 06,Pangkor Laut,Perak,Malacca Strait,4.185277,100.545837,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S07,Pangkor Laut Reef Site 07,Pangkor Laut,Perak,Malacca Strait,4.186019,100.540071,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S08,Pangkor Laut Reef Site 08,Pangkor Laut,Perak,Malacca Strait,4.192718,100.533373,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S09,Pangkor Laut Reef Site 09,Pangkor Laut,Perak,Malacca Strait,4.202167,100.532213,Non-Park Reef (Perak),1
+PANGKOR_LAUT_S10,Pangkor Laut Reef Site 10,Pangkor Laut,Perak,Malacca Strait,4.210427,100.536493,Non-Park Reef (Perak),1
+PAYAR_S01,Payar Reef Site 01,Payar,Kedah,Malacca Strait,6.069629,100.04219,Pulau Payar Marine Park,1
+PAYAR_S02,Payar Reef Site 02,Payar,Kedah,Malacca Strait,6.069898,100.045329,Pulau Payar Marine Park,1
+PAYAR_S03,Payar Reef Site 03,Payar,Kedah,Malacca Strait,6.066906,100.049426,Pulau Payar Marine Park,1
+PAYAR_S04,Payar Reef Site 04,Payar,Kedah,Malacca Strait,6.061329,100.050897,Pulau Payar Marine Park,1
+PAYAR_S05,Payar Reef Site 05,Payar,Kedah,Malacca Strait,6.055635,100.048612,Pulau Payar Marine Park,1
+PAYAR_S06,Payar Reef Site 06,Payar,Kedah,Malacca Strait,6.051903,100.041955,Pulau Payar Marine Park,1
+PAYAR_S07,Payar Reef Site 07,Payar,Kedah,Malacca Strait,6.054087,100.032747,Pulau Payar Marine Park,1
+PAYAR_S08,Payar Reef Site 08,Payar,Kedah,Malacca Strait,6.060802,100.027455,Pulau Payar Marine Park,1
+PAYAR_S09,Payar Reef Site 09,Payar,Kedah,Malacca Strait,6.070521,100.027329,Pulau Payar Marine Park,1
+PAYAR_S10,Payar Reef Site 10,Payar,Kedah,Malacca Strait,6.077411,100.031324,Pulau Payar Marine Park,1
+PEMANGGIL_S01,Pemanggil Reef Site 01,Pemanggil,Johor,Sunda Shelf,2.589049,104.316584,Mersing Marine Park,1
+PEMANGGIL_S02,Pemanggil Reef Site 02,Pemanggil,Johor,Sunda Shelf,2.589348,104.320228,Mersing Marine Park,1
+PEMANGGIL_S03,Pemanggil Reef Site 03,Pemanggil,Johor,Sunda Shelf,2.585618,104.324626,Mersing Marine Park,1
+PEMANGGIL_S04,Pemanggil Reef Site 04,Pemanggil,Johor,Sunda Shelf,2.580304,104.325724,Mersing Marine Park,1
+PEMANGGIL_S05,Pemanggil Reef Site 05,Pemanggil,Johor,Sunda Shelf,2.573926,104.321967,Mersing Marine Park,1
+PEMANGGIL_S06,Pemanggil Reef Site 06,Pemanggil,Johor,Sunda Shelf,2.5713,104.316623,Mersing Marine Park,1
+PEMANGGIL_S07,Pemanggil Reef Site 07,Pemanggil,Johor,Sunda Shelf,2.57272,104.308715,Mersing Marine Park,1
+PEMANGGIL_S08,Pemanggil Reef Site 08,Pemanggil,Johor,Sunda Shelf,2.577615,104.303347,Mersing Marine Park,1
+PEMANGGIL_S09,Pemanggil Reef Site 09,Pemanggil,Johor,Sunda Shelf,2.587344,104.301463,Mersing Marine Park,1
+PEMANGGIL_S10,Pemanggil Reef Site 10,Pemanggil,Johor,Sunda Shelf,2.597766,104.307761,Mersing Marine Park,1
+PENYU_S01,Penyu Reef Site 01,Penyu,Sabah,North Borneo,6.172415,118.067334,Turtle Islands National Park,1
+PENYU_S02,Penyu Reef Site 02,Penyu,Sabah,North Borneo,6.172672,118.070373,Turtle Islands National Park,1
+PENYU_S03,Penyu Reef Site 03,Penyu,Sabah,North Borneo,6.169964,118.074321,Turtle Islands National Park,1
+PENYU_S04,Penyu Reef Site 04,Penyu,Sabah,North Borneo,6.164382,118.075966,Turtle Islands National Park,1
+PENYU_S05,Penyu Reef Site 05,Penyu,Sabah,North Borneo,6.157404,118.072131,Turtle Islands National Park,1
+PENYU_S06,Penyu Reef Site 06,Penyu,Sabah,North Borneo,6.154712,118.067242,Turtle Islands National Park,1
+PENYU_S07,Penyu Reef Site 07,Penyu,Sabah,North Borneo,6.156417,118.058296,Turtle Islands National Park,1
+PENYU_S08,Penyu Reef Site 08,Penyu,Sabah,North Borneo,6.162419,118.052766,Turtle Islands National Park,1
+PENYU_S09,Penyu Reef Site 09,Penyu,Sabah,North Borneo,6.169917,118.051192,Turtle Islands National Park,1
+PENYU_S10,Penyu Reef Site 10,Penyu,Sabah,North Borneo,6.18022,118.056334,Turtle Islands National Park,1
+PERHENTIAN_S01,Perhentian Reef Site 01,Perhentian,Terengganu,Sunda Shelf,5.905728,102.732793,Terengganu Marine Park,1
+PERHENTIAN_S02,Perhentian Reef Site 02,Perhentian,Terengganu,Sunda Shelf,5.905508,102.737643,Terengganu Marine Park,1
+PERHENTIAN_S03,Perhentian Reef Site 03,Perhentian,Terengganu,Sunda Shelf,5.902902,102.741064,Terengganu Marine Park,1
+PERHENTIAN_S04,Perhentian Reef Site 04,Perhentian,Terengganu,Sunda Shelf,5.897472,102.742506,Terengganu Marine Park,1
+PERHENTIAN_S05,Perhentian Reef Site 05,Perhentian,Terengganu,Sunda Shelf,5.891501,102.739918,Terengganu Marine Park,1
+PERHENTIAN_S06,Perhentian Reef Site 06,Perhentian,Terengganu,Sunda Shelf,5.888085,102.731865,Terengganu Marine Park,1
+PERHENTIAN_S07,Perhentian Reef Site 07,Perhentian,Terengganu,Sunda Shelf,5.888791,102.726197,Terengganu Marine Park,1
+PERHENTIAN_S08,Perhentian Reef Site 08,Perhentian,Terengganu,Sunda Shelf,5.895929,102.719309,Terengganu Marine Park,1
+PERHENTIAN_S09,Perhentian Reef Site 09,Perhentian,Terengganu,Sunda Shelf,5.904398,102.718096,Terengganu Marine Park,1
+PERHENTIAN_S10,Perhentian Reef Site 10,Perhentian,Terengganu,Sunda Shelf,5.91459,102.724527,Terengganu Marine Park,1
+POM_POM_S01,Pom Pom Reef Site 01,Pom Pom,Sabah,North Borneo,4.60575,118.866724,Non-Park Reef (Semporna),1
+POM_POM_S02,Pom Pom Reef Site 02,Pom Pom,Sabah,North Borneo,4.605876,118.870517,Non-Park Reef (Semporna),1
+POM_POM_S03,Pom Pom Reef Site 03,Pom Pom,Sabah,North Borneo,4.603037,118.874396,Non-Park Reef (Semporna),1
+POM_POM_S04,Pom Pom Reef Site 04,Pom Pom,Sabah,North Borneo,4.5978,118.875972,Non-Park Reef (Semporna),1
+POM_POM_S05,Pom Pom Reef Site 05,Pom Pom,Sabah,North Borneo,4.590612,118.871954,Non-Park Reef (Semporna),1
+POM_POM_S06,Pom Pom Reef Site 06,Pom Pom,Sabah,North Borneo,4.588023,118.867448,Non-Park Reef (Semporna),1
+POM_POM_S07,Pom Pom Reef Site 07,Pom Pom,Sabah,North Borneo,4.588524,118.860055,Non-Park Reef (Semporna),1
+POM_POM_S08,Pom Pom Reef Site 08,Pom Pom,Sabah,North Borneo,4.594996,118.853047,Non-Park Reef (Semporna),1
+POM_POM_S09,Pom Pom Reef Site 09,Pom Pom,Sabah,North Borneo,4.603493,118.851293,Non-Park Reef (Semporna),1
+POM_POM_S10,Pom Pom Reef Site 10,Pom Pom,Sabah,North Borneo,4.613761,118.856686,Non-Park Reef (Semporna),1
+PORT_DICKSON_S01,Port Dickson Reef Site 01,Port Dickson,Negeri Sembilan,Malacca Strait,2.489028,101.849497,Non-Park Fringing Reef,1
+PORT_DICKSON_S02,Port Dickson Reef Site 02,Port Dickson,Negeri Sembilan,Malacca Strait,2.489044,101.854005,Non-Park Fringing Reef,1
+PORT_DICKSON_S03,Port Dickson Reef Site 03,Port Dickson,Negeri Sembilan,Malacca Strait,2.486291,101.857696,Non-Park Fringing Reef,1
+PORT_DICKSON_S04,Port Dickson Reef Site 04,Port Dickson,Negeri Sembilan,Malacca Strait,2.480468,101.859077,Non-Park Fringing Reef,1
+PORT_DICKSON_S05,Port Dickson Reef Site 05,Port Dickson,Negeri Sembilan,Malacca Strait,2.474222,101.855763,Non-Park Fringing Reef,1
+PORT_DICKSON_S06,Port Dickson Reef Site 06,Port Dickson,Negeri Sembilan,Malacca Strait,2.47138,101.851381,Non-Park Fringing Reef,1
+PORT_DICKSON_S07,Port Dickson Reef Site 07,Port Dickson,Negeri Sembilan,Malacca Strait,2.471797,101.843418,Non-Park Fringing Reef,1
+PORT_DICKSON_S08,Port Dickson Reef Site 08,Port Dickson,Negeri Sembilan,Malacca Strait,2.478919,101.836165,Non-Park Fringing Reef,1
+PORT_DICKSON_S09,Port Dickson Reef Site 09,Port Dickson,Negeri Sembilan,Malacca Strait,2.486605,101.834586,Non-Park Fringing Reef,1
+PORT_DICKSON_S10,Port Dickson Reef Site 10,Port Dickson,Negeri Sembilan,Malacca Strait,2.497756,101.841046,Non-Park Fringing Reef,1
+RAWA_S01,Rawa Reef Site 01,Rawa,Johor,Sunda Shelf,2.52432,103.975284,Mersing Marine Park,1
+RAWA_S02,Rawa Reef Site 02,Rawa,Johor,Sunda Shelf,2.524613,103.978287,Mersing Marine Park,1
+RAWA_S03,Rawa Reef Site 03,Rawa,Johor,Sunda Shelf,2.521344,103.982488,Mersing Marine Park,1
+RAWA_S04,Rawa Reef Site 04,Rawa,Johor,Sunda Shelf,2.516512,103.983977,Mersing Marine Park,1
+RAWA_S05,Rawa Reef Site 05,Rawa,Johor,Sunda Shelf,2.509593,103.980574,Mersing Marine Park,1
+RAWA_S06,Rawa Reef Site 06,Rawa,Johor,Sunda Shelf,2.506613,103.974138,Mersing Marine Park,1
+RAWA_S07,Rawa Reef Site 07,Rawa,Johor,Sunda Shelf,2.508284,103.966377,Mersing Marine Park,1
+RAWA_S08,Rawa Reef Site 08,Rawa,Johor,Sunda Shelf,2.515128,103.960608,Mersing Marine Park,1
+RAWA_S09,Rawa Reef Site 09,Rawa,Johor,Sunda Shelf,2.522578,103.959446,Mersing Marine Park,1
+RAWA_S10,Rawa Reef Site 10,Rawa,Johor,Sunda Shelf,2.531285,103.963371,Mersing Marine Park,1
+REDANG_S01,Redang Reef Site 01,Redang,Terengganu,Sunda Shelf,5.772449,103.016784,Terengganu Marine Park,1
+REDANG_S02,Redang Reef Site 02,Redang,Terengganu,Sunda Shelf,5.772726,103.02028,Terengganu Marine Park,1
+REDANG_S03,Redang Reef Site 03,Redang,Terengganu,Sunda Shelf,5.769307,103.024567,Terengganu Marine Park,1
+REDANG_S04,Redang Reef Site 04,Redang,Terengganu,Sunda Shelf,5.763158,103.02556,Terengganu Marine Park,1
+REDANG_S05,Redang Reef Site 05,Redang,Terengganu,Sunda Shelf,5.757756,103.022695,Terengganu Marine Park,1
+REDANG_S06,Redang Reef Site 06,Redang,Terengganu,Sunda Shelf,5.754771,103.018006,Terengganu Marine Park,1
+REDANG_S07,Redang Reef Site 07,Redang,Terengganu,Sunda Shelf,5.756844,103.0078,Terengganu Marine Park,1
+REDANG_S08,Redang Reef Site 08,Redang,Terengganu,Sunda Shelf,5.762416,103.002777,Terengganu Marine Park,1
+REDANG_S09,Redang Reef Site 09,Redang,Terengganu,Sunda Shelf,5.770995,103.00147,Terengganu Marine Park,1
+REDANG_S10,Redang Reef Site 10,Redang,Terengganu,Sunda Shelf,5.780491,103.006709,Terengganu Marine Park,1
+RHU_S01,Rhu Reef Site 01,Rhu,Terengganu,Sunda Shelf,5.822428,102.617205,Terengganu Marine Park,1
+RHU_S02,Rhu Reef Site 02,Rhu,Terengganu,Sunda Shelf,5.822546,102.62057,Terengganu Marine Park,1
+RHU_S03,Rhu Reef Site 03,Rhu,Terengganu,Sunda Shelf,5.819859,102.624361,Terengganu Marine Park,1
+RHU_S04,Rhu Reef Site 04,Rhu,Terengganu,Sunda Shelf,5.814825,102.626061,Terengganu Marine Park,1
+RHU_S05,Rhu Reef Site 05,Rhu,Terengganu,Sunda Shelf,5.807521,102.622325,Terengganu Marine Park,1
+RHU_S06,Rhu Reef Site 06,Rhu,Terengganu,Sunda Shelf,5.804758,102.617883,Terengganu Marine Park,1
+RHU_S07,Rhu Reef Site 07,Rhu,Terengganu,Sunda Shelf,5.805804,102.609122,Terengganu Marine Park,1
+RHU_S08,Rhu Reef Site 08,Rhu,Terengganu,Sunda Shelf,5.813006,102.602606,Terengganu Marine Park,1
+RHU_S09,Rhu Reef Site 09,Rhu,Terengganu,Sunda Shelf,5.822844,102.602123,Terengganu Marine Park,1
+RHU_S10,Rhu Reef Site 10,Rhu,Terengganu,Sunda Shelf,5.830467,102.606674,Terengganu Marine Park,1
+SEMBILAN_S01,Sembilan Reef Site 01,Sembilan,Perak,Malacca Strait,4.022426,100.550528,Pulau Sembilan State Park,1
+SEMBILAN_S02,Sembilan Reef Site 02,Sembilan,Perak,Malacca Strait,4.022778,100.55348,Pulau Sembilan State Park,1
+SEMBILAN_S03,Sembilan Reef Site 03,Sembilan,Perak,Malacca Strait,4.018359,100.558101,Pulau Sembilan State Park,1
+SEMBILAN_S04,Sembilan Reef Site 04,Sembilan,Perak,Malacca Strait,4.014193,100.559186,Pulau Sembilan State Park,1
+SEMBILAN_S05,Sembilan Reef Site 05,Sembilan,Perak,Malacca Strait,4.007374,100.555359,Pulau Sembilan State Park,1
+SEMBILAN_S06,Sembilan Reef Site 06,Sembilan,Perak,Malacca Strait,4.004704,100.550308,Pulau Sembilan State Park,1
+SEMBILAN_S07,Sembilan Reef Site 07,Sembilan,Perak,Malacca Strait,4.006449,100.541584,Pulau Sembilan State Park,1
+SEMBILAN_S08,Sembilan Reef Site 08,Sembilan,Perak,Malacca Strait,4.013072,100.535927,Pulau Sembilan State Park,1
+SEMBILAN_S09,Sembilan Reef Site 09,Sembilan,Perak,Malacca Strait,4.021377,100.534923,Pulau Sembilan State Park,1
+SEMBILAN_S10,Sembilan Reef Site 10,Sembilan,Perak,Malacca Strait,4.03049,100.540034,Pulau Sembilan State Park,1
+SEMPORNA_S01,Semporna Reef Site 01,Semporna,Sabah,North Borneo,4.485747,118.609809,Semporna Archipelago,1
+SEMPORNA_S02,Semporna Reef Site 02,Semporna,Sabah,North Borneo,4.485793,118.613941,Semporna Archipelago,1
+SEMPORNA_S03,Semporna Reef Site 03,Semporna,Sabah,North Borneo,4.483172,118.617639,Semporna Archipelago,1
+SEMPORNA_S04,Semporna Reef Site 04,Semporna,Sabah,North Borneo,4.477654,118.619234,Semporna Archipelago,1
+SEMPORNA_S05,Semporna Reef Site 05,Semporna,Sabah,North Borneo,4.471018,118.615925,Semporna Archipelago,1
+SEMPORNA_S06,Semporna Reef Site 06,Semporna,Sabah,North Borneo,4.468057,118.611174,Semporna Archipelago,1
+SEMPORNA_S07,Semporna Reef Site 07,Semporna,Sabah,North Borneo,4.46936,118.602079,Semporna Archipelago,1
+SEMPORNA_S08,Semporna Reef Site 08,Semporna,Sabah,North Borneo,4.475461,118.596187,Semporna Archipelago,1
+SEMPORNA_S09,Semporna Reef Site 09,Semporna,Sabah,North Borneo,4.485794,118.59531,Semporna Archipelago,1
+SEMPORNA_S10,Semporna Reef Site 10,Semporna,Sabah,North Borneo,4.493287,118.599363,Semporna Archipelago,1
+SERI_BUAT_S01,Seri Buat Reef Site 01,Seri Buat,Pahang,Sunda Shelf,2.68905,104.133335,Tioman Marine Park Buffer,1
+SERI_BUAT_S02,Seri Buat Reef Site 02,Seri Buat,Pahang,Sunda Shelf,2.689391,104.136753,Tioman Marine Park Buffer,1
+SERI_BUAT_S03,Seri Buat Reef Site 03,Seri Buat,Pahang,Sunda Shelf,2.686663,104.140842,Tioman Marine Park Buffer,1
+SERI_BUAT_S04,Seri Buat Reef Site 04,Seri Buat,Pahang,Sunda Shelf,2.679871,104.142169,Tioman Marine Park Buffer,1
+SERI_BUAT_S05,Seri Buat Reef Site 05,Seri Buat,Pahang,Sunda Shelf,2.67503,104.140175,Tioman Marine Park Buffer,1
+SERI_BUAT_S06,Seri Buat Reef Site 06,Seri Buat,Pahang,Sunda Shelf,2.671353,104.132174,Tioman Marine Park Buffer,1
+SERI_BUAT_S07,Seri Buat Reef Site 07,Seri Buat,Pahang,Sunda Shelf,2.672147,104.126139,Tioman Marine Park Buffer,1
+SERI_BUAT_S08,Seri Buat Reef Site 08,Seri Buat,Pahang,Sunda Shelf,2.679804,104.119212,Tioman Marine Park Buffer,1
+SERI_BUAT_S09,Seri Buat Reef Site 09,Seri Buat,Pahang,Sunda Shelf,2.687013,104.117977,Tioman Marine Park Buffer,1
+SERI_BUAT_S10,Seri Buat Reef Site 10,Seri Buat,Pahang,Sunda Shelf,2.697282,104.12362,Tioman Marine Park Buffer,1
+SIBU_S01,Sibu Reef Site 01,Sibu,Johor,Sunda Shelf,2.222437,104.067092,Mersing Marine Park,1
+SIBU_S02,Sibu Reef Site 02,Sibu,Johor,Sunda Shelf,2.222395,104.070773,Mersing Marine Park,1
+SIBU_S03,Sibu Reef Site 03,Sibu,Johor,Sunda Shelf,2.219015,104.074624,Mersing Marine Park,1
+SIBU_S04,Sibu Reef Site 04,Sibu,Johor,Sunda Shelf,2.214713,104.075997,Mersing Marine Park,1
+SIBU_S05,Sibu Reef Site 05,Sibu,Johor,Sunda Shelf,2.207958,104.07296,Mersing Marine Park,1
+SIBU_S06,Sibu Reef Site 06,Sibu,Johor,Sunda Shelf,2.204704,104.066376,Mersing Marine Park,1
+SIBU_S07,Sibu Reef Site 07,Sibu,Johor,Sunda Shelf,2.20692,104.057754,Mersing Marine Park,1
+SIBU_S08,Sibu Reef Site 08,Sibu,Johor,Sunda Shelf,2.212339,104.052861,Mersing Marine Park,1
+SIBU_S09,Sibu Reef Site 09,Sibu,Johor,Sunda Shelf,2.221911,104.051826,Mersing Marine Park,1
+SIBU_S10,Sibu Reef Site 10,Sibu,Johor,Sunda Shelf,2.229281,104.055258,Mersing Marine Park,1
+SIBU_TINGGI_S01,Sibu & Tinggi Reef Site 01,Sibu & Tinggi,Johor,Sunda Shelf,2.255724,104.099451,Mersing Marine Park,1
+SIBU_TINGGI_S02,Sibu & Tinggi Reef Site 02,Sibu & Tinggi,Johor,Sunda Shelf,2.255236,104.104649,Mersing Marine Park,1
+SIBU_TINGGI_S03,Sibu & Tinggi Reef Site 03,Sibu & Tinggi,Johor,Sunda Shelf,2.252988,104.107696,Mersing Marine Park,1
+SIBU_TINGGI_S04,Sibu & Tinggi Reef Site 04,Sibu & Tinggi,Johor,Sunda Shelf,2.246367,104.108784,Mersing Marine Park,1
+SIBU_TINGGI_S05,Sibu & Tinggi Reef Site 05,Sibu & Tinggi,Johor,Sunda Shelf,2.240883,104.105701,Mersing Marine Park,1
+SIBU_TINGGI_S06,Sibu & Tinggi Reef Site 06,Sibu & Tinggi,Johor,Sunda Shelf,2.238017,104.10064,Mersing Marine Park,1
+SIBU_TINGGI_S07,Sibu & Tinggi Reef Site 07,Sibu & Tinggi,Johor,Sunda Shelf,2.240253,104.091018,Mersing Marine Park,1
+SIBU_TINGGI_S08,Sibu & Tinggi Reef Site 08,Sibu & Tinggi,Johor,Sunda Shelf,2.245065,104.086355,Mersing Marine Park,1
+SIBU_TINGGI_S09,Sibu & Tinggi Reef Site 09,Sibu & Tinggi,Johor,Sunda Shelf,2.255112,104.085091,Mersing Marine Park,1
+SIBU_TINGGI_S10,Sibu & Tinggi Reef Site 10,Sibu & Tinggi,Johor,Sunda Shelf,2.263167,104.089239,Mersing Marine Park,1
+SINGA_S01,Singa Reef Site 01,Singa,Kedah,Malacca Strait,6.189049,99.750079,Pulau Singa Besar (Langkawi),1
+SINGA_S02,Singa Reef Site 02,Singa,Kedah,Malacca Strait,6.189277,99.753666,Pulau Singa Besar (Langkawi),1
+SINGA_S03,Singa Reef Site 03,Singa,Kedah,Malacca Strait,6.186055,99.757822,Pulau Singa Besar (Langkawi),1
+SINGA_S04,Singa Reef Site 04,Singa,Kedah,Malacca Strait,6.181161,99.75931,Pulau Singa Besar (Langkawi),1
+SINGA_S05,Singa Reef Site 05,Singa,Kedah,Malacca Strait,6.174126,99.755636,Pulau Singa Besar (Langkawi),1
+SINGA_S06,Singa Reef Site 06,Singa,Kedah,Malacca Strait,6.171345,99.751044,Pulau Singa Besar (Langkawi),1
+SINGA_S07,Singa Reef Site 07,Singa,Kedah,Malacca Strait,6.172534,99.742231,Pulau Singa Besar (Langkawi),1
+SINGA_S08,Singa Reef Site 08,Singa,Kedah,Malacca Strait,6.179796,99.735847,Pulau Singa Besar (Langkawi),1
+SINGA_S09,Singa Reef Site 09,Singa,Kedah,Malacca Strait,6.186886,99.734574,Pulau Singa Besar (Langkawi),1
+SINGA_S10,Singa Reef Site 10,Singa,Kedah,Malacca Strait,6.196647,99.73941,Pulau Singa Besar (Langkawi),1
+SIPADAN_S01,Sipadan Reef Site 01,Sipadan,Sabah,North Borneo,4.120443,118.628608,Sipadan Island Park,1
+SIPADAN_S02,Sipadan Reef Site 02,Sipadan,Sabah,North Borneo,4.120605,118.63267,Sipadan Island Park,1
+SIPADAN_S03,Sipadan Reef Site 03,Sipadan,Sabah,North Borneo,4.117137,118.636802,Sipadan Island Park,1
+SIPADAN_S04,Sipadan Reef Site 04,Sipadan,Sabah,North Borneo,4.111516,118.637874,Sipadan Island Park,1
+SIPADAN_S05,Sipadan Reef Site 05,Sipadan,Sabah,North Borneo,4.106246,118.635557,Sipadan Island Park,1
+SIPADAN_S06,Sipadan Reef Site 06,Sipadan,Sabah,North Borneo,4.102743,118.627884,Sipadan Island Park,1
+SIPADAN_S07,Sipadan Reef Site 07,Sipadan,Sabah,North Borneo,4.10377,118.621391,Sipadan Island Park,1
+SIPADAN_S08,Sipadan Reef Site 08,Sipadan,Sabah,North Borneo,4.110315,118.615043,Sipadan Island Park,1
+SIPADAN_S09,Sipadan Reef Site 09,Sipadan,Sabah,North Borneo,4.120981,118.614419,Sipadan Island Park,1
+SIPADAN_S10,Sipadan Reef Site 10,Sipadan,Sabah,North Borneo,4.127882,118.618137,Sipadan Island Park,1
+SOUTHERN_SEMPORNA_S01,Southern Semporna Reef Site 01,Southern Semporna,Sabah,North Borneo,4.305742,118.6497,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S02,Southern Semporna Reef Site 02,Southern Semporna,Sabah,North Borneo,4.30531,118.654574,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S03,Southern Semporna Reef Site 03,Southern Semporna,Sabah,North Borneo,4.301891,118.658053,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S04,Southern Semporna Reef Site 04,Southern Semporna,Sabah,North Borneo,4.296568,118.658883,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S05,Southern Semporna Reef Site 05,Southern Semporna,Sabah,North Borneo,4.291245,118.656256,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S06,Southern Semporna Reef Site 06,Southern Semporna,Sabah,North Borneo,4.288003,118.650251,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S07,Southern Semporna Reef Site 07,Southern Semporna,Sabah,North Borneo,4.289721,118.641616,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S08,Southern Semporna Reef Site 08,Southern Semporna,Sabah,North Borneo,4.296423,118.635908,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S09,Southern Semporna Reef Site 09,Southern Semporna,Sabah,North Borneo,4.304408,118.634837,Semporna Archipelago,1
+SOUTHERN_SEMPORNA_S10,Southern Semporna Reef Site 10,Southern Semporna,Sabah,North Borneo,4.313855,118.640121,Semporna Archipelago,1
+TENGAH_S01,Tengah Reef Site 01,Tengah,Johor,Sunda Shelf,2.475732,103.959551,Mersing Marine Park,1
+TENGAH_S02,Tengah Reef Site 02,Tengah,Johor,Sunda Shelf,2.475834,103.963872,Mersing Marine Park,1
+TENGAH_S03,Tengah Reef Site 03,Tengah,Johor,Sunda Shelf,2.472919,103.967723,Mersing Marine Park,1
+TENGAH_S04,Tengah Reef Site 04,Tengah,Johor,Sunda Shelf,2.467343,103.969129,Mersing Marine Park,1
+TENGAH_S05,Tengah Reef Site 05,Tengah,Johor,Sunda Shelf,2.461636,103.966759,Mersing Marine Park,1
+TENGAH_S06,Tengah Reef Site 06,Tengah,Johor,Sunda Shelf,2.458011,103.960507,Mersing Marine Park,1
+TENGAH_S07,Tengah Reef Site 07,Tengah,Johor,Sunda Shelf,2.458782,103.952943,Mersing Marine Park,1
+TENGAH_S08,Tengah Reef Site 08,Tengah,Johor,Sunda Shelf,2.46483,103.94644,Mersing Marine Park,1
+TENGAH_S09,Tengah Reef Site 09,Tengah,Johor,Sunda Shelf,2.473838,103.944711,Mersing Marine Park,1
+TENGAH_S10,Tengah Reef Site 10,Tengah,Johor,Sunda Shelf,2.482915,103.948935,Mersing Marine Park,1
+TENGGOL_S01,Tenggol Reef Site 01,Tenggol,Terengganu,Sunda Shelf,4.80573,103.683785,Terengganu Marine Park,1
+TENGGOL_S02,Tenggol Reef Site 02,Tenggol,Terengganu,Sunda Shelf,4.805865,103.687135,Terengganu Marine Park,1
+TENGGOL_S03,Tenggol Reef Site 03,Tenggol,Terengganu,Sunda Shelf,4.80336,103.690861,Terengganu Marine Park,1
+TENGGOL_S04,Tenggol Reef Site 04,Tenggol,Terengganu,Sunda Shelf,4.797814,103.692578,Terengganu Marine Park,1
+TENGGOL_S05,Tenggol Reef Site 05,Tenggol,Terengganu,Sunda Shelf,4.791217,103.689521,Terengganu Marine Park,1
+TENGGOL_S06,Tenggol Reef Site 06,Tenggol,Terengganu,Sunda Shelf,4.788003,103.68305,Terengganu Marine Park,1
+TENGGOL_S07,Tenggol Reef Site 07,Tenggol,Terengganu,Sunda Shelf,4.788889,103.676056,Terengganu Marine Park,1
+TENGGOL_S08,Tenggol Reef Site 08,Tenggol,Terengganu,Sunda Shelf,4.795038,103.669628,Terengganu Marine Park,1
+TENGGOL_S09,Tenggol Reef Site 09,Tenggol,Terengganu,Sunda Shelf,4.803208,103.667826,Terengganu Marine Park,1
+TENGGOL_S10,Tenggol Reef Site 10,Tenggol,Terengganu,Sunda Shelf,4.814411,103.67425,Terengganu Marine Park,1
+TIGA_S01,Tiga Reef Site 01,Tiga,Sabah,North Borneo,5.730734,115.641263,Pulau Tiga National Park,1
+TIGA_S02,Tiga Reef Site 02,Tiga,Sabah,North Borneo,5.730166,115.646447,Pulau Tiga National Park,1
+TIGA_S03,Tiga Reef Site 03,Tiga,Sabah,North Borneo,5.726946,115.649757,Pulau Tiga National Park,1
+TIGA_S04,Tiga Reef Site 04,Tiga,Sabah,North Borneo,5.721211,115.650456,Pulau Tiga National Park,1
+TIGA_S05,Tiga Reef Site 05,Tiga,Sabah,North Borneo,5.716533,115.648357,Pulau Tiga National Park,1
+TIGA_S06,Tiga Reef Site 06,Tiga,Sabah,North Borneo,5.713046,115.64275,Pulau Tiga National Park,1
+TIGA_S07,Tiga Reef Site 07,Tiga,Sabah,North Borneo,5.714274,115.633881,Pulau Tiga National Park,1
+TIGA_S08,Tiga Reef Site 08,Tiga,Sabah,North Borneo,5.721068,115.627673,Pulau Tiga National Park,1
+TIGA_S09,Tiga Reef Site 09,Tiga,Sabah,North Borneo,5.731486,115.627276,Pulau Tiga National Park,1
+TIGA_S10,Tiga Reef Site 10,Tiga,Sabah,North Borneo,5.738441,115.631239,Pulau Tiga National Park,1
+TINGGI_S01,Tinggi Reef Site 01,Tinggi,Johor,Sunda Shelf,2.305742,104.1164,Mersing Marine Park,1
+TINGGI_S02,Tinggi Reef Site 02,Tinggi,Johor,Sunda Shelf,2.30527,104.12131,Mersing Marine Park,1
+TINGGI_S03,Tinggi Reef Site 03,Tinggi,Johor,Sunda Shelf,2.302936,104.124416,Mersing Marine Park,1
+TINGGI_S04,Tinggi Reef Site 04,Tinggi,Johor,Sunda Shelf,2.297404,104.125846,Mersing Marine Park,1
+TINGGI_S05,Tinggi Reef Site 05,Tinggi,Johor,Sunda Shelf,2.291781,104.123634,Mersing Marine Park,1
+TINGGI_S06,Tinggi Reef Site 06,Tinggi,Johor,Sunda Shelf,2.288005,104.116362,Mersing Marine Park,1
+TINGGI_S07,Tinggi Reef Site 07,Tinggi,Johor,Sunda Shelf,2.288948,104.109385,Mersing Marine Park,1
+TINGGI_S08,Tinggi Reef Site 08,Tinggi,Johor,Sunda Shelf,2.295985,104.102756,Mersing Marine Park,1
+TINGGI_S09,Tinggi Reef Site 09,Tinggi,Johor,Sunda Shelf,2.306233,104.102224,Mersing Marine Park,1
+TINGGI_S10,Tinggi Reef Site 10,Tinggi,Johor,Sunda Shelf,2.314313,104.10752,Mersing Marine Park,1
+TIOMAN_S01,Tioman Reef Site 01,Tioman,Pahang,Sunda Shelf,2.789018,104.167306,Tioman Marine Park,1
+TIOMAN_S02,Tioman Reef Site 02,Tioman,Pahang,Sunda Shelf,2.789199,104.170473,Tioman Marine Park,1
+TIOMAN_S03,Tioman Reef Site 03,Tioman,Pahang,Sunda Shelf,2.786707,104.174222,Tioman Marine Park,1
+TIOMAN_S04,Tioman Reef Site 04,Tioman,Pahang,Sunda Shelf,2.779381,104.175364,Tioman Marine Park,1
+TIOMAN_S05,Tioman Reef Site 05,Tioman,Pahang,Sunda Shelf,2.775207,104.173784,Tioman Marine Park,1
+TIOMAN_S06,Tioman Reef Site 06,Tioman,Pahang,Sunda Shelf,2.771318,104.167355,Tioman Marine Park,1
+TIOMAN_S07,Tioman Reef Site 07,Tioman,Pahang,Sunda Shelf,2.773323,104.15797,Tioman Marine Park,1
+TIOMAN_S08,Tioman Reef Site 08,Tioman,Pahang,Sunda Shelf,2.77761,104.153348,Tioman Marine Park,1
+TIOMAN_S09,Tioman Reef Site 09,Tioman,Pahang,Sunda Shelf,2.78748,104.151497,Tioman Marine Park,1
+TIOMAN_S10,Tioman Reef Site 10,Tioman,Pahang,Sunda Shelf,2.797992,104.158137,Tioman Marine Park,1
+TUN_MUSTAPHA_PARK_S01,Tun Mustapha Park Reef Site 01,Tun Mustapha Park,Sabah,North Borneo,7.10575,117.150074,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S02,Tun Mustapha Park Reef Site 02,Tun Mustapha Park,Sabah,North Borneo,7.10564,117.154178,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S03,Tun Mustapha Park Reef Site 03,Tun Mustapha Park,Sabah,North Borneo,7.102816,117.157815,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S04,Tun Mustapha Park Reef Site 04,Tun Mustapha Park,Sabah,North Borneo,7.097689,117.159286,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S05,Tun Mustapha Park Reef Site 05,Tun Mustapha Park,Sabah,North Borneo,7.09172,117.156909,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S06,Tun Mustapha Park Reef Site 06,Tun Mustapha Park,Sabah,North Borneo,7.088001,117.149821,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S07,Tun Mustapha Park Reef Site 07,Tun Mustapha Park,Sabah,North Borneo,7.088692,117.14304,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S08,Tun Mustapha Park Reef Site 08,Tun Mustapha Park,Sabah,North Borneo,7.096752,117.135759,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S09,Tun Mustapha Park Reef Site 09,Tun Mustapha Park,Sabah,North Borneo,7.105374,117.135081,Tun Mustapha Park,1
+TUN_MUSTAPHA_PARK_S10,Tun Mustapha Park Reef Site 10,Tun Mustapha Park,Sabah,North Borneo,7.11358,117.139694,Tun Mustapha Park,1
+TUN_SAKARAN_MARINE_PARK_S01,Tun Sakaran Marine Park Reef Site 01,Tun Sakaran Marine Park,Sabah,North Borneo,4.605723,118.782745,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S02,Tun Sakaran Marine Park Reef Site 02,Tun Sakaran Marine Park,Sabah,North Borneo,4.605465,118.787689,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S03,Tun Sakaran Marine Park Reef Site 03,Tun Sakaran Marine Park,Sabah,North Borneo,4.602658,118.791135,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S04,Tun Sakaran Marine Park Reef Site 04,Tun Sakaran Marine Park,Sabah,North Borneo,4.597395,118.792466,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S05,Tun Sakaran Marine Park Reef Site 05,Tun Sakaran Marine Park,Sabah,North Borneo,4.591071,118.789306,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S06,Tun Sakaran Marine Park Reef Site 06,Tun Sakaran Marine Park,Sabah,North Borneo,4.58801,118.782814,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S07,Tun Sakaran Marine Park Reef Site 07,Tun Sakaran Marine Park,Sabah,North Borneo,4.588886,118.776063,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S08,Tun Sakaran Marine Park Reef Site 08,Tun Sakaran Marine Park,Sabah,North Borneo,4.596872,118.769096,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S09,Tun Sakaran Marine Park Reef Site 09,Tun Sakaran Marine Park,Sabah,North Borneo,4.606124,118.768742,Tun Sakaran Marine Park,1
+TUN_SAKARAN_MARINE_PARK_S10,Tun Sakaran Marine Park Reef Site 10,Tun Sakaran Marine Park,Sabah,North Borneo,4.614268,118.774027,Tun Sakaran Marine Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S01,Tunku Abdul Rahman Park Reef Site 01,Tunku Abdul Rahman Park,Sabah,North Borneo,5.972446,115.983094,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S02,Tunku Abdul Rahman Park Reef Site 02,Tunku Abdul Rahman Park,Sabah,North Borneo,5.972107,115.98777,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S03,Tunku Abdul Rahman Park Reef Site 03,Tunku Abdul Rahman Park,Sabah,North Borneo,5.968464,115.991403,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S04,Tunku Abdul Rahman Park Reef Site 04,Tunku Abdul Rahman Park,Sabah,North Borneo,5.963795,115.992394,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S05,Tunku Abdul Rahman Park Reef Site 05,Tunku Abdul Rahman Park,Sabah,North Borneo,5.957849,115.989435,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S06,Tunku Abdul Rahman Park Reef Site 06,Tunku Abdul Rahman Park,Sabah,North Borneo,5.954701,115.983422,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S07,Tunku Abdul Rahman Park Reef Site 07,Tunku Abdul Rahman Park,Sabah,North Borneo,5.955337,115.976447,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S08,Tunku Abdul Rahman Park Reef Site 08,Tunku Abdul Rahman Park,Sabah,North Borneo,5.961118,115.969845,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S09,Tunku Abdul Rahman Park Reef Site 09,Tunku Abdul Rahman Park,Sabah,North Borneo,5.971873,115.968343,Tunku Abdul Rahman Park,1
+TUNKU_ABDUL_RAHMAN_PARK_S10,Tunku Abdul Rahman Park Reef Site 10,Tunku Abdul Rahman Park,Sabah,North Borneo,5.980586,115.97344,Tunku Abdul Rahman Park,1
+USUKAN_COVE_S01,Usukan Cove Reef Site 01,Usukan Cove,Sabah,North Borneo,6.389048,116.416856,West Coast Sabah Coastal,1
+USUKAN_COVE_S02,Usukan Cove Reef Site 02,Usukan Cove,Sabah,North Borneo,6.38859,116.421313,West Coast Sabah Coastal,1
+USUKAN_COVE_S03,Usukan Cove Reef Site 03,Usukan Cove,Sabah,North Borneo,6.385887,116.424583,West Coast Sabah Coastal,1
+USUKAN_COVE_S04,Usukan Cove Reef Site 04,Usukan Cove,Sabah,North Borneo,6.380101,116.425701,West Coast Sabah Coastal,1
+USUKAN_COVE_S05,Usukan Cove Reef Site 05,Usukan Cove,Sabah,North Borneo,6.375394,116.424029,West Coast Sabah Coastal,1
+USUKAN_COVE_S06,Usukan Cove Reef Site 06,Usukan Cove,Sabah,North Borneo,6.371314,116.417285,West Coast Sabah Coastal,1
+USUKAN_COVE_S07,Usukan Cove Reef Site 07,Usukan Cove,Sabah,North Borneo,6.373513,116.407712,West Coast Sabah Coastal,1
+USUKAN_COVE_S08,Usukan Cove Reef Site 08,Usukan Cove,Sabah,North Borneo,6.378038,116.403104,West Coast Sabah Coastal,1
+USUKAN_COVE_S09,Usukan Cove Reef Site 09,Usukan Cove,Sabah,North Borneo,6.388283,116.401666,West Coast Sabah Coastal,1
+USUKAN_COVE_S10,Usukan Cove Reef Site 10,Usukan Cove,Sabah,North Borneo,6.396801,116.406305,West Coast Sabah Coastal,1

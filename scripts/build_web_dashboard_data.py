@@ -131,16 +131,23 @@ def build_bundle():
 
     attach_stress_evidence(priorities)
 
-    history = defaultdict(list)
+    island_year_groups = defaultdict(lambda: {"lccs": [], "dhws": []})
     for row in read_csv(PROCESSED / "master_reef_tourism_dataset.csv"):
-        if row["live_coral_cover_pct"]:
-            history[row["island"]].append({
-                "year": int(row["survey_year"]),
-                "lcc": float(row["live_coral_cover_pct"]),
-                "dhwContext": number(row.get("noaa_max_dhw")),
-            })
-    for rows in history.values():
-        rows.sort(key=lambda item: item["year"])
+        if row.get("live_coral_cover_pct") not in ("", None):
+            key = (row["island"], int(row["survey_year"]))
+            island_year_groups[key]["lccs"].append(float(row["live_coral_cover_pct"]))
+            if row.get("noaa_max_dhw") not in ("", None):
+                island_year_groups[key]["dhws"].append(float(row["noaa_max_dhw"]))
+
+    history = defaultdict(list)
+    for (island, year), vals in sorted(island_year_groups.items(), key=lambda item: (item[0][0], item[0][1])):
+        mean_lcc = sum(vals["lccs"]) / len(vals["lccs"])
+        mean_dhw = sum(vals["dhws"]) / len(vals["dhws"]) if vals["dhws"] else 0.0
+        history[island].append({
+            "year": year,
+            "lcc": round(mean_lcc, 2),
+            "dhwContext": round(mean_dhw, 2),
+        })
 
     # All 90 rows match the five Department of Marine Park state datasets (2000-2017).
     visitors = defaultdict(lambda: {"domestic": 0, "foreign": 0})

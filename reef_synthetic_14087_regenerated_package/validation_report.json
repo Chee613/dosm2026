@@ -1,0 +1,10 @@
+{
+  "rows": 14087,
+  "columns": 50,
+  "islands": 56,
+  "noaa_station_years": 70,
+  "coordinate_mismatches": 0,
+  "infrastructure_mismatches": 0,
+  "noaa_join_mismatches": 0,
+  "noaa_raw_aggregate_mismatches": 0
+}

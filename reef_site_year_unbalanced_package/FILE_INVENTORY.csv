@@ -1,0 +1,18 @@
+﻿category,path,rows,columns,role
+Processed,data/processed/master_reef_tourism_dataset.csv,6381,52,Unbalanced predictive site-year panel
+Processed,data/processed/panel_coverage_summary.csv,14,5,Annual site/island coverage
+Processed,data/processed/validation_target_sample_sizes.csv,13,2,Target-year transition counts
+Ecological,data/raw/structured/reef_check/ReefCheck_Malaysia_FINAL.xlsx,6381,42,Structured model_ready workbook
+Ecological,data/raw/structured/reef_check/ReefCheck_Malaysia_model_ready.csv,6381,42,CSV ecological stage
+Geocoding,data/raw/structured/geocoding/reef_site_coordinates.csv,560,9,Site registry
+Geocoding,data/raw/structured/geocoding/island_coordinates.csv,56,6,Island coordinates
+Infrastructure,data/raw/structured/infrastructure/island_accommodations.csv,56,7,Island infrastructure
+NOAA,data/raw/structured/noaa_crw/malacca_strait.txt,,,Thermal series
+NOAA,data/raw/structured/noaa_crw/northern_borneo.txt,,,Thermal series
+NOAA,data/raw/structured/noaa_crw/sabah.txt,,,Thermal series
+NOAA,data/raw/structured/noaa_crw/singapore.txt,,,Thermal series
+NOAA,data/raw/structured/noaa_crw/west_gulf_of_thailand.txt,,,Thermal series
+Docs,README.md,,,Dataset design and disclosure
+Docs,REPORT_TEXT_CORRECTIONS.md,,,Report contradiction fixes
+Docs,PIPELINE_UPDATE_NOTES.md,,,Training-pipeline guidance
+Validation,validation_report.json,,,Structural checks

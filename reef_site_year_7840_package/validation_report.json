@@ -1,0 +1,47 @@
+{
+  "dataset": "synthetic reef-site-year panel",
+  "rows": 7840,
+  "columns": 52,
+  "islands": 56,
+  "sites": 560,
+  "sites_per_island_min": 10,
+  "sites_per_island_max": 10,
+  "years": [
+    2012,
+    2025
+  ],
+  "rows_per_year": {
+    "2012": 560,
+    "2013": 560,
+    "2014": 560,
+    "2015": 560,
+    "2016": 560,
+    "2017": 560,
+    "2018": 560,
+    "2019": 560,
+    "2020": 560,
+    "2021": 560,
+    "2022": 560,
+    "2023": 560,
+    "2024": 560,
+    "2025": 560
+  },
+  "rows_per_island_min": 140,
+  "rows_per_island_max": 140,
+  "unique_site_year_pairs": 7840,
+  "duplicate_site_year_pairs": 0,
+  "valid_next_year_transitions": 7280,
+  "non_forward_transitions": 0,
+  "expected_transitions_560_sites_x_13": 7280,
+  "max_substrate_sum_error": 0.0002000000000066393,
+  "synthetic": true,
+  "cross_file_validation": {
+    "site_coordinate_mismatches": 0,
+    "infrastructure_mismatches": 0,
+    "noaa_station_year_mismatches": 0,
+    "ecological_core_mismatches": 0,
+    "duplicate_site_year_keys": 0,
+    "non_forward_transitions": 0
+  },
+  "all_cross_file_checks_passed": true
+}

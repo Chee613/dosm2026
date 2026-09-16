@@ -298,7 +298,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     </div>
     <div class="header-right">
       <span class="badge">OFFICIAL REGISTRY</span><br>
-      <strong>Version:</strong> 2.0 (Verified)<br>
+      <strong>Version:</strong> 3.0 (Verified)<br>
       <strong>Updated:</strong> September 2026<br>
       <strong>Repository:</strong> Chee613/dosm2026
     </div>
@@ -307,7 +307,8 @@ HTML_CONTENT = """<!DOCTYPE html>
   <!-- SUMMARY BOX -->
   <div class="summary-box">
     <strong>Executive Architecture Summary:</strong> ReefSafe implements an institutional, transparent data pipeline combining 
-    19 years of verified longitudinal coral reef ecology with national macroeconomic series and satellite thermal diagnostics. 
+    19 years of verified longitudinal coral reef survey archives (2007–2025) and a 14-year predictive modeling panel (2012–2025: 6,381 site-year rows across 560 sites and 56 islands) 
+    with national macroeconomic series and satellite thermal diagnostics. 
     To maintain complete scientific integrity, <strong>all datasets are catalogued with explicit usage boundaries</strong>: only verified 
     ecological transects enter the scored Gradient Boosting ML model, while external satellite signals (NOAA DHW), macroeconomic indicators 
     (DOSM Real GDP), and historical benchmarks (DMPM TEV) serve as descriptive context. Below is the complete catalogue of all underlying datasets, 
@@ -323,7 +324,7 @@ HTML_CONTENT = """<!DOCTYPE html>
       <div class="tags"><span class="tag tag-verified">Verified Input</span><span class="tag tag-context">Scored ML</span></div>
     </div>
     <div class="dataset-desc">
-      Standardized 100m transect surveys across 40 monitoring units in national marine parks, yielding a balanced panel of 404 monitoring-unit/year observations. 
+      Standardized 100m transect surveys across 560 registered monitoring sites on 56 islands/units in national marine parks and coastal reefs, yielding an unbalanced panel of 6,381 site-year observations (2012–2025) with 5,821 valid temporal transitions (and 444 paired 2024–2025 comparison sites). 
       Supplies core inputs to the Gradient Boosting Regressor: Live Coral Cover (LCC %), substrate categories (hard coral, soft coral, dead coral, algae), 
       disturbance impact mentions (bleaching, warm water, storm, sedimentation), and indicator fish/invertebrate counts.
     </div>
@@ -603,10 +604,10 @@ HTML_CONTENT = """<!DOCTYPE html>
       <tr>
         <td><strong>reef_check_surveys</strong><br>Annual Reef Survey Reports</td>
         <td>Reef Check Malaysia (RCM)</td>
-        <td>2007–2025<br>404 unit/year rows</td>
+        <td>2012–2025 (Archive 2007–2025)<br>6,381 site-year rows (560 sites, 56 islands)</td>
         <td><span class="tag tag-verified">verified_input</span></td>
         <td>Primary Scored ML Input (Live Coral Cover %)</td>
-        <td>Repeated island labels may contain changing sites; narrative flags record mentions rather than confirmed absence.</td>
+        <td>Unbalanced panel of 560 registered sites across 56 islands (5,821 valid temporal transitions; 444 paired 2024–2025 sites); narrative flags record mentions rather than confirmed absence.</td>
       </tr>
       <tr>
         <td><strong>dmpm_tev_2011_2015</strong><br>Total Economic Value (TEV)</td>
@@ -682,7 +683,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
       <strong style="color: #0f172a; font-size: 8.5pt;">Reef-Adjacent Economy (RM60.09M/yr)</strong>
       <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
-        A realized annual visitor spending proxy calculated across 4 covered marine parks (1,464,770 visitors &times; RM410 avg spend &times; 10% reef attribution coefficient from Spalding et al. 2017). Covers 30 of 40 units.
+        A realized annual visitor spending proxy calculated across 4 covered marine parks (1,464,770 visitors &times; RM410 avg spend &times; 10% reef attribution coefficient from Spalding et al. 2017). Covers 32 of 56 units.
       </p>
     </div>
     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
@@ -703,7 +704,7 @@ HTML_CONTENT = """<!DOCTYPE html>
     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
       <strong style="color: #0f172a; font-size: 8.5pt;">Institutional "Green" Status</strong>
       <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
-        In ReefSafe, "Green" strictly denotes monitoring units with non-negative predicted annual coral change (&ge; 0 pp/yr, Monitor tier): <strong>Kapalai (+0.77 pp/yr)</strong> and <strong>Malacca (+3.48 pp/yr)</strong>. Kapalai is the only verified visitor destination.
+        In ReefSafe, "Green" strictly denotes monitoring units with non-negative predicted annual coral change (&ge; 0 pp/yr, Monitor tier): 32 units including <strong>Kapalai (+1.65 pp/yr)</strong>, <strong>Malacca (+1.47 pp/yr)</strong>, and <strong>Redang (+0.65 pp/yr)</strong>. Kapalai is a verified visitor destination.
       </p>
     </div>
   </div>
@@ -752,6 +753,10 @@ def generate_pdf():
     if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 0:
         size_kb = os.path.getsize(pdf_path) / 1024
         print(f"SUCCESS: Compiled '{pdf_path}' ({size_kb:.1f} KB)")
+        dashboard_pdf = os.path.join(script_dir, "dashboard", "ReefSafe_Data_Provenance_Directory.pdf")
+        import shutil
+        shutil.copyfile(pdf_path, dashboard_pdf)
+        print(f"SUCCESS: Copied to '{dashboard_pdf}'")
     else:
         print(f"Error: PDF was not created or has 0 bytes.", file=sys.stderr)
         sys.exit(1)

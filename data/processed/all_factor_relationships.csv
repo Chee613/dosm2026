@@ -1,25 +1,25 @@
 factor,label,group,evidence_role,n,spearman_rho,p_value,strength
-island_vs_region_pct,Coral Cover Vs Regional Average (Pp),Coral condition and trend,production_feature,346,-0.3201328651102027,1.098528831833362e-9,Moderate
-live_coral_cover_pct,Live Coral Cover Pct,Coral condition and trend,production_feature,348,-0.29477172877303726,2.0932265802573296e-8,Weak
-lcc_change_rate,Lcc Change Rate,Coral condition and trend,production_feature,301,-0.2177626615511026,0.00014002691236867306,Weak
-survey_year,Survey Year,Time and geography,production_feature,348,-0.13673023860202888,0.01066476307474854,Weak
-impact_cot,Impact Cot,Reported impacts,production_feature,348,-0.12207297374250349,0.022752047809950642,Weak
-noaa_max_dhw,Noaa Max Dhw,Regional heat context,context_only,348,-0.1045779727630862,0.051270888572376425,Weak
-noaa_mean_ssta,Noaa Mean Ssta,Regional heat context,context_only,348,-0.06056818930566387,0.2598039926898717,Very weak
-fish_butterflyfish,Fish Butterflyfish,Fish and ecology,production_feature,348,-0.059960864899111475,0.2646212543097188,Very weak
-grazer_ratio,Grazer Ratio,Fish and ecology,production_feature,331,-0.05970715805382468,0.27874907864012083,Very weak
-inv_crown_of_thorns,Crown Of Thorns,Fish and ecology,production_feature,348,-0.0549251294660015,0.3069229307642758,Very weak
-fish_grouper,Fish Grouper,Fish and ecology,production_feature,348,-0.043109213746335764,0.4227431238302467,Very weak
-fish_parrotfish,Fish Parrotfish,Fish and ecology,production_feature,348,-0.0326674872877121,0.5436029873395897,Very weak
-impact_trash,Impact Trash,Reported impacts,production_feature,348,-0.027868881639325303,0.6043763684051495,Very weak
-latitude,Latitude,Time and geography,production_feature,348,-0.027580269629091214,0.6081264349936386,Very weak
-fish_snapper,Fish Snapper,Fish and ecology,production_feature,348,0.016875074032193998,0.753756389418528,Very weak
-impact_anchor,Impact Anchor,Reported impacts,production_feature,348,0.023793242503200005,0.6582555953928503,Very weak
-impact_bleaching,Impact Bleaching,Reported impacts,production_feature,348,0.032349310198842324,0.5475371276027149,Very weak
-impact_nets,Impact Nets,Reported impacts,production_feature,348,0.04348334863840458,0.4187249094164196,Very weak
-inv_diadema_urchin,Diadema Urchin,Fish and ecology,production_feature,348,0.056276821250313525,0.2951534727278756,Very weak
-longitude,Longitude,Time and geography,production_feature,348,0.05639727522742106,0.29411946175068493,Very weak
-grp_disturbance_indicators,Disturbance Indicators,Substrate condition,production_feature,338,0.07772612436258132,0.15391408226206862,Very weak
-grp_sand,Sand,Substrate condition,production_feature,338,0.1285278447978229,0.018078083042251673,Weak
-grp_pollution_indicators,Pollution Indicators,Substrate condition,production_feature,338,0.14597611401784685,0.00718360745525168,Weak
-grp_available_substrate,Available Substrate,Substrate condition,production_feature,338,0.17236790368369923,0.001467434904210288,Weak
+lcc_change_rate,Lcc Change Rate,Coral condition and trend,production_feature,5261,-0.4182349924801625,7.003966952235917e-222,Moderate
+island_vs_region_pct,Coral Cover Vs Regional Average (Pp),Coral condition and trend,production_feature,5821,-0.15219483586905944,1.6636523728256424e-31,Weak
+live_coral_cover_pct,Live Coral Cover Pct,Coral condition and trend,production_feature,5821,-0.14586948072638237,4.7388074660618766e-29,Weak
+impact_anchor,Impact Anchor,Reported impacts,production_feature,5821,-0.01992662070419391,0.12847693089509712,Very weak
+inv_crown_of_thorns,Crown Of Thorns,Fish and ecology,production_feature,5821,-0.01578043778990679,0.22866981620063453,Very weak
+noaa_mean_ssta,Noaa Mean Ssta,Regional heat context,context_only,5821,-0.01321723861840712,0.31333781477620937,Very weak
+latitude,Latitude,Time and geography,production_feature,5821,-0.007818836817028885,0.5508927485977978,Very weak
+longitude,Longitude,Time and geography,production_feature,5821,-0.007241890469511952,0.580666056562238,Very weak
+grazer_ratio,Grazer Ratio,Fish and ecology,production_feature,5821,-0.00489196716057307,0.7090315600461862,Very weak
+noaa_max_dhw,Noaa Max Dhw,Regional heat context,context_only,5821,-0.004374215831262044,0.7386340145248469,Very weak
+impact_cot,Impact Cot,Reported impacts,production_feature,5821,-0.0002655803261696417,0.9838373791717588,Very weak
+fish_snapper,Fish Snapper,Fish and ecology,production_feature,5821,0.0011177655001070055,0.9320529698301554,Very weak
+fish_parrotfish,Fish Parrotfish,Fish and ecology,production_feature,5821,0.0012579798156661386,0.9235542495868938,Very weak
+survey_year,Survey Year,Time and geography,production_feature,5821,0.004112639002044128,0.7537415334717454,Very weak
+impact_nets,Impact Nets,Reported impacts,production_feature,5821,0.007673109349260631,0.5583416875616702,Very weak
+inv_diadema_urchin,Diadema Urchin,Fish and ecology,production_feature,5821,0.011765378581276695,0.3694609919318185,Very weak
+impact_trash,Impact Trash,Reported impacts,production_feature,5821,0.01350521525435043,0.3029102405130879,Very weak
+impact_bleaching,Impact Bleaching,Reported impacts,production_feature,5821,0.016836700069556194,0.19900929295839181,Very weak
+fish_grouper,Fish Grouper,Fish and ecology,production_feature,5821,0.019832420574247778,0.13029290819739642,Very weak
+grp_pollution_indicators,Pollution Indicators,Substrate condition,production_feature,5821,0.02754366852033618,0.035605455303752656,Very weak
+fish_butterflyfish,Fish Butterflyfish,Fish and ecology,production_feature,5821,0.03974587637691791,0.0024215341916192378,Very weak
+grp_disturbance_indicators,Disturbance Indicators,Substrate condition,production_feature,5821,0.06785653010584972,2.1950999349265415e-7,Very weak
+grp_sand,Sand,Substrate condition,production_feature,5821,0.07108261951814741,5.667519723235859e-8,Very weak
+grp_available_substrate,Available Substrate,Substrate condition,production_feature,5821,0.12075347284870952,2.3565704664839838e-20,Weak

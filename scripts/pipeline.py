@@ -7,15 +7,18 @@ def parse_noaa_row(parts):
 
 
 def make_next_observation_rows(rows):
-    """Attach each island's next observed coral-change target to its prior row."""
-    by_island = defaultdict(list)
+    """Attach each unit's next observed coral-change target to its prior row."""
+    by_unit = defaultdict(list)
     for row in rows:
-        by_island[row["island"]].append(row)
+        key = row.get("site_id") or row["island"]
+        by_unit[key].append(row)
 
     result = []
-    for island_rows in by_island.values():
-        island_rows.sort(key=lambda row: int(row["survey_year"]))
-        for current, following in zip(island_rows, island_rows[1:]):
+    for unit_rows in by_unit.values():
+        unit_rows.sort(key=lambda row: int(row["survey_year"]))
+        for current, following in zip(unit_rows, unit_rows[1:]):
+            if int(following["survey_year"]) <= int(current["survey_year"]):
+                continue
             target = following.get("lcc_change_rate")
             if target in (None, ""):
                 continue

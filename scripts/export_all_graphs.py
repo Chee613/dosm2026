@@ -129,8 +129,10 @@ def copy_model_figures():
         ("fig3_feature_importance.png", "08_feature_importance.png"),
         ("fig1_model_performance_cv.png", "09_model_performance.png"),
         ("fig4_factor_relationships.png", "10_factor_relationships.png"),
+        ("fig6_field_verification_priority_matrix.png", "13_field_verification_priority_matrix.png"),
     ):
-        shutil.copy2(OUTPUT / source, OUT / target)
+        if (OUTPUT / source).exists():
+            shutil.copy2(OUTPUT / source, OUT / target)
 
 
 def main():

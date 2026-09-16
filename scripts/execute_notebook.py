@@ -18,10 +18,15 @@ def run_notebook():
     with open(NB_PATH, "r", encoding="utf-8") as f:
         nb = json.load(f)
 
+    class DummyIPython:
+        def run_line_magic(self, *args, **kwargs):
+            pass
+
     # Shared execution context for the notebook session
     exec_globals = {
         "__name__": "__main__",
-        "__file__": str(NB_PATH)
+        "__file__": str(NB_PATH),
+        "get_ipython": lambda: DummyIPython(),
     }
 
     execution_count = 1
@@ -42,6 +47,25 @@ def run_notebook():
 
         cell_outputs = []
         plt.close('all')
+
+        def custom_display(*args):
+            for arg in args:
+                filename = getattr(arg, "filename", None)
+                if filename and os.path.exists(filename):
+                    with open(filename, "rb") as f_img:
+                        b64_data = base64.b64encode(f_img.read()).decode("utf-8")
+                        cell_outputs.append({
+                            "output_type": "display_data",
+                            "data": {
+                                "image/png": b64_data,
+                                "text/plain": ["<IPython.core.display.Image object>"]
+                            },
+                            "metadata": {}
+                        })
+                else:
+                    print(arg)
+
+        exec_globals["display"] = custom_display
 
         try:
             exec(code_text, exec_globals)

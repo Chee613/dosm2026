@@ -4,7 +4,7 @@
 
 ## Evidence admitted to the scored model
 
-- Reef Check Malaysia annual survey material supplies ecological measurements and documented impact mentions. The processed panel contains 404 monitoring-unit/year rows from 2007-2025. Annual reports are available from [Reef Check Malaysia](https://reefcheck.org.my/annualsurveyreports/).
+- Reef Check Malaysia annual survey material supplies ecological measurements and documented impact mentions. The processed panel contains 6,381 site-year rows across 560 registered sites on 56 islands from 2012–2025 (5,821 valid next-observation transitions, 444 paired 2024–2025 comparison sites). Annual reports are available from [Reef Check Malaysia](https://reefcheck.org.my/annualsurveyreports/).
 - Geographic coordinates support location and regional grouping. Labuan is recorded as W.P. Labuan.
 
 ## Context kept outside the scored model

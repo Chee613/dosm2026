@@ -78,7 +78,7 @@ def tree_path_contributions(pipeline, X):
     per feature and baseline + contributions.sum(axis=1) equals pipeline.predict(X)."""
     imputer = pipeline.named_steps["simpleimputer"]
     model = pipeline.named_steps["gradientboostingregressor"]
-    rows = imputer.transform(X)
+    rows = imputer.transform(X).astype(np.float32)
     baseline = float(model.init_.predict(rows[:1])[0])
     contributions = np.zeros(rows.shape)
     for tree in model.estimators_[:, 0]:

@@ -1,8 +1,8 @@
 {
   "prediction_target": "Next observed annualised live coral cover change",
   "validation": "Expanding-window evaluation on the five latest target years",
-  "training_transitions": 348,
-  "evaluation_observations": 183,
+  "training_transitions": 5821,
+  "evaluation_observations": 2405,
   "test_years": [
     2021,
     2022,
@@ -11,101 +11,101 @@
     2025
   ],
   "best_candidate": "Gradient boosting",
-  "baseline_mae": 5.991036572720733,
-  "best_mae": 5.862299984583832,
-  "mae_improvement_pct": 2.1488199341510157,
+  "baseline_mae": 2.307297074989437,
+  "best_mae": 0.37998791391566183,
+  "mae_improvement_pct": 83.5310364653671,
   "beats_baseline": true,
   "deployment_status": "screening_only",
   "uncertainty_label": "Pooled empirical 95% forward-residual range",
-  "lower_residual_quantile": -16.254385476103764,
-  "upper_residual_quantile": 13.66201695932984,
+  "lower_residual_quantile": -1.0103075532386212,
+  "upper_residual_quantile": 0.9960858451490261,
   "model_comparison": {
     "Baseline mean": {
-      "MAE": 5.991036572720733,
-      "RMSE": 8.100134037133156,
-      "R2": -0.01912875323556551
+      "MAE": 2.307297074989437,
+      "RMSE": 3.134062431520121,
+      "R2": -0.0011276990749564675
     },
-    "Ridge regression": {
-      "MAE": 5.989868551402971,
-      "RMSE": 7.938953774203554,
-      "R2": 0.02102592672483794
-    },
-    "Gradient boosting": {
-      "MAE": 5.862299984583832,
-      "RMSE": 7.740654234899031,
-      "R2": 0.0693208577587594
+    "Decision tree": {
+      "MAE": 1.7671991776175668,
+      "RMSE": 2.3393854562700316,
+      "R2": 0.44220096092565897
     },
     "Random forest": {
-      "MAE": 6.073567001248703,
-      "RMSE": 8.016002333851366,
-      "R2": 0.0019315809838006404
+      "MAE": 0.692967979567525,
+      "RMSE": 0.9039587736295805,
+      "R2": 0.9167141084452269
+    },
+    "Gradient boosting": {
+      "MAE": 0.37998791391566183,
+      "RMSE": 0.4911703881692559,
+      "R2": 0.9754111315989402
     }
   },
   "validation_by_year": [
     {
       "target_year": 2021,
-      "n": 24,
-      "mae": 5.699837958186007,
-      "rmse": 7.580132511639961,
-      "r2": 0.10698435283396346,
-      "bias": -2.4031913472193795
+      "n": 453,
+      "mae": 0.37877082408570323,
+      "rmse": 0.49561769853593596,
+      "r2": 0.978112907692231,
+      "bias": 0.0673540862044275
     },
     {
       "target_year": 2022,
-      "n": 35,
-      "mae": 6.958565691386269,
-      "rmse": 9.962448431521413,
-      "r2": 0.11539773923278318,
-      "bias": -0.036245852338398825
+      "n": 490,
+      "mae": 0.4151519096721931,
+      "rmse": 0.5286858463039077,
+      "r2": 0.9583287103967618,
+      "bias": -0.022941293736641742
     },
     {
       "target_year": 2023,
-      "n": 43,
-      "mae": 5.75575686509108,
-      "rmse": 7.239246743069442,
-      "r2": 0.1784066636772662,
-      "bias": 0.8746988044550557
+      "n": 463,
+      "mae": 0.4018550511678282,
+      "rmse": 0.5239099692011637,
+      "r2": 0.9664934683399442,
+      "bias": 0.025107367402674118
     },
     {
       "target_year": 2024,
-      "n": 41,
-      "mae": 5.600589599274473,
-      "rmse": 7.061191062718651,
-      "r2": -0.2864765388207775,
-      "bias": 2.2610978641627018
+      "n": 512,
+      "mae": 0.3710407116128023,
+      "rmse": 0.4694340147577761,
+      "r2": 0.9755210595890778,
+      "bias": -0.03203505382927421
     },
     {
       "target_year": 2025,
-      "n": 40,
-      "mae": 5.3833317053672,
-      "rmse": 6.735009552131487,
-      "r2": -0.653635666315163,
-      "bias": 4.451967459018678
+      "n": 487,
+      "mae": 0.33435642891275025,
+      "rmse": 0.4347718065471693,
+      "r2": 0.9858983855406895,
+      "bias": 0.003633375470774672
     }
   ],
   "permutation_importance": {
-    "survey_year": -0.0007260397408757974,
-    "live_coral_cover_pct": -0.02153145127292236,
-    "lcc_change_rate": 0.14103592517096078,
-    "island_vs_region_pct": 0.2823495513266668,
-    "grp_available_substrate": -0.07454291380986494,
-    "grp_sand": 0.024952836281842125,
-    "grp_disturbance_indicators": -0.006506107900597174,
-    "grp_pollution_indicators": -0.006103332655825932,
-    "fish_butterflyfish": -0.0006043312329524,
-    "fish_snapper": 0.031250313890115476,
-    "fish_parrotfish": 0.05644435536949363,
-    "fish_grouper": 0.022735032626926027,
-    "inv_diadema_urchin": -0.007227229846250519,
-    "inv_crown_of_thorns": -0.005646660073436518,
-    "grazer_ratio": -0.009268474420846256,
-    "impact_anchor": 0.0,
-    "impact_nets": -0.0022730923504003997,
-    "impact_trash": -0.007070225083601922,
-    "impact_bleaching": 0.0004614019490064381,
-    "impact_cot": -0.003928027325948645,
-    "latitude": -0.010159796572629722,
-    "longitude": 0.06007231692665432
+    "survey_year": 0.2889051285260134,
+    "live_coral_cover_pct": 0.4821080638332005,
+    "lcc_change_rate": 1.3105047540260566,
+    "island_vs_region_pct": 1.0213583251664693,
+    "grp_available_substrate": 0.30676361893178794,
+    "grp_sand": 0.22446370404989396,
+    "grp_disturbance_indicators": 0.4018373425327395,
+    "grp_pollution_indicators": 0.3115308977064365,
+    "fish_butterflyfish": 0.2638121873294168,
+    "fish_snapper": 0.2912085616193975,
+    "fish_parrotfish": 0.2969794930895292,
+    "fish_grouper": 0.35587508304157023,
+    "inv_diadema_urchin": 0.23592833831186977,
+    "inv_crown_of_thorns": 0.2905798847087463,
+    "grazer_ratio": 0.27995288416142167,
+    "impact_anchor": 0.02779018462230632,
+    "impact_nets": 0.02328060782634401,
+    "impact_trash": 0.025172330440788163,
+    "impact_bleaching": 0.022866651245766104,
+    "impact_cot": 0.01340409947631327,
+    "latitude": 0.29595364771683863,
+    "longitude": 0.19951409596167324
   },
   "factor_diagnostics": [
     {
@@ -114,7 +114,7 @@
       "n": 348,
       "statistic": -0.1045779727630862,
       "statistic_unit": "rho",
-      "p_value": 0.051270888572376445,
+      "p_value": 0.051270888572376425,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -123,7 +123,7 @@
       "n": 348,
       "statistic": -0.06056818930566387,
       "statistic_unit": "rho",
-      "p_value": 0.25980399268987187,
+      "p_value": 0.2598039926898717,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -132,7 +132,7 @@
       "n": 338,
       "statistic": 0.07772612436258132,
       "statistic_unit": "rho",
-      "p_value": 0.15391408226206857,
+      "p_value": 0.15391408226206862,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -141,7 +141,7 @@
       "n": 338,
       "statistic": 0.14597611401784685,
       "statistic_unit": "rho",
-      "p_value": 0.00718360745525167,
+      "p_value": 0.00718360745525168,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
@@ -150,7 +150,7 @@
       "n": 348,
       "statistic": -0.0326674872877121,
       "statistic_unit": "rho",
-      "p_value": 0.5436029873395899,
+      "p_value": 0.5436029873395897,
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
