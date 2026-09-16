@@ -1,0 +1,760 @@
+import os
+import subprocess
+import sys
+
+HTML_CONTENT = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ReefSafe Data Provenance & Dataset Directory</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 12mm 14mm 12mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.45;
+    color: #1e293b;
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header {
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header-left h1 {
+    font-size: 16pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
+  }
+
+  .header-left .subtitle {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #64748b;
+    line-height: 1.35;
+  }
+
+  .header-right .badge {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 7pt;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    border: 1px solid #bae6fd;
+  }
+
+  .summary-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 8pt;
+    line-height: 1.45;
+    color: #334155;
+  }
+
+  .summary-box strong {
+    color: #0f172a;
+  }
+
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-top: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    page-break-after: avoid;
+  }
+
+  h2 .num {
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dataset-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+
+  .dataset-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .dataset-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .tags {
+    display: flex;
+    gap: 4px;
+  }
+
+  .tag {
+    font-size: 6.5pt;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .tag-verified {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+  }
+
+  .tag-context {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+
+  .tag-pending {
+    background: #fef9c3;
+    color: #854d0e;
+    border: 1px solid #fef08a;
+  }
+
+  .tag-excluded {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+  }
+
+  .dataset-desc {
+    font-size: 8pt;
+    color: #475569;
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+
+  .link-list {
+    list-style: none;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 4px;
+    padding: 5px 8px;
+    margin-top: 3px;
+  }
+
+  .link-list li {
+    font-size: 7.5pt;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  .link-list li:last-child {
+    border-bottom: none;
+  }
+
+  .link-label {
+    font-weight: 600;
+    color: #334155;
+    min-width: 130px;
+    display: inline-block;
+  }
+
+  .link-url {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 7pt;
+    color: #0284c7;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .link-url:hover {
+    text-decoration: underline;
+  }
+
+  .direct-badge {
+    background: #0284c7;
+    color: #ffffff;
+    font-size: 6pt;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  table.provenance-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7pt;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+  }
+
+  table.provenance-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 5px 6px;
+    border: 1px solid #0f172a;
+  }
+
+  table.provenance-table td {
+    padding: 4px 6px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    line-height: 1.3;
+    vertical-align: top;
+  }
+
+  table.provenance-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .footer-note {
+    font-size: 7pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="subtitle">DOSM Datathon 2026 | Technical Data Architecture</div>
+      <h1>ReefSafe Data Provenance & Dataset Directory</h1>
+    </div>
+    <div class="header-right">
+      <span class="badge">OFFICIAL REGISTRY</span><br>
+      <strong>Version:</strong> 2.0 (Verified)<br>
+      <strong>Updated:</strong> September 2026<br>
+      <strong>Repository:</strong> Chee613/dosm2026
+    </div>
+  </div>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <strong>Executive Architecture Summary:</strong> ReefSafe implements an institutional, transparent data pipeline combining 
+    19 years of verified longitudinal coral reef ecology with national macroeconomic series and satellite thermal diagnostics. 
+    To maintain complete scientific integrity, <strong>all datasets are catalogued with explicit usage boundaries</strong>: only verified 
+    ecological transects enter the scored Gradient Boosting ML model, while external satellite signals (NOAA DHW), macroeconomic indicators 
+    (DOSM Real GDP), and historical benchmarks (DMPM TEV) serve as descriptive context. Below is the complete catalogue of all underlying datasets, 
+    their publishers, and direct download links.
+  </div>
+
+  <!-- SECTION 1: PRIMARY ECOLOGICAL PANEL -->
+  <h2><span class="num">1</span> Primary Ecological Monitoring Panel (Scored Model Input)</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">Reef Check Malaysia (RCM) Annual Survey Reports (2007–2025)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Input</span><span class="tag tag-context">Scored ML</span></div>
+    </div>
+    <div class="dataset-desc">
+      Standardized 100m transect surveys across 40 monitoring units in national marine parks, yielding a balanced panel of 404 monitoring-unit/year observations. 
+      Supplies core inputs to the Gradient Boosting Regressor: Live Coral Cover (LCC %), substrate categories (hard coral, soft coral, dead coral, algae), 
+      disturbance impact mentions (bleaching, warm water, storm, sedimentation), and indicator fish/invertebrate counts.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Annual Reports Archive:</span>
+        <a class="link-url" href="https://reefcheck.org.my/annualsurveyreports/">https://reefcheck.org.my/annualsurveyreports/</a>
+        <span class="direct-badge">Download Portal</span>
+      </li>
+      <li>
+        <span class="link-label">2024 Bleaching Report:</span>
+        <a class="link-url" href="https://reefcheck.org.my/wp-content/uploads/2025/07/2024CoralBleachingImpactReportMalaysia.pdf">https://reefcheck.org.my/wp-content/uploads/2025/07/2024CoralBleachingImpactReportMalaysia.pdf</a>
+        <span class="direct-badge">Direct PDF</span>
+      </li>
+      <li>
+        <span class="link-label">Official Homepage:</span>
+        <a class="link-url" href="https://reefcheck.org.my">https://reefcheck.org.my</a>
+      </li>
+      <li>
+        <span class="link-label">Datathon Drive Archive:</span>
+        <span class="link-url" style="color: #475569;">Google Drive &rarr; "Datathon Data Archive" &rarr; Subfolder "RC Annual Reports" (19 raw survey PDFs)</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2: OPEN DATA MALAYSIA & DOSM -->
+  <h2><span class="num">2</span> Department of Statistics Malaysia (DOSM) & data.gov.my</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">State Real GDP by Economic Activity (Supply Side)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Open Data</span></div>
+    </div>
+    <div class="dataset-desc">
+      Official state-level real GDP supply series covering Accommodation, Food & Beverage, Transportation, and Services. Used to evaluate coastal tourism dependencies and maritime economic exposure across Peninsular Malaysia, Sabah, and Sarawak.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Dataset Landing & Download:</span>
+        <a class="link-url" href="https://data.gov.my/data-catalogue/gdp_state_real_supply">https://data.gov.my/data-catalogue/gdp_state_real_supply</a>
+        <span class="direct-badge">Catalogue</span>
+      </li>
+      <li>
+        <span class="link-label">Direct API Query (JSON):</span>
+        <a class="link-url" href="https://api.data.gov.my/data-catalogue?id=gdp_state_real_supply">https://api.data.gov.my/data-catalogue?id=gdp_state_real_supply</a>
+        <span class="direct-badge">Direct Data</span>
+      </li>
+      <li>
+        <span class="link-label">OpenDOSM GDP Portal:</span>
+        <a class="link-url" href="https://open.dosm.gov.my/dashboard/gdp">https://open.dosm.gov.my/dashboard/gdp</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">Marine Fish Landings by State (Resource Pressure Proxy)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Open Data</span></div>
+    </div>
+    <div class="dataset-desc">
+      Published by Department of Fisheries Malaysia (DOFM) via OpenDOSM / data.gov.my. Annual marine fish landings (tonnes) disaggregated by state and coast (East Coast, West Coast, Sabah, Sarawak). Serves as regional proxy for maritime extractive resource pressure.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Dataset Landing & Download:</span>
+        <a class="link-url" href="https://data.gov.my/data-catalogue/fish_landings">https://data.gov.my/data-catalogue/fish_landings</a>
+        <span class="direct-badge">Catalogue</span>
+      </li>
+      <li>
+        <span class="link-label">Direct API Query (JSON):</span>
+        <a class="link-url" href="https://api.data.gov.my/data-catalogue?id=fish_landings">https://api.data.gov.my/data-catalogue?id=fish_landings</a>
+        <span class="direct-badge">Direct Data</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">River Basin Water Quality & Pollution Indicators (Runoff Proxy)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Open Data</span></div>
+    </div>
+    <div class="dataset-desc">
+      Published by Department of Environment (DOE) via data.gov.my. Monitored river basin counts and water quality classifications (Biochemical Oxygen Demand / BOD, Ammoniacal Nitrogen, Suspended Solids). Provides descriptive context on coastal catchment runoff.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Dataset Landing & Download:</span>
+        <a class="link-url" href="https://data.gov.my/data-catalogue/water_pollution_basin">https://data.gov.my/data-catalogue/water_pollution_basin</a>
+        <span class="direct-badge">Catalogue</span>
+      </li>
+      <li>
+        <span class="link-label">Direct API Query (JSON):</span>
+        <a class="link-url" href="https://api.data.gov.my/data-catalogue?id=water_pollution_basin">https://api.data.gov.my/data-catalogue?id=water_pollution_basin</a>
+        <span class="direct-badge">Direct Data</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">Domestic Tourism Survey 2024 (Tourism Spending Metric)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">National Stat</span></div>
+    </div>
+    <div class="dataset-desc">
+      Published by DOSM. Establishes the authoritative national average expenditure per domestic visitor (RM410), directly utilized in the Reef-Adjacent Economy proxy formula: (Visitors) &times; (RM410 Spend) &times; (10% Reef Share).
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Official Survey Release:</span>
+        <a class="link-url" href="https://www.dosm.gov.my/portal-main/release-content/domestic-tourism-survey-2024">https://www.dosm.gov.my/portal-main/release-content/domestic-tourism-survey-2024</a>
+        <span class="direct-badge">Official Release</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3: ARCHIVE DATA.GOV.MY HISTORICAL VISITOR SERIES -->
+  <h2><span class="num">3</span> Historical Marine Park Visitors Series 2000–2017 (archive.data.gov.my)</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">Department of Marine Park Malaysia Visitor Records (2000–2017)</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Direct CSV</span></div>
+    </div>
+    <div class="dataset-desc">
+      Official 18-year historical visitor series across 5 maritime jurisdictions. All 90 rows transcribed in <code>taman_laut_visitors_2000_2017.csv</code> 
+      were verified against published government records (Creative Commons Attribution). The 2013–2017 average (1,464,770 visitors across Payar, Tioman, Redang, Tinggi) 
+      serves as the national baseline for the Reef-Adjacent Economy calculation.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Johor Marine Park CSV:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/dataset/407f5909-fff1-4c57-98af-23d5fff10009/resource/c97e1ec3-f5b1-4be3-bf8b-aabcb931a275/download/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017.csv">Direct CSV Download (Johor)</a>
+        <span class="direct-badge">Exact CSV</span>
+      </li>
+      <li>
+        <span class="link-label">Kedah Marine Park CSV:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/dataset/3f856857-413e-4ef5-93f6-7d391e787c98/resource/1daa3fed-6f6f-47c8-9201-aa3939e9f566/download/senarai-pelancong-ke-taman-laut-kedah-dari-2000-2017.csv">Direct CSV Download (Kedah)</a>
+        <span class="direct-badge">Exact CSV</span>
+      </li>
+      <li>
+        <span class="link-label">Pahang Marine Park CSV:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/dataset/63accf7b-0548-4227-9cec-1b39d547860a/resource/adec1dcb-0e6b-4948-9b4a-e13affda75f8/download/senarai-pelancong-ke-taman-laut-pahang-dari-2000-2017.csv">Direct CSV Download (Pahang)</a>
+        <span class="direct-badge">Exact CSV</span>
+      </li>
+      <li>
+        <span class="link-label">Terengganu Marine Park CSV:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/dataset/71412cd0-7849-4186-bec8-d6374999a80d/resource/98daeda2-1465-4306-ba5e-b2a0fa141034/download/senarai-pelancong-ke-taman-laut-terengganu-dari-2000-2017.csv">Direct CSV Download (Terengganu)</a>
+        <span class="direct-badge">Exact CSV</span>
+      </li>
+      <li>
+        <span class="link-label">Labuan Marine Park CSV:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/dataset/ec63b5cc-7beb-4319-9c9c-443b2b05e8d6/resource/e12e9fb7-db0f-440d-9d19-b94aeb702251/download/senarai-pelancong-ke-taman-laut-labuan-dari-2000-2017.csv">Direct CSV Download (Labuan)</a>
+        <span class="direct-badge">Exact CSV</span>
+      </li>
+      <li>
+        <span class="link-label">Web Dataset Landing:</span>
+        <a class="link-url" href="https://archive.data.gov.my/data/ms_MY/dataset/senarai-pelancong-ke-taman-laut-johor-dari-2000-2017">archive.data.gov.my/data/ms_MY/dataset (Archive Web Catalogue)</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4: NOAA CORAL REEF WATCH -->
+  <h2><span class="num">4</span> NOAA Coral Reef Watch Satellite Time-Series (Regional Heat Context)</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">5km Satellite Virtual Stations Daily SST & Degree Heating Weeks (DHW)</div>
+      <div class="tags"><span class="tag tag-pending">Eligibility Pending</span><span class="tag tag-context">Context Only</span></div>
+    </div>
+    <div class="dataset-desc">
+      Published by NOAA Coral Reef Watch (U.S. NESDIS / NOAA). Provides operational daily satellite sea surface temperature (SST), SST anomaly, bleaching hotspots, 
+      and Degree Heating Weeks (DHW) accumulation. <strong>Strict Boundary:</strong> Kept un-scored outside the ML model; serves purely as regional contextual signal 
+      for rangers to correlate observed bleaching events with regional heat stress.
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">Time-Series Download Directory:</span>
+        <a class="link-url" href="https://coralreefwatch.noaa.gov/product/vs/data.php">https://coralreefwatch.noaa.gov/product/vs/data.php</a>
+        <span class="direct-badge">Data Directory</span>
+      </li>
+      <li>
+        <span class="link-label">Interactive Virtual Stations Map:</span>
+        <a class="link-url" href="https://coralreefwatch.noaa.gov/product/vs/map.php">https://coralreefwatch.noaa.gov/product/vs/map.php</a>
+        <span class="direct-badge">Interactive Map</span>
+      </li>
+      <li>
+        <span class="link-label">Virtual Stations System Info:</span>
+        <a class="link-url" href="https://coralreefwatch.noaa.gov/product/vs/index.php">https://coralreefwatch.noaa.gov/product/vs/index.php</a>
+      </li>
+      <li>
+        <span class="link-label">NOAA CRW Main Portal:</span>
+        <a class="link-url" href="https://coralreefwatch.noaa.gov">https://coralreefwatch.noaa.gov</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5: GEOSPATIAL & REGULATORY -->
+  <h2><span class="num">5</span> Geospatial & Marine Park Administrative Bodies</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">JUPEM Geodetic Baselines & DOFM Marine Park Registers</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Administrative</span></div>
+    </div>
+    <div class="dataset-desc">
+      Authoritative spatial references defining island coordinates, maritime baselines, gazetted Marine Park boundaries, and Fishery Prohibited Areas (FPAs).
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">JUPEM Geodetic Portal:</span>
+        <a class="link-url" href="https://www.jupem.gov.my">https://www.jupem.gov.my</a>
+        <span class="direct-badge">Official Portal</span>
+      </li>
+      <li>
+        <span class="link-label">DOFM Marine Parks Section:</span>
+        <a class="link-url" href="https://www.dof.gov.my">https://www.dof.gov.my</a>
+        <span class="direct-badge">Official Register</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6: ECONOMIC BENCHMARKS & METHODS -->
+  <h2><span class="num">6</span> Economic Valuation Benchmarks & Supporting Methods</h2>
+
+  <div class="dataset-card">
+    <div class="dataset-card-header">
+      <div class="dataset-title">Total Economic Value (TEV) of Marine Biodiversity & Tourism Attribution Method</div>
+      <div class="tags"><span class="tag tag-verified">Verified Context</span><span class="tag tag-context">Methodology</span></div>
+    </div>
+    <div class="dataset-desc">
+      Historical economic valuation benchmarks and peer-reviewed international methodologies for coastal reef economic attribution:
+    </div>
+    <ul class="link-list">
+      <li>
+        <span class="link-label">DMPM TEV Benchmark Report:</span>
+        <a class="link-url" href="https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf">https://wdpa.s3.amazonaws.com/Country_informations/MYS/TOTAL%20ECONOMIC%20VALUE%20OF%20MARINE%20BIODIVERSITY.pdf</a>
+        <span class="direct-badge">Direct PDF</span>
+      </li>
+      <li>
+        <span class="link-label">Spalding et al. (2017) Method:</span>
+        <a class="link-url" href="https://www.nature.org/content/dam/tnc/nature/en/documents/paper_coralreeftourism_spalding_2017.pdf">https://www.nature.org/content/dam/tnc/nature/en/documents/paper_coralreeftourism_spalding_2017.pdf</a>
+        <span class="direct-badge">Direct PDF</span>
+      </li>
+      <li>
+        <span class="link-label">Sabah Parks 2024 Dashboard:</span>
+        <a class="link-url" href="https://dashboard.sabahparks.org.my">https://dashboard.sabahparks.org.my</a>
+      </li>
+      <li>
+        <span class="link-label">Terengganu 2024 Arrivals Release:</span>
+        <a class="link-url" href="https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html">https://malaysia.news.yahoo.com/tourist-arrivals-rise-terengganu-islands-050917502.html</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- PAGE BREAK FOR GOVERNANCE MATRIX -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 7: PROVENANCE GOVERNANCE MATRIX -->
+  <h2><span class="num">7</span> Provenance Register & Boundary Governance Matrix</h2>
+
+  <p style="font-size: 8pt; color: #64748b; margin-bottom: 8px;">
+    Machine-readable source register from <code>data/provenance_manifest.csv</code>, establishing admissible scopes and interpretation guardrails.
+  </p>
+
+  <table class="provenance-table">
+    <thead>
+      <tr>
+        <th style="width: 18%;">Dataset ID & Title</th>
+        <th style="width: 14%;">Publisher</th>
+        <th style="width: 14%;">Temporal / Spatial Coverage</th>
+        <th style="width: 11%;">Status</th>
+        <th style="width: 18%;">Platform Role</th>
+        <th style="width: 25%;">Governing Limitation / Boundary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>reef_check_surveys</strong><br>Annual Reef Survey Reports</td>
+        <td>Reef Check Malaysia (RCM)</td>
+        <td>2007–2025<br>404 unit/year rows</td>
+        <td><span class="tag tag-verified">verified_input</span></td>
+        <td>Primary Scored ML Input (Live Coral Cover %)</td>
+        <td>Repeated island labels may contain changing sites; narrative flags record mentions rather than confirmed absence.</td>
+      </tr>
+      <tr>
+        <td><strong>dmpm_tev_2011_2015</strong><br>Total Economic Value (TEV)</td>
+        <td>Department of Marine Park Malaysia</td>
+        <td>2011–2015 studies<br>6 archipelagos</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>Historical Economic Valuation Benchmark</td>
+        <td>RM8.7B is a rounded annual valuation benchmark across 6 archipelagos; not ReefSafe revenue, asset value, or avoided loss.</td>
+      </tr>
+      <tr>
+        <td><strong>noaa_crw_virtual_stations</strong><br>5km Satellite Virtual Stations</td>
+        <td>NOAA Coral Reef Watch (U.S. NESDIS)</td>
+        <td>Daily time-series<br>5 regional stations</td>
+        <td><span class="tag tag-pending">eligibility_pending</span></td>
+        <td>Descriptive Heat Stress Context Only</td>
+        <td>Kept un-scored outside the ML model; satellite proxies rather than in-water logger measurements.</td>
+      </tr>
+      <tr>
+        <td><strong>marine_park_visitors_2000_2017</strong><br>State Marine Park Visitors</td>
+        <td>DMPM / data.gov.my archive</td>
+        <td>2000–2017<br>90 state-year rows</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>Visitor Volume Baseline (2013–2017 avg: 1.46M)</td>
+        <td>State-level aggregates cannot be assigned to individual monitoring units or commercial island operators.</td>
+      </tr>
+      <tr>
+        <td><strong>dosm_domestic_tourism_2024</strong><br>Domestic Tourism Survey</td>
+        <td>Department of Statistics Malaysia</td>
+        <td>2024 Annual Release</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>RM410 Spending Coefficient</td>
+        <td>National domestic expenditure average; serves as a spending proxy, not a commercial turnover forecast.</td>
+      </tr>
+      <tr>
+        <td><strong>island_arrivals_sabah_2024</strong><br>Sabah Parks Statistics</td>
+        <td>Sabah Parks</td>
+        <td>2024 Full Year<br>5 park jurisdictions</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>Park-level Context for Reef-Adjacent Estimates</td>
+        <td>Park totals with domestic/international split; parks span multi-island archipelagos.</td>
+      </tr>
+      <tr>
+        <td><strong>bleaching_impact_2024</strong><br>4th Global Bleaching Event</td>
+        <td>Coralku & RCM (Szereday 2025)</td>
+        <td>2024 Bleaching Event<br>26 site records</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>Bleaching Mortality Context</td>
+        <td>Headline 34.1% average mortality is the published report average, not a model re-estimation.</td>
+      </tr>
+      <tr>
+        <td><strong>opendosm_economic_series</strong><br>State GDP, Fish, Water Quality</td>
+        <td>DOSM / data.gov.my</td>
+        <td>Annual State Series</td>
+        <td><span class="tag tag-verified">verified_context</span></td>
+        <td>Descriptive Macroeconomic & Catchment Context</td>
+        <td>State-level indicators do not measure monitoring-unit tourism pressure or direct causality.</td>
+      </tr>
+      <tr>
+        <td><strong>island_accommodations</strong><br>Accommodation Inventory</td>
+        <td>Unknown Local Compilation</td>
+        <td>Static 56-island table</td>
+        <td><span class="tag tag-excluded">excluded_unverified</span></td>
+        <td>EXCLUDED from Platform</td>
+        <td>No reproducible source audit trail supports completeness; excluded from all features, rankings, and claims.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 8: CORE CONCEPT CLARIFICATIONS -->
+  <h2><span class="num">8</span> Methodological Guardrails & Concept Disambiguation</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px;">
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+      <strong style="color: #0f172a; font-size: 8.5pt;">Reef-Adjacent Economy (RM60.09M/yr)</strong>
+      <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
+        A realized annual visitor spending proxy calculated across 4 covered marine parks (1,464,770 visitors &times; RM410 avg spend &times; 10% reef attribution coefficient from Spalding et al. 2017). Covers 30 of 40 units.
+      </p>
+    </div>
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+      <strong style="color: #0f172a; font-size: 8.5pt;">Reef-Adjacent Economy Potential (RM8.7B/yr)</strong>
+      <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
+        The historical Total Economic Value (TEV) published benchmark by the Department of Marine Park Malaysia (2011–2015 study). Represents total economic capital (primarily non-market existence and bequest value), NOT annual revenue.
+      </p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+      <strong style="color: #0f172a; font-size: 8.5pt;">Stress Factor Contribution</strong>
+      <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
+        Calculated via <strong>Tree-Path Decomposition (Saabas 2014)</strong> through the Gradient Boosting ensemble. Decomposes decision paths into 8 feature groups (Substrate, Fish, Impacts, Prior Cover, Geography). <strong>It is NOT NOAA DHW!</strong>
+      </p>
+    </div>
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px;">
+      <strong style="color: #0f172a; font-size: 8.5pt;">Institutional "Green" Status</strong>
+      <p style="font-size: 8pt; color: #475569; margin-top: 4px;">
+        In ReefSafe, "Green" strictly denotes monitoring units with non-negative predicted annual coral change (&ge; 0 pp/yr, Monitor tier): <strong>Kapalai (+0.77 pp/yr)</strong> and <strong>Malacca (+3.48 pp/yr)</strong>. Kapalai is the only verified visitor destination.
+      </p>
+    </div>
+  </div>
+
+  <!-- FOOTER NOTE -->
+  <div class="footer-note">
+    <span>ReefSafe &bull; DOSM Datathon 2026 Technical Documentation</span>
+    <span>Certified Open Science & Open Data Provenance &bull; Generated September 2026</span>
+  </div>
+
+</body>
+</html>
+"""
+
+def generate_pdf():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    html_path = os.path.join(script_dir, "ReefSafe_Data_Provenance_Directory.html")
+    pdf_path = os.path.join(script_dir, "ReefSafe_Data_Provenance_Directory.pdf")
+
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write(HTML_CONTENT)
+    print(f"Written HTML template to {html_path}")
+
+    chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+    if not os.path.exists(chrome_path):
+        print(f"Error: Chrome not found at {chrome_path}", file=sys.stderr)
+        sys.exit(1)
+
+    file_url = "file:///" + html_path.replace("\\", "/")
+    cmd = [
+        chrome_path,
+        "--headless=new",
+        "--disable-gpu",
+        "--no-pdf-header-footer",
+        f"--print-to-pdf={pdf_path}",
+        file_url
+    ]
+
+    print("Compiling PDF with Google Chrome Headless Engine...")
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"Chrome PDF generation failed with code {result.returncode}:", file=sys.stderr)
+        print(result.stderr, file=sys.stderr)
+        sys.exit(result.returncode)
+
+    if os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 0:
+        size_kb = os.path.getsize(pdf_path) / 1024
+        print(f"SUCCESS: Compiled '{pdf_path}' ({size_kb:.1f} KB)")
+    else:
+        print(f"Error: PDF was not created or has 0 bytes.", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    generate_pdf()
