@@ -231,7 +231,7 @@
       ], { links: ECONOMY_METHOD_LINKS.slice(0, 2) });
     }
 
-    if (/(mean|average).*coral.*cover|coral.*cover.*(mean|average)|39\.8%|56 units surveyed|40 units surveyed/.test(lower)) {
+    if (/(mean|average).*coral.*cover|coral.*cover.*(mean|average)|39\.8%|45\.3%|56 units surveyed|40 units surveyed/.test(lower)) {
       const kpi = data.nationalKPIs;
       return makeAnswer("Mean coral cover calculation", [
         { label: "Coverage", text: `For all ${kpi.surveyedUnits} ranked monitoring units surveyed in 2025, ReefSafe takes the latest live-coral-cover observation and calculates an arithmetic mean.` },
@@ -242,7 +242,7 @@
 
     if (/\b(recent|current|latest)?\s*coverage\b/.test(lower)) {
       return makeAnswer("Which coverage do you mean?", [
-        { label: "Coral condition", text: "Ask “How is mean coral cover calculated?” for the 39.8% KPI." },
+        { label: "Coral condition", text: "Ask “How is mean coral cover calculated?” for the 45.3% KPI." },
         { label: "Model completeness", text: "Ask “What is model input coverage?” for the Evidence-tab completeness chart." },
         { label: "Economy coverage", text: "Ask “Which units are covered by the reef-adjacent economy estimate?” for the 42-of-56 figure." },
       ], { pose: "wave" });
@@ -348,7 +348,7 @@
       economy_potential_source: "Where is the Reef-Adjacent Economy Potential data from?",
       reef_economy_calculation: "How is reef-adjacent economy calculated?",
       season_rest_calculation: "How are the season rest and long term reef revenue calculated?",
-      coral_cover_calculation: "How is mean coral cover 2025 39.8% for 56 units calculated?",
+      coral_cover_calculation: "How is mean coral cover 2025 45.3% for 56 units calculated?",
       stress_contribution: "How is the stress factor contribution calculated?",
       actionable_insight: "Where does the actionable insight come from?",
       demo_promotion: "Show me a demo promotion",

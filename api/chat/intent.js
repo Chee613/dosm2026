@@ -68,7 +68,7 @@ Map typos or paraphrases to the best supported intent.
 Reef-adjacent economy means the visitor-spending estimate and uses reef_economy_calculation.
 Reef-Adjacent Economy Potential means the separate published RM8.7B valuation and uses economy_potential_source.
 Use evidence_tab for questions about Tab 3 or the Evidence tab, and model_input_coverage for completeness of model inputs.
-Use season_rest_calculation for the one-month rest or 10-15 year reef-value arithmetic; coral_cover_calculation for the 39.8% mean or 56 surveyed units; stress_contribution for factor contribution arithmetic; actionable_insight for how a recommended check is selected; priority_method for tiers or ranking; uncertainty for prediction ranges.
+Use season_rest_calculation for the one-month rest or 10-15 year reef-value arithmetic; coral_cover_calculation for the 45.3% mean or 56 surveyed units; stress_contribution for factor contribution arithmetic; actionable_insight for how a recommended check is selected; priority_method for tiers or ranking; uncertainty for prediction ranges.
 Use the matching rubric intent for problem/SDG, data quality, data integration, dashboard design, real-world implementation, commercial scalability, or innovation questions.
 Examples: 'which plcae is good too visit' => greener_alternative; 'why gradient boosting' => model_selection; 'explaint this dashboard' => dashboard_summary.
 Selected island: ${contextIsland || "none"}

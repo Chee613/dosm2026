@@ -191,3 +191,14 @@ test("dashboard ships the accessible copilot interface and avatar set", () => {
     );
   }
 });
+
+test("explains the 45.3% mean coral cover calculation across 56 units", () => {
+  const answer = answerQuestion("How is mean coral cover calculated?", data);
+
+  assert.equal(answer.title, "Mean coral cover calculation");
+  assert.match(answer.text, /56/);
+  assert.match(answer.text, /45\.3%/);
+  assert.equal(answer.links.length, 1);
+  assert.equal(answer.links[0].href, "https://reefcheck.org.my/annualsurveyreports/");
+});
+
