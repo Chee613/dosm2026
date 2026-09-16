@@ -2,6 +2,11 @@ import os
 import sys
 import time
 import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 import dashboard_server
 
 api_key = os.environ.get("GEMINI_API_KEY", "")

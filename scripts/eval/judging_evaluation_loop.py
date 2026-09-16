@@ -4,6 +4,11 @@ import time
 import datetime
 import random
 import urllib.error
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 import dashboard_server
 
 api_key = os.environ.get("GEMINI_API_KEY", "")
@@ -60,7 +65,7 @@ JUDGING_QUESTIONS = [
     ("Scalability & Innovation", "What represents the core technological innovation of ReefSafe compared to static PDF survey reports?"),
 ]
 
-LOG_FILE = "judging_chat_eval.log"
+LOG_FILE = ROOT / "judging_chat_eval.log"
 
 def main():
     print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting Datathon Judging Continuous Evaluation Loop...")

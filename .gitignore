@@ -18,3 +18,8 @@ Thumbs.db
 .vscode/
 .idea/
 .worktrees/
+.superpowers/
+.pytest_cache/
+
+# Logs
+*.log

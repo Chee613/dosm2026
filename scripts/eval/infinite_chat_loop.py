@@ -4,6 +4,11 @@ import time
 import datetime
 import random
 import urllib.error
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 import dashboard_server
 
 api_key = os.environ.get("GEMINI_API_KEY", "")
@@ -95,7 +100,7 @@ QUESTION_TEMPLATES = [
     ("Nonsense", "undefined null NaN"),
 ]
 
-LOG_FILE = "continuous_chat_eval.log"
+LOG_FILE = ROOT / "continuous_chat_eval.log"
 
 def main():
     print(f"[{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Starting ReefSafe Continuous Evaluation Daemon...")

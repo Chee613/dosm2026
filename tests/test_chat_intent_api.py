@@ -57,11 +57,11 @@ def test_gemini_classifies_a_typo_into_a_supported_intent():
     assert captured["request"].headers["X-goog-api-key"] == "secret-key"
     assert "gemini-3.1-flash-lite:generateContent" in captured["request"].full_url
     body = json.loads(captured["request"].data)
-    assert body["generationConfig"]["responseFormat"]["text"]["mimeType"] == "application/json"
+    assert body["generationConfig"]["responseMimeType"] == "application/json"
 
 
 def test_gemini_rejects_unknown_intents():
-    def fake_open(_request, _timeout):
+    def fake_open(_request, timeout=8, **_kwargs):
         return FakeResponse(
             {
                 "candidates": [
