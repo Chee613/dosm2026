@@ -1,0 +1,5 @@
+Model,MAE (%/yr),RMSE (%/yr),R2 Score
+Baseline mean,2.307,3.134,-0.001
+Decision tree,1.767,2.339,0.442
+Random forest,0.693,0.904,0.917
+Gradient boosting,0.38,0.491,0.975

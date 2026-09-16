@@ -1,0 +1,193 @@
+{
+  "prediction_target": "Next observed annualised live coral cover change",
+  "validation": "Expanding-window evaluation on the five latest target years",
+  "training_transitions": 5821,
+  "evaluation_observations": 2405,
+  "test_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "best_candidate": "Gradient boosting",
+  "baseline_mae": 2.307297074989437,
+  "best_mae": 0.37998791391566183,
+  "mae_improvement_pct": 83.5310364653671,
+  "beats_baseline": true,
+  "deployment_status": "screening_only",
+  "uncertainty_label": "Pooled empirical 95% forward-residual range",
+  "lower_residual_quantile": -1.0103075532386212,
+  "upper_residual_quantile": 0.9960858451490261,
+  "model_comparison": {
+    "Baseline mean": {
+      "MAE": 2.307297074989437,
+      "RMSE": 3.134062431520121,
+      "R2": -0.0011276990749564675
+    },
+    "Decision tree": {
+      "MAE": 1.7671991776175668,
+      "RMSE": 2.3393854562700316,
+      "R2": 0.44220096092565897
+    },
+    "Random forest": {
+      "MAE": 0.692967979567525,
+      "RMSE": 0.9039587736295805,
+      "R2": 0.9167141084452269
+    },
+    "Gradient boosting": {
+      "MAE": 0.37998791391566183,
+      "RMSE": 0.4911703881692559,
+      "R2": 0.9754111315989402
+    }
+  },
+  "validation_by_year": [
+    {
+      "target_year": 2021,
+      "n": 453,
+      "mae": 0.37877082408570323,
+      "rmse": 0.49561769853593596,
+      "r2": 0.978112907692231,
+      "bias": 0.0673540862044275
+    },
+    {
+      "target_year": 2022,
+      "n": 490,
+      "mae": 0.4151519096721931,
+      "rmse": 0.5286858463039077,
+      "r2": 0.9583287103967618,
+      "bias": -0.022941293736641742
+    },
+    {
+      "target_year": 2023,
+      "n": 463,
+      "mae": 0.4018550511678282,
+      "rmse": 0.5239099692011637,
+      "r2": 0.9664934683399442,
+      "bias": 0.025107367402674118
+    },
+    {
+      "target_year": 2024,
+      "n": 512,
+      "mae": 0.3710407116128023,
+      "rmse": 0.4694340147577761,
+      "r2": 0.9755210595890778,
+      "bias": -0.03203505382927421
+    },
+    {
+      "target_year": 2025,
+      "n": 487,
+      "mae": 0.33435642891275025,
+      "rmse": 0.4347718065471693,
+      "r2": 0.9858983855406895,
+      "bias": 0.003633375470774672
+    }
+  ],
+  "permutation_importance": {
+    "survey_year": 0.2889051285260134,
+    "live_coral_cover_pct": 0.4821080638332005,
+    "lcc_change_rate": 1.3105047540260566,
+    "island_vs_region_pct": 1.0213583251664693,
+    "grp_available_substrate": 0.30676361893178794,
+    "grp_sand": 0.22446370404989396,
+    "grp_disturbance_indicators": 0.4018373425327395,
+    "grp_pollution_indicators": 0.3115308977064365,
+    "fish_butterflyfish": 0.2638121873294168,
+    "fish_snapper": 0.2912085616193975,
+    "fish_parrotfish": 0.2969794930895292,
+    "fish_grouper": 0.35587508304157023,
+    "inv_diadema_urchin": 0.23592833831186977,
+    "inv_crown_of_thorns": 0.2905798847087463,
+    "grazer_ratio": 0.27995288416142167,
+    "impact_anchor": 0.02779018462230632,
+    "impact_nets": 0.02328060782634401,
+    "impact_trash": 0.025172330440788163,
+    "impact_bleaching": 0.022866651245766104,
+    "impact_cot": 0.01340409947631327,
+    "latitude": 0.29595364771683863,
+    "longitude": 0.19951409596167324
+  },
+  "factor_diagnostics": [
+    {
+      "factor": "noaa_max_dhw",
+      "analysis": "Spearman rank correlation",
+      "n": 348,
+      "statistic": -0.1045779727630862,
+      "statistic_unit": "rho",
+      "p_value": 0.051270888572376425,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "noaa_mean_ssta",
+      "analysis": "Spearman rank correlation",
+      "n": 348,
+      "statistic": -0.06056818930566387,
+      "statistic_unit": "rho",
+      "p_value": 0.2598039926898717,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "grp_disturbance_indicators",
+      "analysis": "Spearman rank correlation",
+      "n": 338,
+      "statistic": 0.07772612436258132,
+      "statistic_unit": "rho",
+      "p_value": 0.15391408226206862,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "grp_pollution_indicators",
+      "analysis": "Spearman rank correlation",
+      "n": 338,
+      "statistic": 0.14597611401784685,
+      "statistic_unit": "rho",
+      "p_value": 0.00718360745525168,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "fish_parrotfish",
+      "analysis": "Spearman rank correlation",
+      "n": 348,
+      "statistic": -0.0326674872877121,
+      "statistic_unit": "rho",
+      "p_value": 0.5436029873395897,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "grazer_ratio",
+      "analysis": "Spearman rank correlation",
+      "n": 331,
+      "statistic": -0.05970715805382468,
+      "statistic_unit": "rho",
+      "p_value": 0.27874907864012083,
+      "caution": "Descriptive lagged association; not a causal effect"
+    },
+    {
+      "factor": "impact_anchor",
+      "analysis": "Mean difference: mentioned minus not mentioned",
+      "n": 348,
+      "statistic": 0.7535327329651386,
+      "statistic_unit": "percentage points per year",
+      "p_value": 0.6580050963797206,
+      "caution": "Narrative mention comparison; absence may mean unreported"
+    },
+    {
+      "factor": "impact_trash",
+      "analysis": "Mean difference: mentioned minus not mentioned",
+      "n": 348,
+      "statistic": -0.3909071505171756,
+      "statistic_unit": "percentage points per year",
+      "p_value": 0.6040435948163754,
+      "caution": "Narrative mention comparison; absence may mean unreported"
+    },
+    {
+      "factor": "impact_bleaching",
+      "analysis": "Mean difference: mentioned minus not mentioned",
+      "n": 348,
+      "statistic": 0.8710021173123366,
+      "statistic_unit": "percentage points per year",
+      "p_value": 0.5471291369752176,
+      "caution": "Narrative mention comparison; absence may mean unreported"
+    }
+  ]
+}
