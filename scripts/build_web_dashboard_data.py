@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.economic_valuation import load_dmpm_tev
 from scripts.stress_attribution import (
-    FACTOR_GROUPS, FEATURE_INFO, GROUP_NOTES, MIN_STRESSOR_PUSH_PP, STRESSOR_GROUPS, strongest_stressor,
+    FACTOR_GROUPS, FEATURE_INFO, GROUP_NOTES, STRESSOR_GROUPS,
 )
 
 
@@ -58,7 +58,9 @@ def attach_stress_evidence(priorities):
 
     for item in priorities:
         groups = {group["name"]: group["pp"] for group in item["stress"]["groups"]}
-        group, push = strongest_stressor(groups)
+        # Evidence follows the listed (report-primary) stressor; units without one show none.
+        group = item["stress"]["topStressor"]
+        push = groups[group] if group else 0.0
         if group is None:
             item["stress"]["evidence"] = None
             continue
@@ -86,7 +88,7 @@ def attach_stress_evidence(priorities):
         item["stress"]["evidence"] = {
             "group": group,
             "pp": push,
-            "belowThreshold": push > -MIN_STRESSOR_PUSH_PP,
+            "belowThreshold": False,
             "note": GROUP_NOTES[group],
             "items": entries,
         }

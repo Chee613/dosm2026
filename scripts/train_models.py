@@ -25,7 +25,9 @@ from sklearn.tree import DecisionTreeRegressor
 from scipy.stats import mannwhitneyu, spearmanr
 
 from scripts.pipeline import expanding_year_splits, heat_category, make_next_observation_rows
-from scripts.stress_attribution import INSIGHTS, group_contributions, top_stressor, tree_path_contributions
+from scripts.stress_attribution import (
+    INSIGHTS, REPORT_STRESSORS, group_contributions, top_stressor, tree_path_contributions,
+)
 
 
 DATA_PATH = ROOT / "data/processed/master_reef_tourism_dataset.csv"
@@ -215,17 +217,22 @@ def main():
     # Split each unit's prediction into factor-group contributions from the same fitted
     # model, so baseline + groups equals the published prediction exactly.
     baseline, contributions = tree_path_contributions(final_model, latest.select(FEATURES).to_numpy())
+    report_evidence = dict(zip(priority["island"].to_list(), priority["evidence"].to_list()))
     stress_rows = []
     for island, row in zip(latest["island"].to_list(), contributions):
         groups = group_contributions(FEATURES, row)
-        stressor, push = top_stressor(groups)
+        model_stressor, model_push = top_stressor(groups)
+        stressor, insight = REPORT_STRESSORS[report_evidence[island]]
         stress_rows.append({
             "island": island,
             "baseline_pp": baseline,
             **groups,
             "top_stressor": stressor or "",
-            "top_stressor_pp": push,
-            "insight": INSIGHTS[stressor],
+            "top_stressor_pp": groups[stressor] if stressor else 0.0,
+            "insight": insight,
+            "model_top_stressor": model_stressor or "",
+            "model_top_stressor_pp": model_push,
+            "model_insight": INSIGHTS[model_stressor],
         })
     pl.DataFrame(stress_rows).write_csv(PROCESSED / "stress_contributions.csv")
     pl.DataFrame([

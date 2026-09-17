@@ -62,6 +62,14 @@ GROUP_NOTES = {
     "Bleaching reported": "A mention in the Reef Check report, not a severity measure.",
 }
 
+# The report's evidence rule (reef_priority_predictions.csv) mapped to a factor group and action.
+REPORT_STRESSORS = {
+    "NOAA thermal stress observed": ("Bleaching reported", "Coordinate targeted bleaching survey"),
+    "Anchor impact mentioned in Reef Check report": ("Anchors & nets", "Inspect mooring & anchoring controls"),
+    "Waste or pollution indicator is elevated": ("Pollution & waste", "Inspect waste and wastewater controls"),
+    "Modelled decline; no single dominant observed stressor": (None, "Prioritise field validation before restrictions"),
+}
+
 INSIGHTS = {
     "Herbivory & fish": "Review fishing pressure on grazing fish",
     "Anchors & nets": "Check mooring buoys and anchoring controls",

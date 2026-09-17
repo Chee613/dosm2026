@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts.stress_attribution import (
-    FACTOR_GROUPS, INSIGHTS, MIN_STRESSOR_PUSH_PP, STRESSOR_GROUPS, top_stressor,
+    FACTOR_GROUPS, INSIGHTS, MIN_STRESSOR_PUSH_PP, REPORT_STRESSORS, STRESSOR_GROUPS, top_stressor,
 )
 from scripts.train_models import FEATURES
 
@@ -33,12 +33,21 @@ class StressAttributionTests(unittest.TestCase):
             total = float(row["baseline_pp"]) + sum(float(row[group]) for group in FACTOR_GROUPS)
             self.assertAlmostEqual(total, predictions[row["island"]], places=6, msg=row["island"])
 
-    def test_top_stressor_and_insight_follow_the_threshold_rule(self):
+    def test_top_stressor_follows_the_report_evidence_rule(self):
+        evidence = {r["island"]: r["evidence"] for r in rows(PRIORITIES)}
+        for row in rows(STRESS):
+            stressor, insight = REPORT_STRESSORS[evidence[row["island"]]]
+            self.assertEqual(row["top_stressor"], stressor or "", row["island"])
+            self.assertEqual(row["insight"], insight, row["island"])
+            expected_pp = float(row[stressor]) if stressor else 0.0
+            self.assertAlmostEqual(float(row["top_stressor_pp"]), expected_pp, places=9, msg=row["island"])
+
+    def test_model_attribution_follows_the_threshold_rule(self):
         for row in rows(STRESS):
             groups = {group: float(row[group]) for group in FACTOR_GROUPS}
             stressor, push = top_stressor(groups)
-            self.assertEqual(row["top_stressor"], stressor or "", row["island"])
-            self.assertEqual(row["insight"], INSIGHTS[stressor], row["island"])
+            self.assertEqual(row["model_top_stressor"], stressor or "", row["island"])
+            self.assertEqual(row["model_insight"], INSIGHTS[stressor], row["island"])
             if stressor:
                 self.assertLessEqual(push, -MIN_STRESSOR_PUSH_PP)
                 self.assertIn(stressor, STRESSOR_GROUPS)
@@ -50,17 +59,14 @@ class StressAttributionTests(unittest.TestCase):
                 total = sum(float(row[feature]) for feature in features)
                 self.assertAlmostEqual(total, float(groups[row["island"]][group]), places=9, msg=row["island"])
 
-    def test_every_unit_with_a_downward_stressor_has_evidence(self):
+    def test_evidence_follows_the_listed_stressor(self):
         from scripts.build_web_dashboard_data import build_bundle
         for unit in build_bundle()["priorityIslands"]:
             stress = unit["stress"]
-            stressor_pushes = [group["pp"] for group in stress["groups"] if group["stressor"]]
-            if min(stressor_pushes) < 0:
+            if stress["topStressor"]:
                 evidence = stress["evidence"]
-                self.assertEqual(evidence["group"], stress["topStressor"] or evidence["group"], unit["island"])
-                if stress["topStressor"]:
-                    self.assertEqual(evidence["group"], stress["topStressor"], unit["island"])
-                    self.assertFalse(evidence["belowThreshold"], unit["island"])
+                self.assertEqual(evidence["group"], stress["topStressor"], unit["island"])
+                self.assertFalse(evidence["belowThreshold"], unit["island"])
                 # Only inputs that moved the prediction: none that round to 0.00 pp/yr.
                 self.assertLessEqual(len(evidence["items"]), len(FACTOR_GROUPS[evidence["group"]]))
                 for entry in evidence["items"]:

@@ -3,7 +3,7 @@ window.REEFSAFE_DATA = {
   "nationalKPIs": {
     "latestMeanCoralCover": 45.2867240625,
     "latestSurveyYear": 2025,
-    "pairedChange2024To2025": -0.4688027027027175,
+    "pairedChange2024To2025": -0.4688027027027317,
     "pairedUnits": 444,
     "priorityCount": 14,
     "surveyedUnits": 56,
@@ -282,39 +282,10 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Pollution & waste",
-        "topStressorPp": -0.6320629831344833,
-        "insight": "Inspect wastewater and waste controls",
-        "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.6320629831344833,
-          "belowThreshold": false,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
-          "items": [
-            {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 2.5107,
-              "rank": 52,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.48417469775357125
-            },
-            {
-              "label": "Trash mentioned",
-              "kind": "flag",
-              "value": 0.0,
-              "rank": 16,
-              "ties": 41,
-              "of": 56,
-              "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.1478882853809121
-            }
-          ]
-        }
+        "topStressor": null,
+        "topStressorPp": 0.0,
+        "insight": "Prioritise field validation before restrictions",
+        "evidence": null
       }
     },
     {
@@ -380,82 +351,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -1.1086828211784283,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -1.1086828211784283,
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 7.232,
-              "rank": 15,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.6953737275350875
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 5.0195,
-              "rank": 8,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.33305278798183463
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 0.899,
-              "rank": 20,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.07792932589811448
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.8304,
-              "rank": 21,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.060283470561125284
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 4.9476,
-              "rank": 37,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.03133968368208066
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 0.5581,
-              "rank": 50,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": 0.08929617447981421
-            }
-          ]
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -522,25 +426,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Crown-of-thorns",
-        "topStressorPp": -0.37455637618128235,
-        "insight": "Survey and remove crown-of-thorns starfish",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.03529817648013257,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.37455637618128235,
+          "group": "Anchors & nets",
+          "pp": 0.03529817648013257,
           "belowThreshold": false,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0376,
-              "rank": 41,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.37265423788513297
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.03529817648013257
             }
           ]
         }
@@ -609,80 +513,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.4558510734928192,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.07247866314254803,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.4558510734928192,
+          "group": "Bleaching reported",
+          "pp": -0.07247866314254803,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 4.101,
-              "rank": 12,
-              "ties": 1,
+              "label": "Bleaching mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 18,
+              "ties": 39,
               "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.4790903332552767
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 5.9736,
-              "rank": 22,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.16549709479040386
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 2.0027,
-              "rank": 33,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.09954892807474704
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 84.8326,
-              "rank": 1,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.06134926904112254
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 3.4538,
-              "rank": 2,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": 0.05747533958703651
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 0.0733,
-              "rank": 54,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.2921592120816944
+              "median": 0.0,
+              "mentioned": 17,
+              "pp": -0.07247866314254803
             }
           ]
         }
@@ -751,47 +600,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -1.6680939344037893,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.021297251565879208,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -1.6680939344037893,
+          "group": "Anchors & nets",
+          "pp": -0.021297251565879208,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 9.6796,
-              "rank": 22,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.9803806685857811
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.011807601172156913
             },
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 16.1638,
-              "rank": 23,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.3755257622489947
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 19.8145,
-              "rank": 28,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.3121875035690135
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.009489650393722293
             }
           ]
         }
@@ -860,49 +698,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.003559904023728296,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.13453258988289046,
-          "belowThreshold": true,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
-          "items": [
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 8.6034,
-              "rank": 28,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.28023624620930815
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 27.9936,
-              "rank": 7,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": 0.011052925560313731
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 22.7166,
-              "rank": 8,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": 0.13465073076610395
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": -0.003559904023728296,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -969,47 +773,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.02520208819184802,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.24480005966138307,
-          "belowThreshold": true,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "group": "Anchors & nets",
+          "pp": -0.02520208819184802,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 12.6041,
-              "rank": 32,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.16437041010139175
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.013597591585962025
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 21.6709,
-              "rank": 22,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.09760617939257346
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 8.4201,
-              "rank": 30,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": 0.0171765298325821
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.011604496605885995
             }
           ]
         }
@@ -1078,25 +871,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Crown-of-thorns",
-        "topStressorPp": -0.4682699161733165,
-        "insight": "Survey and remove crown-of-thorns starfish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.03754211701748689,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.4682699161733165,
+          "group": "Bleaching reported",
+          "pp": 0.03754211701748689,
           "belowThreshold": false,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0284,
-              "rank": 47,
-              "ties": 1,
+              "label": "Bleaching mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 17,
               "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.4663677778771671
+              "median": 0.0,
+              "mentioned": 17,
+              "pp": 0.03754211701748689
             }
           ]
         }
@@ -1165,49 +958,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.27694289191880966,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.0020427150190804708,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.27694289191880966,
+          "group": "Bleaching reported",
+          "pp": 0.0020427150190804708,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
-          "items": [
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 16.0792,
-              "rank": 24,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.2638089430996114
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 17.8411,
-              "rank": 38,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.06953719152190438
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 27.3366,
-              "rank": 1,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": 0.05640324270270609
-            }
-          ]
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -1274,36 +1033,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.05111036595195405,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Anchors & nets",
-          "pp": -0.24760436579389367,
-          "belowThreshold": true,
-          "note": "Flags record a mention in the Reef Check report, not severity.",
+          "group": "Bleaching reported",
+          "pp": -0.05111036595195405,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Anchor damage mentioned",
-              "kind": "flag",
-              "value": 0.0,
-              "rank": 15,
-              "ties": 42,
-              "of": 56,
-              "median": 0.0,
-              "mentioned": 14,
-              "pp": -0.21024232917603436
-            },
-            {
-              "label": "Discarded nets mentioned",
+              "label": "Bleaching mentioned",
               "kind": "flag",
               "value": 1.0,
               "rank": 1,
-              "ties": 37,
+              "ties": 17,
               "of": 56,
-              "median": 1.0,
-              "mentioned": 37,
-              "pp": -0.037362036617859314
+              "median": 0.0,
+              "mentioned": 17,
+              "pp": -0.05111036595195405
             }
           ]
         }
@@ -1372,49 +1120,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.22472625088352877,
-          "belowThreshold": true,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
-          "items": [
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 24.5275,
-              "rank": 2,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.15041982837037723
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 21.3744,
-              "rank": 25,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.050113808798899026
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 20.7222,
-              "rank": 13,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.02419261371425249
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -1481,47 +1195,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.3565137662507103,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.017040212157169124,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.3565137662507103,
+          "group": "Anchors & nets",
+          "pp": -0.017040212157169124,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 5.7135,
-              "rank": 50,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.42569375915978475
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.011335477048953827
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 22.1922,
-              "rank": 20,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.06735518099160928
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 5.7691,
-              "rank": 39,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": 0.1365351739006837
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.0057047351082152985
             }
           ]
         }
@@ -1590,36 +1293,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Pollution & waste",
-        "topStressorPp": -0.32901066486544334,
-        "insight": "Inspect wastewater and waste controls",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.031425244456265294,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.32901066486544334,
+          "group": "Anchors & nets",
+          "pp": -0.031425244456265294,
           "belowThreshold": false,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 8.3262,
-              "rank": 20,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.302298645426368
-            },
-            {
-              "label": "Trash mentioned",
+              "label": "Anchor damage mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 16,
-              "ties": 41,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
               "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.02671201943907535
+              "mentioned": 14,
+              "pp": -0.04368888735436343
+            },
+            {
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
+              "of": 56,
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.012263642898098137
             }
           ]
         }
@@ -1688,71 +1391,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.001517189004647825,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.22746443679620187,
-          "belowThreshold": true,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 1.6367,
-              "rank": 54,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.1681351837973045
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 3.0445,
-              "rank": 19,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.061626557306653486
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.311,
-              "rank": 42,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.04573416830669583
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 4.4814,
-              "rank": 39,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.010534081072181064
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 1.6942,
-              "rank": 11,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": 0.03298527284478831
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": -0.001517189004647825,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -1819,36 +1466,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Crown-of-thorns",
-        "topStressorPp": -0.41179359187144726,
-        "insight": "Survey and remove crown-of-thorns starfish",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.028231501024529343,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.41179359187144726,
+          "group": "Anchors & nets",
+          "pp": -0.028231501024529343,
           "belowThreshold": false,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0313,
-              "rank": 44,
-              "ties": 1,
-              "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.4168305486393807
-            },
-            {
-              "label": "Crown-of-thorns mentioned",
+              "label": "Anchor damage mentioned",
               "kind": "flag",
               "value": 0.0,
-              "rank": 20,
-              "ties": 37,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
               "median": 0.0,
-              "mentioned": 19,
-              "pp": 0.005036956767933401
+              "mentioned": 14,
+              "pp": -0.014633909438567318
+            },
+            {
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
+              "of": 56,
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.013597591585962025
             }
           ]
         }
@@ -1917,36 +1564,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Pollution & waste",
-        "topStressorPp": -0.2871054673617586,
-        "insight": "Inspect wastewater and waste controls",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.042332779855422276,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.2871054673617586,
+          "group": "Anchors & nets",
+          "pp": 0.042332779855422276,
           "belowThreshold": false,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 3.6907,
-              "rank": 45,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.2729055904151394
-            },
-            {
-              "label": "Trash mentioned",
+              "label": "Discarded nets mentioned",
               "kind": "flag",
               "value": 0.0,
-              "rank": 16,
-              "ties": 41,
+              "rank": 38,
+              "ties": 19,
+              "of": 56,
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.015395252785237066
+            },
+            {
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
               "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.014199876946619241
+              "mentioned": 14,
+              "pp": 0.026937527070185208
             }
           ]
         }
@@ -2015,25 +1662,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Crown-of-thorns",
-        "topStressorPp": -0.47475337021232766,
-        "insight": "Survey and remove crown-of-thorns starfish",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.006205442643048259,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.47475337021232766,
+          "group": "Anchors & nets",
+          "pp": 0.006205442643048259,
           "belowThreshold": false,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0527,
-              "rank": 31,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.47475337021232766
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.01922064735986319
+            },
+            {
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
+              "of": 56,
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.025426090002911447
             }
           ]
         }
@@ -2102,80 +1760,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.9583103315151158,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.013845060016588156,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.9583103315151158,
+          "group": "Bleaching reported",
+          "pp": 0.013845060016588156,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.1776,
-              "rank": 50,
-              "ties": 1,
+              "label": "Bleaching mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 17,
               "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.7544245856964445
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 14.8916,
-              "rank": 6,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.18846937566046013
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 2.3218,
-              "rank": 50,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.16730387747756814
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 0.1025,
-              "rank": 55,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.05035664762793215
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 2.37,
-              "rank": 25,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": 0.07423134659401198
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 0.1819,
-              "rank": 52,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.12801280835327722
+              "median": 0.0,
+              "mentioned": 17,
+              "pp": 0.013845060016588156
             }
           ]
         }
@@ -2244,36 +1847,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Pollution & waste",
+        "topStressorPp": -0.012334984961519116,
+        "insight": "Inspect waste and wastewater controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.03578011859045529,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "group": "Pollution & waste",
+          "pp": -0.012334984961519116,
+          "belowThreshold": false,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns mentioned",
+              "label": "Trash mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 20,
-              "ties": 37,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 15,
               "of": 56,
               "median": 0.0,
-              "mentioned": 19,
-              "pp": -0.029745250626573162
-            },
-            {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.3038,
-              "rank": 7,
-              "ties": 1,
-              "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.0060348679638821245
+              "mentioned": 15,
+              "pp": -0.01562159839352951
             }
           ]
         }
@@ -2342,49 +1934,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.18440912262599088,
-          "belowThreshold": true,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
-          "items": [
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 21.4427,
-              "rank": 9,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.2195837893907285
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 15.5258,
-              "rank": 8,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.024957833801842612
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 30.2821,
-              "rank": 4,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": 0.060132500566580226
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -2451,36 +2009,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Pollution & waste",
-        "topStressorPp": -0.33584734087488954,
-        "insight": "Inspect wastewater and waste controls",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.10927106924599674,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.33584734087488954,
+          "group": "Anchors & nets",
+          "pp": -0.10927106924599674,
           "belowThreshold": false,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Trash mentioned",
+              "label": "Anchor damage mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 16,
-              "ties": 41,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
               "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.22559069411985933
-            },
-            {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 6.669,
-              "rank": 27,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.11025664675503019
+              "mentioned": 14,
+              "pp": -0.10927106924599674
             }
           ]
         }
@@ -2549,82 +2096,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.3777442783320161,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.3777442783320161,
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 0.7221,
-              "rank": 47,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.17127968707862806
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 2.384,
-              "rank": 49,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.12005056930558504
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.1352,
-              "rank": 51,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.07552554926608057
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 27.0985,
-              "rank": 26,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.02977386850600334
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 0.1838,
-              "rank": 29,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": 0.009076478602834021
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 4.1449,
-              "rank": 11,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": 0.009808917221446872
-            }
-          ]
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -2691,80 +2171,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.2795492006477872,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.1006592295386699,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.2795492006477872,
+          "group": "Bleaching reported",
+          "pp": -0.1006592295386699,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 2.214,
-              "rank": 32,
-              "ties": 1,
+              "label": "Bleaching mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 17,
               "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.11783986399862174
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 2.124,
-              "rank": 6,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.08190799281928635
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 1.17,
-              "rank": 17,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.07156504224827882
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 5.0806,
-              "rank": 7,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.03736597039956264
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 2.0425,
-              "rank": 53,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.029346017909774605
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 3.6305,
-              "rank": 40,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.05847568672773694
+              "median": 0.0,
+              "mentioned": 17,
+              "pp": -0.1006592295386699
             }
           ]
         }
@@ -2833,25 +2258,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.01639672885639164,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.0524999778414586,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "group": "Anchors & nets",
+          "pp": 0.01639672885639164,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.2873,
-              "rank": 8,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.050597839545309234
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.01639672885639164
             }
           ]
         }
@@ -2920,80 +2345,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.8664329927098895,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Pollution & waste",
+        "topStressorPp": -0.1947965157684539,
+        "insight": "Inspect waste and wastewater controls",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.8664329927098895,
+          "group": "Pollution & waste",
+          "pp": -0.1947965157684539,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
           "items": [
             {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 15.768,
-              "rank": 2,
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 2.8827,
+              "rank": 50,
               "ties": 1,
               "of": 56,
-              "median": 5.132300000000001,
+              "median": 5.90415,
               "mentioned": null,
-              "pp": -0.25704474353096557
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 25.2557,
-              "rank": 27,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.21313955628539255
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 1.6457,
-              "rank": 8,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.17787987380444215
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 0.0313,
-              "rank": 42,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.1736460249539555
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 1.9072,
-              "rank": 32,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.031363373782960786
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 1.2,
-              "rank": 41,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.013359420352172979
+              "pp": -0.19778364262603812
             }
           ]
         }
@@ -3062,47 +2432,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.5625896367835429,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.017448438473938274,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.5625896367835429,
+          "group": "Anchors & nets",
+          "pp": -0.017448438473938274,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 20.5886,
-              "rank": 14,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.237411734558259
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.029433929806931464
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 21.7783,
-              "rank": 21,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.19045543421137867
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 12.7047,
-              "rank": 14,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.13472246801390522
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.01198549133299319
             }
           ]
         }
@@ -3171,27 +2530,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
+        "topStressor": "Bleaching reported",
         "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.053001772863597175,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
-          "items": [
-            {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0423,
-              "rank": 36,
-              "ties": 1,
-              "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.05109963456744781
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": 0.0,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -3258,47 +2605,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.5071856932447807,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Pollution & waste",
+        "topStressorPp": -0.04183911282490248,
+        "insight": "Inspect waste and wastewater controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.5071856932447807,
+          "group": "Pollution & waste",
+          "pp": -0.04183911282490248,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
+              "label": "Pollution indicators (nutrient algae + silt)",
               "kind": "pct",
-              "value": 12.1605,
-              "rank": 33,
+              "value": 9.3737,
+              "rank": 16,
               "ties": 1,
               "of": 56,
-              "median": 13.7355,
+              "median": 5.90415,
               "mentioned": null,
-              "pp": -0.26286038524654154
+              "pp": -0.023854738828064076
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 17.255,
-              "rank": 42,
-              "ties": 1,
+              "label": "Trash mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 16,
+              "ties": 41,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.16687765427822498
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 13.2398,
-              "rank": 12,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.07744765372001412
+              "median": 0.0,
+              "mentioned": 15,
+              "pp": -0.0179843739968384
             }
           ]
         }
@@ -3367,47 +2703,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.10216040762062381,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.1401964040866706,
-          "belowThreshold": true,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "group": "Anchors & nets",
+          "pp": 0.10216040762062381,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 8.8215,
-              "rank": 25,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.2730319781599221
-            },
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 23.9046,
-              "rank": 13,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": 0.021965524146705856
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 7.6099,
-              "rank": 43,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": 0.11087004992654563
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.1009617154173821
             }
           ]
         }
@@ -3476,47 +2790,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.5178861239684465,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.04625082288110592,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.5178861239684465,
+          "group": "Anchors & nets",
+          "pp": 0.04625082288110592,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 3.9939,
-              "rank": 53,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.3466178385255887
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.01243016704262907
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 13.5784,
-              "rank": 48,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.1357991847858676
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 4.9914,
-              "rank": 43,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.0354691006569902
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.03382065583847685
             }
           ]
         }
@@ -3585,13 +2888,13 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.014847744262257583,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
           "group": "Anchors & nets",
           "pp": -0.014847744262257583,
-          "belowThreshold": true,
+          "belowThreshold": false,
           "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
@@ -3683,71 +2986,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.0008943123189664661,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.21830484053449778,
-          "belowThreshold": true,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 3.8853,
-              "rank": 39,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.10831263097498196
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.3026,
-              "rank": 43,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.0880003066844993
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 6.3231,
-              "rank": 35,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.037460814412327716
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 6.0412,
-              "rank": 13,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.017623770101053884
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 1.1802,
-              "rank": 16,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": 0.03308221648051008
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": 0.0008943123189664661,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -3814,80 +3061,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.0002987712030432738,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.16067554992529492,
-          "belowThreshold": true,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "group": "Anchors & nets",
+          "pp": 0.0002987712030432738,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.5953,
-              "rank": 26,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.07353446693832336
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.006600346216289136
             },
             {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 8.251,
-              "rank": 3,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.051501229146695825
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 5.8813,
-              "rank": 14,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.030131815294016078
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 45.3257,
-              "rank": 2,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.02998344483340175
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 5.1314,
-              "rank": 29,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.005699869224012057
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 0.276,
-              "rank": 51,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.030175275511154124
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.00689911741933241
             }
           ]
         }
@@ -3956,47 +3159,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.32619975712544946,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.015881954819969738,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.32619975712544946,
+          "group": "Anchors & nets",
+          "pp": -0.015881954819969738,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 16.0464,
-              "rank": 43,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.12919290720444565
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 8.5543,
-              "rank": 29,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.10745862688813719
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 6.4812,
-              "rank": 48,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.08954822303286665
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.01517205477581661
             }
           ]
         }
@@ -4065,69 +3246,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Pollution & waste",
+        "topStressorPp": 0.025808860972111818,
+        "insight": "Inspect waste and wastewater controls",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.09613249727418864,
-          "belowThreshold": true,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "group": "Pollution & waste",
+          "pp": 0.025808860972111818,
+          "belowThreshold": false,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
           "items": [
             {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 5.4427,
-              "rank": 26,
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 5.023,
+              "rank": 35,
               "ties": 1,
               "of": 56,
-              "median": 5.132300000000001,
+              "median": 5.90415,
               "mentioned": null,
-              "pp": -0.10295156230869498
+              "pp": -0.04171305525427161
             },
             {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 7.8708,
-              "rank": 34,
-              "ties": 1,
+              "label": "Trash mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 15,
               "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.04748506363717034
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.9853,
-              "rank": 16,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.04520261473045727
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 5.4205,
-              "rank": 15,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.011678775613761383
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 5.2106,
-              "rank": 5,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": 0.10717035681782713
+              "median": 0.0,
+              "mentioned": 15,
+              "pp": 0.06752191622638343
             }
           ]
         }
@@ -4196,25 +3344,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.05211095079996956,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Bleaching reported",
-          "pp": -0.019971070945292452,
-          "belowThreshold": true,
-          "note": "A mention in the Reef Check report, not a severity measure.",
+          "group": "Anchors & nets",
+          "pp": 0.05211095079996956,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Bleaching mentioned",
+              "label": "Discarded nets mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 18,
-              "ties": 39,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 0.0,
-              "mentioned": 17,
-              "pp": -0.019971070945292452
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.05282085084412269
             }
           ]
         }
@@ -4283,13 +3431,13 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.0694685190107018,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
           "group": "Anchors & nets",
           "pp": -0.0694685190107018,
-          "belowThreshold": true,
+          "belowThreshold": false,
           "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
@@ -4370,27 +3518,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
+        "topStressor": "Bleaching reported",
         "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.0373457225971938,
-          "belowThreshold": true,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
-          "items": [
-            {
-              "label": "Trash mentioned",
-              "kind": "flag",
-              "value": 0.0,
-              "rank": 16,
-              "ties": 41,
-              "of": 56,
-              "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.03526131219559183
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": 0.0,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -4457,82 +3593,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.349644276337432,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.0020427150190804708,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.349644276337432,
+          "group": "Bleaching reported",
+          "pp": 0.0020427150190804708,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 1.1362,
-              "rank": 55,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.4245050697967498
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 1.0874,
-              "rank": 43,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.08133490053657051
-            },
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 2.6448,
-              "rank": 10,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.06413926108407186
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 0.77,
-              "rank": 47,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": 0.020123464079338408
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.3387,
-              "rank": 39,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": 0.08719336986856
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 0.9769,
-              "rank": 47,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": 0.11301812113206176
-            }
-          ]
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -4599,82 +3668,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.002489222229789707,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.1920181153183026,
-          "belowThreshold": true,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
-          "items": [
-            {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 0.0279,
-              "rank": 45,
-              "ties": 1,
-              "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.1374119181560687
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 147.2689,
-              "rank": 2,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.09020378261545611
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 3.5906,
-              "rank": 14,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": -0.028690929874459117
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.1945,
-              "rank": 49,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.02386816570927264
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 1.5179,
-              "rank": 37,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": 0.016631224104691752
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 2.4954,
-              "rank": 47,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": 0.07152545693226221
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": 0.002489222229789707,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -4741,38 +3743,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
+        "topStressor": "Bleaching reported",
         "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.18276952283910353,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
-          "items": [
-            {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.0881,
-              "rank": 16,
-              "ties": 1,
-              "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.14345786273055244
-            },
-            {
-              "label": "Crown-of-thorns mentioned",
-              "kind": "flag",
-              "value": 0.0,
-              "rank": 20,
-              "ties": 37,
-              "of": 56,
-              "median": 0.0,
-              "mentioned": 19,
-              "pp": -0.03931166010855108
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": 0.0,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -4839,47 +3818,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.4592205810621046,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.04465382970128421,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.4592205810621046,
+          "group": "Anchors & nets",
+          "pp": -0.04465382970128421,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 26.3749,
-              "rank": 10,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.22694923728110586
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": -0.078300611008272
             },
             {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 1.7002,
-              "rank": 54,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.1529710483336137
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 21.4384,
-              "rank": 10,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.07930029544738508
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.03364678130698779
             }
           ]
         }
@@ -4948,49 +3916,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.3340881851353102,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.3340881851353102,
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
-          "items": [
-            {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 27.4339,
-              "rank": 9,
-              "ties": 1,
-              "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.28794705838711454
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 21.17,
-              "rank": 12,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.11143379443807408
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 19.4577,
-              "rank": 7,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": 0.06529266768987847
-            }
-          ]
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -5057,47 +3991,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.467577983552791,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.09792406780808757,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.467577983552791,
+          "group": "Anchors & nets",
+          "pp": 0.09792406780808757,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 13.6721,
-              "rank": 29,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.33770619544808045
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.023969753868999424
             },
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 22.7622,
-              "rank": 17,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 15,
+              "ties": 42,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.0934095375659714
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 6.6515,
-              "rank": 36,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.0364622505387392
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.07395431393908815
             }
           ]
         }
@@ -5166,14 +4089,14 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.0020427150190804708,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Anchors & nets",
-          "pp": -0.0014715480672305172,
-          "belowThreshold": true,
-          "note": "Flags record a mention in the Reef Check report, not severity.",
+          "group": "Bleaching reported",
+          "pp": 0.0020427150190804708,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": []
         }
       }
@@ -5241,13 +4164,13 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.007239668382948874,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
           "group": "Anchors & nets",
           "pp": -0.007239668382948874,
-          "belowThreshold": true,
+          "belowThreshold": false,
           "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
@@ -5328,27 +4251,15 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.0015949099108232409,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.01349518980016242,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
-          "items": [
-            {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.058,
-              "rank": 28,
-              "ties": 1,
-              "of": 56,
-              "median": 0.05775,
-              "mentioned": null,
-              "pp": -0.011593051504013055
-            }
-          ]
+          "group": "Bleaching reported",
+          "pp": -0.0015949099108232409,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
         }
       }
     },
@@ -5415,47 +4326,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Disturbance & substrate",
-        "topStressorPp": -0.713757727413436,
-        "insight": "Survey physical reef damage",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": -0.01554837550204019,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Disturbance & substrate",
-          "pp": -0.713757727413436,
+          "group": "Anchors & nets",
+          "pp": -0.01554837550204019,
           "belowThreshold": false,
-          "note": "Recently killed coral and rubble signal physical damage such as anchors, trampling, storms or blasting.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Bare rock available for coral recruitment",
-              "kind": "pct",
-              "value": 14.1756,
-              "rank": 47,
-              "ties": 1,
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 19.76455,
-              "mentioned": null,
-              "pp": -0.323729672793366
-            },
-            {
-              "label": "Disturbance indicators (recently killed coral + rubble)",
-              "kind": "pct",
-              "value": 6.1369,
-              "rank": 49,
-              "ties": 1,
-              "of": 56,
-              "median": 13.7355,
-              "mentioned": null,
-              "pp": -0.2805258507347471
-            },
-            {
-              "label": "Sand",
-              "kind": "pct",
-              "value": 9.6442,
-              "rank": 23,
-              "ties": 1,
-              "of": 56,
-              "median": 8.57885,
-              "mentioned": null,
-              "pp": -0.10950220388532297
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": -0.014838475457887062
             }
           ]
         }
@@ -5524,36 +4413,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": -0.027489609302172896,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.05673935108681955,
-          "belowThreshold": true,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "group": "Bleaching reported",
+          "pp": -0.027489609302172896,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 5.8631,
-              "rank": 29,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.1132392511115431
-            },
-            {
-              "label": "Trash mentioned",
+              "label": "Bleaching mentioned",
               "kind": "flag",
-              "value": 1.0,
-              "rank": 1,
-              "ties": 15,
+              "value": 0.0,
+              "rank": 18,
+              "ties": 39,
               "of": 56,
               "median": 0.0,
-              "mentioned": 15,
-              "pp": 0.05649990002472354
+              "mentioned": 17,
+              "pp": -0.027489609302172896
             }
           ]
         }
@@ -5622,25 +4500,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.05475030126094269,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Bleaching reported",
-          "pp": -0.010258359383178525,
-          "belowThreshold": true,
-          "note": "A mention in the Reef Check report, not a severity measure.",
+          "group": "Anchors & nets",
+          "pp": 0.05475030126094269,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Bleaching mentioned",
+              "label": "Anchor damage mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 18,
-              "ties": 39,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
               "median": 0.0,
-              "mentioned": 17,
-              "pp": -0.010258359383178525
+              "mentioned": 14,
+              "pp": -0.021682746599117085
+            },
+            {
+              "label": "Discarded nets mentioned",
+              "kind": "flag",
+              "value": 0.0,
+              "rank": 38,
+              "ties": 19,
+              "of": 56,
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.07643304786005978
             }
           ]
         }
@@ -5709,36 +4598,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.03736512499285004,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -0.05979158969750911,
-          "belowThreshold": true,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "group": "Anchors & nets",
+          "pp": 0.03736512499285004,
+          "belowThreshold": false,
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Trash mentioned",
+              "label": "Discarded nets mentioned",
               "kind": "flag",
               "value": 0.0,
-              "rank": 16,
-              "ties": 41,
+              "rank": 38,
+              "ties": 19,
               "of": 56,
-              "median": 0.0,
-              "mentioned": 15,
-              "pp": -0.04240757033940876
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.005132496305002146
             },
             {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 6.9832,
-              "rank": 24,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -0.01738401935810036
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.03223262868784789
             }
           ]
         }
@@ -5807,36 +4696,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.0669558676392251,
+        "insight": "Coordinate targeted bleaching survey",
         "evidence": {
-          "group": "Anchors & nets",
-          "pp": -0.175822016870665,
-          "belowThreshold": true,
-          "note": "Flags record a mention in the Reef Check report, not severity.",
+          "group": "Bleaching reported",
+          "pp": 0.0669558676392251,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
           "items": [
             {
-              "label": "Discarded nets mentioned",
+              "label": "Bleaching mentioned",
               "kind": "flag",
               "value": 1.0,
               "rank": 1,
-              "ties": 37,
-              "of": 56,
-              "median": 1.0,
-              "mentioned": 37,
-              "pp": -0.16613584376376317
-            },
-            {
-              "label": "Anchor damage mentioned",
-              "kind": "flag",
-              "value": 0.0,
-              "rank": 15,
-              "ties": 42,
+              "ties": 17,
               "of": 56,
               "median": 0.0,
-              "mentioned": 14,
-              "pp": -0.009686173106901851
+              "mentioned": 17,
+              "pp": 0.0669558676392251
             }
           ]
         }
@@ -5905,36 +4783,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Pollution & waste",
-        "topStressorPp": -1.5229145173169518,
-        "insight": "Inspect wastewater and waste controls",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.03197171750452113,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Pollution & waste",
-          "pp": -1.5229145173169518,
+          "group": "Anchors & nets",
+          "pp": 0.03197171750452113,
           "belowThreshold": false,
-          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Pollution indicators (nutrient algae + silt)",
-              "kind": "pct",
-              "value": 10.6381,
-              "rank": 14,
-              "ties": 1,
-              "of": 56,
-              "median": 5.90415,
-              "mentioned": null,
-              "pp": -1.5404445688087438
-            },
-            {
-              "label": "Trash mentioned",
+              "label": "Discarded nets mentioned",
               "kind": "flag",
-              "value": 0.0,
-              "rank": 16,
-              "ties": 41,
+              "value": 1.0,
+              "rank": 1,
+              "ties": 37,
               "of": 56,
-              "median": 0.0,
-              "mentioned": 15,
-              "pp": 0.0175300514917919
+              "median": 1.0,
+              "mentioned": 37,
+              "pp": 0.030451468361743967
             }
           ]
         }
@@ -6003,10 +4870,16 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
-        "evidence": null
+        "topStressor": "Bleaching reported",
+        "topStressorPp": 0.002489222229789707,
+        "insight": "Coordinate targeted bleaching survey",
+        "evidence": {
+          "group": "Bleaching reported",
+          "pp": 0.002489222229789707,
+          "belowThreshold": false,
+          "note": "A mention in the Reef Check report, not a severity measure.",
+          "items": []
+        }
       }
     },
     {
@@ -6072,25 +4945,36 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": null,
-        "topStressorPp": 0.0,
-        "insight": "No measured stressor drives this prediction; verify in the field before acting",
+        "topStressor": "Pollution & waste",
+        "topStressorPp": 0.0809261927036718,
+        "insight": "Inspect waste and wastewater controls",
         "evidence": {
-          "group": "Crown-of-thorns",
-          "pp": -0.11742820098924966,
-          "belowThreshold": true,
-          "note": "Outbreak level is roughly 0.2–0.3 starfish per 100 m²; the flag is a report mention.",
+          "group": "Pollution & waste",
+          "pp": 0.0809261927036718,
+          "belowThreshold": false,
+          "note": "Pollution indicators combine nutrient algae and silt; the trash flag is a report mention, not severity.",
           "items": [
             {
-              "label": "Crown-of-thorns starfish",
-              "kind": "count",
-              "value": 0.1136,
-              "rank": 15,
+              "label": "Trash mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 15,
+              "of": 56,
+              "median": 0.0,
+              "mentioned": 15,
+              "pp": 0.034430087021193406
+            },
+            {
+              "label": "Pollution indicators (nutrient algae + silt)",
+              "kind": "pct",
+              "value": 4.2154,
+              "rank": 40,
               "ties": 1,
               "of": 56,
-              "median": 0.05775,
+              "median": 5.90415,
               "mentioned": null,
-              "pp": -0.1202678666886357
+              "pp": 0.04649610568247839
             }
           ]
         }
@@ -6159,80 +5043,25 @@ window.REEFSAFE_DATA = {
             "stressor": false
           }
         ],
-        "topStressor": "Herbivory & fish",
-        "topStressorPp": -0.3825737687341835,
-        "insight": "Review fishing pressure on grazing fish",
+        "topStressor": "Anchors & nets",
+        "topStressorPp": 0.01088512919312375,
+        "insight": "Inspect mooring & anchoring controls",
         "evidence": {
-          "group": "Herbivory & fish",
-          "pp": -0.3825737687341835,
+          "group": "Anchors & nets",
+          "pp": 0.01088512919312375,
           "belowThreshold": false,
-          "note": "Counts are individuals per 100 m²; a low grazer ratio means urchins, not fish, do most of the grazing.",
+          "note": "Flags record a mention in the Reef Check report, not severity.",
           "items": [
             {
-              "label": "Grazer ratio (parrotfish ÷ urchins)",
-              "kind": "ratio",
-              "value": 0.0303,
-              "rank": 43,
-              "ties": 1,
+              "label": "Anchor damage mentioned",
+              "kind": "flag",
+              "value": 1.0,
+              "rank": 1,
+              "ties": 14,
               "of": 56,
-              "median": 0.19265,
-              "mentioned": null,
-              "pp": -0.19946965506073305
-            },
-            {
-              "label": "Butterflyfish",
-              "kind": "count",
-              "value": 4.6757,
-              "rank": 31,
-              "ties": 1,
-              "of": 56,
-              "median": 5.132300000000001,
-              "mentioned": null,
-              "pp": -0.15388699456154245
-            },
-            {
-              "label": "Diadema urchins",
-              "kind": "count",
-              "value": 45.779,
-              "rank": 19,
-              "ties": 1,
-              "of": 56,
-              "median": 17.44115,
-              "mentioned": null,
-              "pp": -0.10652472915432262
-            },
-            {
-              "label": "Snapper",
-              "kind": "count",
-              "value": 0.289,
-              "rank": 54,
-              "ties": 1,
-              "of": 56,
-              "median": 2.49565,
-              "mentioned": null,
-              "pp": -0.03949330309923352
-            },
-            {
-              "label": "Grouper",
-              "kind": "count",
-              "value": 0.0,
-              "rank": 56,
-              "ties": 1,
-              "of": 56,
-              "median": 0.5389999999999999,
-              "mentioned": null,
-              "pp": -0.02363416965434947
-            },
-            {
-              "label": "Parrotfish",
-              "kind": "count",
-              "value": 2.3522,
-              "rank": 26,
-              "ties": 1,
-              "of": 56,
-              "median": 2.22065,
-              "mentioned": null,
-              "pp": 0.14043508279599767
+              "median": 0.0,
+              "mentioned": 14,
+              "pp": 0.011027887421987443
             }
           ]
         }
@@ -10197,103 +9026,103 @@ window.REEFSAFE_DATA = {
     {
       "factor": "noaa_max_dhw",
       "analysis": "Spearman rank correlation",
-      "n": "348",
-      "statistic": "-0.1045779727630862",
+      "n": "5821",
+      "statistic": "-0.004374215831262044",
       "statistic_unit": "rho",
-      "p_value": "0.051270888572376425",
+      "p_value": "0.7386340145248467",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "noaa_mean_ssta",
       "analysis": "Spearman rank correlation",
-      "n": "348",
-      "statistic": "-0.06056818930566387",
+      "n": "5821",
+      "statistic": "-0.01321723861840712",
       "statistic_unit": "rho",
-      "p_value": "0.2598039926898717",
+      "p_value": "0.31333781477620953",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "grp_disturbance_indicators",
       "analysis": "Spearman rank correlation",
-      "n": "338",
-      "statistic": "0.07772612436258132",
+      "n": "5821",
+      "statistic": "0.06785653010584972",
       "statistic_unit": "rho",
-      "p_value": "0.15391408226206862",
+      "p_value": "2.195099934926538e-7",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "grp_pollution_indicators",
       "analysis": "Spearman rank correlation",
-      "n": "338",
-      "statistic": "0.14597611401784685",
+      "n": "5821",
+      "statistic": "0.02754366852033618",
       "statistic_unit": "rho",
-      "p_value": "0.00718360745525168",
+      "p_value": "0.035605455303752614",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "fish_parrotfish",
       "analysis": "Spearman rank correlation",
-      "n": "348",
-      "statistic": "-0.0326674872877121",
+      "n": "5821",
+      "statistic": "0.0012579798156661386",
       "statistic_unit": "rho",
-      "p_value": "0.5436029873395897",
+      "p_value": "0.9235542495868936",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "grazer_ratio",
       "analysis": "Spearman rank correlation",
-      "n": "331",
-      "statistic": "-0.05970715805382468",
+      "n": "5821",
+      "statistic": "-0.00489196716057307",
       "statistic_unit": "rho",
-      "p_value": "0.27874907864012083",
+      "p_value": "0.7090315600461858",
       "caution": "Descriptive lagged association; not a causal effect"
     },
     {
       "factor": "impact_anchor",
       "analysis": "Mean difference: mentioned minus not mentioned",
-      "n": "348",
-      "statistic": "0.7535327329651386",
+      "n": "5821",
+      "statistic": "-0.2155618616144075",
       "statistic_unit": "percentage points per year",
-      "p_value": "0.6580050963797206",
+      "p_value": "0.12846773380483076",
       "caution": "Narrative mention comparison; absence may mean unreported"
     },
     {
       "factor": "impact_trash",
       "analysis": "Mean difference: mentioned minus not mentioned",
-      "n": "348",
-      "statistic": "-0.3909071505171756",
+      "n": "5821",
+      "statistic": "0.17989654158701326",
       "statistic_unit": "percentage points per year",
-      "p_value": "0.6040435948163754",
+      "p_value": "0.3028739303368855",
       "caution": "Narrative mention comparison; absence may mean unreported"
     },
     {
       "factor": "impact_bleaching",
       "analysis": "Mean difference: mentioned minus not mentioned",
-      "n": "348",
-      "statistic": "0.8710021173123366",
+      "n": "5821",
+      "statistic": "0.17134280363615373",
       "statistic_unit": "percentage points per year",
-      "p_value": "0.5471291369752176",
+      "p_value": "0.19898599254072824",
       "caution": "Narrative mention comparison; absence may mean unreported"
     }
   ],
   "heatSummary": [
     {
       "heat_category": "DHW < 1",
-      "n": "81",
-      "median_next_change_pp_per_year": "-0.63",
-      "mean_next_change_pp_per_year": "-0.5503827160493827"
+      "n": "526",
+      "median_next_change_pp_per_year": "0.46440000000000003",
+      "mean_next_change_pp_per_year": "0.25589125475285174"
     },
     {
       "heat_category": "DHW 1–<4",
-      "n": "128",
-      "median_next_change_pp_per_year": "-1.06",
-      "mean_next_change_pp_per_year": "-0.59840625"
+      "n": "2808",
+      "median_next_change_pp_per_year": "-0.056499999999999995",
+      "mean_next_change_pp_per_year": "-0.031593411680911676"
     },
     {
       "heat_category": "DHW ≥ 4",
-      "n": "139",
-      "median_next_change_pp_per_year": "-1.11",
-      "mean_next_change_pp_per_year": "-1.3778992805755395"
+      "n": "2487",
+      "median_next_change_pp_per_year": "-0.0164",
+      "mean_next_change_pp_per_year": "0.09943401688781664"
     }
   ],
   "modelMetrics": {
