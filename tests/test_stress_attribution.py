@@ -59,14 +59,16 @@ class StressAttributionTests(unittest.TestCase):
                 total = sum(float(row[feature]) for feature in features)
                 self.assertAlmostEqual(total, float(groups[row["island"]][group]), places=9, msg=row["island"])
 
-    def test_evidence_follows_the_listed_stressor(self):
+    def test_every_unit_has_a_report_reason_and_model_evidence(self):
         from scripts.build_web_dashboard_data import build_bundle
         for unit in build_bundle()["priorityIslands"]:
             stress = unit["stress"]
-            if stress["topStressor"]:
+            self.assertTrue(stress["reportReason"]["label"], unit["island"])
+            self.assertTrue(stress["reportReason"]["detail"], unit["island"])
+            stressor_pushes = [group["pp"] for group in stress["groups"] if group["stressor"]]
+            if min(stressor_pushes) < 0:
                 evidence = stress["evidence"]
-                self.assertEqual(evidence["group"], stress["topStressor"], unit["island"])
-                self.assertFalse(evidence["belowThreshold"], unit["island"])
+                self.assertEqual(evidence["pp"], min(stressor_pushes), unit["island"])
                 # Only inputs that moved the prediction: none that round to 0.00 pp/yr.
                 self.assertLessEqual(len(evidence["items"]), len(FACTOR_GROUPS[evidence["group"]]))
                 for entry in evidence["items"]:

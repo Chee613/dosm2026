@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.economic_valuation import load_dmpm_tev
 from scripts.stress_attribution import (
-    FACTOR_GROUPS, FEATURE_INFO, GROUP_NOTES, STRESSOR_GROUPS,
+    FACTOR_GROUPS, FEATURE_INFO, GROUP_NOTES, MIN_STRESSOR_PUSH_PP, STRESSOR_GROUPS, strongest_stressor,
 )
 
 
@@ -46,9 +46,33 @@ def number(value, cast=float, default=0):
 MIN_INPUT_PUSH_PP = 0.005
 
 
+def report_reason(row):
+    """Why the report's evidence rule picked this unit's next check, from the unit's latest survey."""
+    year = row["survey_year"]
+    evidence = row["evidence"]
+    if evidence == "NOAA thermal stress observed":
+        return {"label": "NOAA thermal stress",
+                "detail": f"Regional max DHW {float(row['noaa_max_dhw']):.1f} °C-weeks in {year}, at or above the NOAA Alert Level 1 threshold of 4"}
+    if evidence == "Anchor impact mentioned in Reef Check report":
+        share = float(row["impact_anchor"])
+        return {"label": "Anchor damage",
+                "detail": f"Anchor damage mentioned for {share:.0%} of surveyed sites in the {year} Reef Check report"}
+    if evidence == "Waste or pollution indicator is elevated":
+        parts = []
+        if float(row["impact_trash"] or 0) > 0:
+            parts.append(f"trash mentioned for {float(row['impact_trash']):.0%} of surveyed sites")
+        if float(row["grp_pollution_indicators"] or 0) >= 10:
+            parts.append(f"pollution indicators at {float(row['grp_pollution_indicators']):.1f}% of substrate (10% or more)")
+        return {"label": "Waste or pollution", "detail": f"{'; '.join(parts).capitalize()} in {year}"}
+    return {"label": "No single recorded stressor",
+            "detail": f"Heat below DHW 4 and no anchor, trash or pollution flag in {year}; validate in the field before acting"}
+
+
 def attach_stress_evidence(priorities):
-    """For each unit's top (or strongest) stressor group, list the surveyed value of each
-    input, how it compares across the ranked units, and that input's push in pp/yr."""
+    """Attach the report's reason for each unit's next check, then, for the model's strongest
+    stressor group, list the surveyed value of each input, how it compares across the ranked
+    units, and that input's push in pp/yr."""
+    reasons = {row["island"]: report_reason(row) for row in read_csv(PROCESSED / "reef_priority_predictions.csv")}
     pushes = {row["island"]: row for row in read_csv(PROCESSED / "stress_feature_contributions.csv")}
     surveys = {(row["island"], int(row["survey_year"])): row
                for row in read_csv(PROCESSED / "master_reef_tourism_dataset.csv")}
@@ -57,10 +81,9 @@ def attach_stress_evidence(priorities):
               for feature in FEATURE_INFO}
 
     for item in priorities:
+        item["stress"]["reportReason"] = reasons[item["island"]]
         groups = {group["name"]: group["pp"] for group in item["stress"]["groups"]}
-        # Evidence follows the listed (report-primary) stressor; units without one show none.
-        group = item["stress"]["topStressor"]
-        push = groups[group] if group else 0.0
+        group, push = strongest_stressor(groups)
         if group is None:
             item["stress"]["evidence"] = None
             continue
@@ -88,7 +111,7 @@ def attach_stress_evidence(priorities):
         item["stress"]["evidence"] = {
             "group": group,
             "pp": push,
-            "belowThreshold": False,
+            "belowThreshold": push > -MIN_STRESSOR_PUSH_PP,
             "note": GROUP_NOTES[group],
             "items": entries,
         }
