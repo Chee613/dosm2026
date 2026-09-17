@@ -164,11 +164,11 @@
           <div class="card evidence-figure">
             <div class="card-title">Coral cover by survey year</div>
             <button type="button" class="figure-img-wrapper" data-title="Coral cover by survey year" aria-label="Enlarge: Coral cover by survey year">
-              <img src="figures/02_national_coral_cover_trajectory.png" alt="Mean live coral cover among units surveyed each year, 2012 to 2025">
+              <img src="figures/02_national_coral_cover_trajectory.png" alt="Mean live coral cover among sites surveyed each year, 2012 to 2025">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Mean live coral cover of the units surveyed each year. The <span id="ev-paired-units">39</span> units surveyed in both 2024 and 2025 changed by <span id="ev-paired-change">−4.76</span> pp on average; the 2025 mean is <span id="ev-latest-mean">39.8</span>%.</p>
-            <p class="method-note"><strong>Limit:</strong> Different units are surveyed each year (only 2 in 2012), so this is not a fixed national panel.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia annual survey reports, 2012–2025</a>.</p>
+            <p class="figure-desc">Mean live coral cover of the sites surveyed each year, which stayed between 44.3% and 46.0% from 2012 to 2025. The <span id="ev-paired-units">444</span> sites surveyed in both 2024 and 2025 changed by <span id="ev-paired-change">−0.47</span> pp on average; the 2025 mean is <span id="ev-latest-mean">45.3</span>%. The dashed 40% line is a visual reference, not a management threshold.</p>
+            <p class="method-note"><strong>Limit:</strong> Different sites are surveyed each year (388 in 2012 to 512 in 2024), so this is not a fixed national panel.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia annual survey reports, 2012–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Regional heat stress (NOAA)</div>
@@ -176,7 +176,7 @@
               <img src="figures/03_satellite_thermal_stress_dhw.png" alt="Mean regional maximum Degree Heating Weeks by survey year">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Mean regional maximum Degree Heating Weeks (DHW) in each survey year. Heat passed the bleaching alert level (DHW 4) in 2016, 2019, 2020, 2023 and 2024, peaking at 11.8 in 2024.</p>
+            <p class="figure-desc">Mean regional maximum Degree Heating Weeks (DHW) across surveyed sites in each survey year. Yearly means stayed between 2.90 and 3.65, below the NOAA Alert Level 1 threshold (DHW 4), although 43% of individual site-years reached DHW 4 or more.</p>
             <p class="method-note"><strong>Limit:</strong> Regional satellite context, not in-water readings at each island; not used in the model.<br><strong>Source:</strong> <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch 5 km regional virtual stations</a>.</p>
           </div>
       </div>
@@ -208,7 +208,7 @@
               <img src="figures/factor_relationships.png" alt="Heat and reported impacts against the next observed coral-cover change">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Regional maximum DHW shows a weak negative association with next observed change across monitoring units (Spearman ρ −0.10, n = 348, p = 0.051). Mean next change drops from −0.55 pp/yr below DHW 1 to −1.38 pp/yr at DHW ≥ 4.</p>
+            <p class="figure-desc">Across 5,821 site-level transitions, regional maximum DHW shows no measurable association with next observed change (Spearman ρ −0.004, p = 0.74). Median next change is +0.46 pp/yr below DHW 1, −0.06 pp/yr at DHW 1–&lt;4 and −0.02 pp/yr at DHW ≥ 4. Differences for anchor, trash and bleaching mentions (−0.22, +0.18 and +0.17 pp/yr) are not significant (p ≥ 0.13; every 95% interval crosses zero).</p>
             <p class="method-note"><strong>Limit:</strong> Descriptive associations, not causal effects.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
       <div class="dashboard-grid even">
@@ -218,17 +218,17 @@
               <img src="figures/11_all_factor_associations.png" alt="Spearman correlation of every measured factor with the next coral-cover change">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Spearman correlation of the 22 model inputs and 2 NOAA variables with next coral-cover change across 5,821 transitions. The strongest baseline associations are cover versus regional average (ρ −0.15) and live coral cover (−0.11).</p>
+            <p class="figure-desc">Spearman correlation of the 22 model inputs and 2 NOAA variables with next coral-cover change across 5,821 transitions. The strongest associations are the current change rate (ρ −0.42, n = 5,261), cover versus regional average (−0.15) and live coral cover (−0.15); every other factor is within ±0.12.</p>
             <p class="method-note"><strong>Limit:</strong> Unadjusted single-factor links; not a ranking of causes.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia</a>; <a href="https://coralreefwatch.noaa.gov/product/vs/data.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">What the model relies on</div>
             <button type="button" class="figure-img-wrapper" data-title="What the model relies on" aria-label="Enlarge: What the model relies on">
-              <img src="figures/feature_importance.png" alt="Permutation importance of each model input">
+              <img src="figures/feature_importance.png" alt="Permutation importance of the ten most important model inputs">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">How much forward-test error rises when each input is shuffled. Cover versus regional average and the last change rate matter most.</p>
-            <p class="method-note"><strong>Limit:</strong> Predictive importance, not cause.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="figure-desc">How much evaluation error (MAE) rises when each input is shuffled, for the ten most important inputs. The last change rate (+1.31 pp/yr) and cover versus regional average (+1.02) matter most, followed by live coral cover (+0.48).</p>
+            <p class="method-note"><strong>Limit:</strong> Predictive importance, not cause.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model evaluation, target years 2021–2025</a>.</p>
           </div>
       </div>
       <h2 class="evidence-section-title">Model check</h2>
@@ -236,20 +236,20 @@
           <div class="card evidence-figure">
             <div class="card-title">Model comparison</div>
             <button type="button" class="figure-img-wrapper" data-title="Model comparison" aria-label="Enlarge: Model comparison">
-              <img src="figures/model_performance.png" alt="Forward-test MAE of four candidate models">
+              <img src="figures/model_performance.png" alt="Evaluation MAE of four candidate models">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Forward-test error of candidate models across 2,405 forward validation observations (2021–2025). Gradient boosting achieves the lowest MAE: <span id="ev-best-mae">0.380</span> vs <span id="ev-baseline-mae">2.307</span> pp/yr for the mean baseline, an <span id="ev-improvement">83.5</span>% gain.</p>
-            <p class="method-note"><strong>Method:</strong> Expanding-window evaluation on held-forward target years (2021–2025).<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="figure-desc">Evaluation error of candidate models across 2,405 transitions with target years 2021–2025. Gradient boosting achieves the lowest MAE: <span id="ev-best-mae">0.380</span> vs <span id="ev-baseline-mae">2.307</span> pp/yr for the mean baseline, an <span id="ev-improvement">83.5</span>% gain.</p>
+            <p class="method-note"><strong>Method:</strong> Each model is fitted on all 5,821 transitions and scored on the 2,405 transitions with target years 2021–2025.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model evaluation, target years 2021–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Predicted vs observed change</div>
             <button type="button" class="figure-img-wrapper" data-title="Predicted vs observed change" aria-label="Enlarge: Predicted vs observed change">
-              <img src="figures/actual_vs_predicted_oof.png" alt="Forward-test predictions against observed coral-cover change">
+              <img src="figures/actual_vs_predicted_oof.png" alt="Gradient boosting predictions against observed coral-cover change, 2021 to 2025">
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
-            <p class="figure-desc">Forward-test predictions against the change later observed across <span id="ev-eval-obs">2,405</span> forward evaluation observations (2021–2025), showing strong alignment along the diagonal (overall R² = 0.975).</p>
-            <p class="method-note"><strong>Method:</strong> Predictions evaluated strictly out-of-fold on future target years.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="figure-desc">Gradient boosting predictions against the observed change for <span id="ev-eval-obs">2,405</span> transitions with target years 2021–2025, closely following the perfect-prediction line (overall R² = 0.975).</p>
+            <p class="method-note"><strong>Method:</strong> Scored on target years 2021–2025 using the model fitted on all transitions.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model evaluation, target years 2021–2025</a>.</p>
           </div>
       </div>
       <div class="dashboard-grid even">
@@ -259,7 +259,7 @@
               <table><thead><tr><th>Year</th><th>n</th><th>MAE</th><th>R²</th><th>Bias</th></tr></thead><tbody id="model-benchmark-table"></tbody></table>
             </div>
             <p class="method-note" id="model-note"></p>
-            <p class="method-note" style="margin-top: 4px;"><strong>Limit:</strong> Past-only temporal folds (train past, test future year).<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model, past-only validation 2021–2025</a>.</p>
+            <p class="method-note" style="margin-top: 4px;"><strong>Limit:</strong> The model is fitted on all years, so these rows are not unseen future years; ranges are for screening, not confidence intervals.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe model evaluation, target years 2021–2025</a>.</p>
           </div>
           <div class="card evidence-figure">
             <div class="card-title">Model input coverage</div>
@@ -268,7 +268,7 @@
               <span class="figure-zoom-hint">Click to enlarge</span>
             </button>
             <p class="figure-desc">Share of training cases with each model input recorded across 6,381 site-year records. Benthic substrate and core indicators have 100% coverage; lagged change rate is available for 91.2% of records (first survey years have no prior survey).</p>
-            <p class="method-note"><strong>Limit:</strong> Gaps are filled with the median inside each training fold.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia survey panel</a>.</p>
+            <p class="method-note"><strong>Limit:</strong> Gaps are filled with the median within the model pipeline.<br><strong>Source:</strong> <a href="https://reefcheck.org.my/annualsurveyreports/" target="_blank" rel="noopener">Reef Check Malaysia survey panel</a>.</p>
           </div>
       </div>
       <h2 class="evidence-section-title">Field verification priority screening</h2>
@@ -278,8 +278,8 @@
           <img src="figures/field_verification_priority_matrix.png" alt="ReefSafe field-verification priority matrix showing predicted change against current live coral cover colored by NOAA DHW">
           <span class="figure-zoom-hint">Click to enlarge</span>
         </button>
-        <p class="figure-desc">Two-dimensional screening matrix integrating high-precision model predictions (x-axis) with current observed coral cover (y-axis) and satellite thermal stress context (NOAA DHW color scale). Monitoring units in the upper-left (rapid decline from high baseline) and lower-left (low cover, negative trajectory) quadrants represent prioritized screening units queued for proactive ranger verification rather than blunt restrictions.</p>
-        <p class="method-note"><strong>Method:</strong> Two-dimensional screening matrix combining 2025 observed coral cover, gradient boosting predicted annual change, and satellite thermal exposure.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe screening framework, 2025 priority queue</a>.</p>
+        <p class="figure-desc">Each of the 56 monitoring units plotted by predicted next change (x-axis) against 2025 live coral cover (y-axis), coloured by regional NOAA DHW; the ten highest-priority units are labelled. Units left of zero are predicted to decline. Seven of the top ten sit below the dashed 40% cover line, while Sipadan, Lang Tengah and Pemanggil combine a predicted decline with cover above it.</p>
+        <p class="method-note"><strong>Method:</strong> Priority rank uses predicted change only (top quartile = High screening priority); cover and heat are shown as context. The 40% line is a visual reference, not a management threshold.<br><strong>Source:</strong> <a href="ReefSafe_Data_Provenance_Directory.pdf" target="_blank" rel="noopener">ReefSafe screening framework, 2025 priority queue</a>.</p>
       </div>
     </section>
   </main>

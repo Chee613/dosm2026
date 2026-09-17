@@ -359,7 +359,7 @@
     set("ev-best-mae", fmt(metrics.best_mae, 3));
     set("ev-baseline-mae", fmt(metrics.baseline_mae, 3));
     set("ev-improvement", fmt(metrics.mae_improvement_pct, 1));
-    set("ev-eval-obs", metrics.evaluation_observations);
+    set("ev-eval-obs", Number(metrics.evaluation_observations).toLocaleString("en-US"));
 
     const lightbox = document.getElementById("figure-lightbox");
     const close = () => lightbox.classList.remove("open");
