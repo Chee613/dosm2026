@@ -11,6 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
+import seaborn as sns
 from sklearn.base import clone
 from sklearn.dummy import DummyRegressor
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
@@ -110,17 +111,8 @@ def main():
     }]).write_csv(PROCESSED / "paired_change_summary.csv")
 
     transitions = pl.DataFrame(make_next_observation_rows(master.to_dicts()))
-    island_benchmark_path = PROCESSED / "island_monitoring_units_benchmark.csv"
-    if island_benchmark_path.exists():
-        island_master = pl.read_csv(island_benchmark_path)
-        diag_transitions = pl.DataFrame(make_next_observation_rows(island_master.to_dicts())).filter(
-            pl.col("target_lcc_change_rate").is_not_null()
-        )
-    else:
-        diag_transitions = transitions
-
-    diagnostics, heat_summary = build_factor_diagnostics(diag_transitions)
-    plot_factor_relationships(diag_transitions, diagnostics, heat_summary)
+    diagnostics, heat_summary = build_factor_diagnostics(transitions)
+    plot_factor_relationships(transitions, diagnostics, heat_summary)
     all_associations = build_all_factor_associations(transitions)
     plot_all_factor_associations(all_associations)
 
@@ -472,37 +464,82 @@ def plot_all_factor_associations(associations):
 
 def plot_factor_relationships(transitions, diagnostics, heat_summary):
     target = "target_lcc_change_rate"
-    heat = transitions.select(["noaa_max_dhw", target]).drop_nulls()
-    rho = diagnostics.filter(pl.col("factor") == "noaa_max_dhw")["statistic"][0]
+    heat = transitions.select(["noaa_max_dhw", target]).drop_nulls().to_pandas()
+    rho_row = diagnostics.filter(pl.col("factor") == "noaa_max_dhw")
+    rho = rho_row["statistic"][0]
+    rho_p = rho_row["p_value"][0] if "p_value" in diagnostics.columns else None
     categories = heat_summary["heat_category"].to_list()
-    groups = [
-        [row[target] for row in transitions.select(["noaa_max_dhw", target]).iter_rows(named=True)
-         if heat_category(row["noaa_max_dhw"]) == category and row[target] is not None]
-        for category in categories
-    ]
-    binary = diagnostics.filter(pl.col("factor").is_in(BINARY_DIAGNOSTICS))
+    heat["heat_band"] = heat["noaa_max_dhw"].map(heat_category)
 
-    fig, axes = plt.subplots(1, 3, figsize=(13, 4.4), dpi=180)
-    axes[0].scatter(heat["noaa_max_dhw"], heat[target], alpha=0.55, color="#0284c7", edgecolor="white")
-    axes[0].axhline(0, color="#64748b", linewidth=0.8)
-    axes[0].set_title(f"Heat vs next change\nSpearman ρ={rho:+.2f}, n={heat.height}")
+    mentions = []
+    for factor in BINARY_DIAGNOSTICS:
+        row = diagnostics.filter(pl.col("factor") == factor)
+        label = factor.replace("impact_", "").title()
+        difference = row["statistic"][0]
+        p_value = row["p_value"][0] if "p_value" in diagnostics.columns else None
+        low = high = difference
+        if factor in transitions.columns:
+            pairs = transitions.select([factor, target]).drop_nulls()
+            present = pairs.filter(pl.col(factor) == 1)[target].to_numpy()
+            absent = pairs.filter(pl.col(factor) == 0)[target].to_numpy()
+            if len(present) > 1 and len(absent) > 1:
+                se = np.sqrt(present.var(ddof=1) / len(present) + absent.var(ddof=1) / len(absent))
+                low, high = difference - 1.96 * se, difference + 1.96 * se
+        mentions.append({"label": label, "difference": difference, "low": low, "high": high, "p_value": p_value})
+
+    sns.set_theme(style="whitegrid")
+    fig, axes = plt.subplots(1, 3, figsize=(17, 5.6), dpi=200)
+
+    jitter = np.random.default_rng(42).uniform(-0.06, 0.06, len(heat))
+    sns.scatterplot(x=heat["noaa_max_dhw"] + jitter, y=heat[target], ax=axes[0], s=10, alpha=0.18,
+                    color="#0284c7", edgecolor=None, rasterized=True)
+    binned = heat.assign(dhw_bin=(heat["noaa_max_dhw"] / 0.5).round() * 0.5)
+    trend = binned.groupby("dhw_bin")[target].agg(["median", "size"]).reset_index()
+    trend = trend[trend["size"] >= 30]
+    if len(trend):
+        sns.lineplot(data=trend, x="dhw_bin", y="median", ax=axes[0], color="#0f766e", marker="o",
+                     linewidth=2.2, label="Median per 0.5-DHW bin")
+        axes[0].legend(loc="lower right", frameon=True, fontsize=9)
+    axes[0].axhline(0, color="#475569", linewidth=1)
+    p_text = f" (p = {rho_p:.2f})" if rho_p is not None else ""
+    axes[0].set_title(f"Heat vs next change\nSpearman ρ = {rho:.3f}{p_text}, n = {len(heat):,}")
     axes[0].set_xlabel("NOAA maximum DHW")
     axes[0].set_ylabel("Next observed change (pp/year)")
 
-    boxes = axes[1].boxplot(groups, tick_labels=[f"{name}\nn={len(group)}" for name, group in zip(categories, groups)], patch_artist=True)
-    for box in boxes["boxes"]:
-        box.set_facecolor("#bfdbfe")
-    axes[1].axhline(0, color="#64748b", linewidth=0.8)
+    sns.boxplot(data=heat, x="heat_band", y=target, order=categories, ax=axes[1], color="#bfdbfe", width=0.55,
+                fliersize=2, flierprops={"alpha": 0.3}, linecolor="#1e3a8a",
+                medianprops={"color": "#ea580c", "linewidth": 2})
+    band_labels = []
+    for category in categories:
+        values = heat.loc[heat["heat_band"] == category, target]
+        median = f"\nmedian {values.median():+.2f}" if len(values) else ""
+        band_labels.append(f"{category}\nn={len(values):,}{median}")
+    axes[1].set_xticks(range(len(categories)), band_labels)
+    axes[1].axhline(0, color="#475569", linewidth=1)
     axes[1].set_title("Next change by heat band")
+    axes[1].set_xlabel("")
     axes[1].set_ylabel("Percentage points/year")
 
-    labels = [name.replace("impact_", "").title() for name in binary["factor"]]
-    axes[2].bar(labels, binary["statistic"], color="#0f766e")
-    axes[2].axhline(0, color="#64748b", linewidth=0.8)
-    axes[2].set_title("Narrative mention difference")
+    labels = [item["label"] for item in mentions]
+    differences = [item["difference"] for item in mentions]
+    sns.barplot(x=labels, y=differences, ax=axes[2], color="#0f766e", width=0.6)
+    axes[2].errorbar(range(len(mentions)), differences,
+                     yerr=[[item["difference"] - item["low"] for item in mentions],
+                           [item["high"] - item["difference"] for item in mentions]],
+                     fmt="none", ecolor="#1f2937", capsize=5, linewidth=1.2)
+    for index, item in enumerate(mentions):
+        above = item["difference"] >= 0
+        p_line = f"\np = {item['p_value']:.2f}" if item["p_value"] is not None else ""
+        axes[2].text(index, item["high"] + 0.03 if above else item["low"] - 0.03,
+                     f"{item['difference']:+.2f}{p_line}", ha="center", va="bottom" if above else "top", fontsize=9)
+    axes[2].axhline(0, color="#475569", linewidth=1)
+    span_low = min(item["low"] for item in mentions)
+    span_high = max(item["high"] for item in mentions)
+    axes[2].set_ylim(min(span_low, 0) - 0.15, max(span_high, 0) + 0.15)
+    axes[2].set_title("Narrative mention difference\n(mentioned minus not mentioned, 95% CI)")
     axes[2].set_ylabel("Mean difference (pp/year)")
 
-    fig.suptitle("Key Environmental & Anthropogenic Stressor Analysis", fontweight="bold")
+    fig.suptitle("Descriptive lagged associations — not causal effects", fontweight="bold")
     fig.tight_layout()
     fig.savefig(OUTPUT / "fig4_factor_relationships.png")
     fig.savefig(FIGURES / "factor_relationships.png")
@@ -512,6 +549,7 @@ def plot_factor_relationships(transitions, diagnostics, heat_summary):
     if "DASHBOARD_FIGURES" in globals() and DASHBOARD_FIGURES.exists():
         fig.savefig(DASHBOARD_FIGURES / "factor_relationships.png")
     plt.close(fig)
+    sns.reset_orig()
 
 
 def plot_model_comparison(results):
