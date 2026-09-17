@@ -73,8 +73,8 @@ def plot_coral_trajectory():
     axis.axhline(40, color="#f59e0b", linestyle="--", label="40% reference")
     axis.set(
         xlabel="Survey year", ylabel="Mean live coral cover (%)",
-        title=("Mean cover among units surveyed each year\n"
-               f"Paired 2024-2025 change: {paired['change_pp']:+.2f} pp across n={paired['paired_units']} units"),
+        title=("Mean cover among sites surveyed each year\n"
+               f"Paired 2024-2025 change: {paired['change_pp']:+.2f} pp across n={paired['paired_units']} sites"),
     )
     axis.legend()
     axis.grid(alpha=0.25)
@@ -117,7 +117,7 @@ def plot_model_input_availability():
     fig, axis = plt.subplots(figsize=(10, 6))
     bars = axis.barh([item[0] for item in availability], [item[1] for item in availability], color="#0f766e")
     axis.bar_label(bars, fmt="%.1f%%", padding=3, fontsize=7)
-    axis.set(xlim=(0, 105), xlabel="Available before fold-local imputation (%)",
+    axis.set(xlim=(0, 105), xlabel="Available before median imputation (%)",
              title="Verified scored-model input availability")
     axis.grid(axis="x", alpha=0.25)
     save(fig, "12_dataset_completeness_matrix.png")
