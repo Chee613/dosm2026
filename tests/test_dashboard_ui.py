@@ -44,8 +44,8 @@ class TestDashboardUI(unittest.TestCase):
         self.assertLess(chart, html.index('id="stress-breakdown"'))
         self.assertIn('id="legend-predicted"', html)
         self.assertNotIn('id="unit-top-stressor"', html)
-        self.assertLess(html.index('id="unit-reason-detail"'), html.index('id="unit-insight"'))
-        self.assertLess(html.index('id="unit-insight"'), html.index('id="unit-evidence"'))
+        self.assertLess(html.index('id="unit-insight"'), html.index('id="unit-reason-detail"'))
+        self.assertLess(html.index('id="unit-reason-detail"'), html.index('id="unit-evidence"'))
 
         # Evidence view: data gap, associations, and honest validation.
         self.assertIn('src="figures/01_tourism_data_gap.png"', html)
