@@ -192,6 +192,32 @@ test("dashboard ships the accessible copilot interface and avatar set", () => {
   }
 });
 
+test("tailors reef-adjacent economy protection to the named unit", () => {
+  const answer = chat.answerQuestion("How to protect reef adjacent economy at Port Dickson?", data);
+  assert.equal(answer.title, "Protecting the reef-adjacent economy at Port Dickson");
+  assert.equal(answer.island, "Port Dickson");
+  assert.deepEqual(answer.sections.map((section) => section.label), ["Status", "What is at stake", "Protect it by", "Important limit"]);
+  assert.match(answer.text, /2\.05 pp\/yr/);
+  assert.match(answer.text, /mooring/i);
+  // Port Dickson has no published visitor count, so no ringgit estimate is invented for it.
+  assert.match(answer.text, /excludes it rather than estimating/);
+  assert.doesNotMatch(answer.text, /60\.09/);
+});
+
+test("uses park visitor figures when the unit sits inside a covered park", () => {
+  const answer = chat.answerQuestion("protect the reef economy at Sipadan", data);
+  const park = data.parkEconomics.find((item) => item.park === "Sipadan Island Park");
+  assert.equal(answer.island, "Sipadan");
+  assert.match(answer.text, new RegExp(park.visitors_per_year.toLocaleString("en-MY")));
+  assert.match(answer.text, /bleaching survey/i);
+});
+
+test("general reef-adjacent economy questions keep the national answer", () => {
+  const answer = chat.answerQuestion("How is reef-adjacent economy calculated?", data);
+  assert.equal(answer.title, "Reef-adjacent economy calculation");
+  assert.match(answer.text, /60\.09/);
+});
+
 test("explains the 45.3% mean coral cover calculation across 56 units", () => {
   const answer = answerQuestion("How is mean coral cover calculated?", data);
 

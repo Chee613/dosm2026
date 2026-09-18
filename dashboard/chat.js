@@ -58,6 +58,45 @@
     });
   }
 
+  function parkForIsland(unit, data) {
+    const parks = data.parkEconomics || [];
+    return parks.find((park) => String(park.units || "").split(";")
+      .map((name) => name.trim())
+      .includes(unit.island));
+  }
+
+  function economyProtectionAnswer(unit, data) {
+    const park = parkForIsland(unit, data);
+    const components = (data.economicValuation && data.economicValuation.components) || [];
+    const valueOf = (name) => {
+      const found = components.find((item) => item.component === name);
+      return found ? found.annual_value_myr : null;
+    };
+    const aesthetic = valueOf("Aesthetic value");
+    const tourism = valueOf("Tourism");
+    const anchor = aesthetic && tourism
+      ? ` Nationally, the published value of reef scenery (RM${(aesthetic / 1e9).toFixed(1)}B a year) far exceeds recorded tourism income (RM${(tourism / 1e6).toFixed(1)}M).`
+      : "";
+    const exposure = park
+      ? `${park.park} records ${park.visitors_per_year.toLocaleString("en-MY")} visitors a year, of which RM${(park.reef_adjacent_rm / 1e6).toFixed(2)}M is counted as reef-adjacent. That is the whole park, not this unit alone.${anchor}`
+      : `${unit.island} sits outside the parks with a published visitor count (${unit.marinePark}), so ReefSafe excludes it rather than estimating a ringgit figure.${anchor}`;
+    const reason = unit.stress && unit.stress.reportReason && unit.stress.reportReason.detail
+      ? `${unit.stress.reportReason.detail.replace(/[.!?]+$/, "")}.`
+      : `${unit.evidence.replace(/[.!?]+$/, "")}.`;
+    const step = ((unit.stress && unit.stress.insight) || unit.nextStep || "Verify in the field before acting")
+      .replace(/[.!?]+$/, "");
+    return makeAnswer(`Protecting the reef-adjacent economy at ${unit.island}`, [
+      { label: "Status", text: `${unit.tier}; live coral cover is ${unit.lcc.toFixed(1)}% (${unit.surveyYear}) and the model expects ${formatChange(unit.predictedNextChange)}.` },
+      { label: "What is at stake", text: exposure },
+      { label: "Protect it by", text: `${reason} The matching next check is: ${step}.` },
+      { label: "Important limit", text: "This is a field-screening signal, not a closure, quota, or revenue forecast. The economic figures are descriptive arithmetic on published visitor and spending data." },
+    ], {
+      island: unit.island,
+      links: ECONOMY_METHOD_LINKS,
+      pose: unit.tier === "High screening priority" ? "warn" : "answer",
+    });
+  }
+
   function highestPriorityAnswer(data) {
     const highest = [...(data.priorityIslands || [])].sort((a, b) => a.rank - b.rank)[0];
     if (!highest) return makeAnswer("Highest screening priority", [{ label: "Status", text: "No monitoring-unit ranking is available." }], { pose: "warn" });
@@ -210,6 +249,11 @@
     if (/priority.*(tier|rank|calculat|method)|how.*(rank|tier)/.test(lower)) return judgeAnswer("priority_method", data);
     if (/uncertain|prediction.*(range|interval)|confidence.*(range|interval)/.test(lower)) return judgeAnswer("uncertainty", data);
 
+    if (unit && /(protect|safeguard|preserve|sustain|support)/.test(lower)
+      && /(econom|tourism|livelihood|revenue|income|spending)/.test(lower)) {
+      return economyProtectionAnswer(unit, data);
+    }
+
     if (/season.*rest|rest.*season|long.term.*reef.*(revenue|value)|short.term.*long.term/.test(lower)) {
       const tradeoff = data.tourismEconomics.tradeoff;
       return makeAnswer("Season rest calculation", [
@@ -347,6 +391,7 @@
       dataset_sources: "Give me the dataset links",
       economy_potential_source: "Where is the Reef-Adjacent Economy Potential data from?",
       reef_economy_calculation: "How is reef-adjacent economy calculated?",
+      economy_protection: first ? `How to protect the reef-adjacent economy at ${first}?` : "How is reef-adjacent economy calculated?",
       season_rest_calculation: "How are the season rest and long term reef revenue calculated?",
       coral_cover_calculation: "How is mean coral cover 2025 45.3% for 56 units calculated?",
       stress_contribution: "How is the stress factor contribution calculated?",
