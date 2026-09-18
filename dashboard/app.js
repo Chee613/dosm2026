@@ -289,19 +289,20 @@
   }
 
   function renderUnitEvidence(stress, surveyYear) {
+    // The report's reason sits in its own labelled row; the box below holds the model's own signal.
+    document.getElementById("unit-reason-label").textContent = stress.reportReason.label;
+    document.getElementById("unit-reason-detail").textContent = stress.reportReason.detail;
     const box = document.getElementById("unit-evidence");
-    const reason = `
-      <div class="evidence-head">Why this check · ${escapeHtml(stress.reportReason.label)}</div>
-      <p class="evidence-note">${escapeHtml(stress.reportReason.detail)}</p>`;
     const evidence = stress.evidence;
     if (!evidence) {
-      box.innerHTML = `${reason}<p class="evidence-empty">No measured stressor pushes this prediction towards decline.</p>`;
+      box.innerHTML = `<p class="evidence-empty">No measured stressor pushes this prediction towards decline.</p>`;
       return;
     }
     const threshold = evidence.belowThreshold
-      ? ` · <span class="evidence-flag">strongest stressor, below the 0.25 pp/yr threshold</span>` : "";
-    box.innerHTML = `${reason}
-      <div class="evidence-head">Model's strongest stressor · ${escapeHtml(evidence.group)} · Reef Check Malaysia, ${surveyYear} survey${threshold}</div>
+      ? ` <span class="evidence-flag">(below the 0.25 pp/yr threshold)</span>` : "";
+    box.innerHTML = `
+      <div class="evidence-head">Model's strongest signal · ${escapeHtml(evidence.group)}${threshold}</div>
+      <p class="evidence-note evidence-note-lead">${escapeHtml(evidence.note)}</p>
       ${evidence.items.length ? "" : `<p class="evidence-empty">No single input moved the prediction by 0.01 pp/yr or more.</p>`}
       <ul class="evidence-list">${evidence.items.map((entry) => `
         <li>
@@ -310,7 +311,7 @@
           <span class="evidence-detail">${escapeHtml(evidenceValue(entry, surveyYear))}</span>
         </li>`).join("")}
       </ul>
-      <p class="evidence-note">${escapeHtml(evidence.note)}</p>`;
+      <p class="evidence-source">Reef Check Malaysia, ${surveyYear} survey</p>`;
   }
 
   function selectUnit(name, navigate = true) {
@@ -331,11 +332,10 @@
 
     const stress = unit.stress;
     document.getElementById("unit-insight").textContent = stress.insight;
-    document.getElementById("unit-top-stressor").textContent = stress.reportReason.label;
     renderUnitEvidence(stress, unit.surveyYear);
     renderStressBreakdown(stress, unit.predictedNextChange);
     document.getElementById("unit-heat-note").textContent =
-      `Regional heat (NOAA): max DHW ${fmt(unit.dhwContext, 1)} °C-weeks. Context only; not in the model.`;
+      `regional max DHW ${fmt(unit.dhwContext, 1)} °C-weeks (NOAA), not in the model.`;
 
     renderHistory(unit);
     if (navigate) document.querySelector('[data-tab="diagnostics"]').click();

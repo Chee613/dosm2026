@@ -1886,6 +1886,15 @@ body {
   color: #0F172A;
 }
 
+/* The reason category rides on the row label; the sentence under it carries the detail. */
+.unit-row-label .reason-tag { color: #0F172A; }
+
+.unit-reason-detail {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #334155;
+}
+
 .stress-title {
   margin-top: 12px;
   font-size: 13px;
@@ -2288,6 +2297,22 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: #0F172A;
+}
+
+.evidence-box .evidence-head { margin-top: 0; }
+
+/* Room between the model box and the footer notes below the two columns. */
+.unit-col .evidence-box { margin-bottom: 18px; }
+
+.method-note + .method-note { margin-top: 4px; }
+
+/* The group reading note sits above the inputs it explains. */
+.evidence-note-lead { margin: 3px 0 0; }
+
+.evidence-source {
+  margin: 6px 0 0;
+  font-size: 10.5px;
+  color: var(--text-muted);
 }
 
 .evidence-flag { font-weight: 400; color: #B45309; }

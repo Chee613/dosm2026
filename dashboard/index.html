@@ -139,9 +139,9 @@
               <div class="unit-fact"><span class="unit-fact-label">Predicted change</span><span class="unit-fact-value" id="unit-prediction">—</span></div>
               <div class="unit-fact"><span class="unit-fact-label">Urgency level</span><span id="unit-urgency">—</span></div>
             </div>
+            <div class="unit-row"><span class="unit-row-label">Why this check · <span class="reason-tag" id="unit-reason-label"></span></span><span class="unit-reason-detail" id="unit-reason-detail">—</span></div>
             <div class="unit-row"><span class="unit-row-label">Actionable insight</span><span class="unit-row-value" id="unit-insight">—</span></div>
-            <div class="unit-row"><span class="unit-row-label">Primary actionable stressor</span><span class="unit-row-value" id="unit-top-stressor">—</span></div>
-            <div class="unit-row"><span class="unit-row-label">Evidence</span><div id="unit-evidence"></div></div>
+            <div class="evidence-box" id="unit-evidence"></div>
           </div>
           <div class="unit-col">
             <div class="stress-title">Stress factor contribution <span class="stress-unit">(pp/yr)</span></div>
@@ -149,7 +149,7 @@
             <div id="stress-breakdown"></div>
           </div>
         </div>
-        <p class="method-note" id="unit-heat-note"></p>
+        <p class="method-note"><strong>Context:</strong> <span id="unit-heat-note"></span></p>
         <p class="method-note"><strong>Method:</strong> predicted cover = latest observed cover + predicted change &times; 1 year. Factor bars split the prediction by tracing each tree's decision path (Saabas 2014); they show what drives the model, not proven causes.</p>
       </div>
     </section>
